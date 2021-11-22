@@ -1,0 +1,4 @@
+This is a Brave Rewards publisher verification file.
+
+Domain: wiqonn.com
+Token: aa7a8b5b2210eca4a022489242acc35059bc995b7a0d22d203b50f840bd7d77b
