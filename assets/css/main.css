@@ -18,23 +18,26 @@
 }
 
 /* Global Colors - The following color variables are used throughout the website. Updating them here will change the color scheme of the entire website */
-:root { 
+:root {
   --background-color: #ffffff; /* Background color for the entire website, including individual sections */
-  --default-color: #212529; /* Default color used for the majority of the text content across the entire website */
-  --heading-color: #2C8C3A; /* Color for headings, subheadings and title throughout the website */
-  --accent-color: #39B54A; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --default-color: #333333; /* Default color used for the majority of the text content across the entire website */
+  --heading-color: #0083B3; /* Color for headings, subheadings and title throughout the website */
+  --accent-color: #00ADEC; /* Accent color that represents your brand on the website. It's used for buttons, links, and other elements that need to stand out */
+  --accent-secondary: #39B54A; /* Secondary accent color for variety */
   --surface-color: #ffffff; /* The surface color is used as a background of boxed elements within sections, such as cards, icon boxes, or other elements that require a visual separation from the global background. */
   --contrast-color: #ffffff; /* Contrast color for text, ensuring readability against backgrounds of accent, heading, or default colors. */
+  --gradient-primary: linear-gradient(135deg, #0083B3 0%, #00ADEC 50%, #33C9FF 100%);
+  --gradient-secondary: linear-gradient(135deg, #2C8C3A 0%, #39B54A 50%, #44D959 100%);
 }
 
 /* Nav Menu Colors - The following color variables are used specifically for the navigation menu. They are separate from the global colors to allow for more customization options */
 :root {
-  --nav-color: #44D959; /* The default color of the main navmenu links */
-  --nav-hover-color: #39B54A; /* Applied to main navmenu links when they are hovered over or active */
+  --nav-color: #333333; /* The default color of the main navmenu links */
+  --nav-hover-color: #00ADEC; /* Applied to main navmenu links when they are hovered over or active */
   --nav-mobile-background-color: #ffffff; /* Used as the background color for mobile navigation menu */
   --nav-dropdown-background-color: #ffffff; /* Used as the background color for dropdown items that appear when hovering over primary navigation items */
-  --nav-dropdown-color: #3a3939; /* Used for navigation links of the dropdown items in the navigation menu. */
-  --nav-dropdown-hover-color: #39B54A; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
+  --nav-dropdown-color: #333333; /* Used for navigation links of the dropdown items in the navigation menu. */
+  --nav-dropdown-hover-color: #00ADEC; /* Similar to --nav-hover-color, this color is applied to dropdown navigation links when they are hovered over. */
 }
 
 /* Color Presets - These classes override global colors when applied to any section or element, providing reuse of the sam color scheme. */
@@ -150,10 +153,12 @@ h6 {
 --------------------------------------------------------------*/
 .header {
   color: var(--default-color);
-  background-color: var(--background-color);
-  padding: 20px 0;
-  transition: all 0.5s;
+  background-color: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 0;
+  transition: all 0.3s ease;
   z-index: 997;
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
 }
 
 .header .logo {
@@ -182,18 +187,21 @@ h6 {
 .header .btn-getstarted,
 .header .btn-getstarted:focus {
   color: var(--contrast-color);
-  background: var(--accent-color);
+  background: var(--gradient-primary);
   font-size: 14px;
-  padding: 8px 26px;
+  font-weight: 600;
+  padding: 10px 28px;
   margin: 0;
-  border-radius: 4px;
-  transition: 0.3s;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 173, 236, 0.3);
 }
 
 .header .btn-getstarted:hover,
 .header .btn-getstarted:focus:hover {
   color: var(--contrast-color);
-  background: color-mix(in srgb, var(--accent-color), transparent 15%);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 173, 236, 0.4);
 }
 
 @media (max-width: 1200px) {
@@ -739,30 +747,43 @@ section,
 }
 
 .section-title h2 {
-  font-size: 42px;
-  font-weight: 700;
+  font-size: 48px;
+  font-weight: 800;
   position: relative;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .section-title h2:before,
 .section-title h2:after {
   content: "";
-  width: 50px;
-  height: 2px;
-  background: var(--accent-color);
+  width: 60px;
+  height: 4px;
+  background: var(--gradient-primary);
   display: inline-block;
+  border-radius: 10px;
 }
 
 .section-title h2:before {
-  margin: 0 15px 10px 0;
+  margin: 0 20px 12px 0;
 }
 
 .section-title h2:after {
-  margin: 0 0 10px 15px;
+  margin: 0 0 12px 20px;
 }
 
 .section-title p {
   margin-bottom: 0;
+  font-size: 18px;
+  color: #666666;
+  line-height: 1.7;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*--------------------------------------------------------------
@@ -772,10 +793,11 @@ section,
   width: 100%;
   min-height: 100vh;
   position: relative;
-  padding: 80px 0;
+  padding: 120px 0 80px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 
 .hero img {
@@ -786,11 +808,21 @@ section,
   height: 100%;
   object-fit: cover;
   z-index: 1;
+  animation: kenburns 20s ease-in-out infinite alternate;
+}
+
+@keyframes kenburns {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.1);
+  }
 }
 
 .hero:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  background: linear-gradient(135deg, rgba(0, 131, 179, 0.85) 0%, rgba(0, 173, 236, 0.75) 50%, rgba(51, 201, 255, 0.65) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -803,14 +835,18 @@ section,
 
 .hero h2 {
   margin: 0;
-  font-size: 44px;
-  font-weight: 700;
+  font-size: 56px;
+  font-weight: 800;
+  letter-spacing: -1px;
+  line-height: 1.2;
 }
 
 .hero p {
-  color: color-mix(in srgb, var(--default-color), transparent 20%);
-  margin: 5px 0 0 0;
-  font-size: 20px;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 20px 0 0 0;
+  font-size: 22px;
+  font-weight: 400;
+  line-height: 1.6;
 }
 
 .hero .sign-up-form {
@@ -946,26 +982,53 @@ section,
 }
 
 .about .icon-box {
-  background-color: var(--surface-color);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95));
+  backdrop-filter: blur(10px);
   padding: 50px 40px;
-  box-shadow: 0px 10px 50px rgba(0, 0, 0, 0.1);
-  border-radius: 10px;
-  transition: all 0.3s ease-out 0s;
+  box-shadow: 0px 20px 60px rgba(0, 131, 179, 0.12);
+  border-radius: 20px;
+  border: 1px solid rgba(0, 173, 236, 0.1);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  position: relative;
+  overflow: hidden;
+}
+
+.about .icon-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gradient-primary);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 0;
+}
+
+.about .icon-box:hover::before {
+  opacity: 0.05;
+}
+
+.about .icon-box > * {
+  position: relative;
+  z-index: 1;
 }
 
 .about .icon-box i {
   width: 80px;
   height: 80px;
-  border-radius: 50%;
+  border-radius: 20px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 24px;
   font-size: 32px;
   line-height: 0;
-  transition: all 0.4s ease-out 0s;
-  background-color: color-mix(in srgb, var(--accent-color), transparent 95%);
-  color: var(--accent-color);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: var(--gradient-primary);
+  color: var(--contrast-color);
+  box-shadow: 0 8px 20px rgba(0, 173, 236, 0.3);
 }
 
 .about .icon-box h3 {
@@ -976,11 +1039,18 @@ section,
 
 .about .icon-box p {
   margin-bottom: 0;
+  color: #666666;
+  line-height: 1.7;
+}
+
+.about .icon-box:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 30px 80px rgba(0, 131, 179, 0.18);
 }
 
 .about .icon-box:hover i {
-  background-color: var(--accent-color);
-  color: var(--contrast-color);
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 30px rgba(0, 173, 236, 0.5);
 }
 
 .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
@@ -1053,7 +1123,14 @@ section,
 --------------------------------------------------------------*/
 .services .service-item {
   position: relative;
-  padding-top: 40px;
+  padding: 40px 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+  border-radius: 20px;
+  border: 1px solid rgba(0, 173, 236, 0.08);
+  box-shadow: 0 10px 40px rgba(0, 131, 179, 0.08);
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  overflow: hidden;
+  height: 100%;
 }
 
 .services .service-item:before {
@@ -1061,55 +1138,66 @@ section,
   position: absolute;
   top: 0;
   left: 0;
-  right: 0;
-  height: 2px;
-  background: color-mix(in srgb, var(--default-color), transparent 90%);
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-primary);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.4s ease;
+}
+
+.services .service-item:hover:before {
+  transform: scaleX(1);
 }
 
 .services .service-item::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 30px;
-  height: 2px;
-  background: var(--accent-color);
-  border-right: 5px solid var(--background-color);
+  display: none;
+}
+
+.services .service-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 60px rgba(0, 131, 179, 0.15);
+  border-color: rgba(0, 173, 236, 0.2);
 }
 
 .services .service-item .icon {
-  width: 48px;
-  height: 48px;
+  width: 70px;
+  height: 70px;
   position: relative;
-  margin-right: 50px;
+  margin-right: 20px;
+  margin-bottom: 20px;
   line-height: 0;
+  background: var(--gradient-primary);
+  border-radius: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 25px rgba(0, 173, 236, 0.25);
+  transition: all 0.4s ease;
 }
 
 .services .service-item .icon i {
-  color: color-mix(in srgb, var(--default-color), transparent 30%);
-  font-size: 56px;
-  transition: ease-in-out 0.3s;
+  color: var(--contrast-color);
+  font-size: 38px;
+  transition: all 0.3s ease;
   z-index: 2;
   position: relative;
 }
 
+.services .service-item:hover .icon {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(0, 173, 236, 0.4);
+}
+
 .services .service-item .icon:before {
-  position: absolute;
-  content: "";
-  height: 30px;
-  width: 30px;
-  background: color-mix(in srgb, var(--accent-color), transparent 70%);
-  border-radius: 50px;
-  z-index: 1;
-  bottom: -15px;
-  right: -15px;
-  transition: 0.3s;
+  display: none;
 }
 
 .services .service-item .title {
   font-weight: 700;
   margin-bottom: 15px;
-  font-size: 18px;
+  font-size: 22px;
+  color: var(--heading-color);
 }
 
 .services .service-item .title a {
@@ -1121,8 +1209,9 @@ section,
 }
 
 .services .service-item .description {
-  line-height: 24px;
-  font-size: 14px;
+  line-height: 1.7;
+  font-size: 15px;
+  color: #666666;
 }
 
 /*--------------------------------------------------------------
@@ -1489,12 +1578,20 @@ section,
 }
 
 .faq .faq-container .faq-item {
-  background-color: var(--surface-color);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
   position: relative;
-  padding: 20px;
+  padding: 25px 30px;
   margin-bottom: 20px;
-  box-shadow: 0px 5px 25px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0px 8px 30px rgba(0, 131, 179, 0.08);
   overflow: hidden;
+  border-radius: 15px;
+  border: 1px solid rgba(0, 173, 236, 0.08);
+  transition: all 0.3s ease;
+}
+
+.faq .faq-container .faq-item:hover {
+  box-shadow: 0px 12px 40px rgba(0, 131, 179, 0.12);
+  transform: translateX(5px);
 }
 
 .faq .faq-container .faq-item:last-child {
@@ -1569,6 +1666,7 @@ section,
 --------------------------------------------------------------*/
 .team .member {
   position: relative;
+  transition: all 0.4s ease;
 }
 
 .team .member .member-img {
@@ -1576,8 +1674,16 @@ section,
   border-radius: 50%;
   overflow: hidden;
   position: relative;
-  border: 4px solid var(--background-color);
-  box-shadow: 0 15px 35px -10px rgba(0, 0, 0, 0.2);
+  border: 5px solid transparent;
+  background: var(--gradient-primary);
+  padding: 5px;
+  box-shadow: 0 20px 50px rgba(0, 131, 179, 0.15);
+  transition: all 0.4s ease;
+}
+
+.team .member:hover .member-img {
+  transform: translateY(-10px);
+  box-shadow: 0 30px 70px rgba(0, 131, 179, 0.25);
 }
 
 @media (max-width: 1024px) {
@@ -1649,9 +1755,10 @@ section,
 # Call To Action Section
 --------------------------------------------------------------*/
 .call-to-action {
-  padding: 80px 0;
+  padding: 100px 0;
   position: relative;
   clip-path: inset(0);
+  overflow: hidden;
 }
 
 .call-to-action img {
@@ -1667,7 +1774,7 @@ section,
 
 .call-to-action:before {
   content: "";
-  background: color-mix(in srgb, var(--background-color), transparent 50%);
+  background: linear-gradient(135deg, rgba(44, 140, 58, 0.92) 0%, rgba(57, 181, 74, 0.88) 50%, rgba(68, 217, 89, 0.85) 100%);
   position: absolute;
   inset: 0;
   z-index: 2;
@@ -1679,32 +1786,42 @@ section,
 }
 
 .call-to-action h3 {
-  font-size: 28px;
-  font-weight: 700;
-  color: var(--default-color);
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--contrast-color);
+  margin-bottom: 20px;
+  letter-spacing: -0.5px;
 }
 
 .call-to-action p {
-  color: var(--default-color);
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  line-height: 1.7;
+  margin-bottom: 30px;
 }
 
 .call-to-action .cta-btn {
   font-family: var(--heading-font);
-  font-weight: 500;
+  font-weight: 600;
   font-size: 16px;
-  letter-spacing: 1px;
+  letter-spacing: 0.5px;
   display: inline-block;
-  padding: 12px 40px;
-  border-radius: 5px;
-  transition: 0.5s;
+  padding: 15px 45px;
+  border-radius: 50px;
+  transition: all 0.3s ease;
   margin: 10px;
   border: 2px solid var(--contrast-color);
   color: var(--contrast-color);
+  background: transparent;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
 }
 
 .call-to-action .cta-btn:hover {
-  background: var(--accent-color);
-  border: 2px solid var(--accent-color);
+  background: var(--contrast-color);
+  color: #39B54A;
+  border: 2px solid var(--contrast-color);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
 }
 
 /*--------------------------------------------------------------
@@ -1882,27 +1999,55 @@ section,
 # Contact Section
 --------------------------------------------------------------*/
 .contact .info-item {
-  background: color-mix(in srgb, var(--default-color), transparent 96%);
-  padding: 30px;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.98));
+  padding: 40px 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(0, 131, 179, 0.08);
+  border: 1px solid rgba(0, 173, 236, 0.08);
+  transition: all 0.3s ease;
+  height: 100%;
+  text-align: center;
+}
+
+.contact .info-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 50px rgba(0, 131, 179, 0.12);
 }
 
 .contact .info-item i {
-  font-size: 38px;
+  font-size: 48px;
   line-height: 0;
-  color: var(--accent-color);
+  color: var(--contrast-color);
+  background: var(--gradient-primary);
+  width: 80px;
+  height: 80px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  margin-bottom: 20px;
+  box-shadow: 0 8px 25px rgba(0, 173, 236, 0.25);
+  transition: all 0.3s ease;
+}
+
+.contact .info-item:hover i {
+  transform: scale(1.1) rotate(5deg);
+  box-shadow: 0 12px 35px rgba(0, 173, 236, 0.4);
 }
 
 .contact .info-item h3 {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 700;
   margin: 20px 0 10px 0;
+  color: var(--heading-color);
 }
 
 .contact .info-item p {
   padding: 0;
-  line-height: 24px;
-  font-size: 14px;
+  line-height: 1.7;
+  font-size: 15px;
   margin-bottom: 0;
+  color: #666666;
 }
 
 .contact .php-email-form {
@@ -2868,4 +3013,186 @@ section,
   padding-left: 5px;
   color: color-mix(in srgb, var(--default-color), transparent 60%);
   font-size: 14px;
+}
+/*--------------------------------------------------------------
+# Modern Enhancements - Custom Wiqonn Styling
+--------------------------------------------------------------*/
+
+/* Smooth body font rendering */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Modern scroll behavior */
+html {
+  scroll-padding-top: 100px;
+}
+
+/* Improved link styling */
+a {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Add subtle animations to sections on scroll */
+[data-aos] {
+  pointer-events: auto;
+}
+
+/* Enhanced About section content */
+.about .content h2 {
+  font-size: 36px;
+  font-weight: 800;
+  line-height: 1.3;
+  margin-bottom: 20px;
+}
+
+.about .content h3 {
+  background: var(--gradient-secondary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modern section backgrounds */
+.light-background {
+  background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+}
+
+/* Improved footer styling */
+.footer {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.footer .social-links a {
+  transition: all 0.3s ease;
+}
+
+.footer .social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0, 173, 236, 0.3);
+}
+
+/* Enhanced scroll-to-top button */
+.scroll-top {
+  background: var(--gradient-primary);
+  box-shadow: 0 5px 20px rgba(0, 173, 236, 0.3);
+}
+
+.scroll-top:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 173, 236, 0.4);
+}
+
+/* Modern preloader styling */
+#preloader:before {
+  border-color: var(--accent-color) transparent var(--accent-secondary) transparent;
+  box-shadow: 0 0 20px rgba(0, 173, 236, 0.3);
+}
+
+/* Improved responsive hero for mobile */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 36px;
+  }
+  
+  .hero p {
+    font-size: 18px;
+  }
+  
+  .section-title h2 {
+    font-size: 32px;
+  }
+  
+  .call-to-action h3 {
+    font-size: 28px;
+  }
+}
+
+/* Add gradient text utility class */
+.gradient-text {
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Modern button utility */
+.btn-modern {
+  background: var(--gradient-primary);
+  color: var(--contrast-color);
+  padding: 12px 35px;
+  border-radius: 50px;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 20px rgba(0, 173, 236, 0.3);
+  display: inline-block;
+}
+
+.btn-modern:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 30px rgba(0, 173, 236, 0.4);
+  color: var(--contrast-color);
+}
+
+/* Enhanced team member info */
+.team .member-info h4 {
+  color: var(--heading-color);
+  font-weight: 700;
+}
+
+.team .member-info span {
+  color: var(--accent-color);
+  font-weight: 600;
+}
+
+/* Modern FAQ hover effects */
+.faq .faq-container .faq-active {
+  border-left: 4px solid var(--accent-color);
+}
+
+/* Better responsive spacing */
+@media (max-width: 992px) {
+  .about .icon-boxes .col-md-6:nth-child(2) .icon-box,
+  .about .icon-boxes .col-md-6:nth-child(4) .icon-box {
+    margin-top: 0;
+    margin-bottom: 30px;
+  }
+}
+
+/* Add pulse animation for CTA */
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(0, 173, 236, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(0, 173, 236, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(0, 173, 236, 0);
+  }
+}
+
+.btn-getstarted {
+  animation: pulse 2s infinite;
+}
+
+/* Improved selection colors */
+::selection {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+::-moz-selection {
+  background-color: var(--accent-color);
+  color: var(--contrast-color);
+}
+
+/* Modern focus states */
+button:focus,
+input:focus,
+textarea:focus,
+a:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
 }
