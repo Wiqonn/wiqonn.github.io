@@ -8,24 +8,18 @@ export function ValueProposition() {
       title: "Agile Implementation",
       description:
         "From idea to product in weeks, not months. Proven methodology that accelerates your time to market and reduces implementation risks.",
-      stat: "3x",
-      statLabel: "faster delivery",
     },
     {
       icon: Shield,
       title: "Guaranteed ROI",
       description:
         "Solutions designed to generate measurable returns. We define clear KPIs from the start and optimize until your objectives are met.",
-      stat: "340%",
-      statLabel: "average ROI",
     },
     {
       icon: Handshake,
       title: "Strategic Partner",
       description:
         "We don't just deliver software, we become your technology partner. Continuous support and constant evolution of your solutions.",
-      stat: "98%",
-      statLabel: "client retention",
     },
   ]
 
@@ -50,11 +44,7 @@ export function ValueProposition() {
                   <Icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">{value.description}</p>
-                <div className="pt-4 border-t border-border/50">
-                  <span className="text-3xl font-bold text-gradient-wiqonn">{value.stat}</span>
-                  <span className="text-sm text-muted-foreground ml-2">{value.statLabel}</span>
-                </div>
+                <p className="text-muted-foreground leading-relaxed">{value.description}</p>
               </Card>
             )
           })}

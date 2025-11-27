@@ -33,24 +33,6 @@ export function CTASection() {
             </Button>
           </div>
 
-          <div className="pt-12 grid md:grid-cols-4 gap-8 text-center">
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-gradient-wiqonn">$2M+</div>
-              <div className="text-sm text-muted-foreground">Client Savings Generated</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-gradient-wiqonn">340%</div>
-              <div className="text-sm text-muted-foreground">Average ROI</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-gradient-wiqonn">50+</div>
-              <div className="text-sm text-muted-foreground">Projects Delivered</div>
-            </div>
-            <div className="space-y-2">
-              <div className="text-3xl font-bold text-gradient-wiqonn">48h</div>
-              <div className="text-sm text-muted-foreground">Proposal Turnaround</div>
-            </div>
-          </div>
 
           <p className="text-sm text-muted-foreground pt-8">Your competitors are already investing in AI. Are you?</p>
         </div>
