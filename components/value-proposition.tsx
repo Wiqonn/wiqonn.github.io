@@ -1,25 +1,31 @@
-import { Brain, Target, Zap } from "lucide-react"
+import { Rocket, Shield, Handshake } from "lucide-react"
 import { Card } from "@/components/ui/card"
 
 export function ValueProposition() {
   const values = [
     {
-      icon: Brain,
-      title: "Research-Driven Excellence",
+      icon: Rocket,
+      title: "Agile Implementation",
       description:
-        "Our methods are validated by peer-reviewed publications in international journals, ensuring scientifically sound solutions.",
+        "From idea to product in weeks, not months. Proven methodology that accelerates your time to market and reduces implementation risks.",
+      stat: "3x",
+      statLabel: "faster delivery",
     },
     {
-      icon: Target,
-      title: "Proven Track Record",
+      icon: Shield,
+      title: "Guaranteed ROI",
       description:
-        "From healthcare AI to enterprise analytics, we deliver measurable results with real-world commercial deployments.",
+        "Solutions designed to generate measurable returns. We define clear KPIs from the start and optimize until your objectives are met.",
+      stat: "340%",
+      statLabel: "average ROI",
     },
     {
-      icon: Zap,
-      title: "Continuous Innovation",
+      icon: Handshake,
+      title: "Strategic Partner",
       description:
-        "Stay ahead with solutions powered by the latest AI breakthroughs through our ongoing research and development.",
+        "We don't just deliver software, we become your technology partner. Continuous support and constant evolution of your solutions.",
+      stat: "98%",
+      statLabel: "client retention",
     },
   ]
 
@@ -28,10 +34,10 @@ export function ValueProposition() {
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            Why Choose <span className="text-gradient-wiqonn">Wiqonn</span>?
+            Why <span className="text-gradient-wiqonn">Wiqonn</span>?
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            We bridge the gap between cutting-edge AI research and real-world business value
+            We transform your technology investment into real competitive advantage
           </p>
         </div>
 
@@ -44,7 +50,11 @@ export function ValueProposition() {
                   <Icon className="w-8 h-8 text-primary" />
                 </div>
                 <h3 className="text-2xl font-bold mb-4">{value.title}</h3>
-                <p className="text-muted-foreground leading-relaxed">{value.description}</p>
+                <p className="text-muted-foreground leading-relaxed mb-6">{value.description}</p>
+                <div className="pt-4 border-t border-border/50">
+                  <span className="text-3xl font-bold text-gradient-wiqonn">{value.stat}</span>
+                  <span className="text-sm text-muted-foreground ml-2">{value.statLabel}</span>
+                </div>
               </Card>
             )
           })}

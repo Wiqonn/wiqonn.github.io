@@ -1,84 +1,100 @@
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { FileText, Award, ExternalLink } from "lucide-react"
+import { Brain, BarChart3, Cpu, Eye, MessageSquare, Workflow } from "lucide-react"
 
 export function ResearchSection() {
-  const publications = [
+  const capabilities = [
     {
-      title: "Advanced Medical AI Systems",
-      journal: "International Journal of Artificial Intelligence",
-      year: "2021",
-      focus: "Medical Imaging & Machine Learning",
+      icon: Brain,
+      title: "Custom AI Models",
       description:
-        "Methodologies for building robust AI systems in highly regulated, high-stakes environments with compliance and reliability.",
-      link: "https://www.researchgate.net/profile/Juan-Paniagua/publication/350411823_Influence_of_Preprocessing_and_Segmentation_on_the_Complexity_of_the_Learning_Machines_in_Medical_Imaging/links/6086ec39881fa114b42dbdac/Influence-of-Preprocessing-and-Segmentation-on-the-Complexity-of-the-Learning-Machines-in-Medical-Imaging.pdf",
+        "We build and deploy machine learning models tailored to your specific business needs, from predictive analytics to classification systems.",
+      applications: ["Demand forecasting", "Risk assessment", "Customer segmentation"],
     },
     {
-      title: "Production-Grade Diagnostic AI",
-      journal: "Frontiers in Medical Technology",
-      year: "2022",
-      focus: "COVID-19 Detection & Clinical Decision Support",
+      icon: Eye,
+      title: "Computer Vision",
       description:
-        "Deployed AI system analyzing 1,300+ medical studies with exceptional accuracy in production medical environments.",
-      link: "https://www.frontiersin.org/journals/medical-technology/articles/10.3389/fmedt.2022.980735/full",
+        "Image and video analysis solutions for quality control, document processing, medical imaging, and visual inspection.",
+      applications: ["Defect detection", "Document OCR", "Visual search"],
+    },
+    {
+      icon: MessageSquare,
+      title: "AI Agents & LLMs",
+      description:
+        "Intelligent conversational agents and language models that automate customer support, document analysis, and knowledge management.",
+      applications: ["Customer service bots", "Document Q&A", "Content generation"],
+    },
+    {
+      icon: BarChart3,
+      title: "Business Intelligence",
+      description:
+        "Interactive dashboards and analytics platforms that transform raw data into actionable insights for better decision-making.",
+      applications: ["Executive dashboards", "KPI tracking", "Trend analysis"],
+    },
+    {
+      icon: Workflow,
+      title: "Process Automation",
+      description:
+        "End-to-end automation of repetitive tasks and workflows, integrating AI to handle complex decision points.",
+      applications: ["Data pipelines", "Report generation", "Approval workflows"],
+    },
+    {
+      icon: Cpu,
+      title: "MLOps & Deployment",
+      description:
+        "Production-grade infrastructure for deploying, monitoring, and scaling your AI solutions with reliability and performance.",
+      applications: ["Model serving", "A/B testing", "Performance monitoring"],
     },
   ]
 
   return (
-    <section id="research" className="py-24 md:py-32 bg-muted/30">
+    <section id="capabilities" className="py-24 md:py-32 bg-muted/30">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Peer-Reviewed Research</Badge>
+          <Badge className="mb-4 bg-primary/10 text-primary border-primary/20">Our Capabilities</Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            Proven <span className="text-gradient-wiqonn">Technical Excellence</span>
+            What We <span className="text-gradient-wiqonn">Build</span>
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            Our expertise is peer-reviewed and published in international journals
+            End-to-end AI solutions designed to solve real business problems
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
-          {publications.map((pub, index) => (
-            <Card key={index} className="p-8 bg-card border-border/50 hover:border-primary/50 transition-all group">
-              <div className="flex items-start gap-4 mb-6">
-                <div className="p-3 rounded-xl bg-gradient-wiqonn/10">
-                  <FileText className="w-6 h-6 text-primary" />
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto mb-12">
+          {capabilities.map((capability, index) => {
+            const Icon = capability.icon
+            return (
+              <Card key={index} className="p-6 bg-card border-border/50 hover:border-primary/50 transition-all group">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 rounded-xl bg-gradient-wiqonn/10 group-hover:bg-gradient-wiqonn/20 transition-colors">
+                    <Icon className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-lg font-bold">{capability.title}</h3>
                 </div>
-                <div className="flex-1">
-                  <a
-                    href={pub.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-xl font-bold mb-2 hover:text-primary transition-colors"
-                  >
-                    {pub.title}
-                    <ExternalLink className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </a>
-                  <p className="text-sm text-muted-foreground">
-                    {pub.journal} ({pub.year})
-                  </p>
+                <p className="text-muted-foreground text-sm leading-relaxed mb-4">{capability.description}</p>
+                <div className="flex flex-wrap gap-2">
+                  {capability.applications.map((app, idx) => (
+                    <span key={idx} className="text-xs px-2 py-1 bg-muted rounded-full text-muted-foreground">
+                      {app}
+                    </span>
+                  ))}
                 </div>
-              </div>
-              <Badge variant="outline" className="mb-4 border-primary/30 text-primary">
-                {pub.focus}
-              </Badge>
-              <p className="text-muted-foreground leading-relaxed">{pub.description}</p>
-            </Card>
-          ))}
+              </Card>
+            )
+          })}
         </div>
 
         <div className="max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-wiqonn/10 border border-primary/20">
-          <div className="flex items-start gap-4">
-            <div className="p-3 rounded-xl bg-background">
-              <Award className="w-8 h-8 text-primary" />
-            </div>
-            <div>
-              <h3 className="text-2xl font-bold mb-3">What This Means for You</h3>
-              <p className="text-muted-foreground leading-relaxed">
-                Whether you're in healthcare, manufacturing, finance, or any data-intensive industry, we bring the same
-                rigor, expertise, and proven methodologies to solve your toughest technical challenges with solutions
-                that are both scientifically sound and commercially proven.
-              </p>
+          <div className="text-center">
+            <h3 className="text-2xl font-bold mb-3">Have a specific challenge?</h3>
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Tell us about your project and we'll help you identify the right AI solution for your needs.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+              <span className="px-3 py-1 bg-background rounded-full">No upfront commitment</span>
+              <span className="px-3 py-1 bg-background rounded-full">Free consultation</span>
+              <span className="px-3 py-1 bg-background rounded-full">Proposal in 48h</span>
             </div>
           </div>
         </div>

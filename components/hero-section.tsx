@@ -28,13 +28,12 @@ export function HeroSection() {
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight text-balance">
-            Transforming Data into <span className="text-gradient-wiqonn">Intelligent Action</span>
+            Scale Your Business with <span className="text-gradient-wiqonn">AI That Delivers</span>
           </h1>
 
           {/* Subheadline */}
           <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto text-pretty leading-relaxed">
-            Cutting-edge AI & technology solutions where academic excellence meets commercial impact for enterprise
-            transformation
+            We help companies increase revenue, cut costs, and outpace competitors with custom AI solutions that generate measurable ROI from day one
           </p>
 
           {/* CTA Buttons */}
@@ -53,13 +52,13 @@ export function HeroSection() {
 
           {/* Trust Indicators */}
           <div className="pt-12 flex flex-col items-center gap-4">
-            <p className="text-sm text-muted-foreground uppercase tracking-wider">Trusted by Leading Organizations</p>
+            <p className="text-sm text-muted-foreground uppercase tracking-wider">Trusted by Industry Leaders</p>
             <div className="flex flex-wrap items-center justify-center gap-8 opacity-60">
-              <div className="text-muted-foreground font-medium">Research Centers</div>
+              <div className="text-muted-foreground font-medium">Health</div>
               <div className="w-px h-6 bg-border" />
-              <div className="text-muted-foreground font-medium">National Enterprises</div>
+              <div className="text-muted-foreground font-medium">Energy</div>
               <div className="w-px h-6 bg-border" />
-              <div className="text-muted-foreground font-medium">International Companies</div>
+              <div className="text-muted-foreground font-medium">Education</div>
             </div>
           </div>
         </div>
