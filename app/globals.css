@@ -75,7 +75,7 @@
   /* Updated fonts to Lato and Open Sans per Wiqonn specs */
   --font-sans: "Open Sans", system-ui, -apple-system, sans-serif;
   --font-heading: "Lato", system-ui, -apple-system, sans-serif;
-  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --font-mono: var(--font-mono), "JetBrains Mono", ui-monospace, monospace;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);

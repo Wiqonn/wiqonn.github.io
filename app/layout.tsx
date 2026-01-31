@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Lato, Open_Sans } from "next/font/google"
+import { Lato, Open_Sans, JetBrains_Mono } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
 import { SmoothScrollProvider } from "@/components/smooth-scroll-provider"
 import "./globals.css"
@@ -14,6 +14,11 @@ const lato = Lato({
 const openSans = Open_Sans({
   subsets: ["latin"],
   variable: "--font-sans",
+})
+
+const jetbrainsMono = JetBrains_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
 })
 
 export const metadata: Metadata = {
@@ -34,7 +39,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
-      <body className={`${openSans.variable} ${lato.variable} font-sans antialiased`}>
+      <body className={`${openSans.variable} ${lato.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
         <SmoothScrollProvider>{children}</SmoothScrollProvider>
         <Analytics />
       </body>
