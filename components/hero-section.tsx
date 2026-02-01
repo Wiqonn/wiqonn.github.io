@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { useEffect, useRef } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowRight } from "lucide-react"
 import { gsap } from "gsap"
@@ -13,8 +13,6 @@ export function HeroSection() {
   const ctaRef = useRef<HTMLDivElement>(null)
   const trustRef = useRef<HTMLDivElement>(null)
   const videoRef = useRef<HTMLVideoElement>(null)
-  const [videoLoaded, setVideoLoaded] = useState(false)
-  const [videoError, setVideoError] = useState(false)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -48,57 +46,26 @@ export function HeroSection() {
     return () => ctx.revert()
   }, [])
 
-  // Handle video load and error events
-  useEffect(() => {
-    const video = videoRef.current
-    if (!video) return
-
-    const handleCanPlay = () => setVideoLoaded(true)
-    const handleError = () => setVideoError(true)
-
-    video.addEventListener("canplay", handleCanPlay)
-    video.addEventListener("error", handleError)
-
-    // Timeout fallback for slow connections (10 seconds)
-    const timeout = setTimeout(() => {
-      if (!videoLoaded) {
-        setVideoError(true)
-      }
-    }, 10000)
-
-    return () => {
-      video.removeEventListener("canplay", handleCanPlay)
-      video.removeEventListener("error", handleError)
-      clearTimeout(timeout)
-    }
-  }, [videoLoaded])
-
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]">
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
-        {!videoError && (
-          <video
-            ref={videoRef}
-            autoPlay
-            loop
-            muted
-            playsInline
-            className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
-              videoLoaded ? "opacity-60" : "opacity-0"
-            }`}
-          >
-            <source src="/hero-neural.mp4" type="video/mp4" />
-          </video>
-        )}
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover opacity-60"
+        >
+          <source src="/hero-neural.mp4" type="video/mp4" />
+        </video>
         {/* Fallback gradient overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-transparent to-[#0a0a0a]" />
       </div>
 
-      {/* Neural Network Canvas Animation (fallback when video not loaded or error) */}
-      <div className={`absolute inset-0 z-[1] transition-opacity duration-1000 ${
-        videoLoaded && !videoError ? "opacity-20" : "opacity-60"
-      }`}>
+      {/* Neural Network Canvas Animation (enhancement layer) */}
+      <div className="absolute inset-0 z-[1] opacity-40">
         <NeuralNetworkBackground />
       </div>
 
