@@ -78,7 +78,8 @@
   }
 
   .frame {
-    position: absolute; inset: 14mm;
+    position: absolute;
+    top: 14mm; right: 14mm; bottom: 10mm; left: 14mm;
     display: flex; flex-direction: column;
   }
 
@@ -171,10 +172,43 @@
     display: grid; grid-template-rows: auto 1fr auto;
     gap: 8mm;
   }
-  .cover-top { display:flex; justify-content:space-between; align-items:flex-start; }
-  .cover-logo { height: 14mm; }
-  .cover-meta { text-align: right; font-family: var(--mono); font-size: 8.5pt; color: var(--muted); letter-spacing: .12em; line-height: 1.7; font-weight: 500; }
-  .cover-meta .v { color: var(--ink); }
+  .cover-top {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: var(--mono); font-size: 8pt;
+    color: var(--muted); letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 600;
+    padding-bottom: 5mm;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cover-top .issue { color: var(--ink); }
+
+  /* Logo INSIDE the dark cover panel — primary brand anchor */
+  .panel-brand {
+    display: flex; flex-direction: column; gap: 2mm;
+    padding-bottom: 8mm;
+    border-bottom: 1px solid rgba(255,255,255,.08);
+    margin-bottom: 8mm;
+    position: relative;
+  }
+  .panel-brand::after {
+    content: "";
+    position: absolute;
+    left: 0; bottom: -1.5px;
+    width: 36mm; height: 2.5px;
+    background: linear-gradient(90deg, #22D3EE 0%, #4ADE80 100%);
+    border-radius: 2px;
+  }
+  .panel-brand img {
+    width: 100mm;
+    height: auto;
+    display: block;
+  }
+  .panel-brand .tag {
+    font-family: var(--mono); font-size: 8pt;
+    color: rgba(255,255,255,.55);
+    letter-spacing: .22em; text-transform: uppercase;
+    font-weight: 500;
+  }
 
   .cover-panel {
     position: relative;
@@ -266,7 +300,7 @@
 
   /* ============ MANIFESTO (P2) ============ */
   .manifesto h2 {
-    font-size: 56pt;
+    font-size: 44pt;
     margin: 0;
     max-width: 170mm;
   }
@@ -275,8 +309,8 @@
     font-style: italic;
     font-variation-settings: "opsz" 144, "SOFT" 100;
     font-weight: 300;
-    font-size: 22pt;
-    line-height: 1.2;
+    font-size: 18pt;
+    line-height: 1.25;
     letter-spacing: -0.015em;
     color: var(--ink-2);
     border-left: 2px solid var(--cyan);
@@ -322,7 +356,7 @@
   }
   .pillar h4 {
     font-family: var(--display); font-weight: 400;
-    font-size: 20pt; margin: 0; line-height: 1.0;
+    font-size: 17pt; margin: 0; line-height: 1.05;
     letter-spacing: -.02em; color: var(--ink);
   }
   .pillar h4 em {
@@ -333,7 +367,10 @@
     -webkit-text-fill-color: transparent;
   }
   .pillar p {
-    margin: 0; font-size: 9.5pt; line-height: 1.55; color: var(--muted);
+    margin: 0; font-size: 9pt; line-height: 1.5; color: var(--muted);
+  }
+  .pillars {
+    margin-bottom: 8mm;
   }
 
   /* ============ FEATURE — AI AGENTS (P3) — EDITORIAL REDESIGN ============ */
@@ -876,8 +913,11 @@
   /* ============ PRINT ============ */
   @page { size: A4; margin: 0; }
   @media print {
-    html, body { background: white; }
-    body { background: white !important; }
+    html, body {
+      background: var(--paper) !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
     .page {
       margin: 0;
       box-shadow: none;
@@ -887,19 +927,52 @@
     .page:last-child { page-break-after: auto; }
     .print-help { display: none; }
 
-    /* Force inline display in print to avoid the block-rendering bug
-       that causes teal rectangles to overlay italic text.
-       Gradient via -webkit-background-clip: text is preserved. */
+    /* Print-safe gradient fallback. -webkit-background-clip: text fails in
+       print engines and leaves visible solid-color rectangles over the text.
+       Force solid colors for reliable rendering across all PDF readers. */
     .gradient-text,
     .pillar h4 em,
     .pillar .pillar-num,
     .agent-card .ac-promise,
     .principles-strip .p-key em,
     h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+      background: none !important;
+      background-clip: initial !important;
+      -webkit-background-clip: initial !important;
+      -webkit-text-fill-color: var(--cyan) !important;
+      color: var(--cyan) !important;
+      padding-right: 0 !important;
       display: inline !important;
-      padding-right: 0.05em !important;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
+    }
+    /* On dark panels: split the italic text in two colors to simulate the
+       cyan → green gradient. First italic block = cyan, second = green. */
+    .cover-panel h1 em:nth-of-type(1) {
+      -webkit-text-fill-color: #22D3EE !important;
+      color: #22D3EE !important;
+    }
+    .cover-panel h1 em:nth-of-type(2) {
+      -webkit-text-fill-color: #4ADE80 !important;
+      color: #4ADE80 !important;
+    }
+    /* Contact hero only has one em — use a teal between cyan and green */
+    .contact-hero h2 em {
+      -webkit-text-fill-color: #2DD4BF !important;
+      color: #2DD4BF !important;
+    }
+    /* Box-shadows render as solid rectangles in print engines.
+       Remove glow effects to avoid block artifacts. */
+    .pg-footer .dot,
+    .avatar,
+    .contact-cta,
+    .agent-diagram,
+    .phase.live,
+    .flow-row.agent-row .node,
+    .cover-logo {
+      box-shadow: none !important;
+    }
+    /* Drop-shadows on logos/decorative SVGs also fail in print */
+    .cover-logo {
+      filter: none !important;
     }
   }
 
@@ -936,41 +1009,16 @@
 <section class="page cover">
   <div class="cover-frame">
     <header class="cover-top">
-      <img class="cover-logo" src="/brochure/assets/wiqonn-logo.png" alt="Wiqonn">
+      <span>the briefing <span class="issue">2026</span></span>
+      <span>Vol. 01 / Enterprise edition</span>
     </header>
 
     <div class="cover-panel">
-      <svg class="neural-bg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <defs>
-          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="0">
-            <stop offset="0" stop-color="#5DD5F0"/>
-            <stop offset=".5" stop-color="#2DD4BF"/>
-            <stop offset="1" stop-color="#4ADE80"/>
-          </linearGradient>
-        </defs>
-        <g stroke="url(#g1)" stroke-width="0.7" fill="none" opacity=".85">
-          <line x1="40" y1="60" x2="100" y2="40"/>
-          <line x1="40" y1="60" x2="100" y2="100"/>
-          <line x1="40" y1="60" x2="100" y2="160"/>
-          <line x1="40" y1="140" x2="100" y2="40"/>
-          <line x1="40" y1="140" x2="100" y2="100"/>
-          <line x1="40" y1="140" x2="100" y2="160"/>
-          <line x1="100" y1="40" x2="160" y2="100"/>
-          <line x1="100" y1="100" x2="160" y2="100"/>
-          <line x1="100" y1="160" x2="160" y2="100"/>
-        </g>
-        <g fill="url(#g1)">
-          <circle cx="40" cy="60" r="4"/>
-          <circle cx="40" cy="140" r="4"/>
-          <circle cx="100" cy="40" r="4.5"/>
-          <circle cx="100" cy="100" r="4.5"/>
-          <circle cx="100" cy="160" r="4.5"/>
-          <circle cx="160" cy="100" r="5"/>
-        </g>
-      </svg>
-
+      <header class="panel-brand">
+        <img src="/brochure/assets/wiqonn-logo.png" alt="Wiqonn">
+        <span class="tag">— Research-led AI &amp; Engineering Studio</span>
+      </header>
       <div class="cover-hero">
-        <span class="eyebrow">— Research-backed AI for real-world impact</span>
         <h1>Scale your<br>business with<br><em>AI that</em><br><em>delivers.</em></h1>
         <p class="cover-tag">
           Custom AI agents, predictive systems, and cloud platforms engineered to automate what slows you down — and prove their value in measurable outcomes, not promises.
@@ -989,9 +1037,6 @@
           <span><span>03</span> What we build</span>
           <span><span>06</span> Let's talk</span>
         </div>
-      </div>
-      <div class="cover-issue">
-        the briefing<strong>2026</strong>
       </div>
     </footer>
   </div>
