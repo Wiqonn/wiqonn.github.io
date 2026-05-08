@@ -1,0 +1,1471 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Wiqonn — Enterprise AI Brochure 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@300..700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* Editorial light palette — print friendly */
+    --paper:      #F6F2EA;    /* warm cream page */
+    --paper-2:    #FFFFFF;    /* white surface */
+    --paper-tint: #EDE7DC;    /* tinted card */
+    --ink:        #0B1220;    /* deep navy ink (text) */
+    --ink-2:      #1F2A3D;
+    --muted:      #4F5C73;
+    --dim:        #8A95A8;
+    --rule:       rgba(11,18,32,.10);
+    --rule-strong:rgba(11,18,32,.22);
+
+    /* Brand gradient (kept) */
+    --cyan:       #0095B8;    /* slightly deeper for legibility on cream */
+    --teal:       #0FA68F;
+    --green:      #1FA94F;
+    --green-deep: #128A41;
+
+    --grad:       linear-gradient(92deg, #0095B8 0%, #0FA68F 50%, #1FA94F 100%);
+    --grad-soft:  linear-gradient(135deg, rgba(0,149,184,.10), rgba(31,169,79,.10));
+    --grad-text:  linear-gradient(92deg, #0095B8 0%, #0FA68F 45%, #1FA94F 100%);
+
+    /* Dark feature blocks (cover/contact) */
+    --night:      #07111F;
+    --night-2:    #0E1A2C;
+
+    --display:    "Fraunces", "Iowan Old Style", Georgia, serif;
+    --sans:       "Manrope", -apple-system, "Helvetica Neue", sans-serif;
+    --mono:       "JetBrains Mono", ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: var(--sans);
+    background: #2a2e36;
+    color: var(--ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ============ PAGE FRAME ============ */
+  .page {
+    width: 210mm;
+    height: 297mm;
+    margin: 16mm auto;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 4px 12px rgba(0,0,0,.3);
+    color: var(--ink);
+    page-break-after: always;
+    break-after: page;
+  }
+  .page:last-child { page-break-after: auto; break-after: auto; }
+
+  .page::before {
+    /* paper grain */
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(rgba(11,18,32,.04) 1px, transparent 1px);
+    background-size: 3px 3px;
+    pointer-events: none;
+    opacity: .55;
+  }
+
+  .frame {
+    position: absolute; inset: 14mm;
+    display: flex; flex-direction: column;
+  }
+
+  /* ============ TYPE ============ */
+  .display {
+    font-family: var(--display);
+    font-weight: 350;
+    font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0;
+    letter-spacing: -0.02em;
+    line-height: 0.94;
+    color: var(--ink);
+  }
+  .display-italic {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    letter-spacing: -0.015em;
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 9.5pt;
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    color: var(--muted);
+    font-weight: 500;
+  }
+  .num {
+    font-family: var(--mono);
+    font-size: 9pt;
+    color: var(--cyan);
+    letter-spacing: 0.05em;
+    font-weight: 500;
+  }
+  .lead {
+    font-size: 13.5pt;
+    line-height: 1.45;
+    color: var(--ink-2);
+    font-weight: 300;
+  }
+  .body {
+    font-size: 10.5pt;
+    line-height: 1.55;
+    color: var(--ink-2);
+  }
+  .small { font-size: 9pt; line-height: 1.5; color: var(--muted); }
+  .caps { text-transform: uppercase; letter-spacing: .14em; }
+  .gradient-text {
+    background: var(--grad-text);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    padding-right: 0.08em;
+    display: inline-block;
+  }
+  .display-italic.gradient-text,
+  .gradient-text.display-italic,
+  h1 em, h2 em, h4 em, h5 em, h6 em {
+    padding-right: 0.1em;
+  }
+
+  /* ============ HEADER / FOOTER ============ */
+  .pg-header, .pg-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: var(--mono);
+    font-size: 8pt;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    font-weight: 500;
+  }
+  .pg-header { padding-bottom: 6mm; border-bottom: 1px solid var(--rule); }
+  .pg-footer { padding-top: 6mm; border-top: 1px solid var(--rule); margin-top: auto; }
+  .pg-footer .dot { width:5px; height:5px; border-radius:50%; background:var(--green); display:inline-block; margin-right: 6px; box-shadow: 0 0 10px rgba(31,169,79,.5); }
+  .brand-mini { display:flex; align-items:center; gap: 8px; }
+  .brand-mini-mark {
+    width: 14px; height: 14px;
+    background: var(--grad);
+    border-radius: 3px;
+    transform: rotate(45deg);
+  }
+
+  /* ============ COVER (P1) — light page with dark feature panel ============ */
+  .cover { background: var(--paper); }
+  .cover-frame {
+    position: absolute; inset: 14mm;
+    display: grid; grid-template-rows: auto 1fr auto;
+    gap: 8mm;
+  }
+  .cover-top { display:flex; justify-content:space-between; align-items:flex-start; }
+  .cover-logo { height: 14mm; }
+  .cover-meta { text-align: right; font-family: var(--mono); font-size: 8.5pt; color: var(--muted); letter-spacing: .12em; line-height: 1.7; font-weight: 500; }
+  .cover-meta .v { color: var(--ink); }
+
+  .cover-panel {
+    position: relative;
+    border-radius: 6px;
+    background:
+      radial-gradient(120% 80% at 80% 10%, rgba(0,149,184,.35), transparent 55%),
+      radial-gradient(80% 60% at 10% 90%, rgba(31,169,79,.28), transparent 55%),
+      linear-gradient(180deg, #04101F 0%, #08182A 60%, #051321 100%);
+    color: #F4F7FB;
+    padding: 16mm 14mm;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .cover-panel::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 18mm 18mm;
+    mask-image: radial-gradient(80% 80% at 50% 50%, black 30%, transparent 100%);
+    pointer-events: none;
+  }
+  .cover-panel .eyebrow { color: rgba(255,255,255,.7); }
+  .cover-hero h1 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+    font-size: 78pt;
+    line-height: 0.9;
+    letter-spacing: -0.035em;
+    margin: 4mm 0 0;
+    color: #F4F7FB;
+    position: relative;
+  }
+  .cover-hero h1 em {
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    background: linear-gradient(90deg,
+      #22D3EE 0%,
+      #4ADE80 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .cover-tag {
+    margin-top: 10mm;
+    max-width: 130mm;
+    font-size: 13pt;
+    line-height: 1.45;
+    color: #C5D0E1;
+    font-weight: 300;
+    position: relative;
+  }
+  .neural-bg {
+    position: absolute;
+    right: -10mm; top: 8mm;
+    width: 70mm; height: 70mm;
+    opacity: .55;
+    pointer-events: none;
+  }
+  .cover-bottom {
+    display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 10mm;
+  }
+  .cover-toc {
+    display: flex; flex-direction: column; gap: 4mm;
+  }
+  .cover-toc .toc-label {
+    font-family: var(--mono); font-size: 7.5pt;
+    color: var(--muted); letter-spacing: .2em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .cover-toc .toc-items {
+    display: grid; grid-template-columns: repeat(2, auto);
+    gap: 2.5mm 10mm;
+    font-family: var(--mono); font-size: 8.5pt;
+    color: var(--ink-2); letter-spacing: .04em; line-height: 1.3;
+  }
+  .cover-toc .toc-items span span {
+    color: var(--cyan); margin-right: 3mm;
+  }
+  .cover-issue {
+    text-align: right;
+    font-family: var(--mono); font-size: 8pt; color: var(--muted);
+    letter-spacing: .15em; font-weight: 500;
+  }
+  .cover-issue strong { display:block; font-family: var(--display); font-size: 22pt; color: var(--ink); letter-spacing: -.01em; font-weight: 400; margin-top: 2mm; }
+
+  /* ============ MANIFESTO (P2) ============ */
+  .manifesto h2 {
+    font-size: 56pt;
+    margin: 0;
+    max-width: 170mm;
+  }
+  .manifesto-quote {
+    font-family: var(--display);
+    font-style: italic;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-weight: 300;
+    font-size: 22pt;
+    line-height: 1.2;
+    letter-spacing: -0.015em;
+    color: var(--ink-2);
+    border-left: 2px solid var(--cyan);
+    padding-left: 8mm;
+    margin: 12mm 0 0;
+    max-width: 150mm;
+  }
+  .manifesto-quote .q-mark {
+    font-size: 60pt;
+    line-height: 0;
+    color: var(--cyan);
+    margin-right: 6px;
+    vertical-align: -8mm;
+    font-style: normal;
+  }
+  .pillars {
+    display: grid; grid-template-columns: 1fr;
+    margin-top: auto;
+    border-top: 2px solid var(--ink);
+  }
+  .pillar {
+    display: grid;
+    grid-template-columns: 32mm 60mm 1fr;
+    gap: 8mm; align-items: start;
+    padding: 7mm 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .pillar:last-child { border-bottom: 0; }
+  .pillar .pillar-tag {
+    display: flex; flex-direction: column;
+    gap: 2mm;
+  }
+  .pillar .pillar-num {
+    font-family: var(--mono); font-weight: 600;
+    font-size: 8pt; color: var(--cyan);
+    letter-spacing: .18em; line-height: 1;
+  }
+  .pillar .num {
+    font-family: var(--mono); font-size: 8pt;
+    color: var(--green-deep); letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 600;
+    line-height: 1.3;
+  }
+  .pillar h4 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 20pt; margin: 0; line-height: 1.0;
+    letter-spacing: -.02em; color: var(--ink);
+  }
+  .pillar h4 em {
+    font-style: italic; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    background: var(--grad-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .pillar p {
+    margin: 0; font-size: 9.5pt; line-height: 1.55; color: var(--muted);
+  }
+
+  /* ============ FEATURE — AI AGENTS (P3) — EDITORIAL REDESIGN ============ */
+  .feature .kicker {
+    font-family: var(--mono); font-size: 9pt; color: var(--green-deep);
+    letter-spacing: .25em; text-transform: uppercase; font-weight: 500;
+  }
+  .feature-hero {
+    display: grid; grid-template-columns: 1.4fr 1fr;
+    gap: 14mm; align-items: end;
+    margin-top: 10mm; margin-bottom: 8mm;
+  }
+  .feature-hero h2 {
+    font-size: 40pt; margin: 4mm 0 0;
+    line-height: 0.95;
+  }
+  .feature-hero .lead {
+    font-size: 11pt; line-height: 1.5; color: var(--ink-2);
+    font-weight: 300; margin: 0;
+  }
+  .feature-hero .lead strong {
+    font-weight: 500; color: var(--ink);
+    background: linear-gradient(180deg, transparent 60%, rgba(15,166,143,.18) 60%);
+    padding: 0 2px;
+  }
+
+  .agent-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 4mm; flex: 1;
+  }
+  .agent-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6mm 6mm;
+    background: var(--paper-2);
+    position: relative;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+  .agent-card::before {
+    content: "";
+    position: absolute; left: -1px; top: -1px; width: 16mm; height: 2px;
+    background: var(--grad);
+    border-top-left-radius: 4px;
+  }
+  .agent-card .ac-num {
+    font-family: var(--mono); font-size: 8pt;
+    color: var(--cyan); letter-spacing: .15em; font-weight: 600;
+    margin-bottom: 3mm;
+  }
+  .agent-card h5 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 16pt; line-height: 1.05; letter-spacing: -.015em;
+    margin: 0 0 3mm; color: var(--ink);
+  }
+  .agent-card .ac-promise {
+    font-family: var(--display); font-style: italic; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    font-size: 11pt; line-height: 1.25; letter-spacing: -.01em;
+    margin: 0 0 3mm;
+    background: var(--grad-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .agent-card p {
+    margin: 0; font-size: 9pt; line-height: 1.45; color: var(--muted);
+  }
+
+  .principles-strip {
+    margin-top: 5mm;
+    padding-top: 5mm;
+    border-top: 2px solid var(--ink);
+    display: grid; grid-template-columns: repeat(3, 1fr);
+    gap: 6mm;
+  }
+  .principles-strip .principle {
+    display: grid; grid-template-columns: 1fr;
+    gap: 1mm;
+  }
+  .principles-strip .p-tag {
+    font-family: var(--mono); font-size: 7.5pt;
+    color: var(--green-deep); letter-spacing: .18em;
+    text-transform: uppercase; font-weight: 600;
+  }
+  .principles-strip .p-key {
+    font-family: var(--display); font-size: 18pt; font-weight: 400;
+    line-height: 1; letter-spacing: -.02em; margin: 0;
+    color: var(--ink);
+  }
+  .principles-strip .p-key em {
+    font-style: italic; font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    background: var(--grad-text);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .principles-strip .p-val {
+    font-size: 8.5pt;
+    color: var(--muted); line-height: 1.4;
+    margin-top: 1mm;
+  }
+
+  /* ============ CAPABILITIES (P4) ============ */
+  .caps-head {
+    display: grid; grid-template-columns: 1.2fr 1fr; gap: 10mm;
+    align-items: end; margin-bottom: 7mm;
+  }
+  .caps-head h2 { font-size: 38pt; margin: 4mm 0 0; line-height: 0.95; }
+  .caps-head p { font-size: 10.5pt; line-height: 1.5; color: var(--muted); margin: 0; }
+
+  .caps-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; flex: 1;
+  }
+  .cap-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6mm 6mm 6mm;
+    display: flex; flex-direction: column;
+    background: var(--paper-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .cap-card .num { display:block; }
+  .cap-card h3 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 17pt; line-height: 1.05;
+    margin: 4mm 0 3mm; letter-spacing: -.02em;
+    color: var(--ink);
+    white-space: nowrap;
+  }
+  .cap-card .desc {
+    font-size: 9.5pt; line-height: 1.45; color: var(--ink-2);
+    margin-bottom: 4mm;
+  }
+  .cap-card ul {
+    list-style: none; padding: 0; margin: 0;
+    display: grid; gap: 2mm;
+  }
+  .cap-card li {
+    font-size: 8.5pt; color: var(--muted);
+    padding-left: 6mm; position: relative;
+    line-height: 1.4;
+  }
+  .cap-card li::before {
+    content: "→";
+    position: absolute; left: 0; top: 0;
+    color: var(--cyan);
+    font-family: var(--mono);
+    font-size: 9pt; font-weight: 600;
+    line-height: 1.4;
+  }
+  .cap-card .glyph {
+    position: absolute; right: -16mm; top: -16mm;
+    width: 60mm; height: 60mm;
+    background: var(--grad-soft);
+    border-radius: 50%;
+    filter: blur(18mm);
+    opacity: .9;
+  }
+
+  /* ============ INDUSTRIES + TRUST (P5) ============ */
+  .split-head { display: grid; grid-template-columns: 1.2fr 1fr; gap: 10mm; align-items: end; margin-bottom: 6mm; }
+  .split-head h2 { font-size: 36pt; margin: 4mm 0 0; line-height: 0.96; }
+  .split-head p { font-size: 10.5pt; line-height: 1.5; color: var(--muted); margin: 0; }
+
+  .industries-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 3mm;
+    margin-bottom: 5mm;
+  }
+  .industry-tile {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 4.5mm 4mm;
+    background: var(--paper-2);
+    position: relative;
+    overflow: hidden;
+  }
+  .industry-tile .tag {
+    font-family: var(--mono); font-size: 7pt;
+    color: var(--cyan); letter-spacing: .14em; text-transform: uppercase;
+    margin-bottom: 2.5mm; font-weight: 600;
+  }
+  .industry-tile h5 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 12pt; line-height: 1.05; letter-spacing: -.015em;
+    margin: 0 0 2.5mm; color: var(--ink);
+  }
+  .industry-tile p { margin: 0; font-size: 7.5pt; line-height: 1.4; color: var(--muted); }
+
+  .trust-band {
+    border-top: 2px solid var(--ink);
+    padding-top: 5mm;
+    margin-top: auto;
+  }
+  .trust-band .trust-eyebrow {
+    font-family: var(--mono); font-size: 8.5pt; color: var(--green-deep);
+    letter-spacing: .22em; text-transform: uppercase; font-weight: 600;
+    margin-bottom: 3mm; display: block;
+  }
+  .trust-band h3 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 22pt; letter-spacing: -.02em; line-height: 1.0;
+    margin: 0 0 4mm;
+  }
+  .trust-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm;
+  }
+  .trust-item {
+    padding-top: 3mm;
+    border-top: 1px solid var(--rule);
+  }
+  .trust-item .ti-tag {
+    font-family: var(--mono); font-size: 7pt; color: var(--muted);
+    letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
+    margin-bottom: 2mm;
+  }
+  .trust-item h6 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 12pt; line-height: 1.05; margin: 0 0 2.5mm; color: var(--ink);
+    letter-spacing: -.01em;
+  }
+  .trust-item p { margin: 0; font-size: 8pt; line-height: 1.4; color: var(--muted); }
+
+  /* ============ ENGAGEMENT + ROI (P6) ============ */
+  .timeline-band {
+    margin-bottom: 6mm;
+  }
+  .timeline {
+    display: grid; grid-template-columns: 1fr 8mm 1fr 8mm 1fr;
+    align-items: stretch; gap: 0;
+    margin-top: 6mm;
+  }
+  .phase {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6mm 5mm;
+    background: var(--paper-2);
+    position: relative;
+    display: flex; flex-direction: column;
+  }
+  .phase .duration {
+    font-family: var(--mono); font-size: 7.5pt; color: var(--cyan);
+    letter-spacing: .15em; text-transform: uppercase; font-weight: 600;
+    margin-bottom: 2mm;
+  }
+  .phase h5 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 18pt; line-height: 1.0; letter-spacing: -.02em;
+    margin: 0 0 3mm; color: var(--ink);
+  }
+  .phase p { margin: 0; font-size: 8.5pt; line-height: 1.45; color: var(--muted); }
+  .phase ul {
+    list-style: none; padding: 0; margin: 4mm 0 0;
+    font-family: var(--mono); font-size: 7.5pt; color: var(--ink-2);
+    letter-spacing: .04em;
+  }
+  .phase ul li { padding: 1.5mm 0; border-top: 1px solid var(--rule); }
+  .phase ul li:first-child { border-top: 0; padding-top: 0; }
+  .phase.live {
+    background: linear-gradient(160deg, rgba(0,149,184,.06), rgba(31,169,79,.04));
+    border-color: rgba(15,166,143,.4);
+  }
+  .phase.live::before {
+    content: "";
+    position: absolute; left: -1px; top: -1px; width: 100%; height: 3px;
+    background: var(--grad); border-radius: 4px 4px 0 0;
+  }
+  .timeline-arrow {
+    align-self: center; justify-self: center;
+    color: var(--cyan);
+    font-family: var(--display); font-size: 16pt; line-height: 1;
+  }
+
+  .roi-band {
+    margin-top: auto;
+    border-top: 2px solid var(--ink);
+    padding-top: 6mm;
+  }
+  .roi-grid {
+    display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 6mm;
+    align-items: stretch;
+  }
+  .roi-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6mm 5mm;
+    background: var(--paper-2);
+    display: flex; flex-direction: column;
+  }
+  .roi-card.hero {
+    background:
+      radial-gradient(80% 100% at 0% 100%, rgba(0,149,184,.10), transparent 60%),
+      var(--paper-2);
+    border-color: rgba(0,149,184,.3);
+  }
+  .roi-card .tag {
+    font-family: var(--mono); font-size: 7.5pt;
+    color: var(--cyan); letter-spacing: .15em;
+    text-transform: uppercase; font-weight: 600;
+    margin-bottom: 3mm;
+  }
+  .roi-card h5 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 16pt; line-height: 1.05; letter-spacing: -.015em;
+    margin: 0 0 3mm; color: var(--ink);
+  }
+  .roi-card .big {
+    font-family: var(--display); font-weight: 350;
+    font-size: 36pt; line-height: 0.9; letter-spacing: -.03em;
+    margin: 1mm 0 3mm;
+  }
+  .roi-card p { margin: 0; font-size: 8.5pt; line-height: 1.5; color: var(--muted); }
+
+  /* ============ TECH STACK (P7) ============ */
+  .stack-head {
+    display: grid; grid-template-columns: 1fr auto; gap: 10mm;
+    margin-bottom: 10mm; align-items: end;
+  }
+  .stack-head h2 { font-size: 50pt; margin: 4mm 0 0; max-width: 140mm; }
+  .stack-meta {
+    font-family: var(--mono); font-size: 8.5pt; color: var(--muted);
+    text-align: right; line-height: 1.7; letter-spacing: .12em; font-weight: 500;
+  }
+  .stack-meta strong { color: var(--cyan); display:block; font-size: 16pt; font-family: var(--display); font-weight: 400; letter-spacing: -.01em;}
+
+  .layers { display: grid; grid-template-columns: 1fr; gap: 4mm; flex: 1; }
+  .layer {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 5mm 6mm;
+    display: grid; grid-template-columns: 35mm 1fr;
+    gap: 6mm; align-items: center;
+    background: var(--paper-2);
+  }
+  .layer .label {
+    font-family: var(--display); font-size: 14pt; font-weight: 400;
+    line-height: 1.05; letter-spacing: -.01em; color: var(--ink);
+  }
+  .layer .label small {
+    display: block;
+    font-family: var(--mono); font-size: 7.5pt;
+    color: var(--cyan); text-transform: uppercase; letter-spacing: .14em;
+    margin-bottom: 2mm; font-weight: 600;
+  }
+  .chips { display: flex; flex-wrap: wrap; gap: 2mm 2.5mm; }
+  .chip {
+    font-family: var(--mono); font-size: 8pt;
+    padding: 1.6mm 3mm;
+    border: 1px solid var(--rule-strong);
+    border-radius: 100px;
+    color: var(--ink);
+    letter-spacing: .04em;
+    background: var(--paper);
+    font-weight: 500;
+  }
+  .chip.hot { border-color: rgba(0,149,184,.5); color: var(--cyan); background: rgba(0,149,184,.08); }
+  .chip.green { border-color: rgba(31,169,79,.5); color: var(--green-deep); background: rgba(31,169,79,.08); }
+
+  /* ============ TEAM (P6) ============ */
+  .team-head h2 { font-size: 48pt; margin: 4mm 0 6mm; max-width: 150mm; }
+  .team-head p { font-size: 11pt; color: var(--muted); margin: 0 0 10mm; max-width: 140mm; line-height: 1.5; }
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto auto;
+    gap: 5mm;
+    flex: 1;
+  }
+  .team-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6mm 5mm;
+    display: flex; flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    background: var(--paper-2);
+  }
+  .team-card.hero {
+    grid-column: span 2;
+    background:
+      linear-gradient(135deg, rgba(0,149,184,.10), rgba(31,169,79,.06)),
+      var(--paper-2);
+    border-color: rgba(0,149,184,.30);
+  }
+  .avatar {
+    width: 14mm; height: 14mm;
+    border-radius: 50%;
+    background: var(--grad);
+    display: grid; place-items: center;
+    font-family: var(--display); font-weight: 500;
+    font-size: 13pt; color: #fff;
+    margin-bottom: 4mm;
+    letter-spacing: -.02em;
+    box-shadow: 0 4px 14px rgba(15,166,143,.25);
+  }
+  .team-card.hero .avatar { width: 18mm; height: 18mm; font-size: 16pt; }
+  .team-card h4 { font-family: var(--display); font-size: 16pt; font-weight: 400; margin: 0 0 1mm; letter-spacing: -.01em; line-height: 1.05; color: var(--ink); }
+  .team-card .role { font-family: var(--mono); font-size: 8pt; color: var(--cyan); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 3mm; font-weight: 600; }
+  .team-card p { margin: 0; font-size: 9pt; color: var(--muted); line-height: 1.45; }
+  .team-card.hero p { font-size: 10pt; color: var(--ink-2); }
+
+  /* ============ CASE STUDIES (P7) ============ */
+  .cases h2 { font-size: 48pt; margin: 4mm 0 4mm; }
+  .cases-intro { font-size: 11pt; color: var(--muted); max-width: 150mm; margin: 0 0 8mm; line-height: 1.5; }
+
+  .case-strip {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 4mm;
+    flex: 1;
+  }
+  .case-card {
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    padding: 6mm 5mm 5mm;
+    display: flex; flex-direction: column;
+    background: var(--paper-2);
+    position: relative;
+  }
+  .case-card .case-tag {
+    font-family: var(--mono); font-size: 7.5pt;
+    color: var(--green-deep); letter-spacing: .15em;
+    text-transform: uppercase; margin-bottom: 4mm; font-weight: 600;
+  }
+  .case-card h4 {
+    font-family: var(--display); font-weight: 400;
+    font-size: 16pt; line-height: 1.05; letter-spacing: -.01em;
+    margin: 0 0 4mm; color: var(--ink);
+  }
+  .case-card .case-meta {
+    font-family: var(--mono); font-size: 7.5pt; color: var(--dim);
+    text-transform: uppercase; letter-spacing: .12em;
+    border-top: 1px solid var(--rule);
+    padding-top: 3mm; margin-bottom: 3mm;
+    display: flex; justify-content: space-between;
+    font-weight: 500;
+  }
+  .case-card .body { font-size: 9pt; line-height: 1.5; color: var(--muted); }
+  .case-card .impact {
+    margin-top: auto; padding-top: 5mm;
+    border-top: 1px dashed var(--rule);
+  }
+  .case-card .impact .m { font-family: var(--display); font-size: 24pt; font-weight: 400; line-height: 1; }
+  .case-card .impact .l { font-family: var(--mono); font-size: 7.5pt; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin-top: 2mm; font-weight: 500; }
+  .case-card.placeholder {
+    border-style: dashed;
+    background:
+      repeating-linear-gradient(45deg, transparent 0 8mm, rgba(11,18,32,.03) 8mm 16mm),
+      var(--paper-2);
+  }
+  .case-card.placeholder .case-tag { color: var(--dim); }
+  .case-card.placeholder h4 { color: var(--muted); }
+
+  /* ============ CONTACT / BACK (P8) — light page with dark feature panel ============ */
+  .contact { background: var(--paper); }
+  .contact-frame {
+    position: absolute; inset: 14mm;
+    display: grid; grid-template-rows: auto 1fr auto;
+    gap: 8mm;
+  }
+  .contact-panel {
+    position: relative;
+    border-radius: 6px;
+    background:
+      radial-gradient(60% 40% at 80% 20%, rgba(0,149,184,.30), transparent 60%),
+      radial-gradient(50% 35% at 20% 90%, rgba(31,169,79,.24), transparent 60%),
+      linear-gradient(180deg, #04101F 0%, #08182A 100%);
+    color: #F4F7FB;
+    padding: 16mm 14mm;
+    overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+  }
+  .contact-panel::before {
+    content: "";
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
+    background-size: 18mm 18mm;
+    mask-image: radial-gradient(80% 80% at 50% 50%, black 30%, transparent 100%);
+    pointer-events: none;
+  }
+  .contact-panel .num { color: #5DD5F0; }
+  .contact-hero h2 {
+    font-family: var(--display);
+    font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
+    font-size: 56pt; margin: 4mm 0 0; line-height: 0.95;
+    letter-spacing: -.02em;
+    color: #F4F7FB;
+    max-width: 180mm;
+  }
+  .contact-hero h2 em {
+    font-style: italic;
+    font-weight: 300;
+    font-variation-settings: "opsz" 144, "SOFT" 100;
+    background: linear-gradient(90deg,
+      #22D3EE 0%,
+      #4ADE80 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .contact-hero p {
+    margin: 8mm 0 0;
+    max-width: 130mm;
+    font-size: 13pt; line-height: 1.45;
+    color: #C5D0E1; font-weight: 300;
+  }
+  .contact-cta {
+    margin-top: 10mm;
+    align-self: flex-start;
+    display: inline-flex; align-items: center; gap: 4mm;
+    background: var(--grad);
+    color: #fff;
+    padding: 5mm 8mm;
+    border-radius: 100px;
+    font-family: var(--mono); font-size: 10pt;
+    font-weight: 600; letter-spacing: .12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(15,166,143,.4);
+  }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8mm;
+    margin-top: auto;
+    padding-top: 4mm;
+  }
+  .contact-grid h6 { font-family: var(--mono); font-size: 8pt; color: var(--muted); margin: 0 0 4mm; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; }
+  .contact-grid p { margin: 0; font-size: 11pt; line-height: 1.5; color: var(--ink); font-weight: 400; }
+  .contact-grid a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(0,149,184,.3); }
+
+  .endmark {
+    display: flex; align-items: center; gap: 4mm;
+    font-family: var(--mono); font-size: 8pt;
+    color: var(--muted); letter-spacing: .15em; text-transform: uppercase;
+    font-weight: 500;
+  }
+
+  /* ============ PRINT ============ */
+  @page { size: A4; margin: 0; }
+  @media print {
+    html, body { background: white; }
+    body { background: white !important; }
+    .page {
+      margin: 0;
+      box-shadow: none;
+      page-break-after: always;
+      break-after: page;
+    }
+    .page:last-child { page-break-after: auto; }
+    .print-help { display: none; }
+
+    /* Force inline display in print to avoid the block-rendering bug
+       that causes teal rectangles to overlay italic text.
+       Gradient via -webkit-background-clip: text is preserved. */
+    .gradient-text,
+    .pillar h4 em,
+    .pillar .pillar-num,
+    .agent-card .ac-promise,
+    .principles-strip .p-key em,
+    h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+      display: inline !important;
+      padding-right: 0.05em !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+  }
+
+  .print-help {
+    position: fixed; right: 16px; bottom: 16px;
+    background: #07111F;
+    color: #F4F7FB;
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 8px;
+    padding: 12px 16px;
+    font-family: var(--mono); font-size: 11px;
+    line-height: 1.5; letter-spacing: .04em;
+    box-shadow: 0 8px 30px rgba(0,0,0,.5);
+    max-width: 260px;
+    z-index: 100;
+  }
+  .print-help b { color: #5DD5F0; }
+  .print-help button {
+    margin-top: 8px;
+    background: var(--grad);
+    border: 0; color: #fff;
+    padding: 6px 12px; border-radius: 100px;
+    font-family: var(--mono); font-size: 10px; font-weight: 700;
+    letter-spacing: .1em; text-transform: uppercase;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+
+<!-- ===================================================================
+     PAGE 1 — COVER
+==================================================================== -->
+<section class="page cover">
+  <div class="cover-frame">
+    <header class="cover-top">
+      <img class="cover-logo" src="/brochure/assets/wiqonn-logo.png" alt="Wiqonn">
+    </header>
+
+    <div class="cover-panel">
+      <svg class="neural-bg" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="g1" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#5DD5F0"/>
+            <stop offset=".5" stop-color="#2DD4BF"/>
+            <stop offset="1" stop-color="#4ADE80"/>
+          </linearGradient>
+        </defs>
+        <g stroke="url(#g1)" stroke-width="0.7" fill="none" opacity=".85">
+          <line x1="40" y1="60" x2="100" y2="40"/>
+          <line x1="40" y1="60" x2="100" y2="100"/>
+          <line x1="40" y1="60" x2="100" y2="160"/>
+          <line x1="40" y1="140" x2="100" y2="40"/>
+          <line x1="40" y1="140" x2="100" y2="100"/>
+          <line x1="40" y1="140" x2="100" y2="160"/>
+          <line x1="100" y1="40" x2="160" y2="100"/>
+          <line x1="100" y1="100" x2="160" y2="100"/>
+          <line x1="100" y1="160" x2="160" y2="100"/>
+        </g>
+        <g fill="url(#g1)">
+          <circle cx="40" cy="60" r="4"/>
+          <circle cx="40" cy="140" r="4"/>
+          <circle cx="100" cy="40" r="4.5"/>
+          <circle cx="100" cy="100" r="4.5"/>
+          <circle cx="100" cy="160" r="4.5"/>
+          <circle cx="160" cy="100" r="5"/>
+        </g>
+      </svg>
+
+      <div class="cover-hero">
+        <span class="eyebrow">— Research-backed AI for real-world impact</span>
+        <h1>Scale your<br>business with<br><em>AI that</em><br><em>delivers.</em></h1>
+        <p class="cover-tag">
+          Custom AI agents, predictive systems, and cloud platforms engineered to automate what slows you down — and prove their value in measurable outcomes, not promises.
+        </p>
+      </div>
+    </div>
+
+    <footer class="cover-bottom">
+      <div class="cover-toc">
+        <span class="toc-label">— Inside this brochure</span>
+        <div class="toc-items">
+          <span><span>01</span> Why Wiqonn</span>
+          <span><span>04</span> Industries &amp; trust posture</span>
+          <span><span>02</span> AI Agents &amp; automation</span>
+          <span><span>05</span> Engagement model &amp; ROI</span>
+          <span><span>03</span> What we build</span>
+          <span><span>06</span> Let's talk</span>
+        </div>
+      </div>
+      <div class="cover-issue">
+        the briefing<strong>2026</strong>
+      </div>
+    </footer>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     PAGE 2 — MANIFESTO / WHY WIQONN
+==================================================================== -->
+<section class="page manifesto">
+  <div class="frame">
+    <header class="pg-header">
+      <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
+      <div>01 — THE BRIEFING</div>
+      <div>P. 02</div>
+    </header>
+
+    <div style="margin-top: 14mm;">
+      <span class="num">§ 01 — WHO WE ARE</span>
+      <h2 class="display" style="margin: 6mm 0 0;">
+        AI should solve<br>problems<span class="display-italic" style="font-size: 56pt;">,</span><br>
+        <span class="display-italic gradient-text">not create</span><br>
+        <span class="display-italic gradient-text">new ones.</span>
+      </h2>
+    </div>
+
+    <p class="manifesto-quote">
+      <span class="q-mark">“</span>We are an AI &amp; engineering studio for leaders who are tired of pilots that never reach production. Every system we build has one job — to move a number that matters to your business — or we don't ship it.
+    </p>
+
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-tag">
+          <span class="pillar-num">01 / 03</span>
+          <span class="num">SPEED TO VALUE</span>
+        </div>
+        <h4>Weeks<span class="display-italic">.</span> <em>Not quarters.</em></h4>
+        <p>Compressed discovery, scoped to one outcome that moves the business, delivered in production iterations — never a six-month pilot that quietly drifts off the roadmap.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-tag">
+          <span class="pillar-num">02 / 03</span>
+          <span class="num">ACCOUNTABILITY</span>
+        </div>
+        <h4>Numbers<span class="display-italic">,</span> <em>or it doesn't ship.</em></h4>
+        <p>Every system has a baseline and a target before a single line of code. If the model isn't beating the metric we signed on, it doesn't go live — even when the demo looks good.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-tag">
+          <span class="pillar-num">03 / 03</span>
+          <span class="num">GOVERNANCE-READY</span>
+        </div>
+        <h4>Audit trails<span class="display-italic">,</span> <em>not black boxes.</em></h4>
+        <p>Traces, evals, and guardrails are built in from day one — so security, legal and risk teams aren't surprised when the system reaches production.</p>
+      </div>
+    </div>
+
+    <footer class="pg-footer">
+      <div><span class="dot"></span>WIQONN.COM</div>
+      <div>RESEARCH-BACKED AI &amp; TECHNOLOGY SOLUTIONS</div>
+      <div>02 / 07</div>
+    </footer>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     PAGE 3 — AI AGENTS & PROCESS AUTOMATION (FEATURED)
+==================================================================== -->
+<section class="page feature">
+  <div class="frame">
+    <header class="pg-header">
+      <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
+      <div>02 — FEATURED CAPABILITY</div>
+      <div>P. 03</div>
+    </header>
+
+    <div class="feature-hero">
+      <div>
+        <span class="kicker">§ 02 — Where most of our work begins</span>
+        <h2 class="display">
+          Agents that handle<br>the repetitive work —<br>
+          <span class="display-italic gradient-text">so your team doesn't.</span>
+        </h2>
+      </div>
+      <p class="lead">
+        Most enterprises don't have an "AI problem" — they have a <strong>workflow problem</strong>. Repetitive tickets, slow approvals, data trapped in PDFs, status updates copy-pasted between systems. Wiqonn agents quietly run those workflows around the clock and only surface the work humans actually need to touch.
+      </p>
+    </div>
+
+    <div class="agent-grid">
+      <article class="agent-card">
+        <div class="ac-num">— Type 01</div>
+        <h5>Operational agents</h5>
+        <p class="ac-promise">Replace the human spreadsheet shuffle.</p>
+        <p>Triage tickets, route approvals, reconcile data across ERP, CRM and spreadsheets — turning repetitive ops headcount into measurable throughput.</p>
+      </article>
+
+      <article class="agent-card">
+        <div class="ac-num">— Type 02</div>
+        <h5>Document &amp; knowledge agents</h5>
+        <p class="ac-promise">Read everything. Forget nothing.</p>
+        <p>Read contracts, RFPs, invoices and internal docs. Extract structured data, answer questions with citations and feed your downstream systems on demand.</p>
+      </article>
+
+      <article class="agent-card">
+        <div class="ac-num">— Type 03</div>
+        <h5>Decision-support agents</h5>
+        <p class="ac-promise">A second opinion at scale.</p>
+        <p>Predictive models wrapped in an agent layer — forecasting, anomaly detection, recommendations — delivered inside the tools your team already uses.</p>
+      </article>
+
+      <article class="agent-card">
+        <div class="ac-num">— Type 04</div>
+        <h5>Customer-facing agents</h5>
+        <p class="ac-promise">Available the moment a customer asks.</p>
+        <p>Support, sales and internal copilots grounded in your data — built with retrieval, evaluation harnesses and guardrails, not vibes.</p>
+      </article>
+    </div>
+
+    <div class="principles-strip">
+      <div class="principle">
+        <span class="p-tag">— Always-on</span>
+        <h6 class="p-key">Runs <em>24/7.</em></h6>
+        <p class="p-val">No rotations to staff, no off-hours coverage gap.</p>
+      </div>
+      <div class="principle">
+        <span class="p-tag">— Auditable</span>
+        <h6 class="p-key">Every <em>step logged.</em></h6>
+        <p class="p-val">Replayable trace for risk &amp; legal, from week one.</p>
+      </div>
+      <div class="principle">
+        <span class="p-tag">— Yours</span>
+        <h6 class="p-key">Your <em>stack, your rules.</em></h6>
+        <p class="p-val">Deploys in your cloud or on-prem, on your data, under your governance.</p>
+      </div>
+    </div>
+
+    <footer class="pg-footer">
+      <div><span class="dot"></span>WIQONN.COM</div>
+      <div>AGENTS · LLMS · RETRIEVAL · MLOPS</div>
+      <div>03 / 07</div>
+    </footer>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     PAGE 4 — CAPABILITIES (4 PILLARS)
+==================================================================== -->
+<section class="page">
+  <div class="frame">
+    <header class="pg-header">
+      <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
+      <div>03 — CAPABILITIES</div>
+      <div>P. 04</div>
+    </header>
+
+    <div class="caps-head" style="margin-top: 12mm;">
+      <div>
+        <span class="num">§ 03 — WHAT WE BUILD</span>
+        <h2 class="display">Four ways<br>we move <span class="display-italic gradient-text">your</span> numbers.</h2>
+      </div>
+      <p>
+        Real impact rarely comes from a single piece of tech. We bring AI, data, infrastructure and software under one roof so the result on your desk is one working system — not four invoices to integrate.
+      </p>
+    </div>
+
+    <div class="caps-grid">
+      <article class="cap-card">
+        <div class="glyph"></div>
+        <span class="num">CAP / 01</span>
+        <h3>AI &amp; Automation</h3>
+        <p class="desc">Take the repetitive work off your team's plate. We build AI that runs the boring parts of the business 24/7 so your people focus on the decisions only humans should make.</p>
+        <ul>
+          <li>AI agents that automate end-to-end processes</li>
+          <li>Prediction models tuned on your own data</li>
+          <li>Computer vision for quality &amp; inspection</li>
+          <li>Smart copilots grounded in your knowledge base</li>
+          <li>Private, on-prem AI when your data can't leave the building</li>
+        </ul>
+      </article>
+
+      <article class="cap-card">
+        <div class="glyph"></div>
+        <span class="num">CAP / 02</span>
+        <h3>Business Intelligence</h3>
+        <p class="desc">Stop running the business from a spreadsheet. We turn the data scattered across your tools into dashboards that answer the questions your leaders actually ask in the next meeting.</p>
+        <ul>
+          <li>Executive dashboards built around your real KPIs</li>
+          <li>Automated reports — hours back to your team</li>
+          <li>Real-time alerts when the numbers drift</li>
+          <li>One source of truth across ERP, CRM &amp; warehouse</li>
+        </ul>
+      </article>
+
+      <article class="cap-card">
+        <div class="glyph"></div>
+        <span class="num">CAP / 03</span>
+        <h3>Cloud &amp; Infrastructure</h3>
+        <p class="desc">The foundation everything else runs on — fast, secure, ready to grow. We set it up so your team never has to wake up at 3am because the system fell over.</p>
+        <ul>
+          <li>Multi-cloud setup (AWS · Azure · Google Cloud)</li>
+          <li>High availability — your systems stay up</li>
+          <li>Security &amp; data handling done right by default</li>
+          <li>Costs sized to what you actually use</li>
+        </ul>
+      </article>
+
+      <article class="cap-card">
+        <div class="glyph"></div>
+        <span class="num">CAP / 04</span>
+        <h3>Custom Development</h3>
+        <p class="desc">Software shaped around how your business actually operates — not generic templates with your logo on top. From an internal tool to a customer-facing product, built to last with AI woven in.</p>
+        <ul>
+          <li>Mobile &amp; web applications with AI built in</li>
+          <li>APIs that connect your tools cleanly</li>
+          <li>SaaS platforms ready to ship to your customers</li>
+          <li>Code that stays yours — no vendor lock-in</li>
+        </ul>
+      </article>
+    </div>
+
+    <footer class="pg-footer">
+      <div><span class="dot"></span>WIQONN.COM</div>
+      <div>FOUR PRACTICES · ONE STUDIO · END-TO-END DELIVERY</div>
+      <div>04 / 07</div>
+    </footer>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     PAGE 5 — INDUSTRIES + TRUST & COMPLIANCE
+==================================================================== -->
+<section class="page">
+  <div class="frame">
+    <header class="pg-header">
+      <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
+      <div>04 — INDUSTRIES &amp; TRUST</div>
+      <div>P. 05</div>
+    </header>
+
+    <div class="split-head" style="margin-top: 12mm;">
+      <div>
+        <span class="num">§ 04 — WHERE WE BUILD</span>
+        <h2 class="display">Domains where AI<br>moves <span class="display-italic gradient-text">real</span> numbers.</h2>
+      </div>
+      <p>A snapshot of the domains where Wiqonn's AI, data and engineering work makes a difference. Every engagement is shaped to your actual sector and the specific metric that matters to you.</p>
+    </div>
+
+    <div class="industries-grid">
+      <div class="industry-tile">
+        <div class="tag">— Domain01</div>
+        <h5>Financial Services</h5>
+        <p>Risk scoring, fraud detection, KYC/AML document automation, and BI for treasury &amp; ops.</p>
+      </div>
+      <div class="industry-tile">
+        <div class="tag">— Domain02</div>
+        <h5>Education &amp; EdTech</h5>
+        <p>Student acquisition &amp; enrollment copilots, learning analytics, content generation, and dashboards for academic ops.</p>
+      </div>
+      <div class="industry-tile">
+        <div class="tag">— Domain03</div>
+        <h5>Energy &amp; Utilities</h5>
+        <p>Predictive maintenance, demand forecasting, grid &amp; asset optimization, and dashboards for distribution networks.</p>
+      </div>
+      <div class="industry-tile">
+        <div class="tag">— Domain04</div>
+        <h5>Logistics &amp; Supply Chain</h5>
+        <p>Demand forecasting, route &amp; load optimization, anomaly detection across distributed operations.</p>
+      </div>
+      <div class="industry-tile">
+        <div class="tag">— Domain05</div>
+        <h5>Retail &amp; E-commerce</h5>
+        <p>Personalization, loyalty &amp; churn-risk models, demand forecasting, and shopping copilots grounded in your catalog.</p>
+      </div>
+      <div class="industry-tile">
+        <div class="tag">— Domain06</div>
+        <h5>Manufacturing &amp; Industrial</h5>
+        <p>Computer vision for QA, predictive maintenance, and edge-deployable models for the plant floor.</p>
+      </div>
+      <div class="industry-tile">
+        <div class="tag">— Domain07</div>
+        <h5>Public Sector &amp; Government</h5>
+        <p>Historical spend analysis, pattern detection on legacy records, dashboards for evidence-based policy calls.</p>
+      </div>
+      <div class="industry-tile">
+        <div class="tag">— Domain08</div>
+        <h5>Professional Services &amp; Agencies</h5>
+        <p>Lead scoring &amp; conversion copilots, document &amp; proposal automation, and BI for revenue and client ops.</p>
+      </div>
+    </div>
+
+    <div class="trust-band">
+      <span class="trust-eyebrow">§ 04.B — Built for procurement &amp; legal</span>
+      <h3>Trust posture<span class="display-italic">,</span> <span class="display-italic gradient-text">by default.</span></h3>
+      <div class="trust-grid">
+        <div class="trust-item">
+          <div class="ti-tag">— Data sovereignty</div>
+          <h6>Your data, your infrastructure</h6>
+          <p>Deploy the full stack in your cloud, on-prem or private VPC. Your keys, your retention. Data never trains a public model.</p>
+        </div>
+        <div class="trust-item">
+          <div class="ti-tag">— Private AI</div>
+          <h6>Local models. No internet required.</h6>
+          <p>On-prem LLMs, on-device vision and fully air-gapped pipelines for the most sensitive workloads — zero public API calls.</p>
+        </div>
+        <div class="trust-item">
+          <div class="ti-tag">— IP &amp; compliance</div>
+          <h6>You own the work, audit-ready</h6>
+          <p>Source, models and pipelines transfer at delivery. Architectures aligned with GDPR, HIPAA and SOC2.</p>
+        </div>
+        <div class="trust-item">
+          <div class="ti-tag">— Audit trail</div>
+          <h6>Every decision is traceable</h6>
+          <p>Traces, evals and guardrails always-on. Risk &amp; legal get a replayable audit log from week one.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pg-footer">
+      <div><span class="dot"></span>WIQONN.COM</div>
+      <div>INDUSTRIES · TRUST · COMPLIANCE-READY</div>
+      <div>05 / 07</div>
+    </footer>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     PAGE 6 — ENGAGEMENT MODEL + ROI / PAYBACK
+==================================================================== -->
+<section class="page">
+  <div class="frame">
+    <header class="pg-header">
+      <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
+      <div>05 — ENGAGEMENT &amp; ROI</div>
+      <div>P. 06</div>
+    </header>
+
+    <div class="split-head" style="margin-top: 12mm; margin-bottom: 4mm;">
+      <div>
+        <span class="num">§ 05 — HOW WE WORK</span>
+        <h2 class="display">Three phases<span class="display-italic">.</span><br><span class="display-italic gradient-text">No surprises.</span></h2>
+      </div>
+      <p>Predictable cadence, fixed-scope phases, decision gate at every step. You can stop, pivot, or scale at any phase without contractual penalty.</p>
+    </div>
+
+    <div class="timeline-band">
+      <div class="timeline">
+        <div class="phase">
+          <div class="duration">— Phase 01 · 1–2 weeks</div>
+          <h5>Discovery</h5>
+          <p>Frame the business problem, baseline the metric, audit the data. No code yet.</p>
+          <ul>
+            <li>Stakeholder interviews</li>
+            <li>Data &amp; system audit</li>
+            <li>Success metric &amp; baseline</li>
+            <li>Architecture proposal</li>
+          </ul>
+        </div>
+        <div class="timeline-arrow">→</div>
+        <div class="phase">
+          <div class="duration">— Phase 02 · 4–6 weeks</div>
+          <h5>Pilot</h5>
+          <p>Ship a working system to a controlled scope. Prove the metric moves before we scale.</p>
+          <ul>
+            <li>Production-grade prototype</li>
+            <li>Eval harness &amp; guardrails</li>
+            <li>Internal stakeholder review</li>
+            <li>Go / no-go decision gate</li>
+          </ul>
+        </div>
+        <div class="timeline-arrow">→</div>
+        <div class="phase live">
+          <div class="duration">— Phase 03 · 8–12 weeks</div>
+          <h5>Production</h5>
+          <p>Hardening, integration, and a clear handover plan to your team — or ongoing partnership.</p>
+          <ul>
+            <li>Hardening &amp; SLO definition</li>
+            <li>Full integration &amp; rollout</li>
+            <li>Knowledge transfer to your team</li>
+            <li>Optional managed-ops retainer</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="roi-band">
+      <span class="trust-eyebrow" style="display:block; margin-bottom: 4mm;">§ 05.B — How AI pays for itself</span>
+      <div class="roi-grid">
+        <div class="roi-card hero">
+          <div class="tag">— The principle</div>
+          <h5>Scoped to a number<br>that matters to your business.</h5>
+          <p>We don't sell AI by the hour. Every engagement is shaped around one operational or financial KPI — cost saved, time recovered, revenue unlocked — defined and baselined together in Discovery before code is written.</p>
+        </div>
+        <div class="roi-card">
+          <div class="tag">— The alternative cost</div>
+          <h5>The price of doing nothing.</h5>
+          <p>For most enterprises the real expense isn't the AI build — it's the human hours, missed signals and slow approvals quietly burning every quarter the workflow stays manual.</p>
+        </div>
+        <div class="roi-card">
+          <div class="tag">— The de-risking</div>
+          <h5>Stop or pivot at any phase.</h5>
+          <p>Phase-gated engagements mean you only commit to the next phase, not the full program. If Discovery shows the math doesn't work, we kill it together — no escalation pressure, no sunk-cost theater.</p>
+        </div>
+      </div>
+    </div>
+
+    <footer class="pg-footer">
+      <div><span class="dot"></span>WIQONN.COM</div>
+      <div>ENGAGEMENT MODEL · PAYBACK · DECISION GATES</div>
+      <div>06 / 07</div>
+    </footer>
+  </div>
+</section>
+
+
+<!-- ===================================================================
+     PAGE 7 — CONTACT / BACK COVER
+==================================================================== -->
+<section class="page contact">
+  <div class="contact-frame">
+    <header class="pg-header">
+      <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
+      <div></div>
+      <div>P. 07</div>
+    </header>
+
+    <div class="contact-panel">
+      <div class="contact-hero">
+        <span class="num">§ 07 — NEXT STEP</span>
+        <h2>Tell us what's<br>slowing you<br>down<span class="display-italic">.</span> We'll<br><em>tell you</em> if<br>we can help.</h2>
+        <p>No pitch. No 60-slide deck. A real conversation — usually 30 minutes — to see if there's a measurable problem we can ship a solution for inside a quarter.</p>
+        <a class="contact-cta" href="https://www.wiqonn.com">
+          Schedule a free consultation
+          <span style="font-family: var(--display); font-size: 16pt; line-height: 0;">→</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <h6>— Web</h6>
+        <p><a href="https://www.wiqonn.com">wiqonn.com</a></p>
+      </div>
+      <div>
+        <h6>— Email</h6>
+        <p><a href="mailto:contact@wiqonn.com">contact@wiqonn.com</a></p>
+      </div>
+      <div>
+        <h6>— Engagement model</h6>
+        <p>Discovery → Pilot → Production<br>Typically 2–8 weeks per phase</p>
+      </div>
+    </div>
+
+    <div class="endmark" style="margin-top: 4mm;">
+      <div class="brand-mini-mark"></div>
+      © 2026 Wiqonn — All rights reserved
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================================
+     PRINT HELPER (hidden when printing)
+==================================================================== -->
+<div class="print-help">
+  <b>Print to PDF</b><br>
+  ⌘ + P → Save as PDF.<br>
+  In dialog: <b>Background graphics</b> ON · Margins <b>None</b> · Scale <b>100%</b>.
+  <br>
+  <button onclick="window.print()">Open print dialog</button>
+</div>
+
+</body>
+</html>
