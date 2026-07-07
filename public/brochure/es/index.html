@@ -64,7 +64,7 @@
     page-break-after: always;
     break-after: page;
   }
-  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
 
   .page::before {
     /* paper grain */
@@ -932,7 +932,7 @@
       page-break-after: always;
       break-after: page;
     }
-    .page:last-child { page-break-after: auto; }
+    .page:last-of-type { page-break-after: auto; }
     .print-help { display: none; }
 
     /* Print-safe gradient fallback. -webkit-background-clip: text fails in
@@ -952,11 +952,20 @@
       padding-right: 0 !important;
       display: inline !important;
     }
-    /* On dark panels (cover, contact) use a brighter cyan for contrast */
-    .cover-panel h1 em,
-    .contact-hero h2 em {
+    /* On dark panels: split the italic text in two colors to simulate the
+       cyan → green gradient. First italic block = cyan, second = green. */
+    .cover-panel h1 em:nth-of-type(1) {
       -webkit-text-fill-color: #22D3EE !important;
       color: #22D3EE !important;
+    }
+    .cover-panel h1 em:nth-of-type(2) {
+      -webkit-text-fill-color: #4ADE80 !important;
+      color: #4ADE80 !important;
+    }
+    /* Contact hero only has one em — use a teal between cyan and green */
+    .contact-hero h2 em {
+      -webkit-text-fill-color: #2DD4BF !important;
+      color: #2DD4BF !important;
     }
     /* Box-shadows render as solid rectangles in print engines.
        Remove glow effects to avoid block artifacts. */

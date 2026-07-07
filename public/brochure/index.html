@@ -64,7 +64,7 @@
     page-break-after: always;
     break-after: page;
   }
-  .page:last-child { page-break-after: auto; break-after: auto; }
+  .page:last-of-type { page-break-after: auto; break-after: auto; }
 
   .page::before {
     /* paper grain */
@@ -924,7 +924,7 @@
       page-break-after: always;
       break-after: page;
     }
-    .page:last-child { page-break-after: auto; }
+    .page:last-of-type { page-break-after: auto; }
     .print-help { display: none; }
 
     /* Print-safe gradient fallback. -webkit-background-clip: text fails in
