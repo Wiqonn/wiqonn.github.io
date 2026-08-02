@@ -3,6 +3,7 @@
 import { Layers, GraduationCap, Languages, CheckCircle2 } from "lucide-react"
 import { Card } from "@/components/ui/card"
 import { Reveal } from "@/components/reveal"
+import { ScrollParallax } from "@/components/scroll-parallax"
 import { useT } from "@/components/language-provider"
 
 export function ValueProposition() {
@@ -40,10 +41,12 @@ export function ValueProposition() {
           <p className="text-primary font-medium mb-4 uppercase tracking-wider text-sm">
             {t.value.eyebrow}
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance text-foreground">
-            {t.value.titlePre}{" "}
-            <span className="text-gradient-wiqonn">{t.value.titleAccent}</span>
-          </h2>
+          <ScrollParallax>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance text-foreground">
+              {t.value.titlePre}{" "}
+              <span className="text-gradient-wiqonn">{t.value.titleAccent}</span>
+            </h2>
+          </ScrollParallax>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             {t.value.description}
           </p>

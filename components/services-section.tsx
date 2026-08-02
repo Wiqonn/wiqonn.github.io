@@ -11,6 +11,7 @@ import {
   CheckCircle2,
 } from "lucide-react"
 import { Reveal } from "@/components/reveal"
+import { ScrollParallax } from "@/components/scroll-parallax"
 import { useT } from "@/components/language-provider"
 import { bookingUrl, hasBooking } from "@/lib/forms"
 
@@ -62,10 +63,12 @@ export function ServicesSection() {
           <p className="text-primary font-medium mb-4 uppercase tracking-wider text-sm">
             {t.services.eyebrow}
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            {t.services.titlePre}{" "}
-            <span className="text-gradient-wiqonn">{t.services.titleAccent}</span>
-          </h2>
+          <ScrollParallax>
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
+              {t.services.titlePre}{" "}
+              <span className="text-gradient-wiqonn">{t.services.titleAccent}</span>
+            </h2>
+          </ScrollParallax>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
             {t.services.description}
           </p>

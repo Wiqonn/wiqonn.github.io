@@ -65,20 +65,26 @@ export function HeroSection() {
     return () => clearTimeout(timeout)
   }, [t.hero.rotator.length])
 
-  // Subtle parallax on scroll: only when the user allows motion.
+  // Apple-style hero: subtle parallax + scale-down + fade as you scroll away.
   useEffect(() => {
     const mq = gsap.matchMedia()
     mq.add("(prefers-reduced-motion: no-preference)", () => {
-      gsap.to(heroRef.current, {
-        yPercent: 30,
-        ease: "none",
-        scrollTrigger: {
-          trigger: heroRef.current,
-          start: "top top",
-          end: "bottom top",
-          scrub: true,
-        },
-      })
+      gsap.fromTo(
+        heroRef.current,
+        { yPercent: 0, scale: 1, opacity: 1 },
+        {
+          yPercent: 24,
+          scale: 0.94,
+          opacity: 0.35,
+          ease: "none",
+          scrollTrigger: {
+            trigger: heroRef.current,
+            start: "top top",
+            end: "bottom 30%",
+            scrub: true,
+          },
+        }
+      )
     })
     return () => mq.revert()
   }, [])

@@ -2,6 +2,7 @@
 
 import { ShieldCheck, FileSignature, Clock, MailCheck } from "lucide-react"
 import { Reveal } from "@/components/reveal"
+import { ScrollParallax } from "@/components/scroll-parallax"
 import { useT } from "@/components/language-provider"
 
 const GUARANTEE_ICONS = [ShieldCheck, FileSignature, Clock, MailCheck]
@@ -18,9 +19,11 @@ export function GuaranteesBand() {
           <p className="text-primary font-medium mb-4 uppercase tracking-wider text-sm">
             {t.guarantees.eyebrow}
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-balance text-foreground">
-            {t.guarantees.title}
-          </h2>
+          <ScrollParallax>
+            <h2 className="text-3xl md:text-5xl font-bold text-balance text-foreground">
+              {t.guarantees.title}
+            </h2>
+          </ScrollParallax>
         </Reveal>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 max-w-6xl mx-auto">

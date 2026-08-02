@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react"
 import { Reveal } from "@/components/reveal"
+import { ScrollParallax } from "@/components/scroll-parallax"
 import { useT } from "@/components/language-provider"
 
 export function FAQSection() {
@@ -19,9 +20,11 @@ export function FAQSection() {
           <p className="text-primary font-medium mb-4 uppercase tracking-wider text-sm">
             {t.faq.eyebrow}
           </p>
-          <h2 className="text-3xl md:text-5xl font-bold text-balance text-foreground">
-            {t.faq.title}
-          </h2>
+          <ScrollParallax>
+            <h2 className="text-3xl md:text-5xl font-bold text-balance text-foreground">
+              {t.faq.title}
+            </h2>
+          </ScrollParallax>
         </Reveal>
 
         <div className="max-w-3xl mx-auto space-y-3">
