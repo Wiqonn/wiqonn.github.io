@@ -1,37 +1,53 @@
 # Wiqonn
 
-> AI lab of data and software based in Barranquilla, Colombia. We audit, build
-> and operate AI solutions for companies of any size, anywhere in the world.
+> AI lab of data and software based in Barranquilla, Colombia. We audit, build,
+> fine-tune and operate AI for companies of any size, anywhere in the world —
+> fixed price in writing, results measured from day one.
 
 ## Who we are
 
-- AI lab operated from Barranquilla, Colombia.
-- Full-stack coverage: from data to hardware (AI, data, cloud, IoT, embedded systems).
-- Applied research: we evaluate models on real data with academic rigor.
-- Working languages: Spanish and English.
+- AI lab operated from Barranquilla, Colombia, working worldwide in Spanish and English.
+- Full-stack coverage: from raw data to production systems (AI, data, cloud, IoT, embedded).
+- Applied research embedded in every delivery: we publish and evaluate models with academic rigor.
+- We build, fine-tune and deploy AI on our own hardware: DGX Spark (Blackwell GB10) and Apple Silicon, keeping client data private and on-premise.
 
 ## What we do
 
-- AI and Machine Learning: AI agents, LLM/RAG, computer vision, predictive models.
-- Business Intelligence: dashboards, automated reports, real-time KPI tracking.
-- Cloud and Infrastructure: multi-cloud, high availability, production-grade security.
-- Custom Development: web and mobile apps, APIs, MLOps.
+- Custom AI models: machine learning models built from scratch and trained on your data (predictive models, classification, forecasting, anomaly detection).
+- Custom LLM fine-tuning: fine-tuning open models (e.g. SmolLM3-3B, Llama) with LoRA and 4-bit NVFP4/MXFP8 quantization on Blackwell GPUs — private models trained on your own data.
+- Custom AI agents: autonomous agents that automate workflows, answer customers and operate 24/7, trained and grounded on your company's data.
+- LLM/RAG applications: document Q&A, knowledge management, semantic search, retrieval-augmented generation in Spanish and English.
+- Computer vision: defect detection, OCR/document processing, visual inspection, medical imaging.
+- Business Intelligence: executive dashboards, automated reports, real-time KPI tracking.
+- Cloud and Infrastructure: multi-cloud architecture, high availability, production-grade security, MLOps pipelines.
+- Custom Development: web and mobile apps, APIs, integration with your existing systems.
+
+## Applied research
+
+- Model evaluation with real data and academic rigor — we test claims before we ship.
+- Benchmarks on local inference: vLLM-MLX on Apple Silicon (464 tok/s on M4 Max, 200+ models, zero API cost).
+- Fine-tuning pipelines on DGX Spark: NVFP4 (E2M1) and MXFP8 training with Transformer Engine, TensorRT-LLM serving.
+- If it doesn't work on your data, we tell you before you spend.
 
 ## How we work
 
-- AI Readiness Audit: use-case prioritization by ROI and a roadmap with costs.
-- Outcome-based pilots: KPI defined and measurable from day one.
-- Managed AI Ops: managed operations, monitoring and retraining with SLA.
+- AI Readiness Audit: use-case prioritization by ROI and a roadmap with phases and costs.
+- Outcome-based pilots: KPI defined and measurable from day one, proven with real metrics before scaling.
+- Managed AI Ops: managed operations, monitoring, retraining and model evolution with SLA.
 - Fractional AI Leadership: AI direction and CTO-as-a-service.
-- IP / White-Label: licensed solutions for integrators.
+- IP / White-Label: validated AI solutions licensed for integrators and consultancies.
+- Fixed price in writing, no hidden costs, no lock-in.
 
 ## Contact
 
 - Email: contact@wiqonn.com
 - Web: https://www.wiqonn.com
+- Booking: 30-minute free diagnosis at https://cal.com/wiqonn/30min
 
 ## Files
 
 - [Home](https://www.wiqonn.com/): services, how we work and contact.
 - [Blog](https://www.wiqonn.com/blog): technical AI articles.
+- [DGX Spark fine-tuning](https://www.wiqonn.com/blog/dgx-spark-finetune): LoRA + NVFP4 fine-tuning in practice.
+- [vLLM-MLX](https://www.wiqonn.com/blog/vllm-mlx): production-grade local LLM inference on Apple Silicon.
 - [Brochure](https://www.wiqonn.com/brochure/): official portfolio PDF.
