@@ -12,7 +12,6 @@ interface Node {
 
 export function NeuralNetworkBackground() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
-  const animationRef = useRef<number>()
   const nodesRef = useRef<Node[]>([])
   const mouseRef = useRef({ x: 0, y: 0 })
 
@@ -22,6 +21,12 @@ export function NeuralNetworkBackground() {
 
     const ctx = canvas.getContext("2d")
     if (!ctx) return
+
+    // Local animation handle (no double-loop when restarting).
+    let animationId: number | undefined
+    let isRunning = false
+
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)")
 
     const resizeCanvas = () => {
       canvas.width = window.innerWidth
@@ -133,34 +138,69 @@ export function NeuralNetworkBackground() {
       })
     }
 
-    const animate = () => {
+    const drawFrame = () => {
       if (!ctx) return
-
       ctx.clearRect(0, 0, canvas.width, canvas.height)
-
       updateNodes()
       drawConnections()
       nodesRef.current.forEach((node, index) => drawNode(node, index))
+    }
 
-      animationRef.current = requestAnimationFrame(animate)
+    const animate = () => {
+      if (!isRunning) return
+      drawFrame()
+      animationId = requestAnimationFrame(animate)
+    }
+
+    const start = () => {
+      if (isRunning) return
+      isRunning = true
+      animationId = requestAnimationFrame(animate)
+    }
+
+    const stop = () => {
+      isRunning = false
+      if (animationId !== undefined) {
+        cancelAnimationFrame(animationId)
+        animationId = undefined
+      }
     }
 
     const handleMouseMove = (e: MouseEvent) => {
       mouseRef.current = { x: e.clientX, y: e.clientY }
     }
 
+    // Pause the loop when the hero scrolls off-screen (performance).
+    // Falls back to always-on when IntersectionObserver is unavailable.
+    let observer: IntersectionObserver | undefined
+    if (typeof IntersectionObserver !== "undefined") {
+      observer = new IntersectionObserver(
+        ([entry]) => {
+          if (entry.isIntersecting) start()
+          else stop()
+        },
+        { threshold: 0 }
+      )
+      observer.observe(canvas)
+    }
+
     window.addEventListener("resize", resizeCanvas)
     window.addEventListener("mousemove", handleMouseMove)
 
     resizeCanvas()
-    animate()
+
+    if (reducedMotion.matches) {
+      // Static single frame, no animation loop.
+      drawFrame()
+    } else {
+      start()
+    }
 
     return () => {
+      observer?.disconnect()
       window.removeEventListener("resize", resizeCanvas)
       window.removeEventListener("mousemove", handleMouseMove)
-      if (animationRef.current) {
-        cancelAnimationFrame(animationRef.current)
-      }
+      stop()
     }
   }, [])
 

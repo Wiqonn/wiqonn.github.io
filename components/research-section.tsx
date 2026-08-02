@@ -6,59 +6,26 @@ import { Badge } from "@/components/ui/badge"
 import { Brain, BarChart3, Cpu, Eye, MessageSquare, Workflow } from "lucide-react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
+import { useT } from "@/components/language-provider"
 
 gsap.registerPlugin(ScrollTrigger)
 
 export function ResearchSection() {
+  const t = useT()
   const sectionRef = useRef<HTMLDivElement>(null)
   const titleRef = useRef<HTMLDivElement>(null)
   const cardsRef = useRef<HTMLDivElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
 
-  const capabilities = [
-    {
-      icon: Brain,
-      title: "Custom AI Models",
-      description:
-        "We build and deploy machine learning models tailored to your specific business needs, from predictive analytics to classification systems.",
-      applications: ["Demand forecasting", "Risk assessment", "Customer segmentation"],
-    },
-    {
-      icon: Eye,
-      title: "Computer Vision",
-      description:
-        "Image and video analysis solutions for quality control, document processing, medical imaging, and visual inspection.",
-      applications: ["Defect detection", "Document OCR", "Visual search"],
-    },
-    {
-      icon: MessageSquare,
-      title: "AI Agents & LLMs",
-      description:
-        "Intelligent conversational agents and language models that automate customer support, document analysis, and knowledge management.",
-      applications: ["Customer service bots", "Document Q&A", "Content generation"],
-    },
-    {
-      icon: BarChart3,
-      title: "Business Intelligence",
-      description:
-        "Interactive dashboards and analytics platforms that transform raw data into actionable insights for better decision-making.",
-      applications: ["Executive dashboards", "KPI tracking", "Trend analysis"],
-    },
-    {
-      icon: Workflow,
-      title: "Process Automation",
-      description:
-        "End-to-end automation of repetitive tasks and workflows, integrating AI to handle complex decision points.",
-      applications: ["Data pipelines", "Report generation", "Approval workflows"],
-    },
-    {
-      icon: Cpu,
-      title: "MLOps & Deployment",
-      description:
-        "Production-grade infrastructure for deploying, monitoring, and scaling your AI solutions with reliability and performance.",
-      applications: ["Model serving", "A/B testing", "Performance monitoring"],
-    },
-  ]
+  // Iconos por capability: el orden coincide con t.research.capabilities.
+  const capabilityIcons = [Brain, Eye, MessageSquare, BarChart3, Workflow, Cpu]
+
+  const capabilities = t.research.capabilities.map((capability, index) => ({
+    icon: capabilityIcons[index],
+    title: capability.title,
+    description: capability.description,
+    applications: capability.applications,
+  }))
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -123,7 +90,7 @@ export function ResearchSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="capabilities" className="py-24 md:py-32 bg-muted/30 relative overflow-hidden">
+    <section ref={sectionRef} id="capabilities" className="py-16 md:py-20 bg-muted/30 relative overflow-hidden">
       {/* Animated background gradient */}
       <div className="absolute inset-0">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-primary/10 rounded-full blur-3xl" />
@@ -131,15 +98,16 @@ export function ResearchSection() {
       </div>
 
       <div className="container mx-auto px-4 lg:px-8 relative">
-        <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-16">
+        <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-10">
           <Badge className="mb-4 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors">
-            Our Capabilities
+            {t.research.badge}
           </Badge>
           <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            What We <span className="text-gradient-wiqonn">Build</span>
+            {t.research.titlePre}
+            <span className="text-gradient-wiqonn">{t.research.titleAccent}</span>
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            End-to-end AI solutions designed to solve real business problems
+            {t.research.description}
           </p>
         </div>
 
@@ -178,12 +146,12 @@ export function ResearchSection() {
           className="max-w-4xl mx-auto p-8 rounded-2xl bg-gradient-to-r from-primary/10 via-card to-secondary/10 border border-primary/20 backdrop-blur-sm"
         >
           <div className="text-center">
-            <h3 className="text-2xl font-bold mb-3">Have a specific challenge?</h3>
+            <h3 className="text-2xl font-bold mb-3">{t.research.ctaTitle}</h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Tell us about your project and we&apos;ll help you identify the right AI solution for your needs.
+              {t.research.ctaDescription}
             </p>
             <div className="flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
-              {["No upfront commitment", "Free consultation", "Proposal in 48h"].map((item, idx) => (
+              {t.research.ctaChips.map((item, idx) => (
                 <span
                   key={idx}
                   className="px-4 py-2 bg-background rounded-full border border-border/50 hover:border-primary/30 transition-colors"

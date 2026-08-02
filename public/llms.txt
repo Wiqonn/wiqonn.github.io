@@ -1,0 +1,37 @@
+# Wiqonn
+
+> Boutique de IA, datos y software en Barranquilla, Colombia. Auditamos, construimos
+> y operamos soluciones de IA para empresas medianas en todo el mundo.
+
+## Quiénes somos
+
+- Boutique operada desde Barranquilla, Colombia.
+- Cobertura full-stack: del dato al hardware (IA, datos, cloud, IoT, embebidos).
+- Investigación aplicada: evaluamos modelos con datos reales y rigor académico.
+- Idiomas de trabajo: español e inglés.
+
+## Qué hacemos
+
+- IA y Machine Learning: agentes de IA, LLM/RAG, visión por computador, modelos predictivos.
+- Business Intelligence: dashboards, reportes automatizados, seguimiento de KPIs.
+- Cloud e Infraestructura: multi-cloud, alta disponibilidad, seguridad de producción.
+- Desarrollo a la medida: apps web y móviles, APIs, MLOps.
+
+## Modelo de trabajo
+
+- AI Readiness Audit: priorización de casos de uso por ROI y roadmap con costos.
+- Pilotos outcome-based: KPI definido y medible desde el día uno.
+- Managed AI Ops: operación gestionada, monitoreo y reentrenamiento con SLA.
+- Fractional AI Leadership: dirección de IA y CTO-as-a-service.
+- IP / White-Label: soluciones licenciadas para integradores.
+
+## Contacto
+
+- Email: contact@wiqonn.com
+- Web: https://www.wiqonn.com
+
+## Archivos
+
+- [Inicio](https://www.wiqonn.com/): servicios, modelo de trabajo y contacto.
+- [Blog](https://www.wiqonn.com/blog): artículos técnicos de IA.
+- [Brochure](https://www.wiqonn.com/brochure/): portafolio oficial en PDF.

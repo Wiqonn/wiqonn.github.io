@@ -1,95 +1,185 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { AnimatedCounter } from "./animated-counter"
+import { useEffect, useRef, useState } from "react"
+import { useT } from "@/components/language-provider"
 
-gsap.registerPlugin(ScrollTrigger)
+// Compromisos de servicio verificables: diagnóstico 30 min, respuesta 24 h,
+// propuesta 48 h hábiles, KPI desde el día uno. Cero cifras inventadas.
+const STATS = [
+  { value: "30", suffix: " min", animate: false },
+  { value: "24", suffix: " h", animate: false },
+  { value: "48", suffix: " h", animate: false },
+  { value: "1", suffix: "", animate: true },
+]
+
+const COUNT_DURATION_MS = 1500
+
+/** easeOutCubic: decelerates towards the end of the animation. */
+function easeOutCubic(t: number): number {
+  return 1 - Math.pow(1 - t, 3)
+}
+
+/** Live `prefers-reduced-motion` subscription (safe on the server). */
+function usePrefersReducedMotion(): boolean {
+  const [reduced, setReduced] = useState<boolean>(() => {
+    if (typeof window === "undefined") return false
+    return window.matchMedia("(prefers-reduced-motion: reduce)").matches
+  })
+
+  useEffect(() => {
+    const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
+    const onChange = (event: MediaQueryListEvent) => setReduced(event.matches)
+    setReduced(mq.matches)
+    mq.addEventListener("change", onChange)
+    return () => mq.removeEventListener("change", onChange)
+  }, [])
+
+  return reduced
+}
+
+function AnimatedStat({ end, reduced }: { end: number; reduced: boolean }) {
+  const [count, setCount] = useState(0)
+  const ref = useRef<HTMLSpanElement>(null)
+
+  useEffect(() => {
+    const element = ref.current
+    if (!element) return
+
+    if (reduced) {
+      setCount(end)
+      return
+    }
+
+    let rafId: number | null = null
+    let started = false
+
+    const animate = () => {
+      const startTime = performance.now()
+      const step = (now: number) => {
+        const progress = Math.min((now - startTime) / COUNT_DURATION_MS, 1)
+        setCount(Math.round(end * easeOutCubic(progress)))
+        if (progress < 1) rafId = requestAnimationFrame(step)
+      }
+      rafId = requestAnimationFrame(step)
+    }
+
+    if (typeof IntersectionObserver === "undefined") {
+      animate()
+      return () => {
+        if (rafId !== null) cancelAnimationFrame(rafId)
+      }
+    }
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (started || !entries.some((entry) => entry.isIntersecting)) return
+        started = true
+        observer.disconnect()
+        animate()
+      },
+      { threshold: 0.3 }
+    )
+    observer.observe(element)
+
+    return () => {
+      observer.disconnect()
+      if (rafId !== null) cancelAnimationFrame(rafId)
+    }
+  }, [end, reduced])
+
+  return <span ref={ref}>{count.toLocaleString()}</span>
+}
+
+function StatValue({ stat, reduced }: { stat: { value: string; suffix: string; animate: boolean }; reduced: boolean }) {
+  if (!stat.animate) {
+    return (
+      <span>
+        {stat.value}
+        {stat.suffix}
+      </span>
+    )
+  }
+  return (
+    <span>
+      <AnimatedStat end={Number(stat.value)} reduced={reduced} />
+      {stat.suffix}
+    </span>
+  )
+}
 
 export function StatsSection() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-
-  const stats = [
-    { value: 50, suffix: "+", label: "Projects Delivered" },
-    { value: 98, suffix: "%", label: "Client Satisfaction" },
-    { value: 2, prefix: "$", suffix: "M+", label: "Cost Savings Generated" },
-    { value: 15, suffix: "+", label: "Years Experience" },
-  ]
+  const t = useT()
+  const sectionRef = useRef<HTMLElement>(null)
+  const revealRefs = useRef<(HTMLDivElement | null)[]>([])
+  const revealedRef = useRef(false)
+  const reduced = usePrefersReducedMotion()
 
   useEffect(() => {
     const section = sectionRef.current
-    const container = containerRef.current
-    if (!section || !container) return
+    if (!section) return
 
-    // Horizontal scroll animation
-    const scrollWidth = container.scrollWidth - window.innerWidth
-
-    if (window.innerWidth >= 768) {
-      gsap.to(container, {
-        x: -scrollWidth,
-        ease: "none",
-        scrollTrigger: {
-          trigger: section,
-          start: "top top",
-          end: () => `+=${scrollWidth}`,
-          scrub: 1,
-          pin: true,
-          anticipatePin: 1,
-        },
-      })
+    const reveal = () => {
+      revealRefs.current.forEach((element) =>
+        element?.classList.add("reveal-in")
+      )
     }
 
-    return () => {
-      ScrollTrigger.getAll().forEach((trigger) => trigger.kill())
+    if (reduced || typeof IntersectionObserver === "undefined") {
+      reveal()
+      return
     }
-  }, [])
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        if (revealedRef.current || !entries.some((entry) => entry.isIntersecting))
+          return
+        revealedRef.current = true
+        observer.disconnect()
+        reveal()
+      },
+      { threshold: 0.15 }
+    )
+    observer.observe(section)
+
+    return () => observer.disconnect()
+  }, [reduced])
 
   return (
     <section
       ref={sectionRef}
-      className="relative bg-gradient-to-r from-[#0a0a0a] via-[#0d1117] to-[#0a0a0a] overflow-hidden"
+      className="relative bg-background-navy py-16 md:py-24 overflow-hidden"
     >
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5" />
-
       <div
-        ref={containerRef}
-        className="flex items-center min-h-[60vh] md:min-h-screen px-8 md:px-0"
-      >
-        <div className="flex flex-col md:flex-row items-center gap-8 md:gap-0 py-16 md:py-0 w-full md:w-auto">
-          {/* Title */}
-          <div className="md:min-w-[50vw] flex items-center justify-center px-8">
-            <div className="text-center md:text-left max-w-xl">
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6">
-                Proven <span className="text-gradient-wiqonn">Results</span>
-              </h2>
-              <p className="text-lg md:text-xl text-muted-foreground">
-                Numbers that speak for themselves
-              </p>
-            </div>
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-secondary/5 pointer-events-none"
+      />
+
+      <div className="container mx-auto px-4 lg:px-8 relative">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 max-w-6xl mx-auto">
+          <div className="lg:col-span-4 text-center mb-4">
+            <h2 className="text-3xl md:text-5xl font-bold text-balance text-foreground">
+              {t.stats.titlePre}
+              <span className="text-gradient-wiqonn">{t.stats.titleAccent}</span>
+            </h2>
+            <p className="text-lg text-muted-foreground mt-4">
+              {t.stats.subtitle}
+            </p>
           </div>
 
-          {/* Stats */}
-          {stats.map((stat, index) => (
+          {STATS.map((stat, index) => (
             <div
-              key={index}
-              className="md:min-w-[40vw] flex items-center justify-center px-8"
+              key={t.stats.labels[index]}
+              ref={(element: HTMLDivElement | null) => {
+                revealRefs.current[index] = element
+              }}
+              className="reveal text-center"
             >
-              <div className="text-center group cursor-default">
-                <div className="text-6xl md:text-8xl lg:text-9xl font-bold text-gradient-wiqonn mb-4 transition-transform duration-300 group-hover:scale-105">
-                  <AnimatedCounter
-                    end={stat.value}
-                    prefix={stat.prefix}
-                    suffix={stat.suffix}
-                    duration={2.5}
-                  />
-                </div>
-                <p className="text-lg md:text-xl text-muted-foreground uppercase tracking-wider">
-                  {stat.label}
-                </p>
+              <div className="text-6xl md:text-7xl font-bold text-primary mb-3">
+                <StatValue stat={stat} reduced={reduced} />
               </div>
+              <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-xs mx-auto">
+                {t.stats.labels[index]}
+              </p>
             </div>
           ))}
         </div>
@@ -97,3 +187,5 @@ export function StatsSection() {
     </section>
   )
 }
+
+export default StatsSection

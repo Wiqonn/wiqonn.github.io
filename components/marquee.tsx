@@ -26,11 +26,15 @@ export function Marquee({
     const scroller = scrollerRef.current
     if (!container || !scroller) return
 
-    // Clone children for infinite loop
+    // Clone children for infinite loop; the duplicate is decorative,
+    // so it's hidden from assistive technology.
     const scrollerContent = Array.from(scroller.children)
     scrollerContent.forEach((item) => {
       const clone = item.cloneNode(true)
-      scroller.appendChild(clone)
+      const wrapper = document.createElement("div")
+      wrapper.setAttribute("aria-hidden", "true")
+      wrapper.appendChild(clone)
+      scroller.appendChild(wrapper)
     })
 
     const totalWidth = scroller.scrollWidth / 2

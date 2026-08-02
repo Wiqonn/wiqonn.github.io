@@ -3,14 +3,61 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { Button } from "@/components/ui/button"
 import { Menu, X } from "lucide-react"
+import { useLanguage, useT } from "@/components/language-provider"
+import { BookingButton } from "@/components/booking-button"
+import type { Lang } from "@/lib/i18n"
+
+/** Toggle ES/EN: dos botones segmentados (44px de área táctil mínima,
+ *  aria-pressed, focus-visible). Persistencia vía LanguageProvider. */
+function LanguageToggle() {
+  const { lang, setLang } = useLanguage()
+  const t = useT()
+
+  const options: { value: Lang; label: string; aria: string }[] = [
+    { value: "es", label: "ES", aria: "Español" },
+    { value: "en", label: "EN", aria: "English" },
+  ]
+
+  return (
+    <div
+      role="group"
+      aria-label={t.nav.langLabel}
+      className="flex items-center rounded-full border border-border/50 bg-background/60 p-1"
+    >
+      {options.map((opt) => (
+        <button
+          key={opt.value}
+          type="button"
+          onClick={() => setLang(opt.value)}
+          aria-pressed={lang === opt.value}
+          aria-label={opt.aria}
+          className={`h-11 min-w-11 px-3 rounded-full text-xs font-bold uppercase tracking-wide transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+            lang === opt.value
+              ? "bg-gradient-wiqonn text-[#0A0E1A]"
+              : "text-muted-foreground hover:text-foreground"
+          }`}
+        >
+          {opt.label}
+        </button>
+      ))}
+    </div>
+  )
+}
 
 export function Navigation() {
+  const t = useT()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const [lastScrollY, setLastScrollY] = useState(0)
+
+  const links: { label: string; href: string }[] = [
+    { label: t.nav.links[0], href: "/" },
+    { label: t.nav.links[1], href: "/#services" },
+    { label: t.nav.links[2], href: "/blog" },
+    { label: t.nav.links[3], href: "/#contact" },
+  ]
 
   useEffect(() => {
     const handleScroll = () => {
@@ -31,113 +78,88 @@ export function Navigation() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [lastScrollY])
 
-  const navLinks = [
-    { href: "#services", label: "Services" },
-    { href: "#team", label: "Team" },
-    { href: "/blog", label: "Blog" },
-    { href: "#contact", label: "Contact" },
-  ]
-
   return (
-    <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg shadow-black/5"
-          : "bg-transparent"
-      } ${isVisible ? "translate-y-0" : "-translate-y-full"}`}
+    <header
+      className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
+        isVisible ? "translate-y-0" : "-translate-y-full"
+      } ${isScrolled ? "bg-background-navy/95 border-b border-border/50 shadow-lg shadow-black/20" : "bg-transparent"}`}
     >
-      <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link
-            href="/"
-            className="flex items-center gap-3 transition-transform duration-300 hover:scale-105"
-          >
-            <Image
-              src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/wiqonn-id-special-NRxy7eDlL66Iza3JiqzIjzztpOzC8e.png"
-              alt="Wiqonn"
-              width={180}
-              height={45}
-              className="h-10 w-auto"
-              priority
-            />
-          </Link>
+      <nav className="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
+        {/* Logo */}
+        <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Wiqonn">
+          <Image
+            src="/wiqonn-logo.png"
+            alt="Wiqonn"
+            width={150}
+            height={60}
+            className="w-auto h-10 md:h-14 object-contain"
+          />
+        </Link>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link, index) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="relative text-sm font-medium text-muted-foreground hover:text-foreground transition-colors group"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                {link.label}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-wiqonn transition-all duration-300 group-hover:w-full" />
-              </Link>
-            ))}
-            <Button
-              size="lg"
-              className="bg-gradient-wiqonn hover:opacity-90 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-primary/20"
-              asChild
-            >
-              <a href="mailto:contact@wiqonn.com?subject=Get Started">Get Started</a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground p-2 hover:bg-muted rounded-lg transition-colors"
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            <div className="relative w-6 h-6">
-              <Menu
-                size={24}
-                className={`absolute inset-0 transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-0 rotate-90" : "opacity-100 rotate-0"
-                }`}
-              />
-              <X
-                size={24}
-                className={`absolute inset-0 transition-all duration-300 ${
-                  isMobileMenuOpen ? "opacity-100 rotate-0" : "opacity-0 -rotate-90"
-                }`}
-              />
-            </div>
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      <div
-        className={`md:hidden bg-background/95 backdrop-blur-xl border-t border-border/50 overflow-hidden transition-all duration-500 ${
-          isMobileMenuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="container mx-auto px-4 py-6 flex flex-col gap-4">
-          {navLinks.map((link, index) => (
+        {/* Desktop links */}
+        <div className="hidden lg:flex items-center gap-8">
+          {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-base font-medium text-muted-foreground hover:text-foreground transition-all py-3 px-4 rounded-lg hover:bg-muted"
-              onClick={() => setIsMobileMenuOpen(false)}
-              style={{
-                transitionDelay: isMobileMenuOpen ? `${index * 0.05}s` : "0s",
-              }}
+              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
             >
               {link.label}
             </Link>
           ))}
-          <Button
-            size="lg"
-            className="bg-gradient-wiqonn hover:opacity-90 transition-opacity w-full mt-2"
-            asChild
-          >
-            <a href="mailto:contact@wiqonn.com?subject=Get Started">Get Started</a>
-          </Button>
         </div>
-      </div>
-    </nav>
+
+        <div className="flex items-center gap-3">
+          {/* Language toggle (desktop) */}
+          <div className="hidden md:block">
+            <LanguageToggle />
+          </div>
+
+          {/* CTA */}
+          <BookingButton
+            size="sm"
+            label={t.nav.cta}
+            className="hidden md:inline-flex bg-gradient-wiqonn hover:opacity-90 transition-all text-background font-semibold h-10 px-4"
+          />
+
+          {/* Mobile menu button */}
+          <button
+            type="button"
+            onClick={() => setIsMobileMenuOpen((v) => !v)}
+            aria-label={t.nav.menuLabel}
+            aria-expanded={isMobileMenuOpen}
+            className="lg:hidden inline-flex h-11 w-11 items-center justify-center rounded-md text-foreground hover:bg-white/5 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
+          >
+            {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          </button>
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      {isMobileMenuOpen && (
+        <div className="lg:hidden border-t border-border/50 bg-background-navy/95 backdrop-blur-md">
+          <div className="container mx-auto px-4 py-6 space-y-4">
+            {links.map((link) => (
+              <Link
+                key={link.href}
+                href={link.href}
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="block py-3 text-base font-medium text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
+              >
+                {link.label}
+              </Link>
+            ))}
+            <div className="flex items-center justify-between pt-4 border-t border-border/50">
+              <LanguageToggle />
+              <BookingButton
+                size="sm"
+                label={t.nav.cta}
+                className="bg-gradient-wiqonn hover:opacity-90 transition-all text-background font-semibold h-10 px-4"
+              />
+            </div>
+          </div>
+        </div>
+      )}
+    </header>
   )
 }

@@ -180,7 +180,7 @@ export function BatchingThroughputChart() {
             <div className="text-center">
               <p className="text-xs font-medium">{item.users} user{item.users > 1 ? "s" : ""}</p>
               <p className="text-[10px] text-primary font-bold">
-                {item.users > 1 ? `${(item.batched / item.sequential).toFixed(1)}x` : "—"}
+                {item.users > 1 ? `${(item.batched / item.sequential).toFixed(1)}x` : "n/a"}
               </p>
             </div>
           </div>

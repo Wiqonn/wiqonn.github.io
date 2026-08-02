@@ -31,6 +31,7 @@ import {
 } from "lucide-react"
 import type { IconType } from "react-icons"
 import type { LucideIcon } from "lucide-react"
+import { useT } from "@/components/language-provider"
 
 type TechItem = {
   name: string
@@ -86,7 +87,8 @@ function TechIcon({ tech }: { tech: TechItem }) {
     return (
       <Image
         src={tech.image}
-        alt={tech.name}
+        alt=""
+        aria-hidden="true"
         width={20}
         height={20}
         className="w-5 h-5 transition-transform group-hover:scale-110"
@@ -100,6 +102,7 @@ function TechIcon({ tech }: { tech: TechItem }) {
       <Icon
         className="w-5 h-5 transition-transform group-hover:scale-110"
         style={{ color: tech.color }}
+        aria-hidden="true"
       />
     )
   }
@@ -108,11 +111,12 @@ function TechIcon({ tech }: { tech: TechItem }) {
 }
 
 export function TechMarquee() {
+  const t = useT()
   return (
-    <section className="py-12 md:py-16 bg-[#0a0a0a] border-y border-border/30 overflow-hidden">
+    <section className="py-12 md:py-16 bg-background-navy border-y border-border/30 overflow-hidden">
       <div className="container mx-auto px-4 mb-8">
         <p className="text-center text-xs uppercase tracking-[0.2em] text-muted-foreground/60">
-          Powered by Industry-Leading Technology
+          {t.marquee.title}
         </p>
       </div>
 

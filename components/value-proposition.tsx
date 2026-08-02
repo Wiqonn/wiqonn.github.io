@@ -1,117 +1,82 @@
 "use client"
 
-import { useEffect, useRef } from "react"
-import { Rocket, Shield, Handshake } from "lucide-react"
+import { Layers, GraduationCap, Languages, CheckCircle2 } from "lucide-react"
 import { Card } from "@/components/ui/card"
-import { gsap } from "gsap"
-import { ScrollTrigger } from "gsap/ScrollTrigger"
-
-gsap.registerPlugin(ScrollTrigger)
+import { Reveal } from "@/components/reveal"
+import { useT } from "@/components/language-provider"
 
 export function ValueProposition() {
-  const sectionRef = useRef<HTMLDivElement>(null)
-  const titleRef = useRef<HTMLDivElement>(null)
-  const cardsRef = useRef<HTMLDivElement>(null)
+  const t = useT()
 
-  const values = [
+  const pillars = [
     {
-      icon: Rocket,
-      title: "Fast Delivery",
-      description:
-        "From idea to working product in weeks, not months. We ship fast because your time matters.",
+      icon: Layers,
+      title: t.value.pillars[0].title,
+      description: t.value.pillars[0].description,
+      highlights: t.value.pillars[0].highlights,
     },
     {
-      icon: Shield,
-      title: "Results You Can Measure",
-      description:
-        "Clear KPIs from day one. If it doesn't move the needle for your business, we don't build it.",
+      icon: GraduationCap,
+      title: t.value.pillars[1].title,
+      description: t.value.pillars[1].description,
+      highlights: t.value.pillars[1].highlights,
     },
     {
-      icon: Handshake,
-      title: "Your Team, Extended",
-      description:
-        "We work like part of your team — not consultants who disappear. Continuous support, real partnership.",
+      icon: Languages,
+      title: t.value.pillars[2].title,
+      description: t.value.pillars[2].description,
+      highlights: t.value.pillars[2].highlights,
     },
   ]
 
-  useEffect(() => {
-    const ctx = gsap.context(() => {
-      // Title animation
-      gsap.fromTo(
-        titleRef.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-          scrollTrigger: {
-            trigger: titleRef.current,
-            start: "top 80%",
-            toggleActions: "play none none reverse",
-          },
-        }
-      )
-
-      // Cards stagger animation
-      const cards = cardsRef.current?.children
-      if (cards) {
-        gsap.fromTo(
-          cards,
-          { opacity: 0, y: 60, scale: 0.95 },
-          {
-            opacity: 1,
-            y: 0,
-            scale: 1,
-            duration: 0.8,
-            stagger: 0.15,
-            ease: "power3.out",
-            scrollTrigger: {
-              trigger: cardsRef.current,
-              start: "top 75%",
-              toggleActions: "play none none reverse",
-            },
-          }
-        )
-      }
-    }, sectionRef)
-
-    return () => ctx.revert()
-  }, [])
-
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-muted/30 relative overflow-hidden">
-      {/* Subtle background pattern */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/20 via-transparent to-transparent" />
-      </div>
+    <section className="py-16 md:py-20 bg-background-navy relative overflow-hidden">
+      {/* Fondo sutil con gradientes de marca: opacidad muy baja para no competir con el contenido (AA) */}
+      <div className="aurora opacity-[0.07]" aria-hidden="true" />
 
       <div className="container mx-auto px-4 lg:px-8 relative">
-        <div ref={titleRef} className="text-center max-w-3xl mx-auto mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance">
-            Why Work With <span className="text-gradient-wiqonn">Us</span>?
+        {/* Encabezado: qué hace Wiqonn, en segundos */}
+        <Reveal className="text-center max-w-3xl mx-auto mb-14">
+          <p className="text-primary font-medium mb-4 uppercase tracking-wider text-sm">
+            {t.value.eyebrow}
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6 text-balance text-foreground">
+            {t.value.titlePre}{" "}
+            <span className="text-gradient-wiqonn">{t.value.titleAccent}</span>
           </h2>
           <p className="text-lg text-muted-foreground text-pretty leading-relaxed">
-            Because AI should solve problems, not create new ones
+            {t.value.description}
           </p>
-        </div>
+        </Reveal>
 
-        <div ref={cardsRef} className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {values.map((value, index) => {
-            const Icon = value.icon
+        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {pillars.map((pillar, index) => {
+            const Icon = pillar.icon
             return (
-              <Card
-                key={index}
-                className="p-8 bg-card hover:bg-card/80 transition-all duration-500 border-border/50 group hover:border-primary/50 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5"
-              >
-                <div className="mb-6 inline-flex p-4 rounded-2xl bg-gradient-wiqonn/10 group-hover:bg-gradient-wiqonn/20 transition-all duration-500 group-hover:scale-110">
-                  <Icon className="w-8 h-8 text-primary" />
-                </div>
-                <h3 className="text-2xl font-bold mb-4 group-hover:text-gradient-wiqonn transition-all">
-                  {value.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">{value.description}</p>
-              </Card>
+              <Reveal key={index} delay={120 + index * 80} className="h-full">
+                <Card className="p-8 h-full bg-white/5 border-white/10 hover:border-primary/60 transition-all duration-500 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10">
+                  <div className="mb-6 inline-flex p-4 rounded-2xl bg-gradient-wiqonn/10 group-hover:bg-gradient-wiqonn/20 transition-all duration-500 group-hover:scale-110">
+                    <Icon className="w-8 h-8 text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-4 text-foreground group-hover:text-primary transition-colors">
+                    {pillar.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed mb-6">
+                    {pillar.description}
+                  </p>
+                  <ul className="space-y-3">
+                    {pillar.highlights.map((highlight, idx) => (
+                      <li
+                        key={idx}
+                        className="flex items-center gap-3 text-sm text-muted-foreground group-hover:text-foreground transition-colors"
+                      >
+                        <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                        {highlight}
+                      </li>
+                    ))}
+                  </ul>
+                </Card>
+              </Reveal>
             )
           })}
         </div>

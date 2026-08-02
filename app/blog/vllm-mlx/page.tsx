@@ -25,6 +25,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger"
 import { ArchitectureDiagram } from "@/components/blog/architecture-diagram"
 import { CacheAlgorithmCode } from "@/components/blog/code-block"
 import { CacheStructure } from "@/components/blog/cache-structure"
+import { BookingButton } from "@/components/booking-button"
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -34,55 +35,54 @@ export default function VllmMlxPost() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      gsap.fromTo(
-        heroRef.current,
-        { opacity: 0, y: 50 },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: "power3.out",
-        }
-      )
+      const mq = gsap.matchMedia()
 
-      const sections = articleRef.current?.querySelectorAll(".animate-section")
-      if (sections) {
-        sections.forEach((section) => {
-          gsap.fromTo(
-            section,
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 0.8,
-              ease: "power3.out",
-              scrollTrigger: {
-                trigger: section,
-                start: "top 85%",
-                toggleActions: "play none none reverse",
-              },
-            }
-          )
-        })
-      }
+      mq.add("(prefers-reduced-motion: no-preference)", () => {
+        const sections = articleRef.current?.querySelectorAll(".animate-section")
+        if (sections) {
+          sections.forEach((section) => {
+            gsap.fromTo(
+              section,
+              { opacity: 0, y: 40 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.8,
+                ease: "power3.out",
+                scrollTrigger: {
+                  trigger: section,
+                  start: "top 85%",
+                  toggleActions: "play none none reverse",
+                },
+              }
+            )
+          })
+        }
+      })
     })
 
     return () => ctx.revert()
   }, [])
 
+  // Flip `.reveal` → `.reveal-in` for the hero (CSS utility, reduced-motion safe).
+  useEffect(() => {
+    heroRef.current?.classList.add("reveal-in")
+  }, [])
+
   return (
-    <main className="min-h-screen bg-[#0a0a0a]">
+    <main className="min-h-screen bg-background-navy">
       <Navigation />
 
       {/* Hero Section */}
       <section className="pt-32 pb-8 relative overflow-hidden">
+        <div aria-hidden="true" className="aurora absolute inset-0 pointer-events-none" />
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-primary/10 rounded-full blur-3xl" />
           <div className="absolute bottom-1/4 right-0 w-[600px] h-[600px] bg-secondary/10 rounded-full blur-3xl" />
         </div>
 
         <div className="container mx-auto px-4 lg:px-8 relative">
-          <div ref={heroRef} className="max-w-4xl mx-auto">
+          <div ref={heroRef} className="reveal max-w-4xl mx-auto">
             <Link
               href="/blog"
               className="inline-flex items-center text-muted-foreground hover:text-primary transition-colors mb-8"
@@ -169,7 +169,7 @@ export default function VllmMlxPost() {
                   className="p-6 rounded-2xl bg-card/50 border border-border/50 text-center group hover:border-primary/50 transition-colors"
                 >
                   <stat.icon className="w-8 h-8 text-primary mx-auto mb-3 group-hover:scale-110 transition-transform" />
-                  <div className="text-3xl font-bold text-gradient-wiqonn mb-1">
+                  <div className="text-3xl font-bold text-primary mb-1">
                     {stat.value}
                   </div>
                   <div className="text-sm text-muted-foreground">{stat.label}</div>
@@ -817,11 +817,35 @@ export default function VllmMlxPost() {
               </div>
             </section>
 
+            {/* Wiqonn conversion CTA */}
+            <section className="animate-section mt-16">
+              <div className="relative p-8 md:p-12 rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10" />
+                <div className="relative z-10 text-center">
+                  <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                    Want private AI in your company?
+                  </h2>
+                  <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+                    We build local, private AI systems for mid-sized companies — fixed price
+                    in writing, KPI measured from day one. Book a free 30-minute diagnosis.
+                  </p>
+                  <div className="flex flex-wrap justify-center gap-4">
+                    <BookingButton className="btn-gradient glow-cyan hover:scale-105 transition-all text-base px-8 h-14 text-[#0A0E1A] font-semibold" />
+                    <Button size="lg" variant="outline" asChild className="h-14 px-8 text-lg">
+                      <a href="/ai-readiness-checklist-en.pdf" download>
+                        Get the AI Readiness Checklist
+                      </a>
+                    </Button>
+                  </div>
+                </div>
+              </div>
+            </section>
+
             {/* CTA */}
             <section className="animate-section">
               <div className="relative p-8 md:p-12 rounded-3xl overflow-hidden">
                 {/* Background effects */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-[#0a0a0a] to-secondary/20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-background-navy to-secondary/20" />
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-primary/30 rounded-full blur-[100px]" />
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-secondary/30 rounded-full blur-[100px]" />
 
