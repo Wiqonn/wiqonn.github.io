@@ -1,8 +1,9 @@
 export const CONTACT_EMAIL = "contact@wiqonn.com"
 
-export const WEB3FORMS_ACCESS_KEY = ""
+export const WEB3FORMS_ACCESS_KEY =
+  process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY ?? ""
 
-export const CAL_COM_URL = ""
+export const CAL_COM_URL = process.env.NEXT_PUBLIC_CAL_COM_URL ?? ""
 
 export function hasBooking(): boolean {
   return CAL_COM_URL.length > 0

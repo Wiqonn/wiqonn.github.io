@@ -826,7 +826,7 @@ export default function VllmMlxPost() {
                     Want private AI in your company?
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                    We build local, private AI systems for mid-sized companies — fixed price
+                    We build local, private AI systems for your company — fixed price
                     in writing, KPI measured from day one. Book a free 30-minute diagnosis.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">

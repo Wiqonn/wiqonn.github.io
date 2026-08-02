@@ -28,7 +28,7 @@ const jsonLd = {
   email: "contact@wiqonn.com",
   priceRange: "$$",
   description:
-    "Boutique de IA, datos y software en Barranquilla, Colombia. Auditamos, construimos y operamos soluciones de IA para empresas medianas en todo el mundo.",
+    "AI lab de datos y software en Barranquilla, Colombia. Auditamos, construimos y operamos soluciones de IA para empresas de todo tipo en todo el mundo.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Barranquilla",

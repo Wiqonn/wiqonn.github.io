@@ -74,7 +74,7 @@ export default function BlogPage() {
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Applied research and engineering notes from Wiqonn: how to ship AI that reaches
-              production for mid-sized companies anywhere in the world. Real benchmarks, architecture
+              production for companies of any size, anywhere in the world. Real benchmarks, architecture
               decisions and working code.
             </p>
           </div>
@@ -157,7 +157,7 @@ export default function BlogPage() {
                   Know where it hurts? We build the AI that fixes it.
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Applied AI for mid-sized companies anywhere in the world. Fixed price in
+                  Applied AI for companies of any size, anywhere in the world. Fixed price in
                   writing — and if it doesn&apos;t work on your data, we tell you before you
                   spend.
                 </p>

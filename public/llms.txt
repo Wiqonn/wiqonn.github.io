@@ -1,11 +1,11 @@
 # Wiqonn
 
-> Boutique de IA, datos y software en Barranquilla, Colombia. Auditamos, construimos
-> y operamos soluciones de IA para empresas medianas en todo el mundo.
+> AI lab de datos y software en Barranquilla, Colombia. Auditamos, construimos
+> y operamos soluciones de IA para empresas de todo tipo en todo el mundo.
 
 ## Quiénes somos
 
-- Boutique operada desde Barranquilla, Colombia.
+- AI lab operado desde Barranquilla, Colombia.
 - Cobertura full-stack: del dato al hardware (IA, datos, cloud, IoT, embebidos).
 - Investigación aplicada: evaluamos modelos con datos reales y rigor académico.
 - Idiomas de trabajo: español e inglés.

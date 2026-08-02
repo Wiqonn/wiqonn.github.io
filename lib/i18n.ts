@@ -7,7 +7,7 @@
  *
  * Hechos usados (sin inventar): papers.md (publicaciones de IA multimodal),
  * services.md (17 capacidades declaradas por el dueño), icp.md (empresas
- * medianas en todo el mundo), identidad visual oficial.
+ * empresas de todo tipo en todo el mundo), identidad visual oficial.
  */
 
 export type Lang = "es" | "en"
@@ -16,7 +16,7 @@ export const es = {
   seo: {
     title: "Consultoría de IA en Colombia | Implementación de IA | Wiqonn",
     description:
-      "Consultoría boutique de IA en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas medianas en todo el mundo. Soporte local, consulta gratis.",
+      "AI lab en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas de todo tipo en todo el mundo. Soporte local, consulta gratis.",
     locale: "es_CO",
   },
   nav: {
@@ -70,7 +70,7 @@ export const es = {
       {
         title: "IA para humanos, en tu idioma y tu mercado",
         description:
-          "Tecnología al servicio de personas y negocio, con vocabulario claro y soporte local. Boutique en Barranquilla, Colombia: entendemos tu mercado y trabajamos en tu idioma.",
+          "Tecnología al servicio de personas y negocio, con vocabulario claro y soporte local. AI lab en Barranquilla, Colombia: entendemos tu mercado y trabajamos en tu idioma.",
         highlights: [
           "Atención cercana, en español",
           "Precios accesibles frente a agencias de USA y Europa",
@@ -245,7 +245,7 @@ export const es = {
     },
     why: {
       eyebrow: "Por qué Wiqonn",
-      title: "Rigor de investigación, raíces LatAm. La boutique que cubre del dato al hardware.",
+      title: "Rigor de investigación, raíces LatAm. El AI lab que cubre del dato al hardware.",
       description:
         "Tres razones por las que los proyectos con Wiqonn llegan a producción y no se quedan en demos.",
       items: {
@@ -257,7 +257,7 @@ export const es = {
         fullstack: {
           title: "Full-stack: del dato al hardware",
           description:
-            "Cubrimos el espectro completo: de ML/IA y analítica a apps web/móviles, IoT, visión por computador y sistemas embebidos. Una sola boutique, cero integradores de por medio.",
+            "Cubrimos el espectro completo: de ML/IA y analítica a apps web/móviles, IoT, visión por computador y sistemas embebidos. Un solo AI lab, cero integradores de por medio.",
         },
         humans: {
           title: "Data and engineering for humans",
@@ -267,7 +267,7 @@ export const es = {
         latam: {
           title: "Raíces LatAm, estándar global",
           description:
-            "Boutique en Barranquilla, Colombia: entendemos el mercado local y ofrecemos pricing accesible frente a agencias de USA y Europa, sin sacrificar calidad.",
+            "AI lab en Barranquilla, Colombia: entendemos el mercado local y ofrecemos pricing accesible frente a agencias de USA y Europa, sin sacrificar calidad.",
         },
       },
     },
@@ -422,7 +422,7 @@ export const es = {
       },
       {
         q: "¿Qué tamaño de empresas atienden?",
-        a: "Empresas medianas en cualquier parte del mundo. Cubrimos del dato al hardware: IA/ML, BI, cloud, IoT y desarrollo a la medida bajo un mismo techo.",
+        a: "Empresas de todo tipo en cualquier parte del mundo. Cubrimos del dato al hardware: IA/ML, BI, cloud, IoT y desarrollo a la medida bajo un mismo techo.",
       },
       {
         q: "¿Quedaremos dependientes de ustedes?",
@@ -467,7 +467,7 @@ export const en: Dict = {
   seo: {
     title: "AI Consulting for Mid-Sized Companies | Nearshore AI | Wiqonn",
     description:
-      "Boutique AI consulting in Barranquilla, Colombia. We implement AI, ML, agents and BI for mid-sized companies anywhere in the world. Local support, free consultation call.",
+      "AI lab in Barranquilla, Colombia. We implement AI, ML, agents and BI for companies of any size, anywhere in the world. Local support, free consultation call.",
     locale: "en_US",
   },
   nav: {
@@ -521,7 +521,7 @@ export const en: Dict = {
       {
         title: "AI for humans, in your language and your market",
         description:
-          "Technology at the service of people and business, with clear language and local support. A boutique in Barranquilla, Colombia: we understand your market and work in your language.",
+          "Technology at the service of people and business, with clear language and local support. An AI lab in Barranquilla, Colombia: we understand your market and work in your language.",
         highlights: [
           "Close, personal attention",
           "Affordable pricing vs. US and European agencies",
@@ -697,7 +697,7 @@ export const en: Dict = {
     why: {
       eyebrow: "Why Wiqonn",
       title:
-        "Research rigor, LatAm roots. The boutique that covers from data to hardware.",
+        "Research rigor, LatAm roots. The AI lab that covers from data to hardware.",
       description:
         "Three reasons why projects with Wiqonn reach production — and don't stay demos.",
       items: {
@@ -709,7 +709,7 @@ export const en: Dict = {
         fullstack: {
           title: "Full-stack: from data to hardware",
           description:
-            "We cover the complete spectrum: from ML/AI and analytics to web/mobile apps, IoT, computer vision and embedded systems. One boutique, zero middlemen.",
+            "We cover the complete spectrum: from ML/AI and analytics to web/mobile apps, IoT, computer vision and embedded systems. One AI lab, zero middlemen.",
         },
         humans: {
           title: "Data and engineering for humans",
@@ -719,7 +719,7 @@ export const en: Dict = {
         latam: {
           title: "LatAm roots, global standard",
           description:
-            "A boutique in Barranquilla, Colombia: we understand the local market and offer accessible pricing versus US and European agencies, without sacrificing quality.",
+            "An AI lab in Barranquilla, Colombia: we understand the local market and offer accessible pricing versus US and European agencies, without sacrificing quality.",
         },
       },
     },

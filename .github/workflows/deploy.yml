@@ -36,6 +36,9 @@ jobs:
 
       - name: Build with Next.js
         run: pnpm build
+        env:
+          NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY: ${{ secrets.WEB3FORMS_ACCESS_KEY }}
+          NEXT_PUBLIC_CAL_COM_URL: ${{ secrets.CAL_COM_URL }}
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

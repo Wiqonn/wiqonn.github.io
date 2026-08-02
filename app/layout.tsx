@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "Consultoría de IA en Colombia | Implementación de IA | Wiqonn",
   description:
-    "Consultoría boutique de IA en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas medianas en todo el mundo. Soporte local, consulta gratis.",
+    "AI lab en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas de todo tipo en todo el mundo. Soporte local, consulta gratis.",
   keywords:
     "consultoría de IA Colombia, implementación de IA, inteligencia artificial Barranquilla, agentes de IA, machine learning, business intelligence, nearshore AI",
   alternates: {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Consultoría de IA en Colombia | Implementación de IA | Wiqonn",
     description:
-      "Consultoría boutique de IA en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas medianas en todo el mundo.",
+      "AI lab en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas de todo tipo en todo el mundo.",
     url: SITE_URL,
     siteName: "Wiqonn",
     type: "website",
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Consultoría de IA en Colombia | Implementación de IA | Wiqonn",
     description:
-      "Boutique de IA, datos y software en Barranquilla: auditamos, construimos y operamos soluciones con resultados medibles.",
+      "AI lab de datos y software en Barranquilla: auditamos, construimos y operamos soluciones con resultados medibles.",
     images: ["/wiqonn-icon.png"],
   },
   icons: {
