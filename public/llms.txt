@@ -1,37 +1,37 @@
 # Wiqonn
 
-> AI lab de datos y software en Barranquilla, Colombia. Auditamos, construimos
-> y operamos soluciones de IA para empresas de todo tipo en todo el mundo.
+> AI lab of data and software based in Barranquilla, Colombia. We audit, build
+> and operate AI solutions for companies of any size, anywhere in the world.
 
-## Quiénes somos
+## Who we are
 
-- AI lab operado desde Barranquilla, Colombia.
-- Cobertura full-stack: del dato al hardware (IA, datos, cloud, IoT, embebidos).
-- Investigación aplicada: evaluamos modelos con datos reales y rigor académico.
-- Idiomas de trabajo: español e inglés.
+- AI lab operated from Barranquilla, Colombia.
+- Full-stack coverage: from data to hardware (AI, data, cloud, IoT, embedded systems).
+- Applied research: we evaluate models on real data with academic rigor.
+- Working languages: Spanish and English.
 
-## Qué hacemos
+## What we do
 
-- IA y Machine Learning: agentes de IA, LLM/RAG, visión por computador, modelos predictivos.
-- Business Intelligence: dashboards, reportes automatizados, seguimiento de KPIs.
-- Cloud e Infraestructura: multi-cloud, alta disponibilidad, seguridad de producción.
-- Desarrollo a la medida: apps web y móviles, APIs, MLOps.
+- AI and Machine Learning: AI agents, LLM/RAG, computer vision, predictive models.
+- Business Intelligence: dashboards, automated reports, real-time KPI tracking.
+- Cloud and Infrastructure: multi-cloud, high availability, production-grade security.
+- Custom Development: web and mobile apps, APIs, MLOps.
 
-## Modelo de trabajo
+## How we work
 
-- AI Readiness Audit: priorización de casos de uso por ROI y roadmap con costos.
-- Pilotos outcome-based: KPI definido y medible desde el día uno.
-- Managed AI Ops: operación gestionada, monitoreo y reentrenamiento con SLA.
-- Fractional AI Leadership: dirección de IA y CTO-as-a-service.
-- IP / White-Label: soluciones licenciadas para integradores.
+- AI Readiness Audit: use-case prioritization by ROI and a roadmap with costs.
+- Outcome-based pilots: KPI defined and measurable from day one.
+- Managed AI Ops: managed operations, monitoring and retraining with SLA.
+- Fractional AI Leadership: AI direction and CTO-as-a-service.
+- IP / White-Label: licensed solutions for integrators.
 
-## Contacto
+## Contact
 
 - Email: contact@wiqonn.com
 - Web: https://www.wiqonn.com
 
-## Archivos
+## Files
 
-- [Inicio](https://www.wiqonn.com/): servicios, modelo de trabajo y contacto.
-- [Blog](https://www.wiqonn.com/blog): artículos técnicos de IA.
-- [Brochure](https://www.wiqonn.com/brochure/): portafolio oficial en PDF.
+- [Home](https://www.wiqonn.com/): services, how we work and contact.
+- [Blog](https://www.wiqonn.com/blog): technical AI articles.
+- [Brochure](https://www.wiqonn.com/brochure/): official portfolio PDF.
