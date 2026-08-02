@@ -39,8 +39,8 @@ export function NeuralNetworkBackground() {
       nodesRef.current = Array.from({ length: nodeCount }, () => ({
         x: Math.random() * canvas.width,
         y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.5,
-        vy: (Math.random() - 0.5) * 0.5,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: (Math.random() - 0.5) * 0.8,
         radius: Math.random() * 2 + 1,
       }))
     }
@@ -129,12 +129,12 @@ export function NeuralNetworkBackground() {
         if (node.y > canvas.height) node.y = 0
 
         // Apply friction
-        node.vx *= 0.99
-        node.vy *= 0.99
+        node.vx *= 0.995
+        node.vy *= 0.995
 
         // Add small random movement
-        node.vx += (Math.random() - 0.5) * 0.01
-        node.vy += (Math.random() - 0.5) * 0.01
+        node.vx += (Math.random() - 0.5) * 0.015
+        node.vy += (Math.random() - 0.5) * 0.015
       })
     }
 

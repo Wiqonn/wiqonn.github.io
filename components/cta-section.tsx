@@ -18,7 +18,6 @@ const REVEAL_DELAYS = {
 
 export function CTASection() {
   const t = useT()
-  const badgeRef = useRef<HTMLDivElement>(null)
   const headlineRef = useRef<HTMLHeadingElement>(null)
   const subheadlineRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
@@ -28,7 +27,7 @@ export function CTASection() {
   // Idempotent and inert under reduced motion (the media query in globals.css
   // leaves `.reveal` visible), so no inline style forces animation.
   useEffect(() => {
-    const items = [badgeRef, headlineRef, subheadlineRef, ctaRef, trustRef]
+    const items = [headlineRef, subheadlineRef, ctaRef, trustRef]
     items.forEach((ref) => ref.current?.classList.add("reveal-in"))
   }, [])
 
@@ -53,17 +52,6 @@ export function CTASection() {
 
       <div className="container relative mx-auto px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Trust badge */}
-          <div ref={badgeRef} className="reveal" style={revealStyle(REVEAL_DELAYS.badge)}>
-            <span className="inline-flex items-center gap-2.5 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-sm font-medium text-primary">
-              <span
-                aria-hidden="true"
-                className="h-2 w-2 rounded-full bg-secondary shadow-[0_0_8px_rgba(57,181,74,0.9)]"
-              />
-              {t.cta.badge}
-            </span>
-          </div>
-
           {/* Main headline */}
           <h2
             ref={headlineRef}

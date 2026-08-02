@@ -386,8 +386,11 @@ export const es = {
     location: "Barranquilla, Colombia",
     form: {
       name: "Nombre",
+      namePlaceholder: "Tu nombre",
       email: "Email corporativo",
+      emailPlaceholder: "nombre@empresa.com",
       company: "Empresa",
+      companyPlaceholder: "Nombre de tu empresa",
       size: "Tamaño",
       sizePlaceholder: "Empleados",
       message: "Tu reto (opcional)",
@@ -840,8 +843,11 @@ export const en: Dict = {
     location: "Barranquilla, Colombia",
     form: {
       name: "Name",
+      namePlaceholder: "Your name",
       email: "Work email",
+      emailPlaceholder: "name@company.com",
       company: "Company",
+      companyPlaceholder: "Your company name",
       size: "Company size",
       sizePlaceholder: "Employees",
       message: "Your challenge (optional)",

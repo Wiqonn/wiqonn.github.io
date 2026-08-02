@@ -92,7 +92,7 @@ export function Navigation() {
             alt="Wiqonn"
             width={150}
             height={60}
-            className="w-auto h-10 md:h-14 object-contain"
+            className="w-auto h-11 md:h-16 object-contain"
           />
         </Link>
 

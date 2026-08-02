@@ -548,7 +548,7 @@ export default function DgxSparkFineTunePost() {
               The recipe construction happens at load time. For NVFP4 it&apos;s{" "}
               <span className="font-mono text-sm text-primary">NVFP4BlockScaling()</span> —
               the default recipe with micro-block scaling. For MXFP8 it&apos;s{" "}
-              <span className="font-mono text-sm text-primary">
+              <span className="font-mono text-sm text-primary break-all">
                 MXFP8BlockScaling(fp8_format=Format.E4M3)
               </span>
               . Both require Transformer Engine ≥ 2.9, which is why the scripts run inside
@@ -842,7 +842,7 @@ export default function DgxSparkFineTunePost() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               The training dataset is{" "}
-              <span className="font-mono text-sm text-primary">
+              <span className="font-mono text-sm text-primary break-all">
                 TeichAI/claude-4.5-opus-high-reasoning-250x
               </span>{" "}
               — a collection of high-quality reasoning traces. The model learns to produce

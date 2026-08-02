@@ -11,7 +11,7 @@ export function CacheStructure() {
         <div className="flex flex-col items-center">
           <p className="text-sm text-muted-foreground mb-2">Cache Key</p>
           <div className="w-full max-w-[220px] px-4 py-3 rounded-lg bg-blue-500/10 border border-blue-500/30 text-center">
-            <code className="text-sm font-mono text-blue-400">SHA256(image) + prompt</code>
+            <code className="text-sm font-mono text-blue-400 break-all">SHA256(image) + prompt</code>
           </div>
         </div>
 
@@ -25,7 +25,7 @@ export function CacheStructure() {
         <div className="flex flex-col items-center">
           <p className="text-sm text-muted-foreground mb-2">Cached Value</p>
           <div className="w-full max-w-[220px] px-4 py-3 rounded-lg bg-green-500/10 border border-green-500/30 text-center">
-            <code className="text-sm font-mono text-green-400">embeddings + kv_cache</code>
+            <code className="text-sm font-mono text-green-400 break-all">embeddings + kv_cache</code>
           </div>
         </div>
       </div>

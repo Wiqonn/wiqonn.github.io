@@ -37,3 +37,6 @@ next-env.d.ts
 # personal/academic PDFs (privacy)
 /public/wayner_cv.pdf
 /public/GPTZero*.pdf
+
+# pnpm artifact
+pnpm-workspace.yaml

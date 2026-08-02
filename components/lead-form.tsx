@@ -77,14 +77,14 @@ export function LeadForm() {
     return (
       <div
         role="status"
-        className="rounded-2xl border border-secondary/40 bg-secondary/10 px-6 py-6 max-w-md mx-auto text-left"
+        className="rounded-2xl border border-secondary/40 bg-secondary/10 px-6 py-6 max-w-lg mx-auto text-left"
       >
         <div className="flex items-center gap-3 mb-2">
           <CheckCircle2 className="w-6 h-6 text-secondary" aria-hidden="true" />
-          <p className="text-lg font-semibold text-foreground">¡Recibido!</p>
+          <p className="text-lg font-semibold text-foreground">{t.cta.form.successTitle}</p>
         </div>
         <p className="text-sm text-muted-foreground leading-relaxed">
-          Respondemos en menos de 24 h hábiles.
+          {t.cta.form.successBody}
         </p>
       </div>
     )
@@ -96,7 +96,7 @@ export function LeadForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 max-w-md mx-auto text-left space-y-4"
+      className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 max-w-lg mx-auto text-left space-y-4"
       noValidate
     >
       <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
@@ -105,7 +105,7 @@ export function LeadForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="lead-name" className="block text-sm font-medium mb-1.5 text-foreground">
-            Nombre
+            {t.cta.form.name}
           </label>
           <input
             id="lead-name"
@@ -121,7 +121,7 @@ export function LeadForm() {
         </div>
         <div>
           <label htmlFor="lead-email" className="block text-sm font-medium mb-1.5 text-foreground">
-            Email corporativo
+            {t.cta.form.email}
           </label>
           <input
             id="lead-email"
@@ -140,14 +140,14 @@ export function LeadForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div>
           <label htmlFor="lead-company" className="block text-sm font-medium mb-1.5 text-foreground">
-            Empresa
+            {t.cta.form.company}
           </label>
           <input
             id="lead-company"
             type="text"
             autoComplete="organization"
             className={inputClass}
-            placeholder="Nombre de tu empresa"
+            placeholder={t.cta.form.companyPlaceholder}
             {...register("company")}
           />
           {errors.company && (
@@ -156,11 +156,11 @@ export function LeadForm() {
         </div>
         <div>
           <label htmlFor="lead-size" className="block text-sm font-medium mb-1.5 text-foreground">
-            Tamaño
+            {t.cta.form.size}
           </label>
           <select id="lead-size" className={inputClass} defaultValue="" {...register("size")}>
             <option value="" disabled>
-              Empleados
+              {t.cta.form.sizePlaceholder}
             </option>
             {SIZE_OPTIONS.map((option) => (
               <option key={option} value={option}>
@@ -176,13 +176,13 @@ export function LeadForm() {
 
       <div>
         <label htmlFor="lead-message" className="block text-sm font-medium mb-1.5 text-foreground">
-          Tu reto (opcional)
+          {t.cta.form.message}
         </label>
         <textarea
           id="lead-message"
           rows={3}
           className={inputClass}
-          placeholder="¿Qué quieres automatizar o resolver con IA?"
+          placeholder={t.cta.form.messagePlaceholder}
           {...register("message")}
         />
       </div>
@@ -199,7 +199,7 @@ export function LeadForm() {
         disabled={isSubmitting}
         className="btn-gradient glow-cyan hover:scale-105 transition-all w-full text-base h-13 text-[#0A0E1A] font-semibold"
       >
-        {isSubmitting ? "Enviando…" : t.cta.emailButton}
+        {isSubmitting ? t.cta.form.sending : t.cta.emailButton}
       </Button>
       <p className="text-xs text-center text-muted-foreground">
         Respuesta en menos de 24 h · Sin compromiso · Propuesta en 48 h hábiles
