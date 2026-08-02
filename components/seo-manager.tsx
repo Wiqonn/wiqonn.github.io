@@ -13,17 +13,22 @@ function setMeta(attr: "name" | "property", key: string, value: string) {
 export function SeoManager() {
   const t = useT()
   const pathname = usePathname()
+  const title = t.seo.title
+  const description = t.seo.description
+  const keywords = t.seo.keywords
+  const locale = t.seo.locale
 
   useEffect(() => {
     if (pathname !== "/") return
-    document.title = t.seo.title
-    setMeta("name", "description", t.seo.description)
-    setMeta("property", "og:title", t.seo.title)
-    setMeta("property", "og:description", t.seo.description)
-    setMeta("property", "og:locale", t.seo.locale)
-    setMeta("name", "twitter:title", t.seo.title)
-    setMeta("name", "twitter:description", t.seo.description)
-  }, [pathname, t])
+    document.title = title
+    setMeta("name", "description", description)
+    setMeta("name", "keywords", keywords)
+    setMeta("property", "og:title", title)
+    setMeta("property", "og:description", description)
+    setMeta("property", "og:locale", locale)
+    setMeta("name", "twitter:title", title)
+    setMeta("name", "twitter:description", description)
+  }, [pathname, title, description, keywords, locale])
 
   return null
 }

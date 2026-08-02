@@ -17,6 +17,8 @@ export const es = {
     title: "Consultoría de IA en Colombia | Implementación de IA | Wiqonn",
     description:
       "AI lab en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas de todo tipo en todo el mundo. Soporte local, consulta gratis.",
+    keywords:
+      "consultoría de IA Colombia, implementación de IA, inteligencia artificial, AI lab, applied research IA, investigación aplicada en IA, modelos de IA personalizados, fine-tuning de LLM, modelos de lenguaje grandes, agentes de IA personalizados, machine learning, deep learning, LLM/RAG, visión por computador, MLOps, business intelligence, dashboards, cloud computing, infraestructura cloud, automatización de procesos, análisis de datos, Barranquilla, Colombia, nearshore AI",
     locale: "es_CO",
   },
   nav: {
@@ -471,6 +473,8 @@ export const en: Dict = {
     title: "AI Consulting for Mid-Sized Companies | Nearshore AI | Wiqonn",
     description:
       "AI lab in Barranquilla, Colombia. We implement AI, ML, agents and BI for companies of any size, anywhere in the world. Local support, free consultation call.",
+    keywords:
+      "AI consulting Colombia, AI implementation, artificial intelligence, AI lab, applied AI research, custom AI models, LLM fine-tuning, large language models, custom AI agents, machine learning, deep learning, RAG, computer vision, MLOps, business intelligence, dashboards, cloud infrastructure, process automation, data analytics, Barranquilla, Colombia, nearshore AI",
     locale: "en_US",
   },
   nav: {
