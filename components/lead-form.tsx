@@ -4,7 +4,7 @@ import { useState } from "react"
 import { useForm } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { z } from "zod"
-import { CheckCircle2, Mail } from "lucide-react"
+import { CheckCircle2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { useT } from "@/components/language-provider"
 import { CONTACT_EMAIL, WEB3FORMS_ACCESS_KEY, hasForm } from "@/lib/forms"
@@ -34,23 +34,26 @@ export function LeadForm() {
     resolver: zodResolver(formSchema),
   })
 
-  if (!hasForm()) {
-    const mailtoUrl = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.cta.emailSubject)}&body=${encodeURIComponent(t.cta.emailBody)}`
-    return (
-      <Button
-        size="lg"
-        className="btn-gradient glow-cyan hover:scale-105 transition-all text-base px-8 h-14 text-[#0A0E1A] font-semibold"
-        asChild
-      >
-        <a href={mailtoUrl}>
-          <Mail className="mr-2 w-5 h-5" aria-hidden="true" />
-          {t.cta.emailButton}
-        </a>
-      </Button>
-    )
-  }
-
   const onSubmit = async (values: FormValues) => {
+    setError(false)
+
+    if (!hasForm()) {
+      const emailBody = [
+        t.cta.emailBody,
+        "",
+        `${t.cta.form.name}: ${values.name}`,
+        `${t.cta.form.email}: ${values.email}`,
+        `${t.cta.form.company}: ${values.company}`,
+        `${t.cta.form.size}: ${values.size}`,
+        values.message ? `${t.cta.form.message}: ${values.message}` : "",
+      ]
+        .filter(Boolean)
+        .join("\n")
+
+      window.location.href = `mailto:${CONTACT_EMAIL}?subject=${encodeURIComponent(t.cta.emailSubject)}&body=${encodeURIComponent(emailBody)}`
+      return
+    }
+
     try {
       const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
@@ -99,7 +102,7 @@ export function LeadForm() {
       className="rounded-2xl border border-white/10 bg-white/5 p-6 md:p-8 max-w-lg mx-auto text-left space-y-4"
       noValidate
     >
-      <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />
+      {hasForm() && <input type="hidden" name="access_key" value={WEB3FORMS_ACCESS_KEY} />}
       <input type="checkbox" name="botcheck" className="hidden" tabIndex={-1} autoComplete="off" />
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -112,7 +115,7 @@ export function LeadForm() {
             type="text"
             autoComplete="name"
             className={inputClass}
-            placeholder="Tu nombre"
+            placeholder={t.cta.form.namePlaceholder}
             {...register("name")}
           />
           {errors.name && (
@@ -128,7 +131,7 @@ export function LeadForm() {
             type="email"
             autoComplete="email"
             className={inputClass}
-            placeholder="nombre@empresa.com"
+            placeholder={t.cta.form.emailPlaceholder}
             {...register("email")}
           />
           {errors.email && (
@@ -189,7 +192,8 @@ export function LeadForm() {
 
       {error && (
         <p role="alert" className="text-sm text-destructive">
-          No se pudo enviar. Intenta de nuevo o escríbenos a {CONTACT_EMAIL}.
+          {t.cta.form.error}
+          {CONTACT_EMAIL}.
         </p>
       )}
 
@@ -202,7 +206,7 @@ export function LeadForm() {
         {isSubmitting ? t.cta.form.sending : t.cta.emailButton}
       </Button>
       <p className="text-xs text-center text-muted-foreground">
-        Respuesta en menos de 24 h · Sin compromiso · Propuesta en 48 h hábiles
+        {t.cta.trust}
       </p>
     </form>
   )

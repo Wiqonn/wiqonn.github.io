@@ -1,5 +1,4 @@
 import { Navigation } from "@/components/navigation"
-import { HeroSection } from "@/components/hero-section"
 import { TechMarquee } from "@/components/tech-marquee"
 import { StatsSection } from "@/components/stats-section"
 import { ServicesSection } from "@/components/services-section"
@@ -8,6 +7,10 @@ import { GuaranteesBand } from "@/components/guarantees-band"
 import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
+import { CinematicHero } from "@/components/cinematic/cinematic-hero"
+import { GrainOverlay } from "@/components/cinematic/grain-overlay"
+import { LightTunnel } from "@/components/cinematic/light-tunnel"
+import { PremiumMotion } from "@/components/cinematic/premium-motion"
 import { es } from "@/lib/i18n"
 
 const SITE_URL = "https://www.wiqonn.com"
@@ -129,14 +132,33 @@ export default function Page() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
       />
       <Navigation />
-      <HeroSection />
-      <TechMarquee />
-      <StatsSection />
-      <ServicesSection />
-      <ValueProposition />
-      <GuaranteesBand />
-      <FAQSection />
-      <CTASection />
+      <GrainOverlay />
+      <PremiumMotion />
+      <CinematicHero />
+      <div className="section-frame section-frame--marquee">
+        <TechMarquee />
+      </div>
+      <div className="section-frame section-frame--stats">
+        <LightTunnel className="light-tunnel--stats" />
+        <StatsSection />
+      </div>
+      <div className="section-frame section-frame--services">
+        <ServicesSection />
+      </div>
+      <div className="section-frame section-frame--value">
+        <LightTunnel className="light-tunnel--value" />
+        <ValueProposition />
+      </div>
+      <div className="section-frame section-frame--guarantees">
+        <GuaranteesBand />
+      </div>
+      <div className="section-frame section-frame--faq">
+        <FAQSection />
+      </div>
+      <div className="section-frame section-frame--cta">
+        <LightTunnel className="light-tunnel--cta" />
+        <CTASection />
+      </div>
       <Footer />
     </main>
   )

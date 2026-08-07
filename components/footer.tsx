@@ -96,7 +96,7 @@ export function Footer() {
                 <BookingButton
                   size="sm"
                   label={t.footer.schedule}
-                  className="bg-gradient-wiqonn hover:opacity-90 transition-all text-background font-semibold h-10 px-4"
+                  className="btn-gradient h-10 px-4 font-semibold"
                 />
               </li>
             </ul>

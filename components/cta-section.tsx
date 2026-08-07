@@ -18,7 +18,6 @@ const REVEAL_DELAYS = {
 
 export function CTASection() {
   const t = useT()
-  const headlineRef = useRef<HTMLHeadingElement>(null)
   const subheadlineRef = useRef<HTMLParagraphElement>(null)
   const ctaRef = useRef<HTMLDivElement>(null)
   const trustRef = useRef<HTMLDivElement>(null)
@@ -27,7 +26,7 @@ export function CTASection() {
   // Idempotent and inert under reduced motion (the media query in globals.css
   // leaves `.reveal` visible), so no inline style forces animation.
   useEffect(() => {
-    const items = [headlineRef, subheadlineRef, ctaRef, trustRef]
+    const items = [subheadlineRef, ctaRef, trustRef]
     items.forEach((ref) => ref.current?.classList.add("reveal-in"))
   }, [])
 
@@ -51,53 +50,47 @@ export function CTASection() {
       />
 
       <div className="container relative mx-auto px-4 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center space-y-8">
-          {/* Main headline */}
-          <h2
-            ref={headlineRef}
-            className="reveal text-3xl md:text-5xl lg:text-6xl font-bold text-balance"
-            style={revealStyle(REVEAL_DELAYS.headline)}
-          >
-            {t.cta.titlePre}
-            <span className="text-gradient-wiqonn relative">
-              {t.cta.titleAccent}
-              <span className="absolute left-0 w-full h-1 bg-gradient-wiqonn rounded-full opacity-50 bottom-[-calc(0.1em_+_0.5rem)]" />
-            </span>
-          </h2>
+        <div className="cta-layout">
+          <div className="cta-copy">
+            <h2
+              className="text-balance"
+            >
+              {t.cta.titlePre}
+              <span className="text-gradient-wiqonn">{t.cta.titleAccent}</span>
+            </h2>
 
-          {/* Subheadline */}
-          <p
-            ref={subheadlineRef}
-            className="reveal text-xl text-muted-foreground max-w-2xl mx-auto text-pretty leading-relaxed"
-            style={revealStyle(REVEAL_DELAYS.subheadline)}
-          >
-            {t.cta.subheadline}
-          </p>
+            <p
+              ref={subheadlineRef}
+              className="reveal text-lg text-muted-foreground text-pretty leading-relaxed"
+              style={revealStyle(REVEAL_DELAYS.subheadline)}
+            >
+              {t.cta.subheadline}
+            </p>
 
-          {/* CTA: form de contacto (fallback mailto si no hay form configurado) */}
+            <div
+              ref={trustRef}
+              className="reveal cta-trust"
+              style={revealStyle(REVEAL_DELAYS.trust)}
+            >
+              <ul className="cta-trust-list text-sm text-muted-foreground">
+                <li>
+                  <Clock className="text-primary" aria-hidden="true" />
+                  <span>{t.cta.trust}</span>
+                </li>
+                <li>
+                  <MapPin className="text-secondary" aria-hidden="true" />
+                  <span>{t.cta.location}</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
           <div
             ref={ctaRef}
-            className="reveal pt-4"
+            className="reveal cta-form"
             style={revealStyle(REVEAL_DELAYS.cta)}
           >
             <LeadForm />
-          </div>
-
-          {/* Trust line */}
-          <div
-            ref={trustRef}
-            className="reveal pt-8 flex flex-col items-center gap-3"
-            style={revealStyle(REVEAL_DELAYS.trust)}
-          >
-            <p className="inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1 text-sm text-muted-foreground">
-              <Clock className="w-4 h-4 text-primary" aria-hidden="true" />
-              {t.cta.trust}
-              <span aria-hidden="true" className="text-muted-foreground/40">
-                ·
-              </span>
-              <MapPin className="w-4 h-4 text-secondary" aria-hidden="true" />
-              {t.cta.location}
-            </p>
           </div>
         </div>
       </div>

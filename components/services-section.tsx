@@ -144,7 +144,7 @@ export function ServicesSection() {
           <p className="text-muted-foreground mb-6">{t.services.bottom}</p>
           <Button
             size="lg"
-            className="bg-gradient-wiqonn hover:opacity-90 transition-all hover:scale-105 text-base px-8 h-14 text-background font-semibold group"
+            className="btn-gradient text-base px-8 h-14 font-semibold group"
             asChild
           >
             <a

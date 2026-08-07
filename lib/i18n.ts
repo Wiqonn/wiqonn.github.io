@@ -31,7 +31,7 @@ export const es = {
     titlePre: "Convierte tus datos en resultados con ",
     subheadline:
       "IA que funciona con tus datos reales, no con un demo. Empezamos con un diagnóstico de 30 minutos y, si no podemos ayudarte, te lo decimos antes de que gastes.",
-    rotator: ["IA en producción", "agentes que trabajan 24/7", "modelos que generan retorno"],
+    rotator: ["IA en producción", "agentes IA activos", "modelos con retorno"],
     trustResearch:
       "Evaluamos cada modelo con tus datos reales. Publicamos papers, no promesas.",
     ctaPrimary: "Agenda tu diagnóstico de 30 min",
@@ -487,7 +487,7 @@ export const en: Dict = {
     titlePre: "Turn your data into results with ",
     subheadline:
       "AI that works on your real data, not a demo. We start with a 30-minute diagnosis — and if we can't help you, we tell you before you spend.",
-    rotator: ["AI in production", "agents that work 24/7", "models that generate returns"],
+    rotator: ["AI in production", "AI agents at work", "models that deliver"],
     trustResearch:
       "We evaluate every model on your real data. We publish papers, not promises.",
     ctaPrimary: "Book your 30-min diagnosis",

@@ -77,8 +77,11 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es" className="dark">
-      <body className={`${openSans.variable} ${lato.variable} ${jetbrainsMono.variable} font-sans antialiased`}>
+    <html lang="es" className="dark" suppressHydrationWarning>
+      <body
+        suppressHydrationWarning
+        className={`${openSans.variable} ${lato.variable} ${jetbrainsMono.variable} font-sans antialiased`}
+      >
         <LanguageProvider>
           <SmoothScrollProvider>{children}</SmoothScrollProvider>
           <SeoManager />

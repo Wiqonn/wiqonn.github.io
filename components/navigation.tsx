@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useRef } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { Menu, X } from "lucide-react"
@@ -34,7 +34,7 @@ function LanguageToggle() {
           aria-label={opt.aria}
           className={`h-11 min-w-11 px-3 rounded-full text-xs font-bold uppercase tracking-wide transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
             lang === opt.value
-              ? "bg-gradient-wiqonn text-[#0A0E1A]"
+              ? "bg-primary/10 text-primary ring-1 ring-inset ring-primary/35"
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
@@ -50,7 +50,7 @@ export function Navigation() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
-  const [lastScrollY, setLastScrollY] = useState(0)
+  const lastScrollY = useRef(0)
 
   const links: { label: string; href: string }[] = [
     { label: t.nav.links[0], href: "/" },
@@ -64,27 +64,27 @@ export function Navigation() {
       const currentScrollY = window.scrollY
 
       // Show/hide based on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+      if (currentScrollY > lastScrollY.current && currentScrollY > 100) {
         setIsVisible(false)
       } else {
         setIsVisible(true)
       }
 
-      setLastScrollY(currentScrollY)
+      lastScrollY.current = currentScrollY
       setIsScrolled(currentScrollY > 20)
     }
 
     window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
-  }, [lastScrollY])
+  }, [])
 
   return (
     <header
       className={`fixed top-0 inset-x-0 z-50 transition-all duration-300 ${
         isVisible ? "translate-y-0" : "-translate-y-full"
-      } ${isScrolled ? "bg-background-navy/95 border-b border-border/50 shadow-lg shadow-black/20" : "bg-transparent"}`}
+      } ${isScrolled ? "bg-background-navy/80 border-b border-white/10 shadow-lg shadow-black/20 backdrop-blur-xl" : "bg-transparent"}`}
     >
-      <nav className="container mx-auto px-4 lg:px-8 h-20 flex items-center justify-between gap-4">
+      <nav className="mx-auto flex h-20 w-full max-w-[1440px] items-center justify-between gap-3 px-4 lg:px-8">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Wiqonn">
           <Image
@@ -92,24 +92,26 @@ export function Navigation() {
             alt="Wiqonn"
             width={150}
             height={60}
-            className="w-auto h-12 md:h-[68px] object-contain"
+            priority
+            loading="eager"
+            className="h-12 w-auto object-contain lg:h-14"
           />
         </Link>
 
         {/* Desktop links */}
-        <div className="hidden lg:flex items-center gap-8">
+        <div className="hidden shrink-0 items-center gap-6 lg:flex xl:gap-8">
           {links.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary rounded-sm"
+              className="nav-link-cinematic rounded-sm text-sm font-medium text-muted-foreground transition-colors hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary"
             >
               {link.label}
             </Link>
           ))}
         </div>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 xl:gap-3">
           {/* Language toggle (desktop) */}
           <div className="hidden md:block">
             <LanguageToggle />
@@ -119,7 +121,8 @@ export function Navigation() {
           <BookingButton
             size="sm"
             label={t.nav.cta}
-            className="hidden md:inline-flex bg-gradient-wiqonn hover:opacity-90 transition-all text-background font-semibold h-10 px-4"
+            variant="outline"
+            className="hidden h-10 whitespace-nowrap border-primary/35 bg-primary/[0.06] px-4 font-semibold text-foreground transition-colors hover:border-primary/60 hover:bg-primary/10 md:inline-flex"
           />
 
           {/* Mobile menu button */}
@@ -154,7 +157,8 @@ export function Navigation() {
               <BookingButton
                 size="sm"
                 label={t.nav.cta}
-                className="bg-gradient-wiqonn hover:opacity-90 transition-all text-background font-semibold h-10 px-4"
+                variant="outline"
+                className="h-10 border-primary/35 bg-primary/[0.06] px-4 font-semibold text-foreground transition-colors hover:border-primary/60 hover:bg-primary/10"
               />
             </div>
           </div>

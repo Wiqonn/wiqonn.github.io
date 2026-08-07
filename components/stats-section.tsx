@@ -21,10 +21,7 @@ function easeOutCubic(t: number): number {
 
 /** Live `prefers-reduced-motion` subscription (safe on the server). */
 function usePrefersReducedMotion(): boolean {
-  const [reduced, setReduced] = useState<boolean>(() => {
-    if (typeof window === "undefined") return false
-    return window.matchMedia("(prefers-reduced-motion: reduce)").matches
-  })
+  const [reduced, setReduced] = useState(false)
 
   useEffect(() => {
     const mq = window.matchMedia("(prefers-reduced-motion: reduce)")
