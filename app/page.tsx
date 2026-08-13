@@ -31,7 +31,7 @@ const jsonLd = {
   email: "contact@wiqonn.com",
   priceRange: "$$",
   description:
-    "AI lab de datos y software en Barranquilla, Colombia. Auditamos, construimos y operamos soluciones de IA para empresas de todo tipo en todo el mundo.",
+    "Laboratorio de investigación e ingeniería aplicada en IA en Barranquilla, Colombia. Desarrollamos sistemas de IA a la medida para organizaciones de cualquier tamaño en todo el mundo.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Barranquilla",
@@ -51,12 +51,17 @@ const jsonLd = {
   knowsAbout: [
     "Inteligencia Artificial",
     "Machine Learning",
-    "LLM/RAG",
+    "Custom AI Models",
+    "Large Language Models",
+    "Multimodal AI",
+    "Vision-Language Models",
+    "RAG",
     "Computer Vision",
-    "AI Agents",
+    "Model Evaluation",
     "Business Intelligence",
     "MLOps",
     "Cloud Infrastructure",
+    "Edge AI",
     "IoT",
   ],
   hasOfferCatalog: {
@@ -70,7 +75,7 @@ const jsonLd = {
           "@id": `${SITE_URL}/#service-ai`,
           name: "IA y Machine Learning",
           description:
-            "Agentes de IA, LLM/RAG, visión por computador y modelos predictivos a la medida.",
+            "Modelos predictivos, LLMs, IA multimodal y visión por computador desarrollados y adaptados a la medida.",
         },
       },
       {

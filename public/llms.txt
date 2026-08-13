@@ -1,42 +1,44 @@
 # Wiqonn
 
-> AI lab of data and software based in Barranquilla, Colombia. We audit, build,
-> fine-tune and operate AI for companies of any size, anywhere in the world —
-> fixed price in writing, results measured from day one.
+> Applied AI research and engineering lab based in Barranquilla, Colombia. We
+> research, adapt, train, evaluate and deploy custom AI systems for organizations
+> of every size, anywhere in the world.
 
 ## Who we are
 
-- AI lab operated from Barranquilla, Colombia, working worldwide in Spanish and English.
-- Full-stack coverage: from raw data to production systems (AI, data, cloud, IoT, embedded).
-- Applied research embedded in every delivery: we publish and evaluate models with academic rigor.
+- Applied AI lab operated from Barranquilla, Colombia, working worldwide in Spanish and English.
+- One team spans model research, data, evaluation, product engineering and production deployment.
+- Full-stack coverage from raw data to cloud, on-premise, edge and embedded AI systems.
 - We build, fine-tune and deploy AI on our own hardware: DGX Spark (Blackwell GB10) and Apple Silicon, keeping client data private and on-premise.
 
 ## What we do
 
-- Custom AI models: machine learning models built from scratch and trained on your data (predictive models, classification, forecasting, anomaly detection).
-- Custom LLM fine-tuning: fine-tuning open models (e.g. SmolLM3-3B, Llama) with LoRA and 4-bit NVFP4/MXFP8 quantization on Blackwell GPUs — private models trained on your own data.
-- Custom AI agents: autonomous agents that automate workflows, answer customers and operate 24/7, trained and grounded on your company's data.
+- Custom and domain-specific models: we select, adapt, fine-tune or train models according to the problem, data and operating environment.
+- Language and multimodal AI: LLMs, vision-language models, document intelligence, speech and private knowledge systems.
+- Custom LLM fine-tuning: fine-tuning open models (e.g. SmolLM3-3B, Llama) with LoRA and 4-bit NVFP4/MXFP8 quantization on Blackwell GPUs.
 - LLM/RAG applications: document Q&A, knowledge management, semantic search, retrieval-augmented generation in Spanish and English.
 - Computer vision: defect detection, OCR/document processing, visual inspection, medical imaging.
-- Business Intelligence: executive dashboards, automated reports, real-time KPI tracking.
-- Cloud and Infrastructure: multi-cloud architecture, high availability, production-grade security, MLOps pipelines.
-- Custom Development: web and mobile apps, APIs, integration with your existing systems.
+- Forecasting and decision systems: predictive models, anomaly detection, recommendations, risk and optimization.
+- Model evaluation and safety: domain evals, robustness, latency, inference cost, red teaming and guardrails.
+- AI infrastructure and MLOps: data pipelines, model serving, monitoring, cloud, on-premise and edge deployment.
+- AI product engineering: web and mobile apps, APIs and integration with existing systems.
+- Agentic systems: tool-using and orchestrated workflows when that architecture fits the use case.
 
 ## Applied research
 
 - Model evaluation with real data and academic rigor — we test claims before we ship.
 - Benchmarks on local inference: vLLM-MLX on Apple Silicon (464 tok/s on M4 Max, 200+ models, zero API cost).
 - Fine-tuning pipelines on DGX Spark: NVFP4 (E2M1) and MXFP8 training with Transformer Engine, TensorRT-LLM serving.
-- If it doesn't work on your data, we tell you before you spend.
+- We document model performance and limitations before recommending a larger implementation.
 
 ## How we work
 
-- AI Readiness Audit: use-case prioritization by ROI and a roadmap with phases and costs.
-- Outcome-based pilots: KPI defined and measurable from day one, proven with real metrics before scaling.
+- AI Opportunity & Feasibility Assessment: problem framing, data readiness, technical options, risks and a staged roadmap.
+- Evidence-led validation: representative data, a baseline, acceptance criteria and clear decision gates before scaling.
 - Managed AI Ops: managed operations, monitoring, retraining and model evolution with SLA.
 - Fractional AI Leadership: AI direction and CTO-as-a-service.
 - IP / White-Label: validated AI solutions licensed for integrators and consultancies.
-- Fixed price in writing, no hidden costs, no lock-in.
+- Scope, deliverables and price defined in writing for each phase, with no contractual lock-in.
 
 ## Contact
 

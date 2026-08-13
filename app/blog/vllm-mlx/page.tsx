@@ -826,14 +826,14 @@ export default function VllmMlxPost() {
                     Want private AI in your company?
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                    We build local, private AI systems for your company — fixed price
-                    in writing, KPI measured from day one. Book a free 30-minute diagnosis.
+                    We build local, private AI systems with scope, price and an evidence plan
+                    defined in writing for each phase. Book a free 30-minute technical conversation.
                   </p>
                   <div className="flex flex-wrap justify-center gap-4">
                     <BookingButton className="btn-gradient glow-cyan hover:scale-105 transition-all text-base px-8 h-14 text-[#0A0E1A] font-semibold" />
                     <Button size="lg" variant="outline" asChild className="h-14 px-8 text-lg">
-                      <a href="/ai-readiness-checklist-en.pdf" download>
-                        Get the AI Readiness Checklist
+                      <a href="/#services">
+                        Explore our AI capabilities
                       </a>
                     </Button>
                   </div>

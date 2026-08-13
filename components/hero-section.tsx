@@ -48,9 +48,9 @@ export function HeroSection() {
   return (
     <div className="hero-cinematic-content">
       <div ref={copyRef} className="hero-cinematic-copy">
-        <div className="hero-lab-mark" aria-label="Wiqonn AI Lab, Barranquilla, Colombia">
+        <div className="hero-lab-mark" aria-label={t.hero.labMark}>
           <span aria-hidden="true" />
-          AI LAB / BARRANQUILLA, CO
+          {t.hero.labMark}
         </div>
 
         <h1 className="hero-cinematic-title text-balance">
@@ -76,14 +76,14 @@ export function HeroSection() {
         <div className="hero-cinematic-meta">
           <p>{t.hero.subheadline}</p>
           <span className="hero-index" aria-hidden="true">
-            01—04
+            01-04
           </span>
         </div>
 
         <div className="hero-cinematic-actions">
           <BookingButton className="btn-gradient hero-primary-action" />
           <Button variant="outline" className="hero-secondary-action" asChild>
-            <a href={t.hero.checklistHref} download>
+            <a href={t.hero.checklistHref}>
               <ArrowRight aria-hidden="true" />
               {t.hero.ctaSecondary}
             </a>

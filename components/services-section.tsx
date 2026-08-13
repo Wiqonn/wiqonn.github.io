@@ -3,8 +3,8 @@
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import {
-  BarChart3,
-  Bot,
+  Brain,
+  Eye,
   Cloud,
   Code,
   ArrowRight,
@@ -20,14 +20,14 @@ export function ServicesSection() {
 
   const services = [
     {
-      icon: Bot,
+      icon: Brain,
       title: t.services.items[0].title,
       tagline: t.services.items[0].tagline,
       description: t.services.items[0].description,
       results: t.services.items[0].results,
     },
     {
-      icon: BarChart3,
+      icon: Eye,
       title: t.services.items[1].title,
       tagline: t.services.items[1].tagline,
       description: t.services.items[1].description,

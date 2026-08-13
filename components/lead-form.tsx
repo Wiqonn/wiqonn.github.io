@@ -62,7 +62,7 @@ export function LeadForm() {
           access_key: WEB3FORMS_ACCESS_KEY,
           ...values,
           subject: t.cta.emailSubject,
-          from_name: "Wiqonn — sitio web",
+          from_name: "Wiqonn - sitio web",
         }),
       })
       const data = await response.json()

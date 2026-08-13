@@ -3,8 +3,8 @@
 import { useEffect, useRef, useState } from "react"
 import { useT } from "@/components/language-provider"
 
-// Compromisos de servicio verificables: diagnóstico 30 min, respuesta 24 h,
-// propuesta 48 h hábiles, KPI desde el día uno. Cero cifras inventadas.
+// Compromisos de servicio verificables: conversación 30 min, respuesta 24 h,
+// propuesta 48 h hábiles y un plan de evidencia por validación.
 const STATS = [
   { value: "30", suffix: " min", animate: false },
   { value: "24", suffix: " h", animate: false },
@@ -165,7 +165,7 @@ export function StatsSection() {
 
           {STATS.map((stat, index) => (
             <div
-              key={t.stats.labels[index]}
+              key={index}
               ref={(element: HTMLDivElement | null) => {
                 revealRefs.current[index] = element
               }}

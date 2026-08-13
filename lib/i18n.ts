@@ -14,9 +14,9 @@ export type Lang = "es" | "en"
 
 export const es = {
   seo: {
-    title: "Consultoría de IA en Colombia | Implementación de IA | Wiqonn",
+    title: "Laboratorio de IA aplicada | Sistemas de IA a la medida | Wiqonn",
     description:
-      "AI lab en Barranquilla, Colombia. Implementamos IA, ML, agentes y BI para empresas de todo tipo en todo el mundo. Soporte local, consulta gratis.",
+      "Wiqonn investiga, adapta, entrena, evalúa y despliega sistemas de IA a la medida para organizaciones de cualquier tamaño en todo el mundo.",
     keywords:
       "consultoría de IA Colombia, implementación de IA, inteligencia artificial, AI lab, applied research IA, investigación aplicada en IA, modelos de IA personalizados, fine-tuning de LLM, modelos de lenguaje grandes, agentes de IA personalizados, machine learning, deep learning, LLM/RAG, visión por computador, MLOps, business intelligence, dashboards, cloud computing, infraestructura cloud, automatización de procesos, análisis de datos, Barranquilla, Colombia, nearshore AI",
     locale: "es_CO",
@@ -28,115 +28,116 @@ export const es = {
     langLabel: "Cambiar idioma",
   },
   hero: {
-    titlePre: "Convierte tus datos en resultados con ",
+    labMark: "LABORATORIO DE IA APLICADA / BARRANQUILLA, CO",
+    titlePre: "IA construida para ",
     subheadline:
-      "IA que funciona con tus datos reales, no con un demo. Empezamos con un diagnóstico de 30 minutos y, si no podemos ayudarte, te lo decimos antes de que gastes.",
-    rotator: ["IA en producción", "agentes IA activos", "modelos con retorno"],
+      "Los modelos generales son potentes, pero tus retos más difíciles viven en datos propios, flujos especializados y restricciones reales. Investigamos, adaptamos y desplegamos el sistema de IA que ese contexto exige.",
+    rotator: ["tu dominio", "tus datos", "el mundo real"],
     trustResearch:
-      "Evaluamos cada modelo con tus datos reales. Publicamos papers, no promesas.",
-    ctaPrimary: "Agenda tu diagnóstico de 30 min",
-    ctaSecondary: "Descargar AI Readiness Checklist",
-    checklistHref: "/ai-readiness-checklist-es.pdf",
+      "Un mismo equipo lleva cada sistema de la investigación a producción.",
+    ctaPrimary: "Hablemos de tu caso de uso",
+    ctaSecondary: "Explorar nuestras capacidades",
+    checklistHref: "/#services",
     emailBody: "Hola Wiqonn, quiero agendar un diagnóstico de 30 minutos sobre IA para mi empresa",
     emailSubject: "Diagnóstico de IA · 30 min",
   },
   value: {
     eyebrow: "Qué hace Wiqonn",
-    titlePre: "Convertimos tus datos en productos de IA que generan ",
-    titleAccent: "resultados",
+    titlePre: "Investigación y producto, ",
+    titleAccent: "sin paredes entre ellos",
     description:
-      "De la analítica a la IA en producción y hasta el hardware: ML, LLM y RAG, visión por computador, agentes de IA, MLOps, BI, nube, IoT y sistemas embebidos, bajo un mismo techo.",
+      "Desarrollamos la capacidad completa detrás de un sistema de IA diferenciado: modelos, datos, evaluación, infraestructura e integración en el entorno donde debe funcionar.",
     pillars: [
       {
-        title: "De los datos a la producción",
+        title: "El modelo correcto para el problema",
         description:
-          "Empezamos donde están tus datos y llegamos hasta el producto en producción: modelos de ML y LLM/RAG, visión por computador, agentes de IA, MLOps, BI, nube, IoT y sistemas embebidos. Sin costuras entre etapas ni equipos dispersos.",
+          "Comparamos modelos disponibles, los adaptamos o afinamos cuando mejora el desempeño y entrenamos modelos específicos cuando los datos y el caso lo justifican.",
         highlights: [
-          "ML, LLM/RAG y visión por computador",
-          "Agentes de IA que operan de forma continua",
-          "MLOps, BI y arquitectura de datos",
-          "Nube, IoT y hardware embebido",
+          "LLMs y modelos multimodales",
+          "Visión por computador y percepción",
+          "Pronóstico y sistemas de decisión",
+          "Agentes solo cuando aportan valor",
         ],
       },
       {
-        title: "Investigación aplicada en cada proyecto",
+        title: "Evaluación antes de escalar",
         description:
-          "Investigación aplicada integrada a la entrega: publicamos y evaluamos cada modelo con rigor académico. Si no funciona con tus datos, lo decimos antes de que gastes.",
+          "Acordamos una línea base, datos representativos, criterios de aceptación y límites operativos. Cada fase termina con evidencia para avanzar, refinar o detener.",
         highlights: [
-          "Investigación aplicada en cada entrega",
-          "Papers publicados y metodologías validadas por pares",
-          "Evaluación rigurosa de modelos con datos reales",
-          "Sin promesas vacías de marketing",
+          "Calidad y severidad de errores",
+          "Robustez, latencia y costo de inferencia",
+          "Seguridad e impacto en el flujo de trabajo",
+          "Limitaciones documentadas",
         ],
       },
       {
-        title: "IA para humanos, en tu idioma y tu mercado",
+        title: "Ingeniería para el mundo real",
         description:
-          "Tecnología al servicio de personas y negocio, con vocabulario claro y soporte local. AI lab en Barranquilla, Colombia: entendemos tu mercado y trabajamos en tu idioma.",
+          "Llevamos el sistema a tu nube, infraestructura local o edge, lo integramos con tu operación y transferimos el conocimiento para que mantengas el control.",
         highlights: [
-          "Atención cercana, en español",
-          "Precios accesibles frente a agencias de USA y Europa",
-          "Diseñamos para personas, no solo para modelos",
-          "Soporte local en Barranquilla, Colombia",
+          "MLOps y optimización de inferencia",
+          "Cloud, on-premise, edge e IoT",
+          "Código, artefactos y documentación acordados",
+          "Operación continua opcional",
         ],
       },
     ],
   },
   services: {
-    eyebrow: "Lo que construimos",
-    titlePre: "IA que ",
-    titleAccent: "genera retorno",
+    eyebrow: "De la investigación al sistema",
+    titlePre: "IA a la medida, lista para ",
+    titleAccent: "el mundo real",
     description:
-      "Cada solución que construimos tiene un solo trabajo: hacer mejor tu negocio. Si no aporta valor, no la lanzamos.",
+      "Elegimos la arquitectura según el problema y construimos los modelos, evaluaciones, sistemas de datos e infraestructura que necesita para funcionar.",
     inquirySubject: "Consulta sobre",
     learnMore: "Explorar servicios",
     items: [
       {
-        title: "IA y Machine Learning",
-        tagline: "Tareas repetitivas que se hacen solas. Tu equipo, enfocado en lo que vende.",
+        title: "IA de lenguaje y multimodal",
+        tagline: "Modelos que entienden tu dominio, no solo el internet público.",
         description:
-          "IA personalizada que hace el trabajo para el que no tienes tiempo: desde agentes inteligentes hasta modelos predictivos.",
+          "Adaptamos, afinamos y desplegamos modelos de lenguaje y multimodales alrededor de tus datos, conocimiento y restricciones.",
         results: [
-          "Agentes de IA que trabajan las 24 horas",
-          "Modelos predictivos a la medida de tus datos",
-          "Visión por computador para calidad y automatización",
-          "Integraciones LLM que realmente funcionan",
+          "LLMs y modelos visión-lenguaje",
+          "RAG privado e inteligencia documental",
+          "Fine-tuning y post-training",
+          "Sistemas agentic cuando el caso lo exige",
         ],
       },
       {
-        title: "Business Intelligence",
-        tagline: "Decide con números, no con intuición — en tiempo real.",
+        title: "Visión y sistemas predictivos",
+        tagline: "IA que percibe, anticipa y apoya mejores decisiones.",
         description:
-          "Dashboards y analítica que te dicen qué está pasando, por qué y qué hacer al respecto.",
+          "Modelos para imágenes, video, señales y datos tabulares, diseñados para tu entorno operativo.",
         results: [
-          "Dashboards ejecutivos en tiempo récord",
-          "Reportes automatizados que ahorran horas",
-          "Seguimiento de KPIs en tiempo real",
-          "Arquitectura de datos que escala",
+          "Detección, segmentación, OCR e inspección",
+          "Pronóstico y detección de anomalías",
+          "Recomendación, riesgo y optimización",
+          "Inferencia en cloud, on-premise o edge",
         ],
       },
       {
-        title: "Cloud e Infraestructura",
-        tagline: "Infraestructura que aguanta tu crecimiento sin explotar el presupuesto.",
+        title: "Datos, evaluación y MLOps",
+        tagline: "La capa que convierte un modelo prometedor en un sistema confiable.",
         description:
-          "Infraestructura segura, escalable y construida para cargas de IA, sin la complejidad.",
+          "Construimos pipelines de datos, evaluaciones específicas al dominio y operación de modelos para producción.",
         results: [
-          "Flexibilidad multi-cloud",
-          "Alta disponibilidad y uptime",
-          "Seguridad y cumplimiento listos para producción",
-          "Optimizada en costo y rendimiento",
+          "Datasets, líneas base y evals reproducibles",
+          "Serving y optimización de inferencia",
+          "Monitoreo de calidad, drift y costo",
+          "Seguridad, guardrails y observabilidad",
         ],
       },
       {
-        title: "Desarrollo a la medida",
-        tagline: "Productos que llegan a producción y trabajan para ti, con IA integrada.",
+        title: "Ingeniería de productos de IA",
+        tagline: "El modelo, la aplicación y la infraestructura como un solo sistema.",
         description:
-          "Apps web, móviles y plataformas diseñadas alrededor de cómo trabajas, con IA integrada.",
+          "Integramos la capacidad de IA en productos, APIs y flujos de trabajo que tu equipo puede adoptar y operar.",
         results: [
-          "Apps en React y React Native",
-          "Sistemas backend escalables",
-          "Diseño de APIs limpio",
-          "Pipelines de MLOps y despliegue",
+          "Aplicaciones web, móviles y plataformas",
+          "APIs y sistemas backend escalables",
+          "Cloud, IoT y sistemas embebidos",
+          "Despliegue, transferencia y soporte",
         ],
       },
     ],
@@ -157,7 +158,7 @@ export const es = {
     },
     streams: {
       audit: {
-        title: "AI Readiness Audit",
+        title: "Evaluación de oportunidad y viabilidad de IA",
         price: "Proyecto",
         priceNote: "según alcance",
         description:
@@ -178,7 +179,7 @@ export const es = {
           "Operación gestionada de tus soluciones de IA: monitorización, reentrenamiento, evolución del modelo y soporte continuo. El cerebro de tu operación, sin contratar un equipo interno.",
         bullets: [
           "Monitorización y reentrenamiento de modelos",
-          "Agentes de IA operando de forma continua",
+          "Rendimiento y confiabilidad del sistema",
           "Soporte prioritario con SLA",
           "Evolución continua de la solución",
         ],
@@ -197,15 +198,15 @@ export const es = {
         ],
       },
       pilotos: {
-        title: "Pilotos Outcome-Based",
+        title: "Validación guiada por evidencia",
         price: "Proyecto",
         priceNote: "según alcance",
         description:
-          "Pilotos con compromiso de resultado: definimos el KPI, construimos la solución y demostramos valor con métricas reales antes de escalar.",
+          "Validamos la viabilidad técnica y operativa con datos representativos, una línea base y criterios de aceptación acordados antes de escalar.",
         bullets: [
-          "KPI definido y medible desde el día uno",
-          "Entregas en ciclos cortos",
-          "Resultados demostrados antes de escalar",
+          "Plan de evidencia acordado antes de construir",
+          "Evaluación del modelo y del sistema",
+          "Decisión clara: avanzar, refinar o detener",
         ],
       },
       ip: {
@@ -237,9 +238,9 @@ export const es = {
       eyebrow: "El motor de conversión",
       title: "Cada auditoría termina donde empieza el ingreso recurrente",
       steps: {
-        audit: { label: "AI Readiness Audit", sub: "Proyecto · según alcance" },
+        audit: { label: "Evaluación de viabilidad", sub: "Proyecto · según alcance" },
         plan: { label: "Plan + propuesta", sub: "ROI y roadmap priorizado" },
-        pilot: { label: "Piloto outcome-based", sub: "Proyecto · resultado demostrado" },
+        pilot: { label: "Validación con evidencia", sub: "Proyecto · decisión informada" },
         retainer: { label: "Retainer gestionado", sub: "Ingreso recurrente · MRR" },
       },
       footer:
@@ -254,7 +255,7 @@ export const es = {
         research: {
           title: "Investigación real, no marketing",
           description:
-            "Investigación aplicada en IA: LLMs multimodales, visión por computador y sistemas de IA distribuidos. Evaluamos cada promesa de modelo con rigor. Si no funciona con tus datos, lo decimos antes de que gastes.",
+            "Investigación aplicada en IA: LLMs multimodales, visión por computador y sistemas de IA distribuidos. Evaluamos cada promesa de modelo con rigor y documentamos la evidencia antes de recomendar una implementación mayor.",
         },
         fullstack: {
           title: "Full-stack: del dato al hardware",
@@ -264,7 +265,7 @@ export const es = {
         humans: {
           title: "Data and engineering for humans",
           description:
-            "El tagline oficial no es decoración: tecnología al servicio de personas y negocio, con KPIs claros y resultados que se pueden medir.",
+            "El tagline oficial no es decoración: tecnología al servicio de personas y negocio, con criterios claros, evidencia verificable y transferencia de conocimiento.",
         },
         latam: {
           title: "Raíces LatAm, estándar global",
@@ -281,8 +282,8 @@ export const es = {
     labels: [
       "Diagnóstico de 30 minutos, gratis y sin compromiso",
       "Respuesta a tu mensaje en menos de 24 h",
-      "Propuesta por escrito con precio fijo, en 48 h hábiles",
-      "KPI definido y medible desde el día uno en cada piloto",
+      "Propuesta por escrito con alcance y precio por fase, en 48 h hábiles",
+      "Un plan de evidencia acordado antes de cada validación",
     ],
   },
   research: {
@@ -292,37 +293,37 @@ export const es = {
     description: "Soluciones de IA de punta a punta diseñadas para resolver problemas de negocio reales.",
     capabilities: [
       {
-        title: "Modelos de IA personalizados",
+        title: "Modelos a la medida y específicos al dominio",
         description:
-          "Construimos y desplegamos modelos de machine learning a la medida de tus necesidades de negocio, desde analítica predictiva hasta sistemas de clasificación.",
-        applications: ["Pronóstico de demanda", "Evaluación de riesgo", "Segmentación de clientes"],
+          "Seleccionamos, adaptamos, afinamos o entrenamos modelos según lo que exijan tus datos, dominio y entorno operativo.",
+        applications: ["Fine-tuning", "Post-training", "Modelos predictivos"],
       },
       {
-        title: "Visión por computador",
+        title: "Visión por computador y percepción",
         description:
           "Soluciones de análisis de imagen y video para control de calidad, procesamiento de documentos, imágenes médicas e inspección visual.",
         applications: ["Detección de defectos", "OCR de documentos", "Búsqueda visual"],
       },
       {
-        title: "Agentes de IA y LLMs",
+        title: "LLMs e IA multimodal",
         description:
-          "Agentes conversacionales inteligentes y modelos de lenguaje que automatizan atención al cliente, análisis de documentos y gestión del conocimiento.",
-        applications: ["Bots de servicio al cliente", "Q&A sobre documentos", "Generación de contenido"],
+          "Modelos de lenguaje y multimodales para razonamiento específico al dominio, inteligencia documental, voz y tareas visión-lenguaje.",
+        applications: ["LLMs de dominio", "RAG privado", "Modelos visión-lenguaje"],
       },
       {
-        title: "Inteligencia de negocio",
+        title: "Pronóstico y sistemas de decisión",
         description:
-          "Dashboards interactivos y plataformas de analítica que transforman datos crudos en información accionable para mejores decisiones.",
-        applications: ["Dashboards ejecutivos", "Seguimiento de KPIs", "Análisis de tendencias"],
+          "Modelos que convierten datos operativos en pronósticos, alertas, recomendaciones y decisiones mejor informadas.",
+        applications: ["Pronóstico", "Anomalías", "Riesgo y optimización"],
       },
       {
-        title: "Automatización de procesos",
+        title: "Evaluación y seguridad de modelos",
         description:
-          "Automatización integral de tareas y flujos repetitivos, integrando IA para manejar puntos de decisión complejos.",
-        applications: ["Pipelines de datos", "Generación de reportes", "Flujos de aprobación"],
+          "Evaluaciones reproducibles sobre datos representativos para medir calidad, robustez, seguridad, latencia y costo.",
+        applications: ["Evals de dominio", "Red teaming", "Guardrails"],
       },
       {
-        title: "MLOps y despliegue",
+        title: "Infraestructura de IA y MLOps",
         description:
           "Infraestructura de nivel producción para desplegar, monitorear y escalar tus soluciones de IA con confiabilidad y rendimiento.",
         applications: ["Serving de modelos", "Pruebas A/B", "Monitoreo de rendimiento"],
@@ -377,11 +378,11 @@ export const es = {
   },
   cta: {
     badge: "Hablemos",
-    titlePre: "¿Funciona la IA con tus datos? ",
-    titleAccent: "Te lo decimos en 30 min",
+    titlePre: "Tu problema merece la arquitectura ",
+    titleAccent: "correcta",
     subheadline:
-      "Cuéntanos tu reto en 30 minutos. Te diremos con honestidad si podemos ayudarte, cómo — y si no, también. Antes de que gastes.",
-    emailButton: "Agendar mi diagnóstico",
+      "En 30 minutos revisamos el problema, los datos disponibles y las restricciones reales. Te diremos qué conviene validar primero y si somos el equipo adecuado.",
+    emailButton: "Hablar de mi caso de uso",
     emailBody: "Hola Wiqonn, quiero agendar un diagnóstico de 30 minutos sobre IA para mi empresa",
     emailSubject: "Diagnóstico de IA · 30 min",
     trust: "Respuesta en menos de 24 h · Sin compromiso · Propuesta en 48 h hábiles",
@@ -407,10 +408,10 @@ export const es = {
     eyebrow: "Nuestra palabra, por escrito",
     title: "Trabajar con nosotros no es una apuesta",
     items: [
-      "Precio fijo por escrito: lo que cotizamos es lo que pagas.",
-      "Si no funciona con tus datos, te lo decimos antes de que gastes.",
+      "Alcance, entregables y precio definidos por escrito para cada fase.",
+      "Evaluación con datos representativos antes de una inversión mayor.",
       "Propuesta en 48 h hábiles desde la primera conversación.",
-      "Respuesta a tu mensaje en menos de 24 h.",
+      "Sin lock-in contractual y con transferencia de conocimiento.",
     ],
   },
   faq: {
@@ -418,20 +419,24 @@ export const es = {
     title: "Lo que nos preguntan antes de empezar",
     items: [
       {
-        q: "¿Cuánto cuesta implementar IA en mi empresa?",
-        a: "El costo depende del alcance y del caso de uso. Empezamos con un AI Readiness Audit (proyecto, según alcance) que prioriza casos por ROI y entrega un roadmap con fases y costos antes de que inviertas. Precio fijo por escrito, sin costos ocultos.",
+        q: "¿Cuánto cuesta un sistema de IA a la medida?",
+        a: "Depende del problema, la preparación de los datos, las integraciones y el grado de personalización del modelo. Empezamos con una fase acotada de descubrimiento o viabilidad y entregamos una propuesta escrita con entregables, supuestos, hitos y precio definido por fase. Sin costos ocultos.",
       },
       {
-        q: "¿En cuánto tiempo veo resultados?",
-        a: "La propuesta llega en 48 h hábiles. Los pilotos outcome-based trabajan en ciclos cortos con un KPI definido desde el día uno; si la solución no funciona con tus datos, te lo decimos antes de que gastes.",
+        q: "¿Cuándo sabremos si funciona?",
+        a: "Recibes una propuesta escrita en 48 h hábiles. Después trabajamos en ciclos cortos y evaluamos el sistema con datos representativos, una línea base y criterios de aceptación acordados. Cada fase termina con una recomendación clara para avanzar, refinar o detener antes de una inversión mayor.",
       },
       {
-        q: "¿Qué tamaño de empresas atienden?",
-        a: "Empresas de todo tipo en cualquier parte del mundo. Cubrimos del dato al hardware: IA/ML, BI, cloud, IoT y desarrollo a la medida bajo un mismo techo.",
+        q: "¿Con qué tamaño de organizaciones trabajan?",
+        a: "Con organizaciones de cualquier tamaño y en cualquier parte del mundo, desde startups y equipos de investigación hasta empresas en crecimiento, grandes corporaciones e instituciones públicas. El encaje depende del problema, los datos y el entorno de despliegue, no del número de empleados.",
+      },
+      {
+        q: "¿Solo construyen agentes de IA?",
+        a: "No. Los agentes son una arquitectura posible, no nuestra categoría principal. Desarrollamos y adaptamos modelos predictivos, LLMs, modelos multimodales y visión por computador, junto con las evaluaciones, los sistemas de datos y la infraestructura necesarios para producción. Elegimos, afinamos o entrenamos el modelo según lo que el problema justifique.",
       },
       {
         q: "¿Quedaremos dependientes de ustedes?",
-        a: "No. Entregamos código, documentación y acceso a la infraestructura; el retainer es opcional y se cancela cuando quieras, sin lock-in. La mayoría lo mantiene porque los modelos necesitan evolucionar, no porque estén atados.",
+        a: "No hay lock-in contractual. Entregamos el código, la documentación, los artefactos de modelo y los accesos de infraestructura acordados. También revelamos antes de implementar cualquier dependencia de modelos, nube o hardware de terceros. El soporte continuo es opcional.",
       },
       {
         q: "¿Qué pasa con la seguridad de nuestros datos?",
@@ -439,19 +444,19 @@ export const es = {
       },
       {
         q: "¿Cómo empezamos?",
-        a: "Con un diagnóstico de 30 minutos, gratis y sin compromiso: te escuchamos, te decimos con honestidad si podemos ayudarte y cómo, y en 48 h hábiles recibes una propuesta por escrito con precio fijo y alcance.",
+        a: "Con una conversación técnica gratuita de 30 minutos. Revisamos el problema, los datos disponibles y las restricciones operativas. Si no somos el equipo adecuado, te lo decimos. En 48 h hábiles recibes una recomendación escrita y, cuando aplica, una propuesta con alcance, entregables, supuestos, calendario y precio.",
       },
     ],
   },
   footer: {
     description:
-      "Soluciones de IA y tecnología con respaldo de investigación para un impacto real en tu negocio.",
+      "Laboratorio de investigación e ingeniería aplicada en IA. De los modelos y los datos a sistemas que funcionan en el mundo real.",
     servicesTitle: "Servicios",
     services: [
-      "Business Intelligence",
-      "IA y Machine Learning",
-      "Infraestructura Cloud",
-      "Desarrollo Full-Stack",
+      "IA de lenguaje y multimodal",
+      "Visión y sistemas predictivos",
+      "Evaluación y MLOps",
+      "Ingeniería de productos de IA",
     ],
     companyTitle: "Compañía",
     company: ["Nosotros", "Equipo", "Carreras"],
@@ -470,9 +475,9 @@ export type Dict = typeof es
 
 export const en: Dict = {
   seo: {
-    title: "AI Consulting for Mid-Sized Companies | Nearshore AI | Wiqonn",
+    title: "Applied AI Research Lab | Custom AI Systems | Wiqonn",
     description:
-      "AI lab in Barranquilla, Colombia. We implement AI, ML, agents and BI for companies of any size, anywhere in the world. Local support, free consultation call.",
+      "Wiqonn researches, adapts, trains, evaluates and deploys custom AI systems for organizations of every size, anywhere in the world.",
     keywords:
       "AI consulting Colombia, AI implementation, artificial intelligence, AI lab, applied AI research, custom AI models, LLM fine-tuning, large language models, custom AI agents, machine learning, deep learning, RAG, computer vision, MLOps, business intelligence, dashboards, cloud infrastructure, process automation, data analytics, Barranquilla, Colombia, nearshore AI",
     locale: "en_US",
@@ -484,115 +489,116 @@ export const en: Dict = {
     langLabel: "Switch language",
   },
   hero: {
-    titlePre: "Turn your data into results with ",
+    labMark: "APPLIED AI RESEARCH LAB / BARRANQUILLA, CO",
+    titlePre: "AI built around ",
     subheadline:
-      "AI that works on your real data, not a demo. We start with a 30-minute diagnosis — and if we can't help you, we tell you before you spend.",
-    rotator: ["AI in production", "AI agents at work", "models that deliver"],
+      "General-purpose models are powerful, but your hardest problems live in proprietary data, specialized workflows and real operating constraints. We research, adapt and deploy the AI system that context requires.",
+    rotator: ["your domain", "your data", "the real world"],
     trustResearch:
-      "We evaluate every model on your real data. We publish papers, not promises.",
-    ctaPrimary: "Book your 30-min diagnosis",
-    ctaSecondary: "Get the AI Readiness Checklist",
-    checklistHref: "/ai-readiness-checklist-en.pdf",
+      "One team takes every system from research to production.",
+    ctaPrimary: "Discuss your use case",
+    ctaSecondary: "Explore our capabilities",
+    checklistHref: "/#services",
     emailBody: "Hi Wiqonn, I'd like to book a 30-minute AI diagnosis for my company",
     emailSubject: "AI diagnosis · 30 min",
   },
   value: {
     eyebrow: "What Wiqonn Does",
-    titlePre: "We turn your data into AI products that drive ",
-    titleAccent: "results",
+    titlePre: "Research and product, with ",
+    titleAccent: "no walls between them",
     description:
-      "From analytics to production AI and all the way to hardware: ML, LLM and RAG, computer vision, AI agents, MLOps, BI, cloud, IoT and embedded systems, all under one roof.",
+      "We develop the complete capability behind differentiated AI: models, data, evaluation, infrastructure and integration in the environment where it must perform.",
     pillars: [
       {
-        title: "From data to production",
+        title: "The right model for the problem",
         description:
-          "We start where your data lives and go all the way to a production product: ML and LLM/RAG models, computer vision, AI agents, MLOps, BI, cloud, IoT and embedded systems. No seams between stages, no scattered teams.",
+          "We benchmark available models, adapt or fine-tune them when it improves performance, and train purpose-built models when the data and use case justify it.",
         highlights: [
-          "ML, LLM/RAG and computer vision",
-          "AI agents operating around the clock",
-          "MLOps, BI and data architecture",
-          "Cloud, IoT and embedded hardware",
+          "LLMs and multimodal models",
+          "Computer vision and perception",
+          "Forecasting and decision systems",
+          "Agents only when they add value",
         ],
       },
       {
-        title: "Applied research on every project",
+        title: "Evaluate before you scale",
         description:
-          "Applied research embedded in delivery: we publish and evaluate every model with academic rigor. If it doesn't work on your data, we tell you before you spend.",
+          "We agree on a baseline, representative data, acceptance criteria and operating constraints. Every phase ends with evidence to proceed, refine or stop.",
         highlights: [
-          "Applied research in every delivery",
-          "Published papers and peer-reviewed methodologies",
-          "Rigorous model evaluation with real data",
-          "No empty marketing promises",
+          "Quality and error severity",
+          "Robustness, latency and inference cost",
+          "Safety and workflow impact",
+          "Documented limitations",
         ],
       },
       {
-        title: "AI for humans, in your language and your market",
+        title: "Engineering for the real world",
         description:
-          "Technology at the service of people and business, with clear language and local support. An AI lab in Barranquilla, Colombia: we understand your market and work in your language.",
+          "We deploy to your cloud, on-premise infrastructure or edge environment, integrate with operations and transfer the knowledge so you remain in control.",
         highlights: [
-          "Close, personal attention",
-          "Affordable pricing vs. US and European agencies",
-          "We design for people, not just models",
-          "Local support in Barranquilla, Colombia",
+          "MLOps and inference optimization",
+          "Cloud, on-premise, edge and IoT",
+          "Agreed code, artifacts and documentation",
+          "Optional ongoing operations",
         ],
       },
     ],
   },
   services: {
-    eyebrow: "What We Build",
-    titlePre: "AI That ",
-    titleAccent: "Generates Returns",
+    eyebrow: "From research to working systems",
+    titlePre: "Custom AI, engineered for ",
+    titleAccent: "the real world",
     description:
-      "Every solution we build has one job: make your business better. If it doesn't add value, we don't ship it.",
+      "We choose the architecture for the problem, then build the models, evaluations, data systems and infrastructure it needs to perform.",
     inquirySubject: "Inquiry about",
     learnMore: "Explore services",
     items: [
       {
-        title: "AI & Machine Learning",
-        tagline: "Repetitive work that does itself. Your team, focused on what sells.",
+        title: "Language & Multimodal AI",
+        tagline: "Models that understand your domain, not only the public internet.",
         description:
-          "Custom AI that handles the work you don't have time for: from intelligent agents to predictive models.",
+          "We adapt, fine-tune and deploy language and multimodal models around your data, knowledge and constraints.",
         results: [
-          "AI Agents that work around the clock",
-          "Predictive models tailored to your data",
-          "Computer vision for quality & automation",
-          "LLM integrations that actually work",
+          "LLMs and vision-language models",
+          "Private RAG and document intelligence",
+          "Fine-tuning and post-training",
+          "Agentic systems when the use case calls for them",
         ],
       },
       {
-        title: "Business Intelligence",
-        tagline: "Decide with numbers, not gut feel — in real time.",
+        title: "Vision & Predictive Systems",
+        tagline: "AI that perceives, anticipates and supports better decisions.",
         description:
-          "Dashboards and analytics that tell you what's happening, why, and what to do about it.",
+          "Models for images, video, signals and tabular data, designed for your operating environment.",
         results: [
-          "Executive dashboards in record time",
-          "Automated reports that save hours",
-          "Real-time KPI tracking",
-          "Data architecture that scales",
+          "Detection, segmentation, OCR and inspection",
+          "Forecasting and anomaly detection",
+          "Recommendation, risk and optimization",
+          "Cloud, on-premise or edge inference",
         ],
       },
       {
-        title: "Cloud & Infrastructure",
-        tagline: "Infrastructure that scales with you without blowing the budget.",
+        title: "Data, Evaluation & MLOps",
+        tagline: "The layer that turns a promising model into a dependable system.",
         description:
-          "Secure, scalable infrastructure built for AI workloads, without the complexity.",
+          "We build data pipelines, domain-specific evaluations and production operations for AI models.",
         results: [
-          "Multi-cloud flexibility",
-          "High availability and uptime",
-          "Production-ready security & compliance",
-          "Optimized for cost and performance",
+          "Datasets, baselines and reproducible evals",
+          "Serving and inference optimization",
+          "Quality, drift and cost monitoring",
+          "Security, guardrails and observability",
         ],
       },
       {
-        title: "Custom Development",
-        tagline: "Products that ship and work for you, with AI built in.",
+        title: "AI Product Engineering",
+        tagline: "The model, application and infrastructure as one system.",
         description:
-          "Web, mobile and platform applications designed around how you work, with AI built in.",
+          "We integrate AI capabilities into products, APIs and workflows your team can adopt and operate.",
         results: [
-          "Apps in React and React Native",
-          "Scalable backend systems",
-          "Clean API design",
-          "MLOps and deployment pipelines",
+          "Web, mobile and platform applications",
+          "APIs and scalable backend systems",
+          "Cloud, IoT and embedded systems",
+          "Deployment, handover and support",
         ],
       },
     ],
@@ -613,7 +619,7 @@ export const en: Dict = {
     },
     streams: {
       audit: {
-        title: "AI Readiness Audit",
+        title: "AI Opportunity & Feasibility Assessment",
         price: "Project",
         priceNote: "based on scope",
         description:
@@ -634,7 +640,7 @@ export const en: Dict = {
           "Managed operations for your AI solutions: monitoring, retraining, model evolution and continuous support. The brain of your operation, without hiring an in-house team.",
         bullets: [
           "Model monitoring and retraining",
-          "AI agents operating around the clock",
+          "System performance and reliability",
           "Priority support with SLAs",
           "Continuous solution evolution",
         ],
@@ -653,15 +659,15 @@ export const en: Dict = {
         ],
       },
       pilotos: {
-        title: "Outcome-Based Pilots",
+        title: "Evidence-Led Validation",
         price: "Project",
         priceNote: "based on scope",
         description:
-          "Pilots with a commitment to results: we define the KPI, build the solution and demonstrate value with real metrics before scaling.",
+          "We validate technical and operational feasibility with representative data, a baseline and agreed acceptance criteria before scaling.",
         bullets: [
-          "KPI defined and measurable from day one",
-          "Short delivery cycles",
-          "Results proven before scaling",
+          "Evidence plan agreed before development",
+          "Model and system evaluation",
+          "Clear decision: proceed, refine or stop",
         ],
       },
       ip: {
@@ -693,9 +699,9 @@ export const en: Dict = {
       eyebrow: "The conversion engine",
       title: "Every audit ends where recurring revenue begins",
       steps: {
-        audit: { label: "AI Readiness Audit", sub: "Project · based on scope" },
+        audit: { label: "Feasibility assessment", sub: "Project · based on scope" },
         plan: { label: "Plan + proposal", sub: "ROI and prioritized roadmap" },
-        pilot: { label: "Outcome-based pilot", sub: "Project · proven outcome" },
+        pilot: { label: "Evidence-led validation", sub: "Project · informed decision" },
         retainer: { label: "Managed retainer", sub: "Recurring revenue · MRR" },
       },
       footer:
@@ -706,12 +712,12 @@ export const en: Dict = {
       title:
         "Research rigor, LatAm roots. The AI lab that covers from data to hardware.",
       description:
-        "Three reasons why projects with Wiqonn reach production — and don't stay demos.",
+        "Three reasons why projects with Wiqonn reach production, and don't stay demos.",
       items: {
         research: {
           title: "Real research, not marketing",
           description:
-            "Applied AI research: multimodal LLMs, computer vision and distributed AI systems. We evaluate every model promise with rigor. If it doesn't work on your data, we tell you before you spend.",
+            "Applied AI research: multimodal LLMs, computer vision and distributed AI systems. We evaluate every model claim with rigor and document the evidence before recommending a larger implementation.",
         },
         fullstack: {
           title: "Full-stack: from data to hardware",
@@ -721,7 +727,7 @@ export const en: Dict = {
         humans: {
           title: "Data and engineering for humans",
           description:
-            "The official tagline isn't decoration: technology at the service of people and business, with clear KPIs and measurable results.",
+            "The official tagline isn't decoration: technology at the service of people and business, with clear criteria, verifiable evidence and knowledge transfer.",
         },
         latam: {
           title: "LatAm roots, global standard",
@@ -738,8 +744,8 @@ export const en: Dict = {
     labels: [
       "Free 30-minute diagnosis, no commitment",
       "Reply to your message within 24 hours",
-      "Written proposal with fixed price within 48 business hours",
-      "KPI defined and measurable from day one on every pilot",
+      "Written proposal with scope and price per phase within 48 business hours",
+      "One evidence plan agreed before every validation",
     ],
   },
   research: {
@@ -750,37 +756,37 @@ export const en: Dict = {
       "End-to-end AI solutions designed to solve real business problems.",
     capabilities: [
       {
-        title: "Custom AI Models",
+        title: "Custom & Domain-Specific Models",
         description:
-          "We build and deploy machine learning models tailored to your specific business needs, from predictive analytics to classification systems.",
-        applications: ["Demand forecasting", "Risk assessment", "Customer segmentation"],
+          "We select, adapt, fine-tune or train models according to your data, domain and operating environment.",
+        applications: ["Fine-tuning", "Post-training", "Predictive models"],
       },
       {
-        title: "Computer Vision",
+        title: "Computer Vision & Perception",
         description:
           "Image and video analysis solutions for quality control, document processing, medical imaging and visual inspection.",
         applications: ["Defect detection", "Document OCR", "Visual search"],
       },
       {
-        title: "AI Agents & LLMs",
+        title: "LLMs & Multimodal AI",
         description:
-          "Intelligent conversational agents and language models that automate customer support, document analysis and knowledge management.",
-        applications: ["Customer service bots", "Document Q&A", "Content generation"],
+          "Language and multimodal models for domain-specific reasoning, document intelligence, speech and vision-language tasks.",
+        applications: ["Domain-specific LLMs", "Private RAG", "Vision-language models"],
       },
       {
-        title: "Business Intelligence",
+        title: "Forecasting & Decision Systems",
         description:
-          "Interactive dashboards and analytics platforms that turn raw data into actionable insight for better decisions.",
-        applications: ["Executive dashboards", "KPI tracking", "Trend analysis"],
+          "Models that turn operational data into forecasts, alerts, recommendations and better-informed decisions.",
+        applications: ["Forecasting", "Anomaly detection", "Risk and optimization"],
       },
       {
-        title: "Process Automation",
+        title: "Model Evaluation & Safety",
         description:
-          "End-to-end automation of repetitive tasks and workflows, integrating AI to handle complex decision points.",
-        applications: ["Data pipelines", "Report generation", "Approval workflows"],
+          "Reproducible evaluations on representative data to measure quality, robustness, safety, latency and cost.",
+        applications: ["Domain evals", "Red teaming", "Guardrails"],
       },
       {
-        title: "MLOps & Deployment",
+        title: "AI Infrastructure & MLOps",
         description:
           "Production-grade infrastructure to deploy, monitor and scale your AI solutions with reliability and performance.",
         applications: ["Model serving", "A/B testing", "Performance monitoring"],
@@ -836,11 +842,11 @@ export const en: Dict = {
   },
   cta: {
     badge: "Let's talk",
-    titlePre: "Will AI work with your data? ",
-    titleAccent: "We'll tell you in 30 minutes",
+    titlePre: "Your problem deserves the ",
+    titleAccent: "right architecture",
     subheadline:
-      "Tell us your challenge in 30 minutes. We'll honestly tell you if we can help and how — and if we can't, we'll say so before you spend.",
-    emailButton: "Book my diagnosis",
+      "In 30 minutes, we review the problem, available data and real operating constraints. We tell you what to validate first and whether we are the right team.",
+    emailButton: "Discuss my use case",
     emailBody: "Hi Wiqonn, I'd like to book a 30-minute AI diagnosis for my company",
     emailSubject: "AI diagnosis · 30 min",
     trust: "Reply in under 24h · No commitment · Proposal in 48 business hours",
@@ -866,10 +872,10 @@ export const en: Dict = {
     eyebrow: "Our word, in writing",
     title: "Working with us is not a gamble",
     items: [
-      "Fixed price in writing: the number we quote is the number you pay.",
-      "If it doesn't work on your data, we tell you before you spend.",
+      "Scope, deliverables and price defined in writing for each phase.",
+      "Evaluation on representative data before a larger investment.",
       "Proposal within 48 business hours of our first conversation.",
-      "We reply within 24 hours.",
+      "No contractual lock-in, with knowledge transfer included.",
     ],
   },
   faq: {
@@ -877,20 +883,24 @@ export const en: Dict = {
     title: "What clients ask us before starting",
     items: [
       {
-        q: "How much does AI implementation cost for my company?",
-        a: "It depends on scope and use case. We start with an AI Readiness Audit (project, based on scope) that prioritizes cases by ROI and delivers a roadmap with phases and costs before you invest. Fixed price in writing, no hidden costs.",
+        q: "How much does a custom AI system cost?",
+        a: "Cost depends on the problem, data readiness, integrations and the level of model customization required. We begin with a scoped discovery or feasibility phase, then provide a written proposal with deliverables, assumptions, milestones and a defined price for each phase. No hidden fees.",
       },
       {
-        q: "How soon will I see results?",
-        a: "You get a proposal within 48 business hours. Outcome-based pilots work in short cycles with a KPI defined on day one; if the solution doesn't work on your data, we tell you before you spend.",
+        q: "How soon will we know whether it works?",
+        a: "You receive a written proposal within 48 business hours. We then work in short cycles and evaluate the system on representative data against an agreed baseline and acceptance criteria. Each phase ends with a clear recommendation to proceed, refine or stop before a larger investment.",
       },
       {
-        q: "What size companies do you work with?",
-        a: "Mid-sized companies anywhere in the world. We cover from data to hardware: AI/ML, BI, cloud, IoT and custom development under one roof.",
+        q: "What size organizations do you work with?",
+        a: "Organizations of every size, anywhere in the world, from startups and research teams to growing companies, global enterprises and public institutions. Fit depends on the problem, data and deployment environment, not employee count.",
+      },
+      {
+        q: "Do you only build AI agents?",
+        a: "No. Agents are one possible architecture, not our core category. We develop and adapt predictive models, LLMs, multimodal models and computer vision systems, together with the evaluations, data systems and infrastructure required for production. We select, fine-tune or train models according to what the problem justifies.",
       },
       {
         q: "Will we become dependent on you?",
-        a: "No. We hand over code, documentation and infrastructure access; the retainer is optional and cancellable anytime, no lock-in. Most clients keep it because models need to evolve — not because they're locked in.",
+        a: "There is no contractual lock-in. We hand over the agreed code, documentation, model artifacts and infrastructure access. We also disclose any third-party model, cloud or hardware dependencies before implementation. Ongoing support is optional.",
       },
       {
         q: "What about the security of our data?",
@@ -898,19 +908,19 @@ export const en: Dict = {
       },
       {
         q: "How do we get started?",
-        a: "With a free 30-minute diagnosis, no commitment: we listen, honestly tell you whether we can help and how, and within 48 business hours you get a written proposal with fixed price and scope.",
+        a: "Start with a free 30-minute technical conversation. We review the problem, available data and operating constraints. If we are not the right team, we say so. Within 48 business hours, you receive a written recommendation and, when appropriate, a proposal with scope, deliverables, assumptions, timeline and price.",
       },
     ],
   },
   footer: {
     description:
-      "Research-backed AI and technology solutions for real-world impact.",
+      "An applied AI research and engineering lab. From models and data to systems that work in the real world.",
     servicesTitle: "Services",
     services: [
-      "Business Intelligence",
-      "AI & Machine Learning",
-      "Cloud Infrastructure",
-      "Full-Stack Development",
+      "Language & Multimodal AI",
+      "Vision & Predictive Systems",
+      "Evaluation & MLOps",
+      "AI Product Engineering",
     ],
     companyTitle: "Company",
     company: ["About Us", "Team", "Careers"],

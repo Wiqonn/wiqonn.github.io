@@ -25,7 +25,7 @@ export function NVFP4FormatDiagram() {
     <div className="my-10 rounded-2xl bg-card/30 border border-border/50 p-6 md:p-8 overflow-hidden">
       <h4 className="text-xl font-bold mb-2">NVFP4 (E2M1): What One Value Looks Like</h4>
       <p className="text-sm text-muted-foreground mb-8">
-        1 sign bit · 2 exponent bits · 1 mantissa bit — only 8 representable magnitudes, but
+        1 sign bit · 2 exponent bits · 1 mantissa bit - only 8 representable magnitudes, but
         with float exponent spacing, not a linear integer grid.
       </p>
 
@@ -100,7 +100,7 @@ export function NVFP4FormatDiagram() {
         <div className="p-4 rounded-xl bg-white/5 border border-white/10">
           <p className="font-semibold text-foreground mb-1">Dynamic range</p>
           <p>
-            ±6.0 max with float spacing (0.5, 1, 1.5, 2, 3, 4, 6) — enough exponent headroom
+            ±6.0 max with float spacing (0.5, 1, 1.5, 2, 3, 4, 6) - enough exponent headroom
             for LLM weight distributions. No NaN/Inf: out-of-range values saturate.
           </p>
         </div>
@@ -108,7 +108,7 @@ export function NVFP4FormatDiagram() {
           <p className="font-semibold text-foreground mb-1">Dual-level scaling</p>
           <p>
             A global FP32 scale fixes the range; per-16-element micro-blocks get an FP8 E4M3
-            scale factor. Two FP4 values pack into one byte — executed natively on Blackwell
+            scale factor. Two FP4 values pack into one byte - executed natively on Blackwell
             tensor cores.
           </p>
         </div>

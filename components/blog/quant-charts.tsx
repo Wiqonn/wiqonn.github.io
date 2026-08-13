@@ -98,27 +98,27 @@ export function VramChart() {
   return (
     <BarChart
       title="Training VRAM by Backend (3B Model)"
-      subtitle="Memory footprint during LoRA fine-tuning. Lower is better — NVFP4 wins because quantization happens natively in the Transformer Engine."
+      subtitle="Memory footprint during LoRA fine-tuning. Lower is better: NVFP4 wins because quantization happens natively in the Transformer Engine."
       maxWidth={50}
       rows={[
         {
           label: "Transformer Engine NVFP4 (4-bit)",
           value: "~41GB",
-          detail: "Blackwell native — autocast runs FP4 matmuls in the tensor core, no dequantized copy in memory.",
+          detail: "Blackwell native: autocast runs FP4 matmuls in the tensor core, no dequantized copy in memory.",
           width: 41,
           className: "bg-primary",
         },
         {
           label: "bitsandbytes FP4 (4-bit)",
           value: "~45GB",
-          detail: "Any CUDA GPU — dequantized to bf16 for every matmul, which costs the extra ~4GB.",
+          detail: "Any CUDA GPU: dequantized to bf16 for every matmul, which costs the extra ~4GB.",
           width: 45,
           className: "bg-blue-500",
         },
         {
           label: "Transformer Engine MXFP8 (8-bit)",
           value: "~50GB",
-          detail: "Higher precision — same autocast machinery with an E4M3 block-scaling recipe.",
+          detail: "Higher precision: same autocast machinery with an E4M3 block-scaling recipe.",
           width: 50,
           className: "bg-secondary",
         },
@@ -137,21 +137,21 @@ export function ArtifactChart() {
         {
           label: "LoRA adapter (bf16)",
           value: "~240MB",
-          detail: "rank-64 adapters only — experimentation and versioning.",
+          detail: "rank-64 adapters only: experimentation and versioning.",
           width: 15.5,
           className: "bg-blue-500",
         },
         {
           label: "NVFP4 export (FP4)",
           value: "~1.5GB",
-          detail: "TensorRT-LLM ready — the deployment artifact.",
+          detail: "TensorRT-LLM ready: the deployment artifact.",
           width: 38.7,
           className: "bg-primary",
         },
         {
           label: "Merged model (bf16)",
           value: "~6GB",
-          detail: "full weights + adapter — the full-precision fallback.",
+          detail: "full weights + adapter: the full-precision fallback.",
           width: 77.5,
           className: "bg-secondary",
         },
@@ -223,7 +223,7 @@ export function LoRAParameterChart() {
           />
           <span>
             <span className="font-semibold text-foreground">Frozen base weights</span>{" "}
-            — ~99.5% of parameters, stored at 4-bit during training, never updated.
+            : ~99.5% of parameters, stored at 4-bit during training, never updated.
           </span>
         </div>
         <div className="flex items-start gap-2.5">
@@ -233,7 +233,7 @@ export function LoRAParameterChart() {
           />
           <span>
             <span className="font-semibold text-foreground">LoRA trainable</span>{" "}
-            — ~0.5%, the only matrices receiving gradients, kept in bf16.
+            : ~0.5%, the only matrices receiving gradients, kept in bf16.
           </span>
         </div>
       </div>

@@ -21,7 +21,7 @@ const posts = [
     slug: "dgx-spark-finetune",
     title: "Fine-Tune LLMs on a DGX Spark: LoRA + NVFP4 in Practice",
     description:
-      "Train 3B models at 4-bit on Blackwell GB10 with three quantization backends, export to NVFP4 for TensorRT-LLM, and serve an OpenAI-compatible API — all from a desktop.",
+      "Train 3B models at 4-bit on Blackwell GB10 with three quantization backends, export to NVFP4 for TensorRT-LLM, and serve an OpenAI-compatible API, all from a desktop.",
     date: "August 2026",
     readTime: "14 min read",
     author: "Wayner Barrios",
@@ -154,12 +154,11 @@ export default function BlogPage() {
                   Wiqonn
                 </p>
                 <h2 className="text-2xl md:text-4xl font-bold mb-4 text-balance">
-                  Know where it hurts? We build the AI that fixes it.
+                  Applied AI research, engineered for production.
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Applied AI for companies of any size, anywhere in the world. Fixed price in
-                  writing — and if it doesn&apos;t work on your data, we tell you before you
-                  spend.
+                  Custom models and AI systems for organizations of every size, anywhere in
+                  the world. Scope, evidence plan and price are defined in writing for each phase.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <BookingButton className="btn-gradient glow-cyan hover:scale-105 transition-all text-base px-8 h-14 text-[#0A0E1A] font-semibold" />
@@ -169,8 +168,8 @@ export default function BlogPage() {
                     className="border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all h-14 px-8"
                     asChild
                   >
-                    <a href="/ai-readiness-checklist-en.pdf" download>
-                      Get the AI Readiness Checklist
+                    <a href="/#services">
+                      Explore our AI capabilities
                     </a>
                   </Button>
                 </div>

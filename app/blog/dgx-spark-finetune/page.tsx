@@ -33,7 +33,7 @@ import { BookingButton } from "@/components/booking-button"
 
 gsap.registerPlugin(ScrollTrigger)
 
-const TE_TRAINER_CMD = `# finetune.py — the custom trainer that makes 4-bit training work
+const TE_TRAINER_CMD = `# finetune.py: the custom trainer that makes 4-bit training work
 if use_te:
     from transformer_engine.pytorch import fp8_autocast
 
@@ -57,7 +57,7 @@ else:
         processing_class=tokenizer,
     )`
 
-const QUANT_CONFIG_CMD = `# finetune.py — bitsandbytes FP4 (any CUDA GPU)
+const QUANT_CONFIG_CMD = `# finetune.py: bitsandbytes FP4 (any CUDA GPU)
 def get_quantization_config():
     return BitsAndBytesConfig(
         load_in_4bit=True,
@@ -66,7 +66,7 @@ def get_quantization_config():
         bnb_4bit_use_double_quant=True, # nested quantization: quantize the scales too
     )`
 
-const LORA_CONFIG_CMD = `# finetune.py — LoRA targeting every linear in the transformer block
+const LORA_CONFIG_CMD = `# finetune.py: LoRA targeting every linear in the transformer block
 def get_lora_config():
     return LoraConfig(
         r=64,               # LoRA rank
@@ -80,7 +80,7 @@ def get_lora_config():
         ],
     )`
 
-const SFT_CONFIG_CMD = `# finetune.py — training hyperparameters
+const SFT_CONFIG_CMD = `# finetune.py: training hyperparameters
 training_args = SFTConfig(
     output_dir=output_dir,
     num_train_epochs=3,
@@ -134,7 +134,7 @@ def export_nvfp4_tensorrt(merged_path, output_path, calib_size=256):
     with torch.inference_mode():
         export_hf_checkpoint(model, dtype=torch.bfloat16, export_dir=output_path)`
 
-const THINK_CMD = `# inference.py — /think is not a prompt trick, it's a system-prompt switch
+const THINK_CMD = `# inference.py: /think is not a prompt trick, it's a system-prompt switch
 def generate_response(model, tokenizer, prompt, enable_thinking=True):
     thinking_flag = "/think" if enable_thinking else "/no_think"
     system_content = f"{thinking_flag}\\nYou are a helpful AI assistant."
@@ -159,7 +159,7 @@ def generate_response(model, tokenizer, prompt, enable_thinking=True):
                 pad_token_id=tokenizer.eos_token_id,
             )`
 
-const SERVE_CMD = `# run_serve.sh — OpenAI-compatible serving on the official container
+const SERVE_CMD = `# run_serve.sh: OpenAI-compatible serving on the official container
 CONTAINER="nvcr.io/nvidia/tensorrt-llm/release:spark-single-gpu-dev"
 
 docker run \\
@@ -344,13 +344,13 @@ export default function DgxSparkFineTunePost() {
               Why 4-bit <span className="text-gradient-wiqonn">Training</span> Works at All
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-4">
-              The naive assumption is that 4-bit quantization belongs to inference — that
+              The naive assumption is that 4-bit quantization belongs to inference, that
               training needs full precision because gradients are tiny and easily destroyed.
               That&apos;s half true, and the other half is what makes this pipeline work.
             </p>
             <p className="text-muted-foreground leading-relaxed mb-4">
               With LoRA, the <span className="font-semibold text-foreground">base weights are never updated</span>{" "}
-              — they&apos;re frozen. What gets gradients are the small A/B adapter matrices,
+              because they&apos;re frozen. What gets gradients are the small A/B adapter matrices,
               which live in bf16. The 4-bit weights only participate in the forward pass,
               where their quantization error is absorbed by the optimizer the same way
               bf16 precision loss is absorbed. The result: quantized memory footprint,
@@ -363,7 +363,7 @@ export default function DgxSparkFineTunePost() {
               activations and weights to FP4 on the fly inside each matmul, using per-block
               scales, then accumulates in higher precision. Blackwell&apos;s tensor cores
               execute FP4 matmuls natively, so you pay roughly half the memory bandwidth of
-              FP8 for the same tensor — and the quantization is recomputed every forward,
+              FP8 for the same tensor, and the quantization is recomputed every forward,
               staying optimal as weights evolve during training.
             </p>
           </section>
@@ -375,7 +375,7 @@ export default function DgxSparkFineTunePost() {
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
               NVFP4 is NVIDIA&apos;s 4-bit floating-point format for Blackwell. It&apos;s not
-              a linear 4-bit integer grid — it&apos;s a real float format with a sign bit,
+              a linear 4-bit integer grid. It&apos;s a real float format with a sign bit,
               two exponent bits and one mantissa bit, which gives it a dynamic range that
               integer formats lack. The repo ships a pure-PyTorch reference implementation
               of the exact algorithm (nvfp4.py), which is the best way to read how it works.
@@ -433,16 +433,16 @@ export default function DgxSparkFineTunePost() {
               <span className="font-mono text-sm text-primary">s_enc = 6 × 448 / amax_x</span>{" "}
               ) keeps the whole tensor in range, and per-16-element micro-blocks get their
               own FP8 E4M3 scale so local outliers don&apos;t wreck the grid. Dequantization
-              is just unpacking nibbles and multiplying by the inverse scales — which is
+              is just unpacking nibbles and multiplying by the inverse scales, which is
               exactly what the tensor cores do in hardware during training.
             </p>
             <p className="text-muted-foreground leading-relaxed">
               Worth noting from the repo&apos;s code: values outside ±6.0{" "}
               <span className="font-semibold text-foreground">saturate</span> (no NaN/Inf in
-              the format), and the quantization uses midpoint rounding — each FP32 value
+              the format), and the quantization uses midpoint rounding: each FP32 value
               maps to the nearest of the 8 representable magnitudes. For training, the
               reference implementation also includes a straight-through estimator (STE)
-              variant, which passes gradients through the quantizer unchanged — the standard
+              variant, which passes gradients through the quantizer unchanged, the standard
               trick that makes quantization-aware training converge.
             </p>
           </section>
@@ -453,7 +453,7 @@ export default function DgxSparkFineTunePost() {
               Three Backends, Three Different Places Where Quantization Happens
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              All three flags train the same model with the same data — but the
+              All three flags train the same model with the same data, but the
               quantization engine, and where it runs, is different in a way that shows up
               directly in VRAM.
             </p>
@@ -504,7 +504,7 @@ export default function DgxSparkFineTunePost() {
             <p className="text-muted-foreground leading-relaxed mb-4">
               <span className="font-semibold text-foreground">bitsandbytes</span> quantizes
               the weights once when the model loads, stores the FP4 tensors in memory, and
-              dequantizes them back to bf16 for every matmul. Simple and portable — but the
+              dequantizes them back to bf16 for every matmul. Simple and portable, but the
               dequantized copy lives in memory during the forward pass, which is where the
               extra ~4GB over NVFP4 comes from.
             </p>
@@ -521,7 +521,7 @@ export default function DgxSparkFineTunePost() {
               <span className="font-semibold text-foreground">MXFP8</span> is the same
               autocast machinery with an E4M3 8-bit recipe (the repo uses{" "}
               <span className="font-mono text-sm text-primary">MXFP8BlockScaling</span>{" "}
-              with block scaling): double the bits, roughly double the weight memory — the
+              with block scaling): double the bits, roughly double the weight memory. The
               safe choice when you need the highest fidelity.
             </p>
           </section>
@@ -546,7 +546,7 @@ export default function DgxSparkFineTunePost() {
 
             <p className="text-muted-foreground leading-relaxed mb-4">
               The recipe construction happens at load time. For NVFP4 it&apos;s{" "}
-              <span className="font-mono text-sm text-primary">NVFP4BlockScaling()</span> —
+              <span className="font-mono text-sm text-primary">NVFP4BlockScaling()</span>:
               the default recipe with micro-block scaling. For MXFP8 it&apos;s{" "}
               <span className="font-mono text-sm text-primary break-all">
                 MXFP8BlockScaling(fp8_format=Format.E4M3)
@@ -563,12 +563,12 @@ export default function DgxSparkFineTunePost() {
               <p className="text-muted-foreground leading-relaxed">
                 Gradients are computed by backpropagation through the same FP4 matmuls, but
                 the optimizer state (AdamW moments) and the LoRA adapter weights stay in
-                bf16. Quantizing gradients would double the error accumulation — that&apos;s
+                bf16. Quantizing gradients would double the error accumulation. That&apos;s
                 the line nobody crosses in QAT. Note the repo uses{" "}
                 <span className="font-mono text-sm text-primary">paged_adamw_8bit</span>{" "}
                 for the bitsandbytes path and plain{" "}
                 <span className="font-mono text-sm text-primary">adamw_torch</span> under TE
-                — the paged version spills optimizer pages to CPU when memory is tight.
+                The paged version spills optimizer pages to CPU when memory is tight.
               </p>
             </div>
           </section>
@@ -600,7 +600,7 @@ export default function DgxSparkFineTunePost() {
                 <p className="text-sm text-muted-foreground leading-relaxed">
                   The effective update scale is{" "}
                   <span className="font-mono text-sm text-primary">α/r = 2.0</span>. Rank 64
-                  on a 3B model is on the generous side — enough capacity for a
+                  on a 3B model is on the generous side, with enough capacity for a
                   reasoning-style dataset without turning the adapters into a second model.
                 </p>
               </div>
@@ -623,7 +623,7 @@ export default function DgxSparkFineTunePost() {
               activations, the 41GB budget breaks down roughly as base weights (~1.5GB at
               FP4) + LoRA adapters and their gradients (~2GB) + optimizer state (~3GB) +
               activations for batch 16 × 8192 tokens (~25GB, checkpointed) + TE workspace
-              and framework overhead. The exact split depends on sequence length — which is
+              and framework overhead. The exact split depends on sequence length, which is
               why the OOM recipe at the end of this post targets exactly those three knobs.
             </p>
           </section>
@@ -640,7 +640,7 @@ export default function DgxSparkFineTunePost() {
             </p>
 
             <CodeBlock
-              filename="finetune.py — SFTConfig"
+              filename="finetune.py: SFTConfig"
               language="python"
               code={SFT_CONFIG_CMD}
             />
@@ -649,7 +649,7 @@ export default function DgxSparkFineTunePost() {
               <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                 <p className="font-semibold text-foreground mb-1">cosine + warmup 0.1</p>
                 <p>
-                  Cosine decay with 10% warmup is the current standard for LLM fine-tunes —
+                  Cosine decay with 10% warmup is the current standard for LLM fine-tunes.
                   warmup lets the LoRA weights stabilize before the schedule starts decaying.
                 </p>
               </div>
@@ -664,7 +664,7 @@ export default function DgxSparkFineTunePost() {
                 <p className="font-semibold text-foreground mb-1">packing=False</p>
                 <p>
                   Sequences are not concatenated into fixed-length blocks, so every example
-                  is padded to the same length instead of blending across samples — better
+                  is padded to the same length instead of blending across samples, which is better
                   for instruction/reasoning formats with clear boundaries.
                 </p>
               </div>
@@ -672,34 +672,34 @@ export default function DgxSparkFineTunePost() {
                 <p className="font-semibold text-foreground mb-1">bf16 + tf32</p>
                 <p>
                   bf16 for weights and activations, TF32 for matrix accumulation in the
-                  non-TE path — the same precision class Ampere+ uses for training.
+                  non-TE path, the same precision class Ampere+ uses for training.
                 </p>
               </div>
               <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                 <p className="font-semibold text-foreground mb-1">gradient_checkpointing</p>
                 <p>
-                  Activations are recomputed in the backward pass instead of stored — the
+                  Activations are recomputed in the backward pass instead of stored, so the
                   single biggest VRAM saver at sequence length 8192.
                 </p>
               </div>
               <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                 <p className="font-semibold text-foreground mb-1">seed 42</p>
                 <p>
-                  Reproducibility — everything else being equal, the same seed gives the same
+                  Reproducibility: everything else being equal, the same seed gives the same
                   loss curve and the same adapter.
                 </p>
               </div>
             </div>
 
             <CodeBlock
-              filename="finetune.py — bitsandbytes path"
+              filename="finetune.py: bitsandbytes path"
               language="python"
               code={QUANT_CONFIG_CMD}
             />
             <p className="text-sm text-muted-foreground leading-relaxed mt-2 mb-6">
               Double quantization quantizes the FP4 scale factors themselves (a second
               quantization level), saving another ~0.4 bits per weight on average. For a 3B
-              model that&apos;s roughly 150MB — the difference between fitting and not
+              model that&apos;s roughly 150MB, the difference between fitting and not
               fitting on the GB10&apos;s budget.
             </p>
           </section>
@@ -710,7 +710,7 @@ export default function DgxSparkFineTunePost() {
               The Complete Pipeline: Train → Export → Serve
             </h2>
             <p className="text-muted-foreground leading-relaxed mb-6">
-              Training produces a LoRA adapter — which is not directly deployable. The
+              Training produces a LoRA adapter, which is not directly deployable. The
               export step merges it into the base model, quantizes the merged weights to
               NVFP4 with NVIDIA ModelOpt, and the serving container loads the result through
               TensorRT-LLM. Three commands, one pipeline:
@@ -764,14 +764,14 @@ export default function DgxSparkFineTunePost() {
             </h3>
             <p className="text-muted-foreground leading-relaxed mb-6">
               FP4 quantization of the merged model needs per-block scale factors that match
-              the real activation ranges — and the only way to get them is to measure.
+              the real activation ranges, and the only way to get them is to measure.
               ModelOpt&apos;s <span className="font-mono text-sm text-primary">NVFP4_DEFAULT_CFG</span>{" "}
               takes a forward loop over 256 calibration samples (512 tokens each, drawn from
               wikitext-2) to fit the scales:
             </p>
 
             <CodeBlock
-              filename="inference.py — export_nvfp4_tensorrt()"
+              filename="inference.py: export_nvfp4_tensorrt()"
               language="python"
               code={EXPORT_CMD}
             />
@@ -811,7 +811,7 @@ export default function DgxSparkFineTunePost() {
             <p className="text-muted-foreground leading-relaxed mb-6">
               Serving uses NVIDIA&apos;s reference container for the DGX Spark and{" "}
               <span className="font-mono text-sm text-primary">trtllm-serve</span> with the
-              PyTorch backend — no custom Dockerfiles. You get a fully OpenAI-compatible
+              PyTorch backend, with no custom Dockerfiles. You get a fully OpenAI-compatible
               API, which means any existing client code keeps working:
             </p>
 
@@ -828,7 +828,7 @@ export default function DgxSparkFineTunePost() {
               </div>
               <p className="text-muted-foreground leading-relaxed">
                 Point your OpenAI SDK at <span className="font-mono text-sm text-primary">localhost:8000</span>{" "}
-                instead of the cloud endpoint and the model name changes — that&apos;s it.
+                instead of the cloud endpoint and the model name changes. That&apos;s it.
                 The fine-tuned model becomes a private drop-in replacement, and the
                 deployment size is small enough to ship on a laptop if you ever need to move.
               </p>
@@ -845,13 +845,13 @@ export default function DgxSparkFineTunePost() {
               <span className="font-mono text-sm text-primary break-all">
                 TeichAI/claude-4.5-opus-high-reasoning-250x
               </span>{" "}
-              — a collection of high-quality reasoning traces. The model learns to produce
+              a collection of high-quality reasoning traces. The model learns to produce
               long chains of thought, which is ideal for hard problems and wasteful for
               simple ones. The repo implements the toggle at the system-prompt level:
             </p>
 
             <CodeBlock
-              filename="inference.py — generate_response()"
+              filename="inference.py: generate_response()"
               language="python"
               code={THINK_CMD}
             />
@@ -859,7 +859,7 @@ export default function DgxSparkFineTunePost() {
             <p className="text-muted-foreground leading-relaxed mb-4">
               Because the flag lives in the system prompt, it works on any chat template and
               can be toggled per message in interactive mode without reloading the model.
-              Under the hood this is just the chat template doing its job — but it&apos;s a
+              Under the hood this is just the chat template doing its job, but it&apos;s a
               neat demonstration of why system prompts are the right lever for controlling
               reasoning effort instead of decoding tricks like max-token capping.
             </p>
@@ -886,7 +886,7 @@ export default function DgxSparkFineTunePost() {
               <div className="p-4 rounded-xl bg-white/5 border border-white/10">
                 <p className="font-semibold text-foreground mb-1">Sequence length</p>
                 <p>
-                  8192 → 4096 halves activation memory for a single sequence — the fastest
+                  8192 → 4096 halves activation memory for a single sequence, the fastest
                   lever.
                 </p>
               </div>
@@ -920,7 +920,7 @@ export default function DgxSparkFineTunePost() {
                   <span>
                     4-bit <span className="font-semibold text-foreground">training</span> is
                     viable because LoRA keeps gradients in bf16 while only the frozen weights
-                    live at FP4 — quantization error lands in the forward pass, not the
+                    live at FP4. Quantization error lands in the forward pass, not the
                     optimizer.
                   </span>
                 </li>
@@ -928,7 +928,7 @@ export default function DgxSparkFineTunePost() {
                   <span className="text-primary font-bold">2.</span>
                   <span>
                     NVFP4 is a real float format (E2M1) with block scaling, not a linear
-                    grid — that dynamic range is why it holds up where INT4 grinds.
+                    grid. That dynamic range is why it holds up where INT4 grinds.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
@@ -959,14 +959,15 @@ export default function DgxSparkFineTunePost() {
                   Want private AI in your company?
                 </h2>
                 <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  We fine-tune and deploy private models on your own hardware — fixed price
-                  in writing, KPI measured from day one. Book a free 30-minute diagnosis.
+                  We fine-tune and deploy private models on your own hardware, with scope,
+                  price and an evidence plan defined in writing for each phase. Book a free
+                  30-minute technical conversation.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">
                   <BookingButton className="btn-gradient glow-cyan hover:scale-105 transition-all text-base px-8 h-14 text-[#0A0E1A] font-semibold" />
                   <Button size="lg" variant="outline" asChild className="h-14 px-8 text-lg">
-                    <a href="/ai-readiness-checklist-en.pdf" download>
-                      Get the AI Readiness Checklist
+                    <a href="/#services">
+                      Explore our AI capabilities
                     </a>
                   </Button>
                 </div>
@@ -986,7 +987,7 @@ export default function DgxSparkFineTunePost() {
                   Run it on Your Own Hardware
                 </h3>
                 <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-                  Open source, MIT licensed, work in progress. Star the repo and contribute —
+                  Open source, MIT licensed, work in progress. Star the repo and contribute.
                   or adapt the pipeline for your own model and dataset.
                 </p>
                 <div className="flex flex-wrap justify-center gap-4">

@@ -3,14 +3,10 @@
 import { useLayoutEffect } from "react"
 import { gsap } from "gsap"
 import { ScrollTrigger } from "gsap/ScrollTrigger"
-import { SplitText } from "gsap/SplitText"
-import { useLanguage } from "@/components/language-provider"
 
-gsap.registerPlugin(ScrollTrigger, SplitText)
+gsap.registerPlugin(ScrollTrigger)
 
 export function PremiumMotion() {
-  const { lang } = useLanguage()
-
   useLayoutEffect(() => {
     const media = gsap.matchMedia()
 
@@ -18,7 +14,6 @@ export function PremiumMotion() {
       let context: gsap.Context | undefined
       let cancelled = false
       const cardCleanups: Array<() => void> = []
-      const splits: SplitText[] = []
       const splitParents: HTMLElement[] = []
 
       document.fonts.ready.then(() => {
@@ -32,15 +27,8 @@ export function PremiumMotion() {
               splitParents.push(revealParent)
             }
 
-            const split = SplitText.create(heading, {
-              type: "words",
-              aria: "auto",
-              wordsClass: "split-word",
-            })
-            splits.push(split)
-
             gsap.fromTo(
-              split.words,
+              heading,
               {
                 x: 60,
                 y: 25,
@@ -53,7 +41,6 @@ export function PremiumMotion() {
                 scale: 1,
                 opacity: 1,
                 duration: 1,
-                stagger: 0.065,
                 ease: "none",
                 scrollTrigger: {
                   trigger: heading,
@@ -107,13 +94,12 @@ export function PremiumMotion() {
         cancelled = true
         cardCleanups.forEach((cleanup) => cleanup())
         context?.revert()
-        splits.forEach((split) => split.revert())
         splitParents.forEach((parent) => parent.classList.remove("split-reveal-parent"))
       }
     })
 
     return () => media.revert()
-  }, [lang])
+  }, [])
 
   return null
 }

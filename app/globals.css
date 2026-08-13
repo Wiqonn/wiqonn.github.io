@@ -483,6 +483,19 @@ body {
 
 .cinematic-canvas {
   z-index: -4;
+  opacity: 1;
+  transition: opacity 0.8s var(--wiqonn-ease);
+}
+
+.cinematic-journey[data-webgl="fallback"] .cinematic-canvas {
+  opacity: 0;
+}
+
+.cinematic-journey[data-webgl="fallback"] .cinematic-stage {
+  background:
+    radial-gradient(circle at 72% 42%, rgba(0, 173, 236, 0.16), transparent 34%),
+    radial-gradient(circle at 82% 62%, rgba(57, 181, 74, 0.1), transparent 28%),
+    var(--wiqonn-navy);
 }
 
 .cinematic-scrim {
@@ -697,7 +710,7 @@ body {
   gap: 0.75rem;
   align-items: flex-start;
   max-width: 35rem;
-  margin-top: 2rem;
+  margin-top: 3.25rem;
 }
 
 .hero-cinematic-trust svg {
@@ -709,6 +722,41 @@ body {
 
 .hero-cinematic-trust p {
   font-size: 0.8rem;
+}
+
+.cinematic-world-mark {
+  position: absolute;
+  top: 7rem;
+  right: clamp(1.5rem, 4vw, 4rem);
+  z-index: 2;
+  display: grid;
+  gap: 0.65rem;
+  justify-items: end;
+  color: rgba(168, 222, 225, 0.46);
+  font-family: var(--font-jetbrains-mono), monospace;
+  font-size: 0.56rem;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.cinematic-world-mark > span {
+  color: rgba(224, 244, 242, 0.58);
+}
+
+.cinematic-world-mark > div {
+  display: flex;
+  gap: 0.55rem;
+  align-items: center;
+}
+
+.cinematic-world-mark i {
+  display: block;
+  width: 0.28rem;
+  height: 0.28rem;
+  border-radius: 50%;
+  background: var(--wiqonn-teal);
+  box-shadow: 0 0 0.65rem rgba(28, 178, 159, 0.75);
 }
 
 .cinematic-phases {
@@ -1262,6 +1310,10 @@ body {
     min-height: 100svh;
   }
 
+  .cinematic-world-mark {
+    display: none;
+  }
+
   .cinematic-canvas {
     transform: translateZ(0);
   }
@@ -1446,6 +1498,7 @@ body {
     transform: none;
   }
 
+  .cinematic-world-mark,
   .cinematic-phases,
   .cinematic-progress {
     display: none;
