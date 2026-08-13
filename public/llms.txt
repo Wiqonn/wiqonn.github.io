@@ -33,7 +33,7 @@
 
 ## How we work
 
-- AI Opportunity & Feasibility Assessment: problem framing, data readiness, technical options, risks and a staged roadmap.
+- AI Opportunity & Feasibility Assessment (AI Readiness Audit): problem framing, data readiness, technical options, risks and a staged roadmap.
 - Evidence-led validation: representative data, a baseline, acceptance criteria and clear decision gates before scaling.
 - Managed AI Ops: managed operations, monitoring, retraining and model evolution with SLA.
 - Fractional AI Leadership: AI direction and CTO-as-a-service.
@@ -48,7 +48,7 @@
 
 ## Files
 
-- [Home](https://www.wiqonn.com/): services, how we work and contact.
+- [Home](https://www.wiqonn.com/): services, how we work, FAQ and contact.
 - [Blog](https://www.wiqonn.com/blog): technical AI articles.
 - [DGX Spark fine-tuning](https://www.wiqonn.com/blog/dgx-spark-finetune): LoRA + NVFP4 fine-tuning in practice.
 - [vLLM-MLX](https://www.wiqonn.com/blog/vllm-mlx): production-grade local LLM inference on Apple Silicon.

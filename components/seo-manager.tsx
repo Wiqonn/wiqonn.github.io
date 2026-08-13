@@ -3,11 +3,33 @@
 import { useEffect } from "react"
 import { usePathname } from "next/navigation"
 import { useT } from "@/components/language-provider"
+import type { Dict } from "@/lib/i18n"
+
+const SITE_URL = "https://www.wiqonn.com"
 
 function setMeta(attr: "name" | "property", key: string, value: string) {
   const selector = attr === "name" ? `meta[name="${key}"]` : `meta[property="${key}"]`
   const el = document.querySelector<HTMLMetaElement>(selector)
   if (el) el.setAttribute("content", value)
+}
+
+function setFaqJsonLd(faq: Dict["faq"]) {
+  const el = document.getElementById("faq-jsonld")
+  if (!el) return
+  el.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": `${SITE_URL}/#faq`,
+    inLanguage: document.documentElement.lang,
+    mainEntity: faq.items.map((item) => ({
+      "@type": "Question",
+      name: item.q,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: item.a,
+      },
+    })),
+  })
 }
 
 export function SeoManager() {
@@ -28,7 +50,8 @@ export function SeoManager() {
     setMeta("property", "og:locale", locale)
     setMeta("name", "twitter:title", title)
     setMeta("name", "twitter:description", description)
-  }, [pathname, title, description, keywords, locale])
+    setFaqJsonLd(t.faq)
+  }, [pathname, title, description, keywords, locale, t])
 
   return null
 }

@@ -419,16 +419,16 @@ export const es = {
     title: "Lo que nos preguntan antes de empezar",
     items: [
       {
-        q: "¿Cuánto cuesta un sistema de IA a la medida?",
-        a: "Depende del problema, la preparación de los datos, las integraciones y el grado de personalización del modelo. Empezamos con una fase acotada de descubrimiento o viabilidad y entregamos una propuesta escrita con entregables, supuestos, hitos y precio definido por fase. Sin costos ocultos.",
+        q: "¿Cuánto cuesta implementar IA en mi empresa?",
+        a: "Depende del alcance y del caso de uso — pero decides con datos, no con adivinanzas. Empezamos con una Auditoría de Preparación para IA (AI Readiness Audit), un proyecto a precio fijo que mapea tus casos de uso, los prioriza por ROI y entrega un roadmap con fases y costos antes de invertir en desarrollo. Precio fijo por escrito, sin costos ocultos.",
       },
       {
-        q: "¿Cuándo sabremos si funciona?",
-        a: "Recibes una propuesta escrita en 48 h hábiles. Después trabajamos en ciclos cortos y evaluamos el sistema con datos representativos, una línea base y criterios de aceptación acordados. Cada fase termina con una recomendación clara para avanzar, refinar o detener antes de una inversión mayor.",
+        q: "¿Qué tan pronto veré resultados?",
+        a: "Recibes una propuesta por escrito con precio fijo y alcance dentro de 48 h hábiles desde nuestra primera conversación. Después trabajamos en ciclos cortos: cada fase se evalúa con datos representativos y criterios de aceptación acordados, y termina con una recomendación clara de avanzar, refinar o detener. Ves progreso medible antes de comprometer más presupuesto.",
       },
       {
-        q: "¿Con qué tamaño de organizaciones trabajan?",
-        a: "Con organizaciones de cualquier tamaño y en cualquier parte del mundo, desde startups y equipos de investigación hasta empresas en crecimiento, grandes corporaciones e instituciones públicas. El encaje depende del problema, los datos y el entorno de despliegue, no del número de empleados.",
+        q: "¿Con qué tamaño de empresas trabajan?",
+        a: "Con empresas de cualquier tamaño, en cualquier parte del mundo y en distintas industrias — desde startups y empresas en crecimiento hasta corporaciones e instituciones públicas. Un mismo equipo cubre todo el stack bajo un mismo techo — IA/ML, BI, cloud, IoT y desarrollo a la medida — así que los proyectos avanzan de punta a punta sin la coordinación de múltiples proveedores. Lo que importa es el problema, los datos y el entorno de despliegue, no el tamaño de la empresa.",
       },
       {
         q: "¿Solo construyen agentes de IA?",
@@ -436,15 +436,15 @@ export const es = {
       },
       {
         q: "¿Quedaremos dependientes de ustedes?",
-        a: "No hay lock-in contractual. Entregamos el código, la documentación, los artefactos de modelo y los accesos de infraestructura acordados. También revelamos antes de implementar cualquier dependencia de modelos, nube o hardware de terceros. El soporte continuo es opcional.",
+        a: "No. Entregamos el código, la documentación y los accesos de infraestructura que pagaste. El retainer es opcional y cancelable cuando quieras — no hay lock-in. La mayoría de clientes se queda porque los modelos necesitan evolucionar, no porque estén atados.",
       },
       {
         q: "¿Qué pasa con la seguridad de nuestros datos?",
-        a: "Tus datos son tuyos: no se usan para otros clientes ni para entrenar modelos ajenos. Firmamos NDA y acuerdos de confidencialidad, y acordamos estándares de seguridad por escrito antes de empezar.",
+        a: "Tus datos son tuyos: nunca se usan para otros clientes ni para entrenar modelos ajenos. Firmamos NDA y acuerdos de confidencialidad, y acordamos estándares de seguridad por escrito antes de empezar.",
       },
       {
         q: "¿Cómo empezamos?",
-        a: "Con una conversación técnica gratuita de 30 minutos. Revisamos el problema, los datos disponibles y las restricciones operativas. Si no somos el equipo adecuado, te lo decimos. En 48 h hábiles recibes una recomendación escrita y, cuando aplica, una propuesta con alcance, entregables, supuestos, calendario y precio.",
+        a: "Agenda un diagnóstico gratuito de 30 minutos, sin compromiso. Escuchamos tu caso y te decimos con honestidad si podemos ayudarte — y cómo. En 48 h hábiles recibes una propuesta por escrito con precio fijo y alcance.",
       },
     ],
   },
@@ -883,32 +883,32 @@ export const en: Dict = {
     title: "What clients ask us before starting",
     items: [
       {
-        q: "How much does a custom AI system cost?",
-        a: "Cost depends on the problem, data readiness, integrations and the level of model customization required. We begin with a scoped discovery or feasibility phase, then provide a written proposal with deliverables, assumptions, milestones and a defined price for each phase. No hidden fees.",
+        q: "How much does AI implementation cost for my company?",
+        a: "It depends on scope and use case — but you decide with data, not guesswork. We start with an AI Readiness Audit, a fixed-price project that maps your use cases, prioritizes them by ROI and delivers a roadmap with phases and costs before you invest in development. Fixed price in writing, no hidden costs.",
       },
       {
-        q: "How soon will we know whether it works?",
-        a: "You receive a written proposal within 48 business hours. We then work in short cycles and evaluate the system on representative data against an agreed baseline and acceptance criteria. Each phase ends with a clear recommendation to proceed, refine or stop before a larger investment.",
+        q: "How soon will I see results?",
+        a: "You receive a written proposal with fixed price and scope within 48 business hours of our first call. From there we work in short cycles: every phase is evaluated on representative data against agreed acceptance criteria and ends with a clear recommendation to proceed, refine or stop. You see measurable progress before committing more budget.",
       },
       {
-        q: "What size organizations do you work with?",
-        a: "Organizations of every size, anywhere in the world, from startups and research teams to growing companies, global enterprises and public institutions. Fit depends on the problem, data and deployment environment, not employee count.",
+        q: "What size companies do you work with?",
+        a: "Companies of every size, anywhere in the world, and across industries — from startups and growing businesses to enterprises and public institutions. One team covers the full stack under one roof — AI/ML, BI, cloud, IoT and custom development — so projects run end-to-end without the coordination overhead of multiple vendors. What matters is the problem, your data and the deployment environment, not company size.",
       },
       {
         q: "Do you only build AI agents?",
-        a: "No. Agents are one possible architecture, not our core category. We develop and adapt predictive models, LLMs, multimodal models and computer vision systems, together with the evaluations, data systems and infrastructure required for production. We select, fine-tune or train models according to what the problem justifies.",
+        a: "No — agents are one possible architecture, not our core category. We develop and adapt predictive models, LLMs, multimodal models and computer vision systems, together with the evaluations, data systems and infrastructure required for production. We select, fine-tune or train models according to what the problem justifies.",
       },
       {
         q: "Will we become dependent on you?",
-        a: "There is no contractual lock-in. We hand over the agreed code, documentation, model artifacts and infrastructure access. We also disclose any third-party model, cloud or hardware dependencies before implementation. Ongoing support is optional.",
+        a: "No. We hand over the code, documentation and infrastructure access you paid for. The retainer is optional and cancellable anytime — there is no lock-in. Most clients keep it because models need to keep evolving, not because they have to.",
       },
       {
         q: "What about the security of our data?",
-        a: "Your data stays yours: it's never used for other clients or to train unrelated models. We sign NDAs and confidentiality agreements, and agree security standards in writing before we start.",
+        a: "Your data stays yours: it is never used for other clients or to train unrelated models. We sign NDAs and confidentiality agreements, and agree on security standards in writing before any work begins.",
       },
       {
         q: "How do we get started?",
-        a: "Start with a free 30-minute technical conversation. We review the problem, available data and operating constraints. If we are not the right team, we say so. Within 48 business hours, you receive a written recommendation and, when appropriate, a proposal with scope, deliverables, assumptions, timeline and price.",
+        a: "Book a free 30-minute diagnosis, no commitment. We listen, then tell you honestly whether we can help — and how. Within 48 business hours you receive a written proposal with fixed price and scope.",
       },
     ],
   },
