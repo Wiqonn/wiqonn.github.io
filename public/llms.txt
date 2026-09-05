@@ -48,8 +48,10 @@
 
 ## Files
 
-- [Home](https://www.wiqonn.com/): services, how we work, FAQ and contact.
+- [Home in English](https://www.wiqonn.com/en): services, how we work, FAQ and contact.
+- [Home in Spanish](https://www.wiqonn.com/): servicios, metodología, preguntas frecuentes y contacto.
 - [Blog](https://www.wiqonn.com/blog): technical AI articles.
 - [DGX Spark fine-tuning](https://www.wiqonn.com/blog/dgx-spark-finetune): LoRA + NVFP4 fine-tuning in practice.
 - [vLLM-MLX](https://www.wiqonn.com/blog/vllm-mlx): production-grade local LLM inference on Apple Silicon.
-- [Brochure](https://www.wiqonn.com/brochure/): official portfolio PDF.
+- [Brochure in English](https://www.wiqonn.com/brochure/): printable service portfolio.
+- [Brochure in Spanish](https://www.wiqonn.com/brochure/es/): portafolio de servicios para imprimir.

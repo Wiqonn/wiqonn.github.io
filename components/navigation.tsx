@@ -6,15 +6,14 @@ import Link from "next/link"
 import { Menu, X } from "lucide-react"
 import { useLanguage, useT } from "@/components/language-provider"
 import { BookingButton } from "@/components/booking-button"
-import type { Lang } from "@/lib/i18n"
+import { HOME_PATHS, type Lang } from "@/lib/i18n"
 
-/** Toggle ES/EN: dos botones segmentados (44px de área táctil mínima,
- *  aria-pressed, focus-visible). Persistencia vía LanguageProvider. */
+/** Real language links work for crawlers and visitors without JavaScript. */
 function LanguageToggle() {
-  const { lang, setLang, canChangeLanguage } = useLanguage()
+  const { lang, showLanguageSwitch } = useLanguage()
   const t = useT()
 
-  if (!canChangeLanguage) return null
+  if (!showLanguageSwitch) return null
 
   const options: { value: Lang; label: string; aria: string }[] = [
     { value: "es", label: "ES", aria: "Español" },
@@ -28,20 +27,21 @@ function LanguageToggle() {
       className="flex items-center rounded-full border border-border/50 bg-background/60 p-1"
     >
       {options.map((opt) => (
-        <button
+        <Link
           key={opt.value}
-          type="button"
-          onClick={() => setLang(opt.value)}
-          aria-pressed={lang === opt.value}
+          href={HOME_PATHS[opt.value]}
+          hrefLang={opt.value}
+          lang={opt.value}
+          aria-current={lang === opt.value ? "page" : undefined}
           aria-label={opt.aria}
-          className={`h-11 min-w-11 px-3 rounded-full text-xs font-bold uppercase tracking-wide transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
+          className={`inline-flex items-center justify-center h-11 min-w-11 px-3 rounded-full text-xs font-bold uppercase tracking-wide transition-colors outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-background ${
             lang === opt.value
               ? "bg-primary/10 text-primary ring-1 ring-inset ring-primary/35"
               : "text-muted-foreground hover:text-foreground"
           }`}
         >
           {opt.label}
-        </button>
+        </Link>
       ))}
     </div>
   )
@@ -49,16 +49,17 @@ function LanguageToggle() {
 
 export function Navigation() {
   const t = useT()
+  const { homeHref } = useLanguage()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const [isVisible, setIsVisible] = useState(true)
   const lastScrollY = useRef(0)
 
   const links: { label: string; href: string }[] = [
-    { label: t.nav.links[0], href: "/" },
-    { label: t.nav.links[1], href: "/#services" },
+    { label: t.nav.links[0], href: homeHref },
+    { label: t.nav.links[1], href: `${homeHref}#services` },
     { label: t.nav.links[2], href: "/blog" },
-    { label: t.nav.links[3], href: "/#contact" },
+    { label: t.nav.links[3], href: `${homeHref}#contact` },
   ]
 
   useEffect(() => {
@@ -88,7 +89,7 @@ export function Navigation() {
     >
       <nav className="mx-auto flex h-20 w-full max-w-[1440px] items-center justify-between gap-3 px-4 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-3 shrink-0" aria-label="Wiqonn">
+        <Link href={homeHref} className="flex items-center gap-3 shrink-0" aria-label="Wiqonn">
           <Image
             src="/wiqonn-logo.png"
             alt="Wiqonn"

@@ -12,9 +12,11 @@
 
 export type Lang = "es" | "en"
 
+export const HOME_PATHS: Record<Lang, string> = { es: "/", en: "/en" }
+
 export const es = {
   seo: {
-    title: "Wiqonn",
+    title: "IA a la medida para empresas | Wiqonn",
     description:
       "Wiqonn investiga, adapta, entrena, evalúa y despliega sistemas de IA a la medida para organizaciones de cualquier tamaño en todo el mundo.",
     keywords:
@@ -475,7 +477,7 @@ export type Dict = typeof es
 
 export const en: Dict = {
   seo: {
-    title: "Wiqonn",
+    title: "Custom AI Systems for Businesses | Wiqonn",
     description:
       "Wiqonn researches, adapts, trains, evaluates and deploys custom AI systems for organizations of every size, anywhere in the world.",
     keywords:
@@ -498,7 +500,7 @@ export const en: Dict = {
       "One team takes every system from research to production.",
     ctaPrimary: "Discuss your use case",
     ctaSecondary: "Explore our capabilities",
-    checklistHref: "/#services",
+    checklistHref: "/en#services",
     emailBody: "Hi Wiqonn, I'd like to book a 30-minute AI diagnosis for my company",
     emailSubject: "AI diagnosis · 30 min",
   },

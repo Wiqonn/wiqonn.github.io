@@ -177,7 +177,7 @@ export default function BlogPage() {
                     className="border-border/50 hover:border-primary/50 hover:bg-primary/5 transition-all h-14 px-8"
                     asChild
                   >
-                    <a href="/#services">
+                    <a href="/en#services">
                       Explore our AI capabilities
                     </a>
                   </Button>

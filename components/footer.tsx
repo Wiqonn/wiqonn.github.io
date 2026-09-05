@@ -4,11 +4,12 @@ import Image from "next/image"
 import Link from "next/link"
 import { Linkedin, Mail, Github } from "lucide-react"
 import { Reveal } from "@/components/reveal"
-import { useT } from "@/components/language-provider"
+import { useLanguage, useT } from "@/components/language-provider"
 import { BookingButton } from "@/components/booking-button"
 
 export function Footer() {
   const t = useT()
+  const { homeHref } = useLanguage()
 
   const services = t.footer.services
   const company = t.footer.company
@@ -57,7 +58,7 @@ export function Footer() {
               {services.map((service) => (
                 <li key={service}>
                   <Link
-                    href="/#services"
+                    href={`${homeHref}#services`}
                     className="text-sm text-muted-foreground hover:text-foreground transition-colors hover:translate-x-1 inline-block"
                   >
                     {service}

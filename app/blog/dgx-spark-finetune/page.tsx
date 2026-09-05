@@ -966,7 +966,7 @@ export default function DgxSparkFineTunePost() {
                 <div className="flex flex-wrap justify-center gap-4">
                   <BookingButton className="btn-gradient glow-cyan hover:scale-105 transition-all text-base px-8 h-14 text-[#0A0E1A] font-semibold" />
                   <Button size="lg" variant="outline" asChild className="h-14 px-8 text-lg">
-                    <a href="/#services">
+                    <a href="/en#services">
                       Explore our AI capabilities
                     </a>
                   </Button>

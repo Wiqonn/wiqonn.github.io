@@ -9,5 +9,5 @@ export const metadata = blogMetadata({
 })
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
-  return <SiteLayout lang="en" fixedLanguage>{children}</SiteLayout>
+  return <SiteLayout lang="en" showLanguageSwitch={false}>{children}</SiteLayout>
 }

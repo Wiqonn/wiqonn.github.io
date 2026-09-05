@@ -3,13 +3,16 @@
 from html.parser import HTMLParser
 from pathlib import Path
 from urllib.parse import urljoin, urlparse
+import json
 import unittest
+import xml.etree.ElementTree as ET
 
 
 SITE = "https://www.wiqonn.com"
 OUT = Path(__file__).resolve().parents[1] / "out"
 PAGES = {
     "/": ("index.html", "es"),
+    "/en": ("en.html", "en"),
     "/blog": ("blog.html", "en"),
     "/blog/dgx-spark-finetune": ("blog/dgx-spark-finetune.html", "en"),
     "/blog/vllm-mlx": ("blog/vllm-mlx.html", "en"),
@@ -32,10 +35,21 @@ class Page(HTMLParser):
         self.active = None
         self.email_protected = False
         self.unprotected_emails = []
+        self.body_text = []
+        self.in_body = False
+        self.ignored_tag = None
+        self.json_ld = []
+        self.script_text = None
         self.feed(html)
 
     def handle_starttag(self, tag, attrs):
         attrs = dict(attrs)
+        if tag == "body":
+            self.in_body = True
+        if tag in ("script", "style"):
+            self.ignored_tag = tag
+            if attrs.get("type") == "application/ld+json":
+                self.script_text = ""
         if tag == "html":
             self.lang = attrs.get("lang")
         elif tag == "meta":
@@ -59,10 +73,21 @@ class Page(HTMLParser):
             self.images.append(attrs)
 
     def handle_endtag(self, tag):
+        if tag == "body":
+            self.in_body = False
+        if tag == self.ignored_tag:
+            self.ignored_tag = None
+            if self.script_text is not None:
+                self.json_ld.append(json.loads(self.script_text))
+                self.script_text = None
         if tag == self.active:
             self.active = None
 
     def handle_data(self, data):
+        if self.script_text is not None:
+            self.script_text += data
+        if self.in_body and self.ignored_tag is None:
+            self.body_text.append(data)
         if self.active == "title":
             self.title += data
         elif self.active == "a":
@@ -78,7 +103,55 @@ class Page(HTMLParser):
 class SeoExportTests(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
-        cls.pages = {url: Page((OUT / file).read_text()) for url, (file, _) in PAGES.items()}
+        cls.pages = {
+            url: Page((OUT / file).read_text())
+            for url, (file, _) in PAGES.items() if (OUT / file).exists()
+        }
+
+    def test_export_contains_all_indexable_routes(self):
+        self.assertEqual(set(self.pages), set(PAGES))
+
+    def test_homepages_are_localized_before_javascript(self):
+        expected = {
+            "/": ("IA a la medida para empresas | Wiqonn", "Los modelos generales son potentes"),
+            "/en": ("Custom AI Systems for Businesses | Wiqonn", "General-purpose models are powerful"),
+        }
+        for url, (title, intro) in expected.items():
+            with self.subTest(url=url):
+                self.assertIn(url, self.pages)
+                page = self.pages[url]
+                self.assertEqual(page.title, title)
+                self.assertIn(intro, " ".join(page.body_text))
+                self.assertEqual(set(page.alternates), {"es", "en", "x-default"})
+                targets = {href for href, _ in page.links}
+                self.assertTrue({"/", "/en"}.issubset(targets))
+                faq = next(item for item in page.json_ld if item.get("@type") == "FAQPage")
+                self.assertEqual(faq["inLanguage"], PAGES[url][1])
+                self.assertEqual(faq["@id"], SITE + url + "#faq")
+                body = " ".join(" ".join(page.body_text).split())
+                for question in faq["mainEntity"]:
+                    self.assertIn(" ".join(question["name"].split()), body)
+                    self.assertIn(" ".join(question["acceptedAnswer"]["text"].split()), body)
+
+    def test_english_navigation_stays_in_english(self):
+        for url, page in self.pages.items():
+            if PAGES[url][1] == "en":
+                with self.subTest(url=url):
+                    targets = {href for href, _ in page.links}
+                    self.assertTrue({"/en", SITE + "/en"} & targets)
+                    self.assertNotIn("/#services", targets)
+                    self.assertNotIn("/#contact", targets)
+
+    def test_sitemap_contains_localized_homepages(self):
+        namespaces = {"s": "http://www.sitemaps.org/schemas/sitemap/0.9", "x": "http://www.w3.org/1999/xhtml"}
+        root = ET.parse(OUT / "sitemap.xml").getroot()
+        entries = {item.find("s:loc", namespaces).text: item for item in root.findall("s:url", namespaces)}
+        self.assertEqual(set(entries), {SITE + url for url in PAGES})
+        for url in ("/", "/en"):
+            with self.subTest(url=url):
+                self.assertIn(SITE + url, entries)
+                alternates = {item.attrib["hreflang"]: item.attrib["href"] for item in entries[SITE + url].findall("x:link", namespaces)}
+                self.assertEqual(alternates, {"es": SITE + "/", "en": SITE + "/en", "x-default": SITE + "/"})
 
     def test_document_languages_match_content(self):
         for url, page in self.pages.items():
@@ -119,7 +192,9 @@ class SeoExportTests(unittest.TestCase):
                     translated = self.pages[target_path]
                     if lang != "x-default":
                         self.assertEqual(translated.lang, lang)
-                        self.assertEqual(translated.alternates.get(page.lang), SITE + url)
+                        backlink = translated.alternates.get(page.lang)
+                        self.assertIsNotNone(backlink)
+                        self.assertEqual(urlparse(backlink).path or "/", url)
 
     def test_pages_have_crawlable_internal_navigation(self):
         for url, page in self.pages.items():

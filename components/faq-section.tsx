@@ -9,7 +9,7 @@ export function FAQSection() {
   const t = useT()
 
   return (
-    <section className="py-16 md:py-24 bg-background-navy relative overflow-hidden">
+    <section id="faq" className="py-16 md:py-24 bg-background-navy relative overflow-hidden">
       <div
         aria-hidden="true"
         className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/[0.03] to-transparent pointer-events-none"
