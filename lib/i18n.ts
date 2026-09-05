@@ -14,7 +14,7 @@ export type Lang = "es" | "en"
 
 export const es = {
   seo: {
-    title: "Laboratorio de IA aplicada | Sistemas de IA a la medida | Wiqonn",
+    title: "Wiqonn",
     description:
       "Wiqonn investiga, adapta, entrena, evalúa y despliega sistemas de IA a la medida para organizaciones de cualquier tamaño en todo el mundo.",
     keywords:
@@ -475,7 +475,7 @@ export type Dict = typeof es
 
 export const en: Dict = {
   seo: {
-    title: "Applied AI Research Lab | Custom AI Systems | Wiqonn",
+    title: "Wiqonn",
     description:
       "Wiqonn researches, adapts, trains, evaluates and deploys custom AI systems for organizations of every size, anywhere in the world.",
     keywords:

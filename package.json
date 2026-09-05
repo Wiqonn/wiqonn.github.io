@@ -3,9 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "next build",
+    "build": "next build && node scripts/protect-email-links.mjs",
     "dev": "next dev",
     "lint": "eslint .",
+    "test:seo": "python3 scripts/check-seo.py",
     "start": "next start"
   },
   "dependencies": {

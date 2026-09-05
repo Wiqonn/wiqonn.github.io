@@ -53,25 +53,22 @@ export function HeroSection() {
           {t.hero.labMark}
         </div>
 
-        <h1 className="hero-cinematic-title text-balance">
-          <span className="sr-only">
-            {t.hero.titlePre}
-            {t.hero.rotator[0]}
-          </span>
+        <h1 className="sr-only">{t.hero.titlePre.trim()} {t.hero.rotator[0]}</h1>
+        <div className="hero-cinematic-title text-balance" aria-hidden="true">
           <span aria-hidden="true">
-            <span className="hero-cinematic-title-pre">{t.hero.titlePre}</span>
+            <span className="hero-cinematic-title-pre">{t.hero.titlePre} </span>
             <span className="hero-rotator-viewport">
               <span
                 key={`${rotatorIndex}-${t.hero.rotator[rotatorIndex]}`}
                 className={`hero-cinematic-accent ${rotatorExiting ? "is-exiting" : "is-entering"}`}
               >
                 {rotatorLines.map((line) => (
-                  <span key={line}>{line}</span>
+                  <span key={line}>{line} </span>
                 ))}
               </span>
             </span>
           </span>
-        </h1>
+        </div>
 
         <div className="hero-cinematic-meta">
           <p>{t.hero.subheadline}</p>

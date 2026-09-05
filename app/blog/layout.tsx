@@ -1,26 +1,13 @@
-import type { Metadata } from "next"
+import { SiteLayout } from "@/components/site-layout"
+import { blogMetadata } from "@/lib/seo"
 
-export const metadata: Metadata = {
-  title: "Wiqonn Blog: AI in Production, No Hype",
+export const metadata = blogMetadata({
+  title: "Applied AI Research & Engineering Blog | Wiqonn",
   description:
-    "Applied research and engineering notes from Wiqonn: how to ship AI that reaches production for companies of any size, anywhere in the world. Real benchmarks, architecture decisions and working code.",
-  alternates: {
-    canonical: "/blog",
-    languages: {
-      es: "/blog",
-      en: "/blog",
-    },
-  },
-  openGraph: {
-    title: "Wiqonn Blog: AI in Production, No Hype",
-    description:
-      "Applied research and engineering notes from Wiqonn: how to ship AI that reaches production for companies of any size, anywhere in the world.",
-    url: "https://www.wiqonn.com/blog",
-    siteName: "Wiqonn",
-    type: "website",
-  },
-}
+    "Explore Wiqonn's applied AI research: LLM fine-tuning, local inference benchmarks, architecture decisions and practical guides for production systems.",
+  path: "/blog",
+})
 
 export default function BlogLayout({ children }: { children: React.ReactNode }) {
-  return <>{children}</>
+  return <SiteLayout lang="en" fixedLanguage>{children}</SiteLayout>
 }

@@ -11,8 +11,10 @@ import type { Lang } from "@/lib/i18n"
 /** Toggle ES/EN: dos botones segmentados (44px de área táctil mínima,
  *  aria-pressed, focus-visible). Persistencia vía LanguageProvider. */
 function LanguageToggle() {
-  const { lang, setLang } = useLanguage()
+  const { lang, setLang, canChangeLanguage } = useLanguage()
   const t = useT()
+
+  if (!canChangeLanguage) return null
 
   const options: { value: Lang; label: string; aria: string }[] = [
     { value: "es", label: "ES", aria: "Español" },

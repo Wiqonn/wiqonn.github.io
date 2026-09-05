@@ -102,13 +102,14 @@ export default function VllmMlxPost() {
             </div>
 
             <h1 className="text-3xl md:text-5xl lg:text-6xl font-bold mb-6 tracking-tight leading-tight">
-              Your Mac is Now an{" "}
-              <span className="text-gradient-wiqonn">AI Server</span>
+              Run LLMs on Apple Silicon with{" "}
+              <span className="text-gradient-wiqonn">vLLM-MLX</span>
             </h1>
 
             <p className="text-xl text-muted-foreground leading-relaxed mb-8">
-              Stop paying for cloud APIs. Run production-grade LLMs and vision models locally
-              with the same performance you&apos;d get from expensive GPU servers.
+              Run LLMs and vision models locally on Apple Silicon with vLLM-MLX.
+              These M4 Max benchmarks explore continuous batching, image caching and
+              the setup needed to turn your Mac into a private AI server.
             </p>
 
             <div className="flex flex-wrap items-center gap-6 text-sm text-muted-foreground mb-8">
@@ -706,7 +707,7 @@ export default function VllmMlxPost() {
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-full bg-gradient-wiqonn flex items-center justify-center text-background font-bold text-sm">1</div>
-                    <h4 className="font-bold text-foreground">Clone the Repository</h4>
+                    <h3 className="font-bold text-foreground">Clone the Repository</h3>
                   </div>
                   <div className="rounded-xl overflow-hidden border border-border/50">
                     <div className="flex items-center justify-between px-4 py-2 bg-[#1a1a1a] border-b border-border/30">
@@ -723,7 +724,7 @@ export default function VllmMlxPost() {
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-full bg-gradient-wiqonn flex items-center justify-center text-background font-bold text-sm">2</div>
-                    <h4 className="font-bold text-foreground">Install Dependencies</h4>
+                    <h3 className="font-bold text-foreground">Install Dependencies</h3>
                   </div>
                   <div className="rounded-xl overflow-hidden border border-border/50">
                     <div className="flex items-center justify-between px-4 py-2 bg-[#1a1a1a] border-b border-border/30">
@@ -739,7 +740,7 @@ export default function VllmMlxPost() {
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-full bg-gradient-wiqonn flex items-center justify-center text-background font-bold text-sm">3</div>
-                    <h4 className="font-bold text-foreground">Start the AI Server</h4>
+                    <h3 className="font-bold text-foreground">Start the AI Server</h3>
                   </div>
                   <div className="rounded-xl overflow-hidden border border-border/50">
                     <div className="flex items-center justify-between px-4 py-2 bg-[#1a1a1a] border-b border-border/30">
@@ -755,7 +756,7 @@ export default function VllmMlxPost() {
                 <div className="mb-6">
                   <div className="flex items-center gap-3 mb-3">
                     <div className="w-8 h-8 rounded-full bg-gradient-wiqonn flex items-center justify-center text-background font-bold text-sm">4</div>
-                    <h4 className="font-bold text-foreground">Start Chatting</h4>
+                    <h3 className="font-bold text-foreground">Start Chatting</h3>
                   </div>
                   <div className="rounded-xl overflow-hidden border border-border/50">
                     <div className="flex items-center justify-between px-4 py-2 bg-[#1a1a1a] border-b border-border/30">

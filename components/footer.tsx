@@ -52,7 +52,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h3 className="font-bold mb-4 text-foreground">{t.footer.servicesTitle}</h3>
+            <p className="font-bold mb-4 text-foreground">{t.footer.servicesTitle}</p>
             <ul className="space-y-3">
               {services.map((service) => (
                 <li key={service}>
@@ -69,11 +69,22 @@ export function Footer() {
 
           {/* Company */}
           <div>
-            <h3 className="font-bold mb-4 text-foreground">{t.footer.companyTitle}</h3>
+            <p className="font-bold mb-4 text-foreground">{t.footer.companyTitle}</p>
             <ul className="space-y-3">
               {company.map((item) => (
                 <li key={item}>
                   <span className="text-sm text-muted-foreground">{item}</span>
+                </li>
+              ))}
+              {[
+                { href: "/blog", label: "Wiqonn AI Blog" },
+                { href: "/brochure/es/", label: "Servicios de IA (Español)", lang: "es" },
+                { href: "/brochure/", label: "AI services (English)", lang: "en" },
+              ].map((item) => (
+                <li key={item.href}>
+                  <a href={item.href} lang={item.lang} hrefLang={item.lang} className="text-sm text-muted-foreground hover:text-foreground transition-colors">
+                    {item.label}
+                  </a>
                 </li>
               ))}
             </ul>
@@ -81,7 +92,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h3 className="font-bold mb-4 text-foreground">{t.footer.getInTouch}</h3>
+            <p className="font-bold mb-4 text-foreground">{t.footer.getInTouch}</p>
             <ul className="space-y-3 text-sm text-muted-foreground">
               <li>
                 <a

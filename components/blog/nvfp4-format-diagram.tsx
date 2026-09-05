@@ -23,7 +23,7 @@ const MAX = 6
 export function NVFP4FormatDiagram() {
   return (
     <div className="my-10 rounded-2xl bg-card/30 border border-border/50 p-6 md:p-8 overflow-hidden">
-      <h4 className="text-xl font-bold mb-2">NVFP4 (E2M1): What One Value Looks Like</h4>
+      <h3 className="text-xl font-bold mb-2">NVFP4 (E2M1): What One Value Looks Like</h3>
       <p className="text-sm text-muted-foreground mb-8">
         1 sign bit · 2 exponent bits · 1 mantissa bit - only 8 representable magnitudes, but
         with float exponent spacing, not a linear integer grid.

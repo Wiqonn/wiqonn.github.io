@@ -3,7 +3,22 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Wiqonn — Brochure de IA Empresarial 2026</title>
+<title>Servicios de IA, Datos y Automatización | Wiqonn</title>
+<meta name="description" content="Conoce los servicios de Wiqonn: agentes de IA, automatización, análisis de datos e infraestructura cloud. Del diagnóstico a sistemas en producción." />
+<link rel="canonical" href="https://www.wiqonn.com/brochure/es/" />
+<link rel="alternate" hreflang="en" href="https://www.wiqonn.com/brochure/" />
+<link rel="alternate" hreflang="es" href="https://www.wiqonn.com/brochure/es/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Wiqonn" />
+<meta property="og:title" content="Servicios de IA, Datos y Automatización | Wiqonn" />
+<meta property="og:description" content="Conoce los servicios de Wiqonn: agentes de IA, automatización, análisis de datos e infraestructura cloud. Del diagnóstico a sistemas en producción." />
+<meta property="og:url" content="https://www.wiqonn.com/brochure/es/" />
+<meta property="og:locale" content="es_CO" />
+<meta property="og:image" content="https://www.wiqonn.com/wiqonn-icon.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Servicios de IA, Datos y Automatización | Wiqonn" />
+<meta name="twitter:description" content="Conoce los servicios de Wiqonn: agentes de IA, automatización, análisis de datos e infraestructura cloud. Del diagnóstico a sistemas en producción." />
+<meta name="twitter:image" content="https://www.wiqonn.com/wiqonn-icon.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@300..700&display=swap" rel="stylesheet">
@@ -138,7 +153,7 @@
   }
   .display-italic.gradient-text,
   .gradient-text.display-italic,
-  h1 em, h2 em, h4 em, h5 em, h6 em {
+  h1 em, h2 em, h3 em, .detail-title em {
     padding-right: 0.1em;
   }
 
@@ -356,12 +371,12 @@
     text-transform: uppercase; font-weight: 600;
     line-height: 1.3;
   }
-  .pillar h4 {
+  .pillar h3 {
     font-family: var(--display); font-weight: 400;
     font-size: 17pt; margin: 0; line-height: 1.05;
     letter-spacing: -.02em; color: var(--ink);
   }
-  .pillar h4 em {
+  .pillar h3 em {
     font-style: italic; font-weight: 300;
     font-variation-settings: "opsz" 144, "SOFT" 100;
     background: var(--grad-text);
@@ -426,7 +441,7 @@
   .agent-card {
     padding: 7mm 7mm;
   }
-  .agent-card h5 {
+  .agent-card h3 {
     font-family: var(--display); font-weight: 400;
     font-size: 17pt; line-height: 1.05; letter-spacing: -.015em;
     margin: 0 0 4mm; color: var(--ink);
@@ -561,12 +576,12 @@
     color: var(--cyan); letter-spacing: .14em; text-transform: uppercase;
     margin-bottom: 2.5mm; font-weight: 600;
   }
-  .industry-tile h5 {
+  .industry-tile .card-label {
     font-family: var(--display); font-weight: 400;
     font-size: 12pt; line-height: 1.05; letter-spacing: -.015em;
     margin: 0 0 2.5mm; color: var(--ink);
   }
-  .industry-tile p { margin: 0; font-size: 7.5pt; line-height: 1.4; color: var(--muted); }
+  .industry-tile p:not(.card-label) { margin: 0; font-size: 7.5pt; line-height: 1.4; color: var(--muted); }
 
   .trust-band {
     border-top: 2px solid var(--ink);
@@ -595,12 +610,12 @@
     letter-spacing: .14em; text-transform: uppercase; font-weight: 500;
     margin-bottom: 2mm;
   }
-  .trust-item h6 {
+  .trust-item .detail-title {
     font-family: var(--display); font-weight: 400;
     font-size: 12pt; line-height: 1.05; margin: 0 0 2.5mm; color: var(--ink);
     letter-spacing: -.01em;
   }
-  .trust-item p { margin: 0; font-size: 8pt; line-height: 1.4; color: var(--muted); }
+  .trust-item p:not(.detail-title) { margin: 0; font-size: 8pt; line-height: 1.4; color: var(--muted); }
 
   /* ============ ENGAGEMENT + ROI (P6) ============ */
   .timeline-band {
@@ -624,7 +639,7 @@
     letter-spacing: .15em; text-transform: uppercase; font-weight: 600;
     margin-bottom: 2mm;
   }
-  .phase h5 {
+  .phase h3 {
     font-family: var(--display); font-weight: 400;
     font-size: 18pt; line-height: 1.0; letter-spacing: -.02em;
     margin: 0 0 3mm; color: var(--ink);
@@ -680,7 +695,7 @@
     text-transform: uppercase; font-weight: 600;
     margin-bottom: 3mm;
   }
-  .roi-card h5 {
+  .roi-card .card-label {
     font-family: var(--display); font-weight: 400;
     font-size: 16pt; line-height: 1.05; letter-spacing: -.015em;
     margin: 0 0 3mm; color: var(--ink);
@@ -690,7 +705,7 @@
     font-size: 36pt; line-height: 0.9; letter-spacing: -.03em;
     margin: 1mm 0 3mm;
   }
-  .roi-card p { margin: 0; font-size: 8.5pt; line-height: 1.5; color: var(--muted); }
+  .roi-card p:not(.card-label) { margin: 0; font-size: 8.5pt; line-height: 1.5; color: var(--muted); }
 
   /* ============ TECH STACK (P7) ============ */
   .stack-head {
@@ -775,7 +790,7 @@
     box-shadow: 0 4px 14px rgba(15,166,143,.25);
   }
   .team-card.hero .avatar { width: 18mm; height: 18mm; font-size: 16pt; }
-  .team-card h4 { font-family: var(--display); font-size: 16pt; font-weight: 400; margin: 0 0 1mm; letter-spacing: -.01em; line-height: 1.05; color: var(--ink); }
+  .team-card h3 { font-family: var(--display); font-size: 16pt; font-weight: 400; margin: 0 0 1mm; letter-spacing: -.01em; line-height: 1.05; color: var(--ink); }
   .team-card .role { font-family: var(--mono); font-size: 8pt; color: var(--cyan); letter-spacing: .14em; text-transform: uppercase; margin-bottom: 3mm; font-weight: 600; }
   .team-card p { margin: 0; font-size: 9pt; color: var(--muted); line-height: 1.45; }
   .team-card.hero p { font-size: 10pt; color: var(--ink-2); }
@@ -801,7 +816,7 @@
     color: var(--green-deep); letter-spacing: .15em;
     text-transform: uppercase; margin-bottom: 4mm; font-weight: 600;
   }
-  .case-card h4 {
+  .case-card h3 {
     font-family: var(--display); font-weight: 400;
     font-size: 16pt; line-height: 1.05; letter-spacing: -.01em;
     margin: 0 0 4mm; color: var(--ink);
@@ -828,7 +843,7 @@
       var(--paper-2);
   }
   .case-card.placeholder .case-tag { color: var(--dim); }
-  .case-card.placeholder h4 { color: var(--muted); }
+  .case-card.placeholder h3 { color: var(--muted); }
 
   /* ============ CONTACT / BACK (P8) — light page with dark feature panel ============ */
   .contact { background: var(--paper); }
@@ -907,8 +922,8 @@
     margin-top: auto;
     padding-top: 4mm;
   }
-  .contact-grid h6 { font-family: var(--mono); font-size: 8pt; color: var(--muted); margin: 0 0 4mm; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; }
-  .contact-grid p { margin: 0; font-size: 11pt; line-height: 1.5; color: var(--ink); font-weight: 400; }
+  .contact-grid .detail-title { font-family: var(--mono); font-size: 8pt; color: var(--muted); margin: 0 0 4mm; letter-spacing: .15em; text-transform: uppercase; font-weight: 600; }
+  .contact-grid p:not(.detail-title) { margin: 0; font-size: 11pt; line-height: 1.5; color: var(--ink); font-weight: 400; }
   .contact-grid a { color: var(--cyan); text-decoration: none; border-bottom: 1px solid rgba(0,149,184,.3); }
 
   .endmark {
@@ -939,11 +954,11 @@
        print engines and leaves visible solid-color rectangles over the text.
        Force solid colors for reliable rendering across all PDF readers. */
     .gradient-text,
-    .pillar h4 em,
+    .pillar h3 em,
     .pillar .pillar-num,
     .agent-card .ac-promise,
     .principles-strip .p-key em,
-    h1 em, h2 em, h3 em, h4 em, h5 em, h6 em {
+    h1 em, h2 em, h3 em, .detail-title em {
       background: none !important;
       background-clip: initial !important;
       -webkit-background-clip: initial !important;
@@ -1007,6 +1022,14 @@
     letter-spacing: .1em; text-transform: uppercase;
     cursor: pointer;
   }
+  .site-nav {
+    max-width: 210mm; margin: 24px auto; padding: 16px;
+    background: var(--paper); border-radius: 4px;
+    display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px;
+    font-family: var(--sans); font-size: 14px;
+  }
+  .site-nav a { color: var(--ink); text-decoration: underline; }
+  @media print { .site-nav { display: none; } }
 </style>
 </head>
 <body>
@@ -1081,7 +1104,7 @@
           <span class="pillar-num">01 / 03</span>
           <span class="num">VELOCIDAD AL VALOR</span>
         </div>
-        <h4>Semanas<span class="display-italic">.</span><br><em>No trimestres.</em></h4>
+        <h3>Semanas<span class="display-italic">.</span><br><em>No trimestres.</em></h3>
         <p>Descubrimiento comprimido, alcance acotado a un resultado que mueva el negocio, entregado en iteraciones de producción — nunca un piloto de seis meses que se desvanece del roadmap.</p>
       </div>
       <div class="pillar">
@@ -1089,7 +1112,7 @@
           <span class="pillar-num">02 / 03</span>
           <span class="num">RESPONSABILIDAD</span>
         </div>
-        <h4>Números<span class="display-italic">,</span><br><em>o no se lanza.</em></h4>
+        <h3>Números<span class="display-italic">,</span><br><em>o no se lanza.</em></h3>
         <p>Cada sistema tiene una línea base y un objetivo antes de la primera línea de código. Si el modelo no supera la métrica acordada, no entra a producción — aunque la demo se vea bien.</p>
       </div>
       <div class="pillar">
@@ -1097,7 +1120,7 @@
           <span class="pillar-num">03 / 03</span>
           <span class="num">LISTO PARA GOBIERNO</span>
         </div>
-        <h4>Trazabilidad<span class="display-italic">,</span><br><em>no hay cajas negras.</em></h4>
+        <h3>Trazabilidad<span class="display-italic">,</span><br><em>no hay cajas negras.</em></h3>
         <p>Trazas, evaluaciones y guardarraíles desde el día uno — para que los equipos de seguridad, legal y riesgo no se sorprendan cuando el sistema llegue a producción.</p>
       </div>
     </div>
@@ -1138,28 +1161,28 @@
     <div class="agent-grid">
       <article class="agent-card">
         <div class="ac-num">— Tipo 01</div>
-        <h5>Agentes operativos</h5>
+        <h3>Agentes operativos</h3>
         <p class="ac-promise">Adiós al copy-paste entre planillas.</p>
         <p>Clasifican tickets, mueven aprobaciones y concilian datos entre ERP, CRM y planillas — la operación repetitiva se convierte en trabajo medible.</p>
       </article>
 
       <article class="agent-card">
         <div class="ac-num">— Tipo 02</div>
-        <h5>Agentes de documentos &amp; conocimiento</h5>
+        <h3>Agentes de documentos &amp; conocimiento</h3>
         <p class="ac-promise">Lo leen todo. No olvidan nada.</p>
         <p>Leen contratos, RFPs, facturas y documentación interna. Extraen datos estructurados, responden con citas verificables y alimentan tus sistemas a demanda.</p>
       </article>
 
       <article class="agent-card">
         <div class="ac-num">— Tipo 03</div>
-        <h5>Agentes de apoyo a decisiones</h5>
+        <h3>Agentes de apoyo a decisiones</h3>
         <p class="ac-promise">Una segunda opinión, a escala.</p>
         <p>Modelos predictivos en una capa de agente — pronósticos, detección de anomalías, recomendaciones — dentro de las herramientas que tu equipo ya usa todos los días.</p>
       </article>
 
       <article class="agent-card">
         <div class="ac-num">— Tipo 04</div>
-        <h5>Agentes de cara al cliente</h5>
+        <h3>Agentes de cara al cliente</h3>
         <p class="ac-promise">Listos en el momento que el cliente pregunta.</p>
         <p>Copilotos de soporte, ventas y uso interno anclados en tus propios datos — con retrieval, evaluaciones y guardarraíles, no improvisando.</p>
       </article>
@@ -1168,17 +1191,17 @@
     <div class="principles-strip">
       <div class="principle">
         <span class="p-tag">— Siempre activos</span>
-        <h6 class="p-key">Corren <em>24/7.</em></h6>
+        <p class="p-key detail-title">Corren <em>24/7.</em></p>
         <p class="p-val">Sin turnos rotativos, sin huecos en horario no laboral.</p>
       </div>
       <div class="principle">
         <span class="p-tag">— Auditables</span>
-        <h6 class="p-key">Cada <em>paso registrado.</em></h6>
+        <p class="p-key detail-title">Cada <em>paso registrado.</em></p>
         <p class="p-val">Traza re-ejecutable para riesgo y legal, desde la primera semana.</p>
       </div>
       <div class="principle">
         <span class="p-tag">— Tuyos</span>
-        <h6 class="p-key">Tu <em>stack, tus reglas.</em></h6>
+        <p class="p-key detail-title">Tu <em>stack, tus reglas.</em></p>
         <p class="p-val">Despliegue en tu nube o on-prem, sobre tus datos, bajo tu gobernanza.</p>
       </div>
     </div>
@@ -1222,7 +1245,7 @@
         <ul>
           <li>Agentes IA que automatizan procesos de punta a punta</li>
           <li>Modelos predictivos entrenados con tus propios datos</li>
-          <li>Computer vision para control de calidad e inspección</li>
+          <li>Visión por computador para control de calidad e inspección</li>
           <li>Copilotos inteligentes anclados a tu base de conocimiento</li>
           <li>IA privada en tu propia infraestructura cuando los datos no pueden salir</li>
         </ul>
@@ -1299,42 +1322,42 @@
     <div class="industries-grid">
       <div class="industry-tile">
         <div class="tag">— Dominio 01</div>
-        <h5>Servicios Financieros</h5>
+        <p class="card-label">Servicios Financieros</p>
         <p>Risk scoring, detección de fraude, automatización de KYC/AML y BI para tesorería y operaciones.</p>
       </div>
       <div class="industry-tile">
         <div class="tag">— Dominio 02</div>
-        <h5>Educación &amp; EdTech</h5>
+        <p class="card-label">Educación &amp; EdTech</p>
         <p>Copilotos de captación y matrícula de estudiantes, learning analytics, generación de contenido y dashboards para operaciones académicas.</p>
       </div>
       <div class="industry-tile">
         <div class="tag">— Dominio 03</div>
-        <h5>Energía &amp; Utilities</h5>
+        <p class="card-label">Energía &amp; Utilities</p>
         <p>Mantenimiento predictivo, pronóstico de demanda, optimización de red y activos, y dashboards para redes de distribución.</p>
       </div>
       <div class="industry-tile">
         <div class="tag">— Dominio 04</div>
-        <h5>Logística &amp; Supply Chain</h5>
+        <p class="card-label">Logística &amp; Supply Chain</p>
         <p>Pronóstico de demanda, optimización de rutas y carga, detección de anomalías en operaciones distribuidas.</p>
       </div>
       <div class="industry-tile">
         <div class="tag">— Dominio 05</div>
-        <h5>Retail &amp; E-commerce</h5>
+        <p class="card-label">Retail &amp; E-commerce</p>
         <p>Personalización, modelos de fidelización y churn, pronóstico de demanda y copilotos de compra anclados en tu catálogo.</p>
       </div>
       <div class="industry-tile">
         <div class="tag">— Dominio 06</div>
-        <h5>Manufactura &amp; Industrial</h5>
-        <p>Computer vision para control de calidad, mantenimiento predictivo y modelos desplegables en el edge para la planta.</p>
+        <p class="card-label">Manufactura &amp; Industrial</p>
+        <p>Visión por computador para control de calidad, mantenimiento predictivo y modelos desplegables en el edge para la planta.</p>
       </div>
       <div class="industry-tile">
         <div class="tag">— Dominio 07</div>
-        <h5>Sector Público &amp; Gobierno</h5>
+        <p class="card-label">Sector Público &amp; Gobierno</p>
         <p>Análisis histórico de gasto, detección de patrones en registros legados y dashboards para decisiones basadas en evidencia.</p>
       </div>
       <div class="industry-tile">
         <div class="tag">— Dominio 08</div>
-        <h5>Servicios Profesionales &amp; Agencias</h5>
+        <p class="card-label">Servicios Profesionales &amp; Agencias</p>
         <p>Copilotos de lead scoring y conversión, automatización de documentos y propuestas, y BI para ingresos y operaciones de clientes.</p>
       </div>
     </div>
@@ -1345,22 +1368,22 @@
       <div class="trust-grid">
         <div class="trust-item">
           <div class="ti-tag">— Soberanía de datos</div>
-          <h6>Tus datos, tu infraestructura</h6>
+          <p class="detail-title">Tus datos, tu infraestructura</p>
           <p>Despliega todo el stack en tu nube, on-prem o VPC privada. Tus llaves, tus políticas de retención. Tus datos nunca entrenan un modelo público.</p>
         </div>
         <div class="trust-item">
           <div class="ti-tag">— IA Privada</div>
-          <h6>Modelos locales. Sin internet.</h6>
+          <p class="detail-title">Modelos locales. Sin internet.</p>
           <p>LLMs on-prem, visión en dispositivo y pipelines totalmente air-gapped para las cargas más sensibles — cero llamadas a APIs públicas.</p>
         </div>
         <div class="trust-item">
           <div class="ti-tag">— PI &amp; cumplimiento</div>
-          <h6>El trabajo es tuyo, auditable</h6>
+          <p class="detail-title">El trabajo es tuyo, auditable</p>
           <p>Código fuente, modelos y pipelines se transfieren al entregar. Arquitecturas alineadas con GDPR, HIPAA y SOC2.</p>
         </div>
         <div class="trust-item">
           <div class="ti-tag">— Trazabilidad</div>
-          <h6>Cada decisión es trazable</h6>
+          <p class="detail-title">Cada decisión es trazable</p>
           <p>Trazas, evaluaciones y guardarraíles siempre activos. Riesgo y legal obtienen un log auditable desde la primera semana.</p>
         </div>
       </div>
@@ -1398,7 +1421,7 @@
       <div class="timeline">
         <div class="phase">
           <div class="duration">— Fase 01 · 1–2 semanas</div>
-          <h5>Descubrimiento</h5>
+          <h3>Descubrimiento</h3>
           <p>Enmarcar el problema de negocio, definir línea base de la métrica, auditar los datos. Aún sin código.</p>
           <ul>
             <li>Entrevistas con stakeholders</li>
@@ -1410,7 +1433,7 @@
         <div class="timeline-arrow">→</div>
         <div class="phase">
           <div class="duration">— Fase 02 · 4–6 semanas</div>
-          <h5>Piloto</h5>
+          <h3>Piloto</h3>
           <p>Lanzar un sistema funcional con alcance controlado. Probar que la métrica se mueve antes de escalar.</p>
           <ul>
             <li>Prototipo de calidad productiva</li>
@@ -1422,7 +1445,7 @@
         <div class="timeline-arrow">→</div>
         <div class="phase live">
           <div class="duration">— Fase 03 · 8–12 semanas</div>
-          <h5>Producción</h5>
+          <h3>Producción</h3>
           <p>Endurecimiento, integración y un plan claro de handover a tu equipo — o partnership continuo.</p>
           <ul>
             <li>Endurecimiento y definición de SLOs</li>
@@ -1439,17 +1462,17 @@
       <div class="roi-grid">
         <div class="roi-card hero">
           <div class="tag">— El principio</div>
-          <h5>Acotado a un número<br>que importa a tu negocio.</h5>
+          <p class="card-label">Acotado a un número<br>que importa a tu negocio.</p>
           <p>No vendemos IA por hora. Cada engagement se moldea alrededor de un KPI operativo o financiero — costo ahorrado, tiempo recuperado, ingreso desbloqueado — definido y con línea base juntos en Descubrimiento antes de escribir código.</p>
         </div>
         <div class="roi-card">
           <div class="tag">— El costo alternativo</div>
-          <h5>El precio de no hacer nada.</h5>
+          <p class="card-label">El precio de no hacer nada.</p>
           <p>Para la mayoría de empresas el verdadero gasto no es el desarrollo de IA — son las horas humanas, las señales perdidas y las aprobaciones lentas que se queman silenciosamente cada trimestre que el flujo sigue manual.</p>
         </div>
         <div class="roi-card">
           <div class="tag">— El de-risking</div>
-          <h5>Para o pivota en cualquier fase.</h5>
+          <p class="card-label">Para o pivota en cualquier fase.</p>
           <p>Los engagements por fases significan que solo te comprometes a la siguiente fase, no al programa completo. Si Descubrimiento muestra que las matemáticas no cuadran, lo cancelamos juntos — sin presión de escalación, sin teatro de costos hundidos.</p>
         </div>
       </div>
@@ -1480,7 +1503,7 @@
         <span class="num">§ 07 — SIGUIENTE PASO</span>
         <h2>Cuéntanos qué te<br>está frenando<span class="display-italic">.</span> Te<br><em>diremos</em> si<br>podemos ayudar.</h2>
         <p>Sin pitch. Sin deck de 60 slides. Una conversación real — usualmente 30 minutos — para ver si hay un problema medible para el que podamos lanzar una solución dentro de un trimestre.</p>
-        <a class="contact-cta" href="https://www.wiqonn.com">
+        <a class="contact-cta" href="https://www.wiqonn.com/">
           Agenda una consulta gratis
           <span style="font-family: var(--display); font-size: 16pt; line-height: 0;">→</span>
         </a>
@@ -1489,15 +1512,15 @@
 
     <div class="contact-grid">
       <div>
-        <h6>— Web</h6>
-        <p><a href="https://www.wiqonn.com">wiqonn.com</a></p>
+        <p class="detail-title">— Web</p>
+        <p><a href="https://www.wiqonn.com/">wiqonn.com</a></p>
       </div>
       <div>
-        <h6>— Correo</h6>
-        <p><a href="mailto:contact@wiqonn.com">contact@wiqonn.com</a></p>
+        <p class="detail-title">— Correo</p>
+        <p><!--email_off--><a href="mailto:contact@wiqonn.com">contact@wiqonn.com</a><!--/email_off--></p>
       </div>
       <div>
-        <h6>— Modelo de trabajo</h6>
+        <p class="detail-title">— Modelo de trabajo</p>
         <p>Descubrimiento → Piloto → Producción<br>Típicamente 2–8 semanas por fase</p>
       </div>
     </div>
@@ -1520,5 +1543,10 @@
   <button onclick="window.print()">Abrir diálogo de impresión</button>
 </div>
 
+<nav class="site-nav" aria-label="Navegación del sitio">
+  <a href="/">Wiqonn: inicio</a>
+  <a href="/blog">Blog de investigación en IA</a>
+  <a href="/brochure/" hreflang="en" lang="en">AI services (English)</a>
+</nav>
 </body>
 </html>

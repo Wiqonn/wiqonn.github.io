@@ -62,7 +62,7 @@ function BarChart({
       ref={containerRef}
       className="my-8 p-6 md:p-8 rounded-2xl bg-card/30 border border-border/50"
     >
-      <h4 className="text-xl font-bold mb-2">{title}</h4>
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
       <p className="text-sm text-muted-foreground mb-8">{subtitle}</p>
 
       <div className="space-y-7">
@@ -197,7 +197,7 @@ export function LoRAParameterChart() {
       ref={containerRef}
       className="my-8 p-6 md:p-8 rounded-2xl bg-card/30 border border-border/50"
     >
-      <h4 className="text-xl font-bold mb-2">Trainable Parameters with LoRA</h4>
+      <h3 className="text-xl font-bold mb-2">Trainable Parameters with LoRA</h3>
       <p className="text-sm text-muted-foreground mb-8">
         Out of SmolLM3-3B&apos;s ~3.1B parameters, LoRA only updates a fraction: the A/B
         adapters on q/k/v/o and the SwiGLU projections (gate/up/down), at rank 64.

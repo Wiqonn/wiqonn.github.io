@@ -30,7 +30,7 @@ const posts = [
   },
   {
     slug: "vllm-mlx",
-    title: "Your Mac is Now an AI Server",
+    title: "vLLM-MLX: Local LLM Benchmarks on Apple Silicon",
     description:
       "Stop paying for cloud APIs. Run production-grade LLMs and vision models locally with continuous batching for multiple users and zero API costs.",
     date: "January 2026",
@@ -70,12 +70,19 @@ export default function BlogPage() {
               Research & Insights
             </Badge>
             <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 tracking-tight">
-              Wiqonn <span className="text-gradient-wiqonn">Blog</span>
+              Applied AI Research &amp; <span className="text-gradient-wiqonn">Engineering</span>
             </h1>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Applied research and engineering notes from Wiqonn: how to ship AI that reaches
               production for companies of any size, anywhere in the world. Real benchmarks, architecture
               decisions and working code.
+            </p>
+            <p className="mt-6 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              The Wiqonn blog documents how we train, evaluate and deploy language models.
+              Start with the DGX Spark guide to compare fine-tuning backends, memory requirements
+              and model export workflows. For inference on a Mac, explore our vLLM-MLX benchmarks
+              and setup instructions. Each article includes the hardware, software and limitations
+              behind the results so you can assess them against your own workload.
             </p>
           </div>
         </div>
@@ -87,7 +94,7 @@ export default function BlogPage() {
           <div className="grid gap-8 max-w-4xl mx-auto">
             <div ref={cardRef} className="reveal" style={revealStyle(REVEAL_DELAYS.card)}>
               {posts.map((post) => (
-                <Link key={post.slug} href={`/blog/${post.slug}`}>
+                <article key={post.slug}>
                   <Card className="p-8 bg-card/50 backdrop-blur-sm border-border/50 hover:border-primary/50 transition-all duration-500 group hover:-translate-y-1 hover:shadow-2xl hover:shadow-primary/10 relative overflow-hidden">
                     {/* Hover gradient */}
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -100,7 +107,9 @@ export default function BlogPage() {
                       )}
 
                       <h2 className="text-2xl md:text-3xl font-bold mb-4 group-hover:text-primary transition-colors">
-                        {post.title}
+                        <Link href={`/blog/${post.slug}`} className="after:absolute after:inset-0 focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary">
+                          {post.title}
+                        </Link>
                       </h2>
 
                       <p className="text-muted-foreground leading-relaxed mb-6">
@@ -140,7 +149,7 @@ export default function BlogPage() {
                       </div>
                     </div>
                   </Card>
-                </Link>
+                </article>
               ))}
             </div>
           </div>

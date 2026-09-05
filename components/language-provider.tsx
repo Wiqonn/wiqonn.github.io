@@ -12,6 +12,7 @@ import { es, en, type Dict, type Lang } from "@/lib/i18n"
 
 interface LanguageContextValue {
   lang: Lang
+  canChangeLanguage: boolean
   setLang: (lang: Lang) => void
   toggleLang: () => void
   t: Dict
@@ -19,6 +20,7 @@ interface LanguageContextValue {
 
 const LanguageContext = createContext<LanguageContextValue>({
   lang: "es",
+  canChangeLanguage: true,
   setLang: () => {},
   toggleLang: () => {},
   t: es,
@@ -28,27 +30,36 @@ const STORAGE_KEY = "wiqonn-lang"
 
 function getInitialLang(): Lang {
   if (typeof window === "undefined") return "es"
-  const stored = window.localStorage.getItem(STORAGE_KEY)
-  if (stored === "es" || stored === "en") return stored
+  try {
+    const stored = window.localStorage.getItem(STORAGE_KEY)
+    if (stored === "es" || stored === "en") return stored
+  } catch {
+    /* Storage can be unavailable in private browsing. */
+  }
   return navigator.language?.toLowerCase().startsWith("en") ? "en" : "es"
 }
 
-export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [lang, setLangState] = useState<Lang>("es")
+export function LanguageProvider({ children, initialLang = "es", fixedLanguage = false }: {
+  children: ReactNode
+  initialLang?: Lang
+  fixedLanguage?: boolean
+}) {
+  const [lang, setLangState] = useState<Lang>(initialLang)
 
   // Init once on mount (avoids hydration mismatch on static export).
   useEffect(() => {
-    setLangState(getInitialLang())
-  }, [])
+    if (!fixedLanguage) setLangState(getInitialLang())
+  }, [fixedLanguage])
 
   const setLang = useCallback((next: Lang) => {
+    if (fixedLanguage) return
     setLangState(next)
     try {
       window.localStorage.setItem(STORAGE_KEY, next)
     } catch {
       /* private mode: ignore */
     }
-  }, [])
+  }, [fixedLanguage])
 
   const toggleLang = useCallback(() => {
     setLang(lang === "es" ? "en" : "es")
@@ -61,7 +72,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   const t = lang === "en" ? en : es
 
   return (
-    <LanguageContext.Provider value={{ lang, setLang, toggleLang, t }}>
+    <LanguageContext.Provider value={{ lang, canChangeLanguage: !fixedLanguage, setLang, toggleLang, t }}>
       {children}
     </LanguageContext.Provider>
   )
