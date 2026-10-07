@@ -9,6 +9,7 @@ import {
   Code,
   Workflow,
   Megaphone,
+  GraduationCap,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react"
@@ -17,7 +18,7 @@ import { ScrollParallax } from "@/components/scroll-parallax"
 import { useT } from "@/components/language-provider"
 import { bookingUrl, hasBooking } from "@/lib/forms"
 
-const SERVICE_ICONS = [Brain, Eye, Cloud, Code, Workflow, Megaphone]
+const SERVICE_ICONS = [Brain, Eye, Cloud, Code, Workflow, Megaphone, GraduationCap]
 
 export function ServicesSection() {
   const t = useT()
@@ -56,32 +57,57 @@ export function ServicesSection() {
         <div className="grid md:grid-cols-2 gap-5 lg:gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon
+            const spansFullRow = index === services.length - 1 && services.length % 2 === 1
             return (
-              <Reveal key={service.title} delay={index * 80} className="h-full">
+              <Reveal
+                key={service.title}
+                delay={index * 80}
+                className={`h-full ${spansFullRow ? "md:col-span-2" : ""}`}
+              >
                 <Card className="relative overflow-hidden h-full flex flex-col border-border/50 bg-white/5 backdrop-blur-sm transition-all duration-500 group hover:-translate-y-1 hover:border-primary/40 p-6 md:p-8">
                   {/* Hover gradient wash */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
-                  <div className="relative flex flex-col h-full gap-4 md:gap-5">
+                  <div
+                    className={`relative flex flex-col h-full gap-4 md:gap-5 ${
+                      spansFullRow
+                        ? "md:grid md:grid-cols-[minmax(0,1fr)_minmax(18rem,0.85fr)] md:grid-rows-[auto_auto_1fr_auto] md:gap-x-12 md:gap-y-4"
+                        : ""
+                    }`}
+                  >
                     {/* Header */}
-                    <div className="flex items-start justify-between gap-4">
+                    <div
+                      className={`flex items-start justify-between gap-4 ${
+                        spansFullRow ? "md:col-start-1 md:row-start-1" : ""
+                      }`}
+                    >
                       <div className="inline-flex p-3 rounded-xl bg-gradient-wiqonn/10 group-hover:bg-gradient-wiqonn transition-all duration-500">
                         <Icon className="w-6 h-6 text-primary group-hover:text-background transition-colors" />
                       </div>
                     </div>
 
-                    <div>
+                    <div className={spansFullRow ? "md:col-start-1 md:row-start-2" : ""}>
                       <h3 className="text-xl md:text-2xl font-bold mb-1">{service.title}</h3>
                       <p className="text-primary font-medium text-sm md:text-base">{service.tagline}</p>
                     </div>
 
                     {/* Description */}
-                    <p className="text-muted-foreground leading-relaxed text-sm md:text-base">
+                    <p
+                      className={`text-muted-foreground leading-relaxed text-sm md:text-base ${
+                        spansFullRow ? "md:col-start-1 md:row-start-3" : ""
+                      }`}
+                    >
                       {service.description}
                     </p>
 
                     {/* Results */}
-                    <ul className="space-y-2.5 mt-auto pt-2">
+                    <ul
+                      className={`space-y-2.5 ${
+                        spansFullRow
+                          ? "pt-2 md:col-start-2 md:row-start-1 md:row-span-4 md:self-center md:border-l md:border-border/50 md:py-3 md:pl-10"
+                          : "mt-auto pt-2"
+                      }`}
+                    >
                       {service.results.map((result) => (
                         <li
                           key={result}
@@ -94,7 +120,11 @@ export function ServicesSection() {
                     </ul>
 
                     {/* CTA */}
-                    <div className="pt-2">
+                    <div
+                      className={`pt-2 ${
+                        spansFullRow ? "md:col-start-1 md:row-start-4" : ""
+                      }`}
+                    >
                       <Button
                         variant="ghost"
                         className="p-0 h-auto text-primary hover:text-primary/80 hover:bg-transparent group/btn"
