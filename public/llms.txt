@@ -1,12 +1,13 @@
 # Wiqonn
 
-> Applied AI research and engineering lab based in Barranquilla, Colombia. We
-> research, adapt, train, evaluate and deploy custom AI systems for organizations
-> of every size, anywhere in the world.
+> Applied AI, software, digital transformation and measurable marketing for
+> public, private, academic and research organizations of every size and sector.
+> Based in Barranquilla, Colombia, and working worldwide in Spanish and English.
 
 ## Who we are
 
 - Applied AI lab operated from Barranquilla, Colombia, working worldwide in Spanish and English.
+- We work with public institutions, companies large and small, universities, research centers and social organizations across sectors.
 - One team spans model research, data, evaluation, product engineering and production deployment.
 - Full-stack coverage from raw data to cloud, on-premise, edge and embedded AI systems.
 - We build, fine-tune and deploy AI on our own hardware: DGX Spark (Blackwell GB10) and Apple Silicon, keeping client data private and on-premise.
@@ -23,10 +24,12 @@
 - AI infrastructure and MLOps: data pipelines, model serving, monitoring, cloud, on-premise and edge deployment.
 - AI product engineering: web and mobile apps, APIs and integration with existing systems.
 - Agentic systems: tool-using and orchestrated workflows when that architecture fits the use case.
+- Digital transformation: operating models, digital roadmaps, process redesign, automation, connected tools and internal adoption.
+- Digital marketing: SEO, GEO, AEO, Brand Content, Product Content, Funnel Content, campaigns, analytics and marketing automation.
 
 ## Applied research
 
-- Model evaluation with real data and academic rigor — we test claims before we ship.
+- Model evaluation with real data and academic rigor. We test claims before we ship.
 - Benchmarks on local inference: vLLM-MLX on Apple Silicon (464 tok/s on M4 Max, 200+ models, zero API cost).
 - Fine-tuning pipelines on DGX Spark: NVFP4 (E2M1) and MXFP8 training with Transformer Engine, TensorRT-LLM serving.
 - We document model performance and limitations before recommending a larger implementation.
@@ -34,6 +37,8 @@
 ## How we work
 
 - AI Opportunity & Feasibility Assessment (AI Readiness Audit): problem framing, data readiness, technical options, risks and a staged roadmap.
+- Digital transformation assessment: current processes, audiences, channels, metrics and an actionable roadmap.
+- Marketing strategy: search visibility, content, acquisition, conversion, analytics and internal team enablement.
 - Evidence-led validation: representative data, a baseline, acceptance criteria and clear decision gates before scaling.
 - Managed AI Ops: managed operations, monitoring, retraining and model evolution with SLA.
 - Fractional AI Leadership: AI direction and CTO-as-a-service.

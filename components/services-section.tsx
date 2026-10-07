@@ -7,6 +7,8 @@ import {
   Eye,
   Cloud,
   Code,
+  Workflow,
+  Megaphone,
   ArrowRight,
   CheckCircle2,
 } from "lucide-react"
@@ -15,39 +17,15 @@ import { ScrollParallax } from "@/components/scroll-parallax"
 import { useT } from "@/components/language-provider"
 import { bookingUrl, hasBooking } from "@/lib/forms"
 
+const SERVICE_ICONS = [Brain, Eye, Cloud, Code, Workflow, Megaphone]
+
 export function ServicesSection() {
   const t = useT()
 
-  const services = [
-    {
-      icon: Brain,
-      title: t.services.items[0].title,
-      tagline: t.services.items[0].tagline,
-      description: t.services.items[0].description,
-      results: t.services.items[0].results,
-    },
-    {
-      icon: Eye,
-      title: t.services.items[1].title,
-      tagline: t.services.items[1].tagline,
-      description: t.services.items[1].description,
-      results: t.services.items[1].results,
-    },
-    {
-      icon: Cloud,
-      title: t.services.items[2].title,
-      tagline: t.services.items[2].tagline,
-      description: t.services.items[2].description,
-      results: t.services.items[2].results,
-    },
-    {
-      icon: Code,
-      title: t.services.items[3].title,
-      tagline: t.services.items[3].tagline,
-      description: t.services.items[3].description,
-      results: t.services.items[3].results,
-    },
-  ]
+  const services = t.services.items.map((service, index) => ({
+    ...service,
+    icon: SERVICE_ICONS[index] ?? Code,
+  }))
 
   return (
     <section id="services" className="py-16 md:py-20 bg-background relative overflow-hidden">
@@ -74,12 +52,12 @@ export function ServicesSection() {
           </p>
         </Reveal>
 
-        {/* Grid 2x2 uniforme */}
+        {/* Two-column service grid */}
         <div className="grid md:grid-cols-2 gap-5 lg:gap-6 max-w-5xl mx-auto">
           {services.map((service, index) => {
             const Icon = service.icon
             return (
-              <Reveal key={index} delay={index * 80} className="h-full">
+              <Reveal key={service.title} delay={index * 80} className="h-full">
                 <Card className="relative overflow-hidden h-full flex flex-col border-border/50 bg-white/5 backdrop-blur-sm transition-all duration-500 group hover:-translate-y-1 hover:border-primary/40 p-6 md:p-8">
                   {/* Hover gradient wash */}
                   <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-secondary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -104,9 +82,9 @@ export function ServicesSection() {
 
                     {/* Results */}
                     <ul className="space-y-2.5 mt-auto pt-2">
-                      {service.results.map((result, idx) => (
+                      {service.results.map((result) => (
                         <li
-                          key={idx}
+                          key={result}
                           className="flex items-start gap-3 text-sm md:text-base text-muted-foreground group-hover:text-foreground/80 transition-colors"
                         >
                           <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0 mt-0.5" />

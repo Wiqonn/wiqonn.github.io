@@ -48,11 +48,6 @@ export function HeroSection() {
   return (
     <div className="hero-cinematic-content">
       <div ref={copyRef} className="hero-cinematic-copy">
-        <div className="hero-lab-mark" aria-label={t.hero.labMark}>
-          <span aria-hidden="true" />
-          {t.hero.labMark}
-        </div>
-
         <h1 className="sr-only">{t.hero.titlePre.trim()} {t.hero.rotator[0]}</h1>
         <div className="hero-cinematic-title text-balance" aria-hidden="true">
           <span aria-hidden="true">
@@ -72,9 +67,6 @@ export function HeroSection() {
 
         <div className="hero-cinematic-meta">
           <p>{t.hero.subheadline}</p>
-          <span className="hero-index" aria-hidden="true">
-            01-04
-          </span>
         </div>
 
         <div className="hero-cinematic-actions">

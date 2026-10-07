@@ -31,7 +31,7 @@ const jsonLd = {
   email: "contact@wiqonn.com",
   priceRange: "$$",
   description:
-    "Laboratorio de investigación e ingeniería aplicada en IA en Barranquilla, Colombia. Desarrollamos sistemas de IA a la medida para organizaciones de cualquier tamaño en todo el mundo.",
+    "Wiqonn combina IA aplicada, software, transformación digital y marketing medible para organizaciones de cualquier tamaño y sector.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Barranquilla",
@@ -63,6 +63,15 @@ const jsonLd = {
     "Cloud Infrastructure",
     "Edge AI",
     "IoT",
+    "Digital Transformation",
+    "Transformación Digital",
+    "Digital Marketing",
+    "Marketing Digital",
+    "SEO",
+    "GEO",
+    "AEO",
+    "Content Marketing",
+    "Marketing Automation",
   ],
 }
 
@@ -72,6 +81,14 @@ export function HomePage({ lang }: { lang: Lang }) {
   const organizationJsonLd = {
     ...jsonLd,
     description: t.seo.description,
+    inLanguage: lang,
+    audience: {
+      "@type": "Audience",
+      audienceType:
+        lang === "en"
+          ? "Public, private, academic and research organizations of every size and sector"
+          : "Organizaciones públicas, privadas, académicas y de investigación de cualquier tamaño y sector",
+    },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: t.footer.servicesTitle,
@@ -81,6 +98,7 @@ export function HomePage({ lang }: { lang: Lang }) {
           "@type": "Service",
           name: service.title,
           description: service.description,
+          inLanguage: lang,
         },
       })),
     },

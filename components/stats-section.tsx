@@ -1,25 +1,8 @@
 "use client"
 
-import { useEffect, useRef, useState } from "react"
+import { type CSSProperties, useEffect, useRef, useState } from "react"
 import { useT } from "@/components/language-provider"
 
-// Compromisos de servicio verificables: conversación 30 min, respuesta 24 h,
-// propuesta 48 h hábiles y un plan de evidencia por validación.
-const STATS = [
-  { value: "30", suffix: " min", animate: false },
-  { value: "24", suffix: " h", animate: false },
-  { value: "48", suffix: " h", animate: false },
-  { value: "1", suffix: "", animate: true },
-]
-
-const COUNT_DURATION_MS = 1500
-
-/** easeOutCubic: decelerates towards the end of the animation. */
-function easeOutCubic(t: number): number {
-  return 1 - Math.pow(1 - t, 3)
-}
-
-/** Live `prefers-reduced-motion` subscription (safe on the server). */
 function usePrefersReducedMotion(): boolean {
   const [reduced, setReduced] = useState(false)
 
@@ -34,107 +17,28 @@ function usePrefersReducedMotion(): boolean {
   return reduced
 }
 
-function AnimatedStat({ end, reduced }: { end: number; reduced: boolean }) {
-  const [count, setCount] = useState(0)
-  const ref = useRef<HTMLSpanElement>(null)
-
-  useEffect(() => {
-    const element = ref.current
-    if (!element) return
-
-    if (reduced) {
-      setCount(end)
-      return
-    }
-
-    let rafId: number | null = null
-    let started = false
-
-    const animate = () => {
-      const startTime = performance.now()
-      const step = (now: number) => {
-        const progress = Math.min((now - startTime) / COUNT_DURATION_MS, 1)
-        setCount(Math.round(end * easeOutCubic(progress)))
-        if (progress < 1) rafId = requestAnimationFrame(step)
-      }
-      rafId = requestAnimationFrame(step)
-    }
-
-    if (typeof IntersectionObserver === "undefined") {
-      animate()
-      return () => {
-        if (rafId !== null) cancelAnimationFrame(rafId)
-      }
-    }
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        if (started || !entries.some((entry) => entry.isIntersecting)) return
-        started = true
-        observer.disconnect()
-        animate()
-      },
-      { threshold: 0.3 }
-    )
-    observer.observe(element)
-
-    return () => {
-      observer.disconnect()
-      if (rafId !== null) cancelAnimationFrame(rafId)
-    }
-  }, [end, reduced])
-
-  return <span ref={ref}>{count.toLocaleString()}</span>
-}
-
-function StatValue({ stat, reduced }: { stat: { value: string; suffix: string; animate: boolean }; reduced: boolean }) {
-  if (!stat.animate) {
-    return (
-      <span>
-        {stat.value}
-        {stat.suffix}
-      </span>
-    )
-  }
-  return (
-    <span>
-      <AnimatedStat end={Number(stat.value)} reduced={reduced} />
-      {stat.suffix}
-    </span>
-  )
-}
-
 export function StatsSection() {
   const t = useT()
   const sectionRef = useRef<HTMLElement>(null)
-  const revealRefs = useRef<(HTMLDivElement | null)[]>([])
-  const revealedRef = useRef(false)
   const reduced = usePrefersReducedMotion()
+  const [active, setActive] = useState(false)
 
   useEffect(() => {
     const section = sectionRef.current
     if (!section) return
 
-    const reveal = () => {
-      revealRefs.current.forEach((element) =>
-        element?.classList.add("reveal-in")
-      )
-    }
-
     if (reduced || typeof IntersectionObserver === "undefined") {
-      reveal()
+      setActive(true)
       return
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
-        if (revealedRef.current || !entries.some((entry) => entry.isIntersecting))
-          return
-        revealedRef.current = true
+        if (!entries.some((entry) => entry.isIntersecting)) return
+        setActive(true)
         observer.disconnect()
-        reveal()
       },
-      { threshold: 0.15 }
+      { threshold: 0.22 }
     )
     observer.observe(section)
 
@@ -144,6 +48,7 @@ export function StatsSection() {
   return (
     <section
       ref={sectionRef}
+      data-active={active}
       className="relative bg-background-navy py-16 md:py-24 overflow-hidden"
     >
       <div
@@ -152,33 +57,49 @@ export function StatsSection() {
       />
 
       <div className="container mx-auto px-4 lg:px-8 relative">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8 max-w-6xl mx-auto">
-          <div className="lg:col-span-4 text-center mb-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto mb-14 md:mb-20">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-primary mb-4">
+              {t.stats.eyebrow}
+            </p>
             <h2 className="text-3xl md:text-5xl font-bold text-balance text-foreground">
               {t.stats.titlePre}
               <span className="text-gradient-wiqonn">{t.stats.titleAccent}</span>
             </h2>
-            <p className="text-lg text-muted-foreground mt-4">
+            <p className="text-lg text-muted-foreground text-pretty leading-relaxed mt-5">
               {t.stats.subtitle}
             </p>
           </div>
 
-          {STATS.map((stat, index) => (
-            <div
-              key={index}
-              ref={(element: HTMLDivElement | null) => {
-                revealRefs.current[index] = element
-              }}
-              className="reveal text-center"
-            >
-              <div className="text-6xl md:text-7xl font-bold text-primary mb-3">
-                <StatValue stat={stat} reduced={reduced} />
-              </div>
-              <p className="text-base md:text-lg text-muted-foreground text-pretty max-w-xs mx-auto">
-                {t.stats.labels[index]}
-              </p>
+          <div className="impact-journey">
+            <div className="impact-journey__rail" aria-hidden="true">
+              <span className="impact-journey__progress" />
+              <span className="impact-journey__signal" />
             </div>
-          ))}
+
+            <ol className="impact-journey__steps">
+              {t.stats.items.map((item, index) => (
+                <li
+                  key={item.title}
+                  className="impact-journey__step"
+                  style={{ "--phase-delay": `${240 + index * 260}ms` } as CSSProperties}
+                >
+                  <div className="impact-journey__marker" aria-hidden="true">
+                    <span />
+                  </div>
+                  <p className="impact-journey__number" aria-hidden="true">
+                    {String(index + 1).padStart(2, "0")}
+                  </p>
+                  <h3 className="text-xl md:text-2xl font-bold text-foreground text-balance">
+                    {item.title}
+                  </h3>
+                  <p className="mt-3 text-sm md:text-base leading-relaxed text-muted-foreground text-pretty">
+                    {item.description}
+                  </p>
+                </li>
+              ))}
+            </ol>
+          </div>
         </div>
       </div>
     </section>

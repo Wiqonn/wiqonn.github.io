@@ -16,11 +16,11 @@ export const HOME_PATHS: Record<Lang, string> = { es: "/", en: "/en" }
 
 export const es = {
   seo: {
-    title: "IA a la medida para empresas | Wiqonn",
+    title: "IA, Transformación y Marketing Digital | Wiqonn",
     description:
-      "Wiqonn investiga, adapta, entrena, evalúa y despliega sistemas de IA a la medida para organizaciones de cualquier tamaño en todo el mundo.",
+      "Laboratorio de IA aplicada en Barranquilla que integra software, transformación digital y marketing medible para organizaciones de cualquier sector.",
     keywords:
-      "consultoría de IA Colombia, implementación de IA, inteligencia artificial, AI lab, applied research IA, investigación aplicada en IA, modelos de IA personalizados, fine-tuning de LLM, modelos de lenguaje grandes, agentes de IA personalizados, machine learning, deep learning, LLM/RAG, visión por computador, MLOps, business intelligence, dashboards, cloud computing, infraestructura cloud, automatización de procesos, análisis de datos, Barranquilla, Colombia, nearshore AI",
+      "transformación digital, consultoría de transformación digital, marketing digital, marketing de contenidos, SEO, GEO, AEO, automatización de marketing, consultoría de IA Colombia, implementación de IA, inteligencia artificial, AI lab, investigación aplicada en IA, modelos de IA personalizados, agentes de IA, machine learning, LLM/RAG, visión por computador, MLOps, business intelligence, software a la medida, automatización de procesos, análisis de datos, Barranquilla, Colombia",
     locale: "es_CO",
   },
   nav: {
@@ -30,7 +30,6 @@ export const es = {
     langLabel: "Cambiar idioma",
   },
   hero: {
-    labMark: "LABORATORIO DE IA APLICADA / BARRANQUILLA, CO",
     titlePre: "IA construida para ",
     subheadline:
       "Los modelos generales son potentes, pero tus retos más difíciles viven en datos propios, flujos especializados y restricciones reales. Investigamos, adaptamos y desplegamos el sistema de IA que ese contexto exige.",
@@ -40,8 +39,8 @@ export const es = {
     ctaPrimary: "Hablemos de tu caso de uso",
     ctaSecondary: "Explorar nuestras capacidades",
     checklistHref: "/#services",
-    emailBody: "Hola Wiqonn, quiero agendar un diagnóstico de 30 minutos sobre IA para mi empresa",
-    emailSubject: "Diagnóstico de IA · 30 min",
+    emailBody: "Hola Wiqonn, quiero agendar un diagnóstico de 30 minutos para mi organización",
+    emailSubject: "Diagnóstico inicial · 30 min",
   },
   value: {
     eyebrow: "Qué hace Wiqonn",
@@ -86,11 +85,11 @@ export const es = {
     ],
   },
   services: {
-    eyebrow: "De la investigación al sistema",
-    titlePre: "IA a la medida, lista para ",
-    titleAccent: "el mundo real",
+    eyebrow: "De la estrategia a resultados medibles",
+    titlePre: "Tecnología, transformación y",
+    titleAccent: "crecimiento",
     description:
-      "Elegimos la arquitectura según el problema y construimos los modelos, evaluaciones, sistemas de datos e infraestructura que necesita para funcionar.",
+      "Unimos estrategia digital, marketing, datos, software e IA para convertir retos complejos en capacidades que tu organización pueda adoptar y mejorar.",
     inquirySubject: "Consulta sobre",
     learnMore: "Explorar servicios",
     items: [
@@ -140,6 +139,30 @@ export const es = {
           "APIs y sistemas backend escalables",
           "Cloud, IoT y sistemas embebidos",
           "Despliegue, transferencia y soporte",
+        ],
+      },
+      {
+        title: "Transformación Digital",
+        tagline: "Procesos, tecnología y equipos alineados con objetivos medibles.",
+        description:
+          "Diagnosticamos cómo opera tu organización y convertimos la estrategia digital en una hoja de ruta que se pueda ejecutar.",
+        results: [
+          "Modelos de negocio y hojas de ruta digitales",
+          "Rediseño y automatización de procesos",
+          "Canales, datos y herramientas integradas",
+          "Formación y adopción dentro del equipo",
+        ],
+      },
+      {
+        title: "Marketing Digital",
+        tagline: "Estrategia, contenido y adquisición guiados por datos.",
+        description:
+          "Diseñamos sistemas de marketing para que las personas encuentren, entiendan y adopten tu oferta, servicio o iniciativa.",
+        results: [
+          "SEO, GEO y AEO",
+          "Brand, Product y Funnel Content",
+          "Canales, campañas y automatización",
+          "Analítica, KPIs y formación de equipos",
         ],
       },
     ],
@@ -278,14 +301,28 @@ export const es = {
     },
   },
   stats: {
-    titlePre: "Compromisos, ",
-    titleAccent: "no promesas",
-    subtitle: "Plazos y reglas que cumplimos en cada proyecto",
-    labels: [
-      "Diagnóstico de 30 minutos, gratis y sin compromiso",
-      "Respuesta a tu mensaje en menos de 24 h",
-      "Propuesta por escrito con alcance y precio por fase, en 48 h hábiles",
-      "Un plan de evidencia acordado antes de cada validación",
+    eyebrow: "Cómo trabajamos",
+    titlePre: "De la estrategia al ",
+    titleAccent: "impacto",
+    subtitle:
+      "Conectamos transformación digital, tecnología, inteligencia artificial y marketing en un proceso que tu organización puede medir y sostener.",
+    items: [
+      {
+        title: "Entendemos el reto",
+        description: "Procesos, usuarios, datos y objetivos.",
+      },
+      {
+        title: "Diseñamos la ruta",
+        description: "Prioridades, canales, arquitectura y métricas.",
+      },
+      {
+        title: "Construimos y activamos",
+        description: "Software, IA, automatización, contenido y campañas.",
+      },
+      {
+        title: "Medimos y mejoramos",
+        description: "Evidencia, adopción y decisiones para la siguiente etapa.",
+      },
     ],
   },
   research: {
@@ -355,9 +392,9 @@ export const es = {
       },
       {
         name: "Jaime Cotes",
-        role: "Director de Operaciones",
+        role: "Director de Operaciones y Transformación Digital",
         expertise:
-          "Experto en Marketing Digital y planificación de operaciones, asegurando una ejecución impecable de cada proyecto.",
+          "Lidera transformación digital y marketing con experiencia en estrategia, contenido, SEO, automatización y formación de equipos.",
       },
       {
         name: "Sergio Molinares",
@@ -380,29 +417,29 @@ export const es = {
   },
   cta: {
     badge: "Hablemos",
-    titlePre: "Tu problema merece la arquitectura ",
-    titleAccent: "correcta",
+    titlePre: "Tu reto necesita un ",
+    titleAccent: "plan que se pueda ejecutar",
     subheadline:
-      "En 30 minutos revisamos el problema, los datos disponibles y las restricciones reales. Te diremos qué conviene validar primero y si somos el equipo adecuado.",
+      "En 30 minutos revisamos el objetivo, el contexto y las restricciones reales. Te decimos qué conviene validar primero y si somos el equipo adecuado.",
     emailButton: "Hablar de mi caso de uso",
-    emailBody: "Hola Wiqonn, quiero agendar un diagnóstico de 30 minutos sobre IA para mi empresa",
-    emailSubject: "Diagnóstico de IA · 30 min",
+    emailBody: "Hola Wiqonn, quiero agendar un diagnóstico de 30 minutos para mi organización",
+    emailSubject: "Diagnóstico inicial · 30 min",
     trust: "Respuesta en menos de 24 h · Sin compromiso · Propuesta en 48 h hábiles",
     location: "Barranquilla, Colombia",
     form: {
       name: "Nombre",
       namePlaceholder: "Tu nombre",
       email: "Email corporativo",
-      emailPlaceholder: "nombre@empresa.com",
-      company: "Empresa",
-      companyPlaceholder: "Nombre de tu empresa",
-      size: "Tamaño",
-      sizePlaceholder: "Empleados",
+      emailPlaceholder: "nombre@organizacion.com",
+      company: "Organización",
+      companyPlaceholder: "Nombre de tu organización",
+      size: "Tamaño de la organización",
+      sizePlaceholder: "Personas",
       message: "Tu reto (opcional)",
-      messagePlaceholder: "¿Qué quieres automatizar o resolver con IA?",
+      messagePlaceholder: "¿Qué necesita cambiar en tu organización?",
       sending: "Enviando…",
       successTitle: "¡Recibido!",
-      successBody: "Respondemos en menos de 24 h hábiles.",
+      successBody: "Respondemos en menos de 24 horas.",
       error: "No se pudo enviar. Intenta de nuevo o escríbenos a ",
     },
   },
@@ -418,27 +455,27 @@ export const es = {
   },
   faq: {
     eyebrow: "Preguntas frecuentes",
-    title: "Lo que nos preguntan antes de empezar",
+    title: "Lo que las organizaciones preguntan antes de empezar",
     items: [
       {
-        q: "¿Cuánto cuesta implementar IA en mi empresa?",
-        a: "Depende del alcance y del caso de uso — pero decides con datos, no con adivinanzas. Empezamos con una Auditoría de Preparación para IA (AI Readiness Audit), un proyecto a precio fijo que mapea tus casos de uso, los prioriza por ROI y entrega un roadmap con fases y costos antes de invertir en desarrollo. Precio fijo por escrito, sin costos ocultos.",
+        q: "¿Cuánto cuesta un proyecto digital o de IA?",
+        a: "Depende del alcance. Primero definimos el problema, los usuarios, los datos, los canales y el resultado esperado. Después entregamos una propuesta por fases con alcance, entregables y precio por escrito.",
       },
       {
         q: "¿Qué tan pronto veré resultados?",
         a: "Recibes una propuesta por escrito con precio fijo y alcance dentro de 48 h hábiles desde nuestra primera conversación. Después trabajamos en ciclos cortos: cada fase se evalúa con datos representativos y criterios de aceptación acordados, y termina con una recomendación clara de avanzar, refinar o detener. Ves progreso medible antes de comprometer más presupuesto.",
       },
       {
-        q: "¿Con qué tamaño de empresas trabajan?",
-        a: "Con empresas de cualquier tamaño, en cualquier parte del mundo y en distintas industrias — desde startups y empresas en crecimiento hasta corporaciones e instituciones públicas. Un mismo equipo cubre todo el stack bajo un mismo techo — IA/ML, BI, cloud, IoT y desarrollo a la medida — así que los proyectos avanzan de punta a punta sin la coordinación de múltiples proveedores. Lo que importa es el problema, los datos y el entorno de despliegue, no el tamaño de la empresa.",
+        q: "¿Con qué tipo de organizaciones trabajan?",
+        a: "Trabajamos con entidades públicas, empresas grandes y pequeñas, universidades, centros de investigación y organizaciones sociales de cualquier sector. Adaptamos el trabajo al problema, los datos, los usuarios y las reglas de cada entorno.",
       },
       {
         q: "¿Solo construyen agentes de IA?",
-        a: "No. Los agentes son una arquitectura posible, no nuestra categoría principal. Desarrollamos y adaptamos modelos predictivos, LLMs, modelos multimodales y visión por computador, junto con las evaluaciones, los sistemas de datos y la infraestructura necesarios para producción. Elegimos, afinamos o entrenamos el modelo según lo que el problema justifique.",
+        a: "No. También trabajamos en transformación digital y marketing medible. Dentro de IA, los agentes son una arquitectura posible. Elegimos, adaptamos o entrenamos modelos según lo que el problema justifique.",
       },
       {
         q: "¿Quedaremos dependientes de ustedes?",
-        a: "No. Entregamos el código, la documentación y los accesos de infraestructura que pagaste. El retainer es opcional y cancelable cuando quieras — no hay lock-in. La mayoría de clientes se queda porque los modelos necesitan evolucionar, no porque estén atados.",
+        a: "No. Entregamos el código, la documentación y los accesos de infraestructura acordados. El acompañamiento continuo es opcional y puedes cancelarlo cuando quieras. También transferimos conocimiento para que tu equipo mantenga el control.",
       },
       {
         q: "¿Qué pasa con la seguridad de nuestros datos?",
@@ -446,19 +483,21 @@ export const es = {
       },
       {
         q: "¿Cómo empezamos?",
-        a: "Agenda un diagnóstico gratuito de 30 minutos, sin compromiso. Escuchamos tu caso y te decimos con honestidad si podemos ayudarte — y cómo. En 48 h hábiles recibes una propuesta por escrito con precio fijo y alcance.",
+        a: "Agenda un diagnóstico gratuito de 30 minutos, sin compromiso. Escuchamos tu caso y te decimos con honestidad si podemos ayudarte y cómo. En 48 horas hábiles recibes una propuesta inicial con alcance y precio por fase.",
       },
     ],
   },
   footer: {
     description:
-      "Laboratorio de investigación e ingeniería aplicada en IA. De los modelos y los datos a sistemas que funcionan en el mundo real.",
+      "IA aplicada, transformación digital y marketing medible para organizaciones que necesitan resultados concretos.",
     servicesTitle: "Servicios",
     services: [
       "IA de lenguaje y multimodal",
       "Visión y sistemas predictivos",
       "Evaluación y MLOps",
       "Ingeniería de productos de IA",
+      "Transformación Digital",
+      "Marketing Digital",
     ],
     companyTitle: "Compañía",
     company: ["Nosotros", "Equipo", "Carreras"],
@@ -477,11 +516,11 @@ export type Dict = typeof es
 
 export const en: Dict = {
   seo: {
-    title: "Custom AI Systems for Businesses | Wiqonn",
+    title: "AI, Digital Transformation & Marketing | Wiqonn",
     description:
-      "Wiqonn researches, adapts, trains, evaluates and deploys custom AI systems for organizations of every size, anywhere in the world.",
+      "Applied AI lab in Barranquilla combining software, digital transformation and measurable marketing for organizations across sectors.",
     keywords:
-      "AI consulting Colombia, AI implementation, artificial intelligence, AI lab, applied AI research, custom AI models, LLM fine-tuning, large language models, custom AI agents, machine learning, deep learning, RAG, computer vision, MLOps, business intelligence, dashboards, cloud infrastructure, process automation, data analytics, Barranquilla, Colombia, nearshore AI",
+      "digital transformation, digital transformation consulting, digital marketing, content marketing, SEO, GEO, AEO, marketing automation, AI consulting Colombia, AI implementation, artificial intelligence, AI lab, applied AI research, custom AI models, AI agents, machine learning, LLM/RAG, computer vision, MLOps, business intelligence, custom software, process automation, data analytics, Barranquilla, Colombia",
     locale: "en_US",
   },
   nav: {
@@ -491,7 +530,6 @@ export const en: Dict = {
     langLabel: "Switch language",
   },
   hero: {
-    labMark: "APPLIED AI RESEARCH LAB / BARRANQUILLA, CO",
     titlePre: "AI built around ",
     subheadline:
       "General-purpose models are powerful, but your hardest problems live in proprietary data, specialized workflows and real operating constraints. We research, adapt and deploy the AI system that context requires.",
@@ -501,8 +539,8 @@ export const en: Dict = {
     ctaPrimary: "Discuss your use case",
     ctaSecondary: "Explore our capabilities",
     checklistHref: "/en#services",
-    emailBody: "Hi Wiqonn, I'd like to book a 30-minute AI diagnosis for my company",
-    emailSubject: "AI diagnosis · 30 min",
+    emailBody: "Hi Wiqonn, I'd like to book a 30-minute diagnosis for my organization",
+    emailSubject: "Initial diagnosis · 30 min",
   },
   value: {
     eyebrow: "What Wiqonn Does",
@@ -547,11 +585,11 @@ export const en: Dict = {
     ],
   },
   services: {
-    eyebrow: "From research to working systems",
-    titlePre: "Custom AI, engineered for ",
-    titleAccent: "the real world",
+    eyebrow: "From strategy to measurable outcomes",
+    titlePre: "Technology, transformation and",
+    titleAccent: "growth",
     description:
-      "We choose the architecture for the problem, then build the models, evaluations, data systems and infrastructure it needs to perform.",
+      "We combine digital strategy, marketing, data, software and AI to turn complex challenges into capabilities your organization can adopt and improve.",
     inquirySubject: "Inquiry about",
     learnMore: "Explore services",
     items: [
@@ -601,6 +639,30 @@ export const en: Dict = {
           "APIs and scalable backend systems",
           "Cloud, IoT and embedded systems",
           "Deployment, handover and support",
+        ],
+      },
+      {
+        title: "Digital Transformation",
+        tagline: "Processes, technology and teams aligned around measurable goals.",
+        description:
+          "We examine how your organization operates and turn its digital strategy into an actionable roadmap.",
+        results: [
+          "Digital business models and roadmaps",
+          "Process redesign and automation",
+          "Connected channels, data and tools",
+          "Team training and internal adoption",
+        ],
+      },
+      {
+        title: "Digital Marketing",
+        tagline: "Strategy, content and acquisition guided by data.",
+        description:
+          "We build marketing systems that help people find, understand and adopt your product, service or initiative.",
+        results: [
+          "SEO, GEO and AEO",
+          "Brand, Product and Funnel Content",
+          "Channels, campaigns and automation",
+          "Analytics, KPIs and team training",
         ],
       },
     ],
@@ -740,14 +802,28 @@ export const en: Dict = {
     },
   },
   stats: {
-    titlePre: "Commitments, ",
-    titleAccent: "not promises",
-    subtitle: "Deadlines and rules we honor on every project",
-    labels: [
-      "Free 30-minute diagnosis, no commitment",
-      "Reply to your message within 24 hours",
-      "Written proposal with scope and price per phase within 48 business hours",
-      "One evidence plan agreed before every validation",
+    eyebrow: "How we work",
+    titlePre: "From strategy to ",
+    titleAccent: "impact",
+    subtitle:
+      "We connect digital transformation, technology, AI and marketing through a process your organization can measure and sustain.",
+    items: [
+      {
+        title: "Understand the challenge",
+        description: "Processes, users, data and goals.",
+      },
+      {
+        title: "Design the path",
+        description: "Priorities, channels, architecture and metrics.",
+      },
+      {
+        title: "Build and activate",
+        description: "Software, AI, automation, content and campaigns.",
+      },
+      {
+        title: "Measure and improve",
+        description: "Evidence, adoption and decisions for the next stage.",
+      },
     ],
   },
   research: {
@@ -818,9 +894,9 @@ export const en: Dict = {
       },
       {
         name: "Jaime Cotes",
-        role: "Operations Director",
+        role: "Operations & Digital Transformation Director",
         expertise:
-          "Digital Marketing and operations planning expert, ensuring flawless project execution.",
+          "Leads digital transformation and marketing with experience in strategy, content, SEO, automation and team training.",
       },
       {
         name: "Sergio Molinares",
@@ -844,29 +920,29 @@ export const en: Dict = {
   },
   cta: {
     badge: "Let's talk",
-    titlePre: "Your problem deserves the ",
-    titleAccent: "right architecture",
+    titlePre: "Your challenge needs an ",
+    titleAccent: "actionable plan",
     subheadline:
-      "In 30 minutes, we review the problem, available data and real operating constraints. We tell you what to validate first and whether we are the right team.",
+      "In 30 minutes, we review the goal, context and real constraints. We tell you what to validate first and whether we are the right team.",
     emailButton: "Discuss my use case",
-    emailBody: "Hi Wiqonn, I'd like to book a 30-minute AI diagnosis for my company",
-    emailSubject: "AI diagnosis · 30 min",
+    emailBody: "Hi Wiqonn, I'd like to book a 30-minute diagnosis for my organization",
+    emailSubject: "Initial diagnosis · 30 min",
     trust: "Reply in under 24h · No commitment · Proposal in 48 business hours",
     location: "Barranquilla, Colombia",
     form: {
       name: "Name",
       namePlaceholder: "Your name",
       email: "Work email",
-      emailPlaceholder: "name@company.com",
-      company: "Company",
-      companyPlaceholder: "Your company name",
-      size: "Company size",
-      sizePlaceholder: "Employees",
+      emailPlaceholder: "name@organization.com",
+      company: "Organization",
+      companyPlaceholder: "Your organization name",
+      size: "Organization size",
+      sizePlaceholder: "People",
       message: "Your challenge (optional)",
-      messagePlaceholder: "What do you want to automate or solve with AI?",
+      messagePlaceholder: "What needs to change in your organization?",
       sending: "Sending…",
       successTitle: "Received!",
-      successBody: "We reply within 24 business hours.",
+      successBody: "We reply within 24 hours.",
       error: "Couldn't send. Try again or write to ",
     },
   },
@@ -882,27 +958,27 @@ export const en: Dict = {
   },
   faq: {
     eyebrow: "Frequently asked questions",
-    title: "What clients ask us before starting",
+    title: "What organizations ask before getting started",
     items: [
       {
-        q: "How much does AI implementation cost for my company?",
-        a: "It depends on scope and use case — but you decide with data, not guesswork. We start with an AI Readiness Audit, a fixed-price project that maps your use cases, prioritizes them by ROI and delivers a roadmap with phases and costs before you invest in development. Fixed price in writing, no hidden costs.",
+        q: "How much does a digital or AI project cost?",
+        a: "It depends on the scope. We first define the problem, users, data, channels and expected outcome. We then provide a phased proposal with the scope, deliverables and price in writing.",
       },
       {
         q: "How soon will I see results?",
         a: "You receive a written proposal with fixed price and scope within 48 business hours of our first call. From there we work in short cycles: every phase is evaluated on representative data against agreed acceptance criteria and ends with a clear recommendation to proceed, refine or stop. You see measurable progress before committing more budget.",
       },
       {
-        q: "What size companies do you work with?",
-        a: "Companies of every size, anywhere in the world, and across industries — from startups and growing businesses to enterprises and public institutions. One team covers the full stack under one roof — AI/ML, BI, cloud, IoT and custom development — so projects run end-to-end without the coordination overhead of multiple vendors. What matters is the problem, your data and the deployment environment, not company size.",
+        q: "What types of organizations do you work with?",
+        a: "We work with public institutions, companies large and small, universities, research centers and social organizations across sectors. We adapt the work to each environment's problem, data, users and rules.",
       },
       {
         q: "Do you only build AI agents?",
-        a: "No — agents are one possible architecture, not our core category. We develop and adapt predictive models, LLMs, multimodal models and computer vision systems, together with the evaluations, data systems and infrastructure required for production. We select, fine-tune or train models according to what the problem justifies.",
+        a: "No. We also work on digital transformation and measurable marketing. Within AI, agents are one possible architecture. We select, adapt or train models according to what the problem justifies.",
       },
       {
         q: "Will we become dependent on you?",
-        a: "No. We hand over the code, documentation and infrastructure access you paid for. The retainer is optional and cancellable anytime — there is no lock-in. Most clients keep it because models need to keep evolving, not because they have to.",
+        a: "No. We hand over the agreed code, documentation and infrastructure access. Ongoing support is optional and can be cancelled at any time. We also transfer knowledge so your team remains in control.",
       },
       {
         q: "What about the security of our data?",
@@ -910,19 +986,21 @@ export const en: Dict = {
       },
       {
         q: "How do we get started?",
-        a: "Book a free 30-minute diagnosis, no commitment. We listen, then tell you honestly whether we can help — and how. Within 48 business hours you receive a written proposal with fixed price and scope.",
+        a: "Book a free 30-minute diagnosis with no commitment. We listen and tell you honestly whether we can help and how. Within 48 business hours, you receive an initial proposal with scope and pricing by phase.",
       },
     ],
   },
   footer: {
     description:
-      "An applied AI research and engineering lab. From models and data to systems that work in the real world.",
+      "Applied AI, digital transformation and measurable marketing for organizations that need concrete results.",
     servicesTitle: "Services",
     services: [
       "Language & Multimodal AI",
       "Vision & Predictive Systems",
       "Evaluation & MLOps",
       "AI Product Engineering",
+      "Digital Transformation",
+      "Digital Marketing",
     ],
     companyTitle: "Company",
     company: ["About Us", "Team", "Careers"],

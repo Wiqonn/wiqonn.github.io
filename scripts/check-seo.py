@@ -113,8 +113,8 @@ class SeoExportTests(unittest.TestCase):
 
     def test_homepages_are_localized_before_javascript(self):
         expected = {
-            "/": ("IA a la medida para empresas | Wiqonn", "Los modelos generales son potentes"),
-            "/en": ("Custom AI Systems for Businesses | Wiqonn", "General-purpose models are powerful"),
+            "/": ("IA, Transformación y Marketing Digital | Wiqonn", "Los modelos generales son potentes"),
+            "/en": ("AI, Digital Transformation & Marketing | Wiqonn", "General-purpose models are powerful"),
         }
         for url, (title, intro) in expected.items():
             with self.subTest(url=url):
