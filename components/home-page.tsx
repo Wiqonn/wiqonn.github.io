@@ -31,7 +31,7 @@ const jsonLd = {
   email: "contact@wiqonn.com",
   priceRange: "$$",
   description:
-    "Wiqonn combina IA aplicada, software, transformación digital y marketing medible para organizaciones de cualquier tamaño y sector.",
+    "Wiqonn diseña software, datos, IA e infraestructura para transformar organizaciones y formar a sus equipos.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Barranquilla",
@@ -65,6 +65,10 @@ const jsonLd = {
     "IoT",
     "Digital Transformation",
     "Transformación Digital",
+    "Technology Training",
+    "AI Training",
+    "Formación tecnológica",
+    "Transferencia de conocimiento",
     "Digital Marketing",
     "Marketing Digital",
     "SEO",

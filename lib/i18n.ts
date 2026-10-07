@@ -16,11 +16,11 @@ export const HOME_PATHS: Record<Lang, string> = { es: "/", en: "/en" }
 
 export const es = {
   seo: {
-    title: "IA, Transformación y Marketing Digital | Wiqonn",
+    title: "IA Aplicada y Transformación Digital | Wiqonn",
     description:
-      "Laboratorio de IA aplicada en Barranquilla que integra software, transformación digital y marketing medible para organizaciones de cualquier sector.",
+      "Laboratorio de IA aplicada en Barranquilla. Diseñamos software, datos e infraestructura para transformar organizaciones y formar a sus equipos.",
     keywords:
-      "transformación digital, consultoría de transformación digital, marketing digital, marketing de contenidos, SEO, GEO, AEO, automatización de marketing, consultoría de IA Colombia, implementación de IA, inteligencia artificial, AI lab, investigación aplicada en IA, modelos de IA personalizados, agentes de IA, machine learning, LLM/RAG, visión por computador, MLOps, business intelligence, software a la medida, automatización de procesos, análisis de datos, Barranquilla, Colombia",
+      "IA aplicada, transformación digital, consultoría de transformación digital, ingeniería digital, consultoría de IA Colombia, implementación de IA, inteligencia artificial, AI lab, investigación aplicada en IA, modelos de IA personalizados, agentes de IA, machine learning, LLM/RAG, visión por computador, MLOps, business intelligence, software a la medida, automatización de procesos, análisis de datos, infraestructura tecnológica, formación tecnológica, capacitación en IA, marketing digital, marketing de contenidos, SEO, GEO, AEO, automatización de marketing, Barranquilla, Colombia",
     locale: "es_CO",
   },
   nav: {
@@ -30,9 +30,9 @@ export const es = {
     langLabel: "Cambiar idioma",
   },
   hero: {
-    titlePre: "IA construida para ",
+    titlePre: "Tecnología construida para ",
     subheadline:
-      "Los modelos generales son potentes, pero tus retos más difíciles viven en datos propios, flujos especializados y restricciones reales. Investigamos, adaptamos y desplegamos el sistema de IA que ese contexto exige.",
+      "Diseñamos, construimos y desplegamos software, sistemas de datos, inteligencia artificial e infraestructura para transformar procesos reales. Formamos a tus equipos para asegurar adopción, autonomía y transferencia de conocimiento.",
     rotator: ["tu dominio", "tus datos", "el mundo real"],
     trustResearch:
       "Un mismo equipo lleva cada sistema de la investigación a producción.",
@@ -43,7 +43,7 @@ export const es = {
     emailSubject: "Diagnóstico inicial · 30 min",
   },
   value: {
-    eyebrow: "Qué hace Wiqonn",
+    eyebrow: "Nuestro enfoque en IA",
     titlePre: "Investigación y producto, ",
     titleAccent: "sin paredes entre ellos",
     description:
@@ -86,10 +86,10 @@ export const es = {
   },
   services: {
     eyebrow: "De la estrategia a resultados medibles",
-    titlePre: "Tecnología, transformación y",
-    titleAccent: "crecimiento",
+    titlePre: "Tecnología y transformación digital con",
+    titleAccent: "IA aplicada",
     description:
-      "Unimos estrategia digital, marketing, datos, software e IA para convertir retos complejos en capacidades que tu organización pueda adoptar y mejorar.",
+      "Unimos software, datos, IA e infraestructura para transformar procesos reales. En cada área podemos formar a tu equipo para que adopte, opere y mejore lo construido.",
     inquirySubject: "Consulta sobre",
     learnMore: "Explorar servicios",
     items: [
@@ -150,7 +150,7 @@ export const es = {
           "Modelos de negocio y hojas de ruta digitales",
           "Rediseño y automatización de procesos",
           "Canales, datos y herramientas integradas",
-          "Formación y adopción dentro del equipo",
+          "Gobernanza, métricas y gestión del cambio",
         ],
       },
       {
@@ -162,7 +162,19 @@ export const es = {
           "SEO, GEO y AEO",
           "Brand, Product y Funnel Content",
           "Canales, campañas y automatización",
-          "Analítica, KPIs y formación de equipos",
+          "Analítica, KPIs y optimización continua",
+        ],
+      },
+      {
+        title: "Formación y adopción tecnológica",
+        tagline: "El conocimiento que tu equipo necesita para mantener el control.",
+        description:
+          "Diseñamos programas prácticos alrededor de las tecnologías, procesos y herramientas que tu organización necesita adoptar.",
+        results: [
+          "IA, datos, software e infraestructura",
+          "Transformación digital y automatización",
+          "Marketing digital, SEO y contenido",
+          "Talleres por rol, documentación y acompañamiento",
         ],
       },
     ],
@@ -305,7 +317,7 @@ export const es = {
     titlePre: "De la estrategia al ",
     titleAccent: "impacto",
     subtitle:
-      "Conectamos transformación digital, tecnología, inteligencia artificial y marketing en un proceso que tu organización puede medir y sostener.",
+      "Conectamos estrategia, software, datos, IA e infraestructura en un proceso medible. En cada etapa transferimos conocimiento para que tu equipo pueda adoptar y sostener lo construido.",
     items: [
       {
         title: "Entendemos el reto",
@@ -313,15 +325,15 @@ export const es = {
       },
       {
         title: "Diseñamos la ruta",
-        description: "Prioridades, canales, arquitectura y métricas.",
+        description: "Prioridades, arquitectura y métricas.",
       },
       {
         title: "Construimos y activamos",
-        description: "Software, IA, automatización, contenido y campañas.",
+        description: "Software, datos, IA, automatización e infraestructura.",
       },
       {
-        title: "Medimos y mejoramos",
-        description: "Evidencia, adopción y decisiones para la siguiente etapa.",
+        title: "Transferimos y mejoramos",
+        description: "Formación, documentación, adopción y decisiones para la siguiente etapa.",
       },
     ],
   },
@@ -471,7 +483,7 @@ export const es = {
       },
       {
         q: "¿Solo construyen agentes de IA?",
-        a: "No. También trabajamos en transformación digital y marketing medible. Dentro de IA, los agentes son una arquitectura posible. Elegimos, adaptamos o entrenamos modelos según lo que el problema justifique.",
+        a: "No. Construimos software, sistemas de datos, infraestructura y soluciones de IA, y acompañamos procesos de transformación digital. El marketing digital es una capacidad complementaria. También formamos a los equipos en cualquiera de estas áreas cuando el proyecto lo requiere.",
       },
       {
         q: "¿Quedaremos dependientes de ustedes?",
@@ -489,7 +501,7 @@ export const es = {
   },
   footer: {
     description:
-      "IA aplicada, transformación digital y marketing medible para organizaciones que necesitan resultados concretos.",
+      "Tecnología y transformación digital con IA aplicada, ingeniería y transferencia de conocimiento.",
     servicesTitle: "Servicios",
     services: [
       "IA de lenguaje y multimodal",
@@ -498,6 +510,7 @@ export const es = {
       "Ingeniería de productos de IA",
       "Transformación Digital",
       "Marketing Digital",
+      "Formación y adopción tecnológica",
     ],
     companyTitle: "Compañía",
     company: ["Nosotros", "Equipo", "Carreras"],
@@ -516,11 +529,11 @@ export type Dict = typeof es
 
 export const en: Dict = {
   seo: {
-    title: "AI, Digital Transformation & Marketing | Wiqonn",
+    title: "Applied AI & Digital Transformation | Wiqonn",
     description:
-      "Applied AI lab in Barranquilla combining software, digital transformation and measurable marketing for organizations across sectors.",
+      "Applied AI lab in Barranquilla. We build software, data systems and infrastructure to transform organizations and train their teams.",
     keywords:
-      "digital transformation, digital transformation consulting, digital marketing, content marketing, SEO, GEO, AEO, marketing automation, AI consulting Colombia, AI implementation, artificial intelligence, AI lab, applied AI research, custom AI models, AI agents, machine learning, LLM/RAG, computer vision, MLOps, business intelligence, custom software, process automation, data analytics, Barranquilla, Colombia",
+      "applied AI, digital transformation, digital transformation consulting, digital engineering, AI consulting Colombia, AI implementation, artificial intelligence, AI lab, applied AI research, custom AI models, AI agents, machine learning, LLM/RAG, computer vision, MLOps, business intelligence, custom software, process automation, data analytics, technology infrastructure, technology training, AI training, digital marketing, content marketing, SEO, GEO, AEO, marketing automation, Barranquilla, Colombia",
     locale: "en_US",
   },
   nav: {
@@ -530,9 +543,9 @@ export const en: Dict = {
     langLabel: "Switch language",
   },
   hero: {
-    titlePre: "AI built around ",
+    titlePre: "Technology built around ",
     subheadline:
-      "General-purpose models are powerful, but your hardest problems live in proprietary data, specialized workflows and real operating constraints. We research, adapt and deploy the AI system that context requires.",
+      "We design, build and deploy software, data systems, artificial intelligence and infrastructure to transform real processes. We train your teams to ensure adoption, autonomy and lasting knowledge transfer.",
     rotator: ["your domain", "your data", "the real world"],
     trustResearch:
       "One team takes every system from research to production.",
@@ -543,7 +556,7 @@ export const en: Dict = {
     emailSubject: "Initial diagnosis · 30 min",
   },
   value: {
-    eyebrow: "What Wiqonn Does",
+    eyebrow: "Our approach to AI",
     titlePre: "Research and product, with ",
     titleAccent: "no walls between them",
     description:
@@ -586,10 +599,10 @@ export const en: Dict = {
   },
   services: {
     eyebrow: "From strategy to measurable outcomes",
-    titlePre: "Technology, transformation and",
-    titleAccent: "growth",
+    titlePre: "Technology and digital transformation with",
+    titleAccent: "applied AI",
     description:
-      "We combine digital strategy, marketing, data, software and AI to turn complex challenges into capabilities your organization can adopt and improve.",
+      "We combine software, data, AI and infrastructure to transform real processes. In every area, we can train your team to adopt, operate and improve what we build.",
     inquirySubject: "Inquiry about",
     learnMore: "Explore services",
     items: [
@@ -650,7 +663,7 @@ export const en: Dict = {
           "Digital business models and roadmaps",
           "Process redesign and automation",
           "Connected channels, data and tools",
-          "Team training and internal adoption",
+          "Governance, metrics and change management",
         ],
       },
       {
@@ -662,7 +675,19 @@ export const en: Dict = {
           "SEO, GEO and AEO",
           "Brand, Product and Funnel Content",
           "Channels, campaigns and automation",
-          "Analytics, KPIs and team training",
+          "Analytics, KPIs and continuous improvement",
+        ],
+      },
+      {
+        title: "Technology Training & Adoption",
+        tagline: "The knowledge your team needs to stay in control.",
+        description:
+          "We design practical programs around the technologies, processes and tools your organization needs to adopt.",
+        results: [
+          "AI, data, software and infrastructure",
+          "Digital transformation and automation",
+          "Digital marketing, SEO and content",
+          "Role-based workshops, documentation and support",
         ],
       },
     ],
@@ -806,7 +831,7 @@ export const en: Dict = {
     titlePre: "From strategy to ",
     titleAccent: "impact",
     subtitle:
-      "We connect digital transformation, technology, AI and marketing through a process your organization can measure and sustain.",
+      "We connect strategy, software, data, AI and infrastructure through a measurable process. At every stage, we transfer knowledge so your team can adopt and sustain what we build.",
     items: [
       {
         title: "Understand the challenge",
@@ -814,15 +839,15 @@ export const en: Dict = {
       },
       {
         title: "Design the path",
-        description: "Priorities, channels, architecture and metrics.",
+        description: "Priorities, architecture and metrics.",
       },
       {
         title: "Build and activate",
-        description: "Software, AI, automation, content and campaigns.",
+        description: "Software, data, AI, automation and infrastructure.",
       },
       {
-        title: "Measure and improve",
-        description: "Evidence, adoption and decisions for the next stage.",
+        title: "Transfer and improve",
+        description: "Training, documentation, adoption and decisions for the next stage.",
       },
     ],
   },
@@ -974,7 +999,7 @@ export const en: Dict = {
       },
       {
         q: "Do you only build AI agents?",
-        a: "No. We also work on digital transformation and measurable marketing. Within AI, agents are one possible architecture. We select, adapt or train models according to what the problem justifies.",
+        a: "No. We build software, data systems, infrastructure and AI solutions, and support digital transformation programs. Digital marketing is a complementary capability. We can also train teams in any of these areas when the project requires it.",
       },
       {
         q: "Will we become dependent on you?",
@@ -992,7 +1017,7 @@ export const en: Dict = {
   },
   footer: {
     description:
-      "Applied AI, digital transformation and measurable marketing for organizations that need concrete results.",
+      "Technology and digital transformation with applied AI, engineering and knowledge transfer.",
     servicesTitle: "Services",
     services: [
       "Language & Multimodal AI",
@@ -1001,6 +1026,7 @@ export const en: Dict = {
       "AI Product Engineering",
       "Digital Transformation",
       "Digital Marketing",
+      "Technology Training & Adoption",
     ],
     companyTitle: "Company",
     company: ["About Us", "Team", "Careers"],

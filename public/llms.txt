@@ -1,7 +1,7 @@
 # Wiqonn
 
-> Applied AI, software, digital transformation and measurable marketing for
-> public, private, academic and research organizations of every size and sector.
+> Technology and digital transformation with applied AI at the core for public,
+> private, academic and research organizations of every size and sector.
 > Based in Barranquilla, Colombia, and working worldwide in Spanish and English.
 
 ## Who we are
@@ -25,7 +25,8 @@
 - AI product engineering: web and mobile apps, APIs and integration with existing systems.
 - Agentic systems: tool-using and orchestrated workflows when that architecture fits the use case.
 - Digital transformation: operating models, digital roadmaps, process redesign, automation, connected tools and internal adoption.
-- Digital marketing: SEO, GEO, AEO, Brand Content, Product Content, Funnel Content, campaigns, analytics and marketing automation.
+- Digital marketing, as a complementary capability: SEO, GEO, AEO, Brand Content, Product Content, Funnel Content, campaigns, analytics and marketing automation.
+- Technology training and adoption: practical programs across AI, data, software, infrastructure, digital transformation and marketing so client teams can operate and improve what we build.
 
 ## Applied research
 
@@ -39,6 +40,7 @@
 - AI Opportunity & Feasibility Assessment (AI Readiness Audit): problem framing, data readiness, technical options, risks and a staged roadmap.
 - Digital transformation assessment: current processes, audiences, channels, metrics and an actionable roadmap.
 - Marketing strategy: search visibility, content, acquisition, conversion, analytics and internal team enablement.
+- Cross-functional training: role-based enablement, documentation, adoption and knowledge transfer throughout delivery.
 - Evidence-led validation: representative data, a baseline, acceptance criteria and clear decision gates before scaling.
 - Managed AI Ops: managed operations, monitoring, retraining and model evolution with SLA.
 - Fractional AI Leadership: AI direction and CTO-as-a-service.
