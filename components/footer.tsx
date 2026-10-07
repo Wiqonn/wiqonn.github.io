@@ -79,8 +79,8 @@ export function Footer() {
               ))}
               {[
                 { href: "/blog", label: "Wiqonn AI Blog" },
-                { href: "/brochure/es/", label: "Servicios de IA (Español)", lang: "es" },
-                { href: "/brochure/", label: "AI services (English)", lang: "en" },
+                { href: "/brochure/es/", label: "Brochure de servicios (Español)", lang: "es" },
+                { href: "/brochure/", label: "Services brochure (English)", lang: "en" },
               ].map((item) => (
                 <li key={item.href}>
                   <a href={item.href} lang={item.lang} hrefLang={item.lang} className="text-sm text-muted-foreground hover:text-foreground transition-colors">

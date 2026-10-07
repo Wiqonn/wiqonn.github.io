@@ -3,31 +3,28 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Servicios de IA, Datos y Automatización | Wiqonn</title>
-<meta name="description" content="Conoce los servicios de Wiqonn: agentes de IA, automatización, análisis de datos e infraestructura cloud. Del diagnóstico a sistemas en producción." />
+<title>Brochure de IA Aplicada y Transformación Digital | Wiqonn</title>
+<meta name="description" content="Conoce las capacidades de Wiqonn en software, datos, IA aplicada, infraestructura, transformación digital, formación y marketing complementario." />
 <link rel="canonical" href="https://www.wiqonn.com/brochure/es/" />
 <link rel="alternate" hreflang="en" href="https://www.wiqonn.com/brochure/" />
 <link rel="alternate" hreflang="es" href="https://www.wiqonn.com/brochure/es/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Wiqonn" />
-<meta property="og:title" content="Servicios de IA, Datos y Automatización | Wiqonn" />
-<meta property="og:description" content="Conoce los servicios de Wiqonn: agentes de IA, automatización, análisis de datos e infraestructura cloud. Del diagnóstico a sistemas en producción." />
+<meta property="og:title" content="Brochure de IA Aplicada y Transformación Digital | Wiqonn" />
+<meta property="og:description" content="Conoce las capacidades de Wiqonn en software, datos, IA aplicada, infraestructura, transformación digital, formación y marketing complementario." />
 <meta property="og:url" content="https://www.wiqonn.com/brochure/es/" />
 <meta property="og:locale" content="es_CO" />
 <meta property="og:image" content="https://www.wiqonn.com/wiqonn-icon.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Servicios de IA, Datos y Automatización | Wiqonn" />
-<meta name="twitter:description" content="Conoce los servicios de Wiqonn: agentes de IA, automatización, análisis de datos e infraestructura cloud. Del diagnóstico a sistemas en producción." />
+<meta name="twitter:title" content="Brochure de IA Aplicada y Transformación Digital | Wiqonn" />
+<meta name="twitter:description" content="Conoce las capacidades de Wiqonn en software, datos, IA aplicada, infraestructura, transformación digital, formación y marketing complementario." />
 <meta name="twitter:image" content="https://www.wiqonn.com/wiqonn-icon.png" />
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT,WONK@9..144,300..900,0..100,0..1&family=Manrope:wght@200..800&family=JetBrains+Mono:wght@300..700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* Editorial light palette — print friendly */
-    --paper:      #F6F2EA;    /* warm cream page */
-    --paper-2:    #FFFFFF;    /* white surface */
-    --paper-tint: #EDE7DC;    /* tinted card */
+    /* Minimal white palette */
+    --paper:      #FFFFFF;
+    --paper-2:    #FFFFFF;
+    --paper-tint: #FFFFFF;
     --ink:        #0B1220;    /* deep navy ink (text) */
     --ink-2:      #1F2A3D;
     --muted:      #4F5C73;
@@ -41,24 +38,20 @@
     --green:      #1FA94F;
     --green-deep: #128A41;
 
-    --grad:       linear-gradient(92deg, #0095B8 0%, #0FA68F 50%, #1FA94F 100%);
+    --grad:       linear-gradient(135deg, #00ADEC 0%, #1CB29F 50%, #39B54A 100%);
     --grad-soft:  linear-gradient(135deg, rgba(0,149,184,.10), rgba(31,169,79,.10));
-    --grad-text:  linear-gradient(92deg, #0095B8 0%, #0FA68F 45%, #1FA94F 100%);
+    --grad-text:  linear-gradient(135deg, #00ADEC 0%, #1CB29F 50%, #39B54A 100%);
 
-    /* Dark feature blocks (cover/contact) */
-    --night:      #07111F;
-    --night-2:    #0E1A2C;
-
-    --display:    "Fraunces", "Iowan Old Style", Georgia, serif;
-    --sans:       "Manrope", -apple-system, "Helvetica Neue", sans-serif;
-    --mono:       "JetBrains Mono", ui-monospace, monospace;
+    --display:    "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+    --sans:       "Avenir Next", Avenir, "Segoe UI", Helvetica, Arial, sans-serif;
+    --mono:       "SFMono-Regular", Consolas, "Liberation Mono", monospace;
   }
 
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
     font-family: var(--sans);
-    background: #2a2e36;
+    background: #FFFFFF;
     color: var(--ink);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -74,7 +67,8 @@
     background: var(--paper);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 4px 12px rgba(0,0,0,.3);
+    border: 1px solid var(--rule);
+    box-shadow: 0 12px 36px rgba(7,17,31,.08);
     color: var(--ink);
     page-break-after: always;
     break-after: page;
@@ -85,9 +79,7 @@
     /* paper grain */
     content: "";
     position: absolute; inset: 0;
-    background-image:
-      radial-gradient(rgba(11,18,32,.04) 1px, transparent 1px);
-    background-size: 3px 3px;
+    display: none;
     pointer-events: none;
     opacity: .55;
   }
@@ -101,7 +93,7 @@
   /* ============ TYPE ============ */
   .display {
     font-family: var(--display);
-    font-weight: 350;
+    font-weight: 700;
     font-variation-settings: "opsz" 144, "SOFT" 50, "WONK" 0;
     letter-spacing: -0.02em;
     line-height: 0.94;
@@ -171,6 +163,7 @@
   }
   .pg-header { padding-bottom: 6mm; border-bottom: 1px solid var(--rule); }
   .pg-footer { padding-top: 6mm; border-top: 1px solid var(--rule); margin-top: auto; }
+  .pg-header > :nth-child(2), .pg-footer > :nth-child(2) { display: none; }
   .pg-footer .dot { width:5px; height:5px; border-radius:50%; background:var(--green); display:inline-block; margin-right: 6px; box-shadow: 0 0 10px rgba(31,169,79,.5); }
   .brand-mini { display:flex; align-items:center; gap: 8px; }
   .brand-mini-mark {
@@ -180,7 +173,7 @@
     transform: rotate(45deg);
   }
 
-  /* ============ COVER (P1) — light page with dark feature panel ============ */
+  /* ============ COVER (P1) ============ */
   .cover { background: var(--paper); }
   .cover-frame {
     position: absolute; inset: 14mm;
@@ -197,11 +190,11 @@
   }
   .cover-top .issue { color: var(--ink); }
 
-  /* Logo INSIDE the dark cover panel — primary brand anchor */
+  /* Primary brand anchor */
   .panel-brand {
     display: flex; flex-direction: column; gap: 2mm;
     padding-bottom: 8mm;
-    border-bottom: 1px solid rgba(255,255,255,.08);
+    border-bottom: 1px solid var(--rule);
     margin-bottom: 8mm;
     position: relative;
   }
@@ -210,7 +203,7 @@
     position: absolute;
     left: 0; bottom: -1.5px;
     width: 36mm; height: 2.5px;
-    background: linear-gradient(90deg, #22D3EE 0%, #4ADE80 100%);
+    background: var(--grad);
     border-radius: 2px;
   }
   .panel-brand img {
@@ -220,55 +213,42 @@
   }
   .panel-brand .tag {
     font-family: var(--mono); font-size: 8pt;
-    color: rgba(255,255,255,.55);
+    color: var(--muted);
     letter-spacing: .22em; text-transform: uppercase;
     font-weight: 500;
   }
 
   .cover-panel {
     position: relative;
-    border-radius: 6px;
-    background:
-      radial-gradient(120% 80% at 80% 10%, rgba(0,149,184,.35), transparent 55%),
-      radial-gradient(80% 60% at 10% 90%, rgba(31,169,79,.28), transparent 55%),
-      linear-gradient(180deg, #04101F 0%, #08182A 60%, #051321 100%);
-    color: #F4F7FB;
+    border: 1px solid var(--rule-strong);
+    border-radius: 12px;
+    background: #FFFFFF;
+    color: var(--ink);
     padding: 16mm 14mm;
     overflow: hidden;
     display: flex; flex-direction: column;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+    box-shadow: none;
   }
   .cover-panel::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-    background-size: 18mm 18mm;
-    mask-image: radial-gradient(80% 80% at 50% 50%, black 30%, transparent 100%);
-    pointer-events: none;
+    display: none;
   }
-  .cover-panel .eyebrow { color: rgba(255,255,255,.7); }
+  .cover-panel .eyebrow { color: var(--muted); }
   .cover-hero h1 {
     font-family: var(--display);
-    font-weight: 300;
+    font-weight: 500;
     font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
     font-size: 68pt;
     line-height: 0.92;
     letter-spacing: -0.03em;
     margin: 4mm 0 0;
-    color: #F4F7FB;
+    color: var(--ink);
     position: relative;
   }
   .cover-hero h1 em {
     font-style: italic;
     font-weight: 300;
     font-variation-settings: "opsz" 144, "SOFT" 100;
-    background: linear-gradient(100deg,
-      #38BDF8 0%,
-      #2DD4BF 35%,
-      #4ADE80 70%,
-      #A3E635 100%);
+    background: var(--grad-text);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -277,7 +257,7 @@
     max-width: 130mm;
     font-size: 13pt;
     line-height: 1.45;
-    color: #C5D0E1;
+    color: var(--ink-2);
     font-weight: 300;
     position: relative;
   }
@@ -314,6 +294,16 @@
     letter-spacing: .15em; font-weight: 500;
   }
   .cover-issue strong { display:block; font-family: var(--display); font-size: 22pt; color: var(--ink); letter-spacing: -.01em; font-weight: 400; margin-top: 2mm; }
+  .cover-line {
+    padding-top: 5mm;
+    border-top: 1px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 8.5pt;
+    line-height: 1.6;
+    letter-spacing: .08em;
+    color: var(--muted);
+    text-transform: uppercase;
+  }
 
   /* ============ MANIFESTO (P2) ============ */
   .manifesto h2 {
@@ -322,13 +312,12 @@
     max-width: 170mm;
   }
   .manifesto-quote {
-    font-family: var(--display);
-    font-style: italic;
-    font-variation-settings: "opsz" 144, "SOFT" 100;
-    font-weight: 300;
-    font-size: 17pt;
-    line-height: 1.3;
-    letter-spacing: -0.015em;
+    font-family: var(--sans);
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14pt;
+    line-height: 1.5;
+    letter-spacing: 0;
     color: var(--ink-2);
     border-left: 2px solid var(--cyan);
     padding-left: 8mm;
@@ -361,9 +350,7 @@
     gap: 2mm;
   }
   .pillar .pillar-num {
-    font-family: var(--mono); font-weight: 600;
-    font-size: 8pt; color: var(--cyan);
-    letter-spacing: .18em; line-height: 1;
+    display: none;
   }
   .pillar .num {
     font-family: var(--mono); font-size: 8pt;
@@ -390,7 +377,7 @@
     margin-bottom: 8mm;
   }
 
-  /* ============ FEATURE — AI AGENTS (P3) — EDITORIAL REDESIGN ============ */
+  /* ============ DELIVERY MODEL (P3) ============ */
   .feature .kicker {
     font-family: var(--mono); font-size: 8.5pt; color: var(--green-deep);
     letter-spacing: .22em; text-transform: uppercase; font-weight: 500;
@@ -410,7 +397,8 @@
   }
   .feature-hero .lead strong {
     font-weight: 500; color: var(--ink);
-    background: linear-gradient(180deg, transparent 60%, rgba(15,166,143,.18) 60%);
+    background: none;
+    color: var(--teal);
     padding: 0 2px;
   }
 
@@ -520,7 +508,7 @@
     font-size: 16pt; line-height: 1.05;
     margin: 4mm 0 3mm; letter-spacing: -.02em;
     color: var(--ink);
-    white-space: nowrap;
+    white-space: normal;
   }
   .cap-card .desc {
     font-size: 9.5pt; line-height: 1.5; color: var(--ink-2);
@@ -544,12 +532,7 @@
     line-height: 1.4;
   }
   .cap-card .glyph {
-    position: absolute; right: -16mm; top: -16mm;
-    width: 60mm; height: 60mm;
-    background: var(--grad-soft);
-    border-radius: 50%;
-    filter: blur(18mm);
-    opacity: .9;
+    display: none;
   }
 
   /* ============ INDUSTRIES + TRUST (P5) ============ */
@@ -599,7 +582,7 @@
     margin: 0 0 4mm;
   }
   .trust-grid {
-    display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 6mm;
   }
   .trust-item {
     padding-top: 3mm;
@@ -653,7 +636,7 @@
   .phase ul li { padding: 1.5mm 0; border-top: 1px solid var(--rule); }
   .phase ul li:first-child { border-top: 0; padding-top: 0; }
   .phase.live {
-    background: linear-gradient(160deg, rgba(0,149,184,.06), rgba(31,169,79,.04));
+    background: #FFFFFF;
     border-color: rgba(15,166,143,.4);
   }
   .phase.live::before {
@@ -684,9 +667,7 @@
     display: flex; flex-direction: column;
   }
   .roi-card.hero {
-    background:
-      radial-gradient(80% 100% at 0% 100%, rgba(0,149,184,.10), transparent 60%),
-      var(--paper-2);
+    background: #FFFFFF;
     border-color: rgba(0,149,184,.3);
   }
   .roi-card .tag {
@@ -845,7 +826,7 @@
   .case-card.placeholder .case-tag { color: var(--dim); }
   .case-card.placeholder h3 { color: var(--muted); }
 
-  /* ============ CONTACT / BACK (P8) — light page with dark feature panel ============ */
+  /* ============ CONTACT / BACK (P7) ============ */
   .contact { background: var(--paper); }
   .contact-frame {
     position: absolute; inset: 14mm;
@@ -854,46 +835,33 @@
   }
   .contact-panel {
     position: relative;
-    border-radius: 6px;
-    background:
-      radial-gradient(60% 40% at 80% 20%, rgba(0,149,184,.30), transparent 60%),
-      radial-gradient(50% 35% at 20% 90%, rgba(31,169,79,.24), transparent 60%),
-      linear-gradient(180deg, #04101F 0%, #08182A 100%);
-    color: #F4F7FB;
+    border: 1px solid var(--rule-strong);
+    border-radius: 12px;
+    background: #FFFFFF;
+    color: var(--ink);
     padding: 16mm 14mm;
     overflow: hidden;
     display: flex; flex-direction: column;
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,.06);
+    box-shadow: none;
   }
   .contact-panel::before {
-    content: "";
-    position: absolute; inset: 0;
-    background-image:
-      linear-gradient(rgba(255,255,255,.04) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,.04) 1px, transparent 1px);
-    background-size: 18mm 18mm;
-    mask-image: radial-gradient(80% 80% at 50% 50%, black 30%, transparent 100%);
-    pointer-events: none;
+    display: none;
   }
-  .contact-panel .num { color: #5DD5F0; }
+  .contact-panel .num { color: var(--cyan); }
   .contact-hero h2 {
     font-family: var(--display);
-    font-weight: 300;
+    font-weight: 500;
     font-variation-settings: "opsz" 144, "SOFT" 30, "WONK" 0;
     font-size: 56pt; margin: 4mm 0 0; line-height: 0.95;
     letter-spacing: -.02em;
-    color: #F4F7FB;
+    color: var(--ink);
     max-width: 180mm;
   }
   .contact-hero h2 em {
     font-style: italic;
     font-weight: 300;
     font-variation-settings: "opsz" 144, "SOFT" 100;
-    background: linear-gradient(100deg,
-      #38BDF8 0%,
-      #2DD4BF 35%,
-      #4ADE80 70%,
-      #A3E635 100%);
+    background: var(--grad-text);
     -webkit-background-clip: text; background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -901,7 +869,7 @@
     margin: 8mm 0 0;
     max-width: 130mm;
     font-size: 13pt; line-height: 1.45;
-    color: #C5D0E1; font-weight: 300;
+    color: var(--ink-2); font-weight: 300;
   }
   .contact-cta {
     margin-top: 10mm;
@@ -943,6 +911,7 @@
     }
     .page {
       margin: 0;
+      border: 0;
       box-shadow: none;
       page-break-after: always;
       break-after: page;
@@ -967,8 +936,7 @@
       padding-right: 0 !important;
       display: inline !important;
     }
-    /* On dark panels: split the italic text in two colors to simulate the
-       cyan → green gradient. First italic block = cyan, second = green. */
+    /* Preserve the two brand accent colors in print. */
     .cover-panel h1 em:nth-of-type(1) {
       -webkit-text-fill-color: #22D3EE !important;
       color: #22D3EE !important;
@@ -977,7 +945,7 @@
       -webkit-text-fill-color: #4ADE80 !important;
       color: #4ADE80 !important;
     }
-    /* Contact hero only has one em — use a teal between cyan and green */
+    /* The contact accent uses the midpoint of the brand palette. */
     .contact-hero h2 em {
       -webkit-text-fill-color: #2DD4BF !important;
       color: #2DD4BF !important;
@@ -1001,18 +969,18 @@
 
   .print-help {
     position: fixed; right: 16px; bottom: 16px;
-    background: #07111F;
-    color: #F4F7FB;
-    border: 1px solid rgba(255,255,255,.18);
+    background: #FFFFFF;
+    color: var(--ink);
+    border: 1px solid var(--rule-strong);
     border-radius: 8px;
     padding: 12px 16px;
     font-family: var(--mono); font-size: 11px;
     line-height: 1.5; letter-spacing: .04em;
-    box-shadow: 0 8px 30px rgba(0,0,0,.5);
+    box-shadow: 0 8px 30px rgba(7,17,31,.12);
     max-width: 260px;
     z-index: 100;
   }
-  .print-help b { color: #5DD5F0; }
+  .print-help b { color: var(--cyan); }
   .print-help button {
     margin-top: 8px;
     background: var(--grad);
@@ -1024,15 +992,163 @@
   }
   .site-nav {
     max-width: 210mm; margin: 24px auto; padding: 16px;
-    background: var(--paper); border-radius: 4px;
+    background: var(--paper); border: 1px solid var(--rule); border-radius: 8px;
     display: flex; flex-wrap: wrap; justify-content: center; gap: 12px 24px;
     font-family: var(--sans); font-size: 14px;
   }
   .site-nav a { color: var(--ink); text-decoration: underline; }
+  a:focus-visible, button:focus-visible {
+    outline: 3px solid var(--cyan);
+    outline-offset: 4px;
+  }
+
+  .agent-card, .cap-card, .industry-tile, .phase, .roi-card {
+    border-radius: 12px;
+  }
+  .display-italic, h1 em, h2 em, h3 em, .detail-title em {
+    font-style: normal !important;
+    font-weight: 600 !important;
+  }
+  .cover-hero h1, .contact-hero h2 {
+    font-weight: 700;
+  }
+  .agent-card h3, .cap-card h3, .industry-tile .card-label,
+  .phase h3, .roi-card .card-label, .trust-item .detail-title {
+    font-weight: 600;
+  }
+
+  /* Modo de lectura responsive. La impresión conserva la composición A4. */
+  @media screen and (max-width: 56.25rem) {
+    body { background: #FFFFFF; }
+    .page {
+      width: 100%;
+      height: auto;
+      min-height: 100svh;
+      margin: 0;
+      border-bottom: 1px solid var(--rule-strong);
+      box-shadow: none;
+      overflow: hidden;
+    }
+    .frame, .cover-frame, .contact-frame {
+      position: relative;
+      inset: auto;
+      min-height: 100svh;
+      padding: clamp(1.25rem, 5vw, 3rem);
+    }
+    .cover-frame, .contact-frame { gap: clamp(1.5rem, 4vw, 2.5rem); }
+    .cover-panel, .contact-panel { padding: clamp(2rem, 7vw, 4rem); }
+    .panel-brand img { width: min(100%, 22rem); }
+    .cover-hero h1 { font-size: clamp(3.5rem, 12vw, 6rem); }
+    .contact-hero h2 { font-size: clamp(3rem, 10vw, 5rem); }
+    .manifesto h2, .feature-hero h2, .caps-head h2, .split-head h2 {
+      font-size: clamp(2.6rem, 8vw, 4.25rem);
+    }
+    .feature-hero, .caps-head, .split-head { grid-template-columns: 1fr; gap: 1.5rem; }
+    .feature-hero { align-items: start; }
+    .pillar { grid-template-columns: minmax(7rem, .45fr) 1fr; gap: 1rem 1.5rem; }
+    .pillar > p { grid-column: 1 / -1; }
+    .agent-grid, .caps-grid, .industries-grid, .trust-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .timeline { grid-template-columns: 1fr; gap: .75rem; }
+    .timeline-arrow { transform: rotate(90deg); }
+    .roi-grid { grid-template-columns: 1fr; }
+    .contact-grid { grid-template-columns: 1fr 1fr; }
+    .pg-footer { margin-top: 2rem; }
+    .print-help { display: none; }
+    .site-nav { margin: 0; max-width: none; border-radius: 0; }
+  }
+
+  @media screen and (max-width: 40rem) {
+    .cover-top, .pg-header { gap: .75rem; }
+    .cover-top > :last-child, .pg-header > :nth-child(2) { display: none; }
+    .cover-panel, .contact-panel { border-radius: 0; margin-inline: -1.25rem; }
+    .cover-hero h1 { font-size: clamp(2.1rem, 10.5vw, 3rem); }
+    .contact-hero h2 { font-size: clamp(2.35rem, 11vw, 3.25rem); }
+    .cover-toc .toc-items, .agent-grid, .caps-grid, .industries-grid,
+    .trust-grid, .principles-strip, .contact-grid { grid-template-columns: 1fr; }
+    .pillar { grid-template-columns: 1fr; }
+    .pillar > p { grid-column: auto; }
+    .manifesto-quote { font-size: 1.2rem; padding-left: 1rem; }
+    .cover-tag, .contact-hero p, .lead { font-size: 1rem; }
+    .cap-card h3 { white-space: normal; }
+    .contact-cta { width: 100%; justify-content: center; text-align: center; }
+    .site-nav { justify-content: flex-start; padding: 1.25rem; }
+  }
+  /* Editorial balance: content breathes without creating empty boxed areas. */
+  .cover-hero { margin: auto 0; }
+
+  .agent-grid {
+    gap: 5mm 10mm;
+    flex: 0;
+    min-height: 116mm;
+    max-height: 116mm;
+    margin-bottom: auto;
+  }
+  .agent-card {
+    border: 0;
+    border-top: 1px solid var(--rule-strong);
+    border-radius: 0;
+    padding: 6mm 0 4mm;
+    background: transparent;
+  }
+  .agent-card::before { border-radius: 2px; }
+  .agent-card p { max-width: 72mm; }
+
+  .caps-grid {
+    gap: 4mm 12mm;
+    flex: 0;
+    min-height: 132mm;
+    max-height: 132mm;
+    margin-bottom: auto;
+  }
+  .cap-card {
+    border: 0;
+    border-top: 1px solid var(--rule-strong);
+    border-radius: 0;
+    padding: 6mm 0 5mm;
+    background: transparent;
+  }
+  .cap-card ul { margin-top: auto; }
+
+  .industries-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 5mm 12mm;
+    margin-bottom: 10mm;
+  }
+  .industry-tile {
+    border: 0;
+    border-top: 1px solid var(--rule-strong);
+    border-radius: 0;
+    padding: 5mm 0 3mm;
+    background: transparent;
+  }
+  .industry-tile .card-label { font-size: 14pt; line-height: 1.1; }
+  .industry-tile p:not(.card-label) {
+    max-width: 76mm;
+    font-size: 8.5pt;
+    line-height: 1.5;
+  }
+  .trust-band { margin-top: 0; }
+  .contact-panel { justify-content: center; }
+
+  @media screen and (max-width: 56.25rem) {
+    .cover-hero { margin: 0; }
+    .agent-grid, .caps-grid {
+      min-height: 0;
+      max-height: none;
+      margin-bottom: 0;
+    }
+    .agent-card, .cap-card, .industry-tile {
+      padding: 1.4rem 0;
+    }
+  }
+
   @media print { .site-nav { display: none; } }
 </style>
 </head>
 <body>
+<main id="brochure">
 
 <!-- ===================================================================
      PAGE 1 — COVER
@@ -1040,35 +1156,25 @@
 <section class="page cover">
   <div class="cover-frame">
     <header class="cover-top">
-      <span>el informe <span class="issue">2026</span></span>
-      <span>Vol. 01 / Edición Empresarial</span>
+      <span>WIQONN / 2026</span>
+      <span>Resumen de servicios</span>
     </header>
 
     <div class="cover-panel">
       <header class="panel-brand">
-        <img src="/brochure/assets/wiqonn-logo.png" alt="Wiqonn">
-        <span class="tag">— Estudio de IA &amp; Ingeniería con respaldo de investigación</span>
+        <img src="/brochure/assets/wiqonn-logo.png" alt="Wiqonn" width="1793" height="710" decoding="async">
+        <span class="tag">Tecnología &amp; transformación digital</span>
       </header>
       <div class="cover-hero">
-        <h1>Haz crecer tu<br>negocio con<br><em>IA que</em><br><em>sí cumple.</em></h1>
+        <h1>Tecnología para<br><em>tu contexto.</em><br><em>Tu realidad.</em></h1>
         <p class="cover-tag">
-          Agentes IA a medida, modelos predictivos y plataformas cloud que automatizan lo que te frena. Su valor se prueba con resultados medibles, no con promesas.
+          Diseñamos y desplegamos software, sistemas de datos, IA aplicada e infraestructura. Transformamos procesos y formamos a tu equipo para operar lo construido.
         </p>
       </div>
     </div>
 
     <footer class="cover-bottom">
-      <div class="cover-toc">
-        <span class="toc-label">— En esta edición</span>
-        <div class="toc-items">
-          <span><span>01</span> Por qué Wiqonn</span>
-          <span><span>04</span> Sectores &amp; postura de confianza</span>
-          <span><span>02</span> Agentes IA &amp; automatización</span>
-          <span><span>05</span> Modelo de trabajo &amp; ROI</span>
-          <span><span>03</span> Lo que construimos</span>
-          <span><span>06</span> Hablemos</span>
-        </div>
-      </div>
+      <div class="cover-line">Software · Datos · IA aplicada · Infraestructura · Transformación digital · Formación</div>
     </footer>
   </div>
 </section>
@@ -1081,53 +1187,53 @@
   <div class="frame">
     <header class="pg-header">
       <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
-      <div>01 — EL INFORME</div>
+      <div>01 · EL INFORME</div>
       <div>P. 02</div>
     </header>
 
     <div style="margin-top: 14mm;">
-      <span class="num">§ 01 — QUIÉNES SOMOS</span>
+      <span class="num">QUIÉNES SOMOS</span>
       <h2 class="display" style="margin: 6mm 0 0;">
-        La IA debe<br>resolver problemas<span class="display-italic" style="font-size: 56pt;">,</span><br>
+        La tecnología debe<br>resolver problemas<span class="display-italic" style="font-size: 56pt;">,</span><br>
         <span class="display-italic gradient-text">no crear</span><br>
         <span class="display-italic gradient-text">nuevos.</span>
       </h2>
     </div>
 
     <p class="manifesto-quote">
-      <span class="q-mark">“</span>Somos un estudio de IA e ingeniería para líderes cansados de pilotos que nunca llegan a producción. Cada sistema que construimos tiene un solo trabajo: mover un número que importa para tu negocio. Si no lo logra, no lo lanzamos.
+      Wiqonn es un estudio de tecnología y transformación digital. Construimos software, sistemas de datos, IA aplicada e infraestructura alrededor de la operación real. Cada proyecto empieza con un objetivo medible e incluye el conocimiento que tu equipo necesita para tomar el control.
     </p>
 
     <div class="pillars">
       <div class="pillar">
         <div class="pillar-tag">
           <span class="pillar-num">01 / 03</span>
-          <span class="num">VELOCIDAD AL VALOR</span>
+          <span class="num">PRIMERO EL CONTEXTO</span>
         </div>
-        <h3>Semanas<span class="display-italic">.</span><br><em>No trimestres.</em></h3>
-        <p>Descubrimiento comprimido, alcance acotado a un resultado que mueva el negocio, entregado en iteraciones de producción — nunca un piloto de seis meses que se desvanece del roadmap.</p>
+        <h3>Tu operación<span class="display-italic">.</span><br><em>Tus restricciones.</em></h3>
+        <p>Empezamos por los usuarios, datos, sistemas y reglas que definen el problema. La solución se adapta al entorno donde debe funcionar.</p>
       </div>
       <div class="pillar">
         <div class="pillar-tag">
           <span class="pillar-num">02 / 03</span>
-          <span class="num">RESPONSABILIDAD</span>
+          <span class="num">EVIDENCIA ANTES DE ESCALAR</span>
         </div>
-        <h3>Números<span class="display-italic">,</span><br><em>o no se lanza.</em></h3>
-        <p>Cada sistema tiene una línea base y un objetivo antes de la primera línea de código. Si el modelo no supera la métrica acordada, no entra a producción — aunque la demo se vea bien.</p>
+        <h3>Medir<span class="display-italic">,</span><br><em>luego decidir.</em></h3>
+        <p>Acordamos una línea base, datos representativos y criterios de aceptación. Cada fase produce evidencia para avanzar, ajustar o detener.</p>
       </div>
       <div class="pillar">
         <div class="pillar-tag">
           <span class="pillar-num">03 / 03</span>
-          <span class="num">LISTO PARA GOBIERNO</span>
+          <span class="num">ADOPCIÓN INCLUIDA</span>
         </div>
-        <h3>Trazabilidad<span class="display-italic">,</span><br><em>no hay cajas negras.</em></h3>
-        <p>Trazas, evaluaciones y guardarraíles desde el día uno — para que los equipos de seguridad, legal y riesgo no se sorprendan cuando el sistema llegue a producción.</p>
+        <h3>El conocimiento queda<span class="display-italic">.</span><br><em>Tu equipo crece.</em></h3>
+        <p>La formación, la documentación y la transferencia de conocimiento ayudan a tu equipo a adoptar, operar y mejorar el sistema.</p>
       </div>
     </div>
 
     <footer class="pg-footer">
       <div><span class="dot"></span>WIQONN.COM</div>
-      <div>SOLUCIONES DE IA Y TECNOLOGÍA RESPALDADAS POR INVESTIGACIÓN</div>
+      <div>TECNOLOGÍA · TRANSFORMACIÓN · IA APLICADA</div>
       <div>02 / 07</div>
     </footer>
   </div>
@@ -1135,80 +1241,58 @@
 
 
 <!-- ===================================================================
-     PAGE 3 — AI AGENTS & PROCESS AUTOMATION (FEATURED)
+     PAGE 3: DEL RETO A LA ADOPCIÓN
 ==================================================================== -->
 <section class="page feature">
   <div class="frame">
     <header class="pg-header">
       <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
-      <div>02 — CAPACIDAD DESTACADA</div>
+      <div>02 · CÓMO TRABAJAMOS</div>
       <div>P. 03</div>
     </header>
 
     <div class="feature-hero">
       <div>
-        <span class="kicker">§ 02 — Donde empieza nuestro trabajo</span>
+        <span class="kicker">DEL RETO A LA ADOPCIÓN</span>
         <h2 class="display">
-          El trabajo repetitivo<br>lo hacen los agentes —<br>
-          <span class="display-italic gradient-text">tu equipo, no.</span>
+          Un mismo equipo<br>del problema real a<br>
+          <span class="display-italic gradient-text">un sistema que controlas.</span>
         </h2>
       </div>
       <p class="lead">
-        La mayoría de empresas no tienen un "problema de IA" — tienen un <strong>problema de flujos de trabajo</strong>. Tickets repetitivos, aprobaciones lentas, datos atrapados en PDFs, estados copiados y pegados entre sistemas. Los agentes de Wiqonn corren esos flujos 24/7 y le pasan a tus humanos solo lo que de verdad requiere criterio.
+        La tecnología es solo una parte del trabajo. Conectamos <strong>estrategia, software, datos, IA e infraestructura</strong>, validamos el resultado en contexto y preparamos a tu equipo para sostenerlo.
       </p>
     </div>
 
     <div class="agent-grid">
       <article class="agent-card">
-        <div class="ac-num">— Tipo 01</div>
-        <h3>Agentes operativos</h3>
-        <p class="ac-promise">Adiós al copy-paste entre planillas.</p>
-        <p>Clasifican tickets, mueven aprobaciones y concilian datos entre ERP, CRM y planillas — la operación repetitiva se convierte en trabajo medible.</p>
+        <div class="ac-num">Paso 01</div>
+        <h3>Entender el contexto</h3>
+        <p>Mapeamos el reto, los usuarios, los datos, los sistemas y las restricciones. Juntos definimos el resultado y cómo evaluarlo.</p>
       </article>
 
       <article class="agent-card">
-        <div class="ac-num">— Tipo 02</div>
-        <h3>Agentes de documentos &amp; conocimiento</h3>
-        <p class="ac-promise">Lo leen todo. No olvidan nada.</p>
-        <p>Leen contratos, RFPs, facturas y documentación interna. Extraen datos estructurados, responden con citas verificables y alimentan tus sistemas a demanda.</p>
+        <div class="ac-num">Paso 02</div>
+        <h3>Diseñar la ruta</h3>
+        <p>Definimos prioridades, arquitectura, métricas y puntos de decisión. Usamos IA cuando aporta valor, junto al software y la infraestructura necesarios.</p>
       </article>
 
       <article class="agent-card">
-        <div class="ac-num">— Tipo 03</div>
-        <h3>Agentes de apoyo a decisiones</h3>
-        <p class="ac-promise">Una segunda opinión, a escala.</p>
-        <p>Modelos predictivos en una capa de agente — pronósticos, detección de anomalías, recomendaciones — dentro de las herramientas que tu equipo ya usa todos los días.</p>
+        <div class="ac-num">Paso 03</div>
+        <h3>Construir y validar</h3>
+        <p>Construimos el sistema, lo integramos con flujos reales y lo evaluamos con datos representativos antes de recomendar un despliegue mayor.</p>
       </article>
 
       <article class="agent-card">
-        <div class="ac-num">— Tipo 04</div>
-        <h3>Agentes de cara al cliente</h3>
-        <p class="ac-promise">Listos en el momento que el cliente pregunta.</p>
-        <p>Copilotos de soporte, ventas y uso interno anclados en tus propios datos — con retrieval, evaluaciones y guardarraíles, no improvisando.</p>
+        <div class="ac-num">Paso 04</div>
+        <h3>Formar y transferir</h3>
+        <p>Formamos a quienes usarán y operarán la solución. Tu equipo recibe la documentación, los accesos y el conocimiento acordados.</p>
       </article>
-    </div>
-
-    <div class="principles-strip">
-      <div class="principle">
-        <span class="p-tag">— Siempre activos</span>
-        <p class="p-key detail-title">Corren <em>24/7.</em></p>
-        <p class="p-val">Sin turnos rotativos, sin huecos en horario no laboral.</p>
-      </div>
-      <div class="principle">
-        <span class="p-tag">— Auditables</span>
-        <p class="p-key detail-title">Cada <em>paso registrado.</em></p>
-        <p class="p-val">Traza re-ejecutable para riesgo y legal, desde la primera semana.</p>
-      </div>
-      <div class="principle">
-        <span class="p-tag">— Tuyos</span>
-        <p class="p-key detail-title">Tu <em>stack, tus reglas.</em></p>
-        <p class="p-val">Despliegue en tu nube o on-prem, sobre tus datos, bajo tu gobernanza.</p>
-      </div>
     </div>
 
     <footer class="pg-footer">
       <div><span class="dot"></span>WIQONN.COM</div>
-      <div>AGENTES · LLMS · RETRIEVAL · MLOPS</div>
+      <div>ENTENDER · DISEÑAR · CONSTRUIR · TRANSFERIR</div>
       <div>03 / 07</div>
     </footer>
   </div>
@@ -1216,23 +1300,23 @@
 
 
 <!-- ===================================================================
-     PAGE 4 — CAPABILITIES (4 PILLARS)
+     PAGE 4: CAPACIDADES CONECTADAS
 ==================================================================== -->
 <section class="page">
   <div class="frame">
     <header class="pg-header">
       <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
-      <div>03 — CAPACIDADES</div>
+      <div>03 · CAPACIDADES</div>
       <div>P. 04</div>
     </header>
 
     <div class="caps-head" style="margin-top: 12mm;">
       <div>
-        <span class="num">§ 03 — LO QUE CONSTRUIMOS</span>
-        <h2 class="display">Cuatro formas<br>de mover <span class="display-italic gradient-text">tus</span> números.</h2>
+        <span class="num">LO QUE CONSTRUIMOS</span>
+        <h2 class="display">Cuatro prácticas<br><span class="display-italic gradient-text">conectadas.</span> Un equipo.</h2>
       </div>
       <p>
-        El impacto real rara vez viene de una sola pieza de tecnología. Reunimos IA, datos, infraestructura y software bajo un mismo techo para que el resultado en tu escritorio sea un sistema funcionando — no cuatro facturas que tienes que integrar.
+        Los retos complejos rara vez caben en una sola disciplina. Unimos ingeniería de producto, datos, IA aplicada, infraestructura y adopción para que cada parte funcione con las demás.
       </p>
     </div>
 
@@ -1240,60 +1324,55 @@
       <article class="cap-card">
         <div class="glyph"></div>
         <span class="num">CAP / 01</span>
-        <h3>IA &amp; Automatización</h3>
-        <p class="desc">Liberamos a tu equipo del trabajo repetitivo. Construimos IA que se encarga 24/7 de la parte mecánica del negocio para que tu gente se enfoque en las decisiones que solo un humano debería tomar.</p>
+        <h3>IA aplicada</h3>
+        <p class="desc">Elegimos, adaptamos, afinamos o construimos modelos alrededor de tu dominio, tus datos y tus restricciones operativas.</p>
         <ul>
-          <li>Agentes IA que automatizan procesos de punta a punta</li>
-          <li>Modelos predictivos entrenados con tus propios datos</li>
-          <li>Visión por computador para control de calidad e inspección</li>
-          <li>Copilotos inteligentes anclados a tu base de conocimiento</li>
-          <li>IA privada en tu propia infraestructura cuando los datos no pueden salir</li>
+          <li>IA de lenguaje, multimodal y visión por computador</li>
+          <li>Pronóstico y sistemas de decisión</li>
+          <li>Conocimiento privado, documentos y sistemas agentic</li>
         </ul>
       </article>
 
       <article class="cap-card">
         <div class="glyph"></div>
         <span class="num">CAP / 02</span>
-        <h3>Business Intelligence</h3>
-        <p class="desc">Deja de tomar decisiones a punta de hoja de cálculo. Convertimos los datos regados entre tus sistemas en tableros que responden las preguntas que tus líderes realmente se hacen en la próxima reunión.</p>
+        <h3>Datos, evaluación &amp; MLOps</h3>
+        <p class="desc">Construimos la capa de datos y evaluación que convierte un modelo prometedor en un sistema confiable para producción.</p>
         <ul>
-          <li>Tableros ejecutivos construidos sobre tus KPIs reales</li>
-          <li>Reportes automatizados — horas devueltas a tu equipo</li>
-          <li>Alertas en tiempo real cuando los números se desvían</li>
-          <li>Una sola fuente de verdad entre ERP, CRM y warehouse</li>
+          <li>Pipelines, datasets y líneas base</li>
+          <li>Evaluaciones del dominio y monitoreo en producción</li>
+          <li>Serving y optimización de inferencia</li>
         </ul>
       </article>
 
       <article class="cap-card">
         <div class="glyph"></div>
         <span class="num">CAP / 03</span>
-        <h3>Cloud &amp; Infraestructura</h3>
-        <p class="desc">La base que sostiene todo lo demás — rápida, segura y preparada para crecer. La dejamos en su sitio para que tu equipo no tenga que apagar incendios un domingo a las 3am.</p>
+        <h3>Software, cloud &amp; infraestructura</h3>
+        <p class="desc">Construimos las aplicaciones, APIs y la infraestructura que convierten una capacidad técnica en un producto o flujo útil.</p>
         <ul>
-          <li>Setup multi-cloud (AWS · Azure · Google Cloud)</li>
-          <li>Alta disponibilidad — tus sistemas se mantienen arriba</li>
-          <li>Seguridad y manejo de datos bien hechos desde el día uno</li>
-          <li>Costos ajustados a lo que realmente consumes</li>
+          <li>Productos web, móviles y plataformas</li>
+          <li>APIs, backends y flujos conectados</li>
+          <li>Cloud, on-premise, edge e IoT</li>
         </ul>
       </article>
 
       <article class="cap-card">
         <div class="glyph"></div>
         <span class="num">CAP / 04</span>
-        <h3>Desarrollo a Medida</h3>
-        <p class="desc">Software a la medida de tu negocio — no plantillas con tu logo encima. Desde herramientas internas hasta productos para tus clientes, con IA integrada de fábrica.</p>
+        <h3>Transformación &amp; adopción</h3>
+        <p class="desc">Alineamos procesos, tecnología y equipos alrededor de una ruta práctica, y construimos la capacidad necesaria para sostenerla.</p>
         <ul>
-          <li>Aplicaciones móviles y web con IA integrada</li>
-          <li>APIs que conectan tus herramientas</li>
-          <li>Plataformas SaaS listas para tus clientes</li>
-          <li>El código es tuyo — sin vendor lock-in</li>
+          <li>Hojas de ruta, rediseño y automatización</li>
+          <li>Formación, documentación y adopción</li>
+          <li>Marketing digital, SEO y contenido cuando aporta</li>
         </ul>
       </article>
     </div>
 
     <footer class="pg-footer">
       <div><span class="dot"></span>WIQONN.COM</div>
-      <div>CUATRO PRÁCTICAS · UN ESTUDIO · ENTREGA DE PUNTA A PUNTA</div>
+      <div>CUATRO PRÁCTICAS · UN EQUIPO RESPONSABLE</div>
       <div>04 / 07</div>
     </footer>
   </div>
@@ -1301,97 +1380,72 @@
 
 
 <!-- ===================================================================
-     PAGE 5 — INDUSTRIES + TRUST & COMPLIANCE
+     PAGE 5: ORGANIZACIONES + CONFIANZA
 ==================================================================== -->
 <section class="page">
   <div class="frame">
     <header class="pg-header">
       <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
-      <div>04 — SECTORES &amp; CONFIANZA</div>
+      <div>04 · ORGANIZACIONES &amp; CONFIANZA</div>
       <div>P. 05</div>
     </header>
 
     <div class="split-head" style="margin-top: 12mm;">
       <div>
-        <span class="num">§ 04 — DONDE CONSTRUIMOS</span>
-        <h2 class="display">Dominios donde la IA<br>mueve números <span class="display-italic gradient-text">reales</span>.</h2>
+        <span class="num">CON QUIÉNES TRABAJAMOS</span>
+        <h2 class="display">Hecho para tu contexto<span class="display-italic">,</span><br><span class="display-italic gradient-text">no para un sector genérico.</span></h2>
       </div>
-      <p>Una muestra de los dominios donde el trabajo de IA, datos e ingeniería de Wiqonn marca la diferencia. Cada engagement se moldea a tu sector específico y a la métrica que importa para ti.</p>
+      <p>Trabajamos de forma horizontal y adaptamos cada proyecto al tamaño, los usuarios, los datos, las reglas operativas y las responsabilidades de la organización.</p>
     </div>
 
     <div class="industries-grid">
       <div class="industry-tile">
-        <div class="tag">— Dominio 01</div>
-        <p class="card-label">Servicios Financieros</p>
-        <p>Risk scoring, detección de fraude, automatización de KYC/AML y BI para tesorería y operaciones.</p>
+        <div class="tag">Público y social</div>
+        <p class="card-label">Entidades y organizaciones con propósito</p>
+        <p>Servicios digitales, operaciones, datos y evidencia adaptados a la responsabilidad pública y al impacto social.</p>
       </div>
       <div class="industry-tile">
-        <div class="tag">— Dominio 02</div>
-        <p class="card-label">Educación &amp; EdTech</p>
-        <p>Copilotos de captación y matrícula de estudiantes, learning analytics, generación de contenido y dashboards para operaciones académicas.</p>
+        <div class="tag">Empresas</div>
+        <p class="card-label">Organizaciones de cualquier tamaño</p>
+        <p>Soluciones enfocadas para equipos pequeños y sistemas conectados para operaciones grandes o reguladas.</p>
       </div>
       <div class="industry-tile">
-        <div class="tag">— Dominio 03</div>
-        <p class="card-label">Energía &amp; Utilities</p>
-        <p>Mantenimiento predictivo, pronóstico de demanda, optimización de red y activos, y dashboards para redes de distribución.</p>
+        <div class="tag">Conocimiento</div>
+        <p class="card-label">Universidades y centros de investigación</p>
+        <p>Operaciones académicas, datos institucionales, modelos especializados e infraestructura para investigación aplicada.</p>
       </div>
       <div class="industry-tile">
-        <div class="tag">— Dominio 04</div>
-        <p class="card-label">Logística &amp; Supply Chain</p>
-        <p>Pronóstico de demanda, optimización de rutas y carga, detección de anomalías en operaciones distribuidas.</p>
-      </div>
-      <div class="industry-tile">
-        <div class="tag">— Dominio 05</div>
-        <p class="card-label">Retail &amp; E-commerce</p>
-        <p>Personalización, modelos de fidelización y churn, pronóstico de demanda y copilotos de compra anclados en tu catálogo.</p>
-      </div>
-      <div class="industry-tile">
-        <div class="tag">— Dominio 06</div>
-        <p class="card-label">Manufactura &amp; Industrial</p>
-        <p>Visión por computador para control de calidad, mantenimiento predictivo y modelos desplegables en el edge para la planta.</p>
-      </div>
-      <div class="industry-tile">
-        <div class="tag">— Dominio 07</div>
-        <p class="card-label">Sector Público &amp; Gobierno</p>
-        <p>Análisis histórico de gasto, detección de patrones en registros legados y dashboards para decisiones basadas en evidencia.</p>
-      </div>
-      <div class="industry-tile">
-        <div class="tag">— Dominio 08</div>
-        <p class="card-label">Servicios Profesionales &amp; Agencias</p>
-        <p>Copilotos de lead scoring y conversión, automatización de documentos y propuestas, y BI para ingresos y operaciones de clientes.</p>
+        <div class="tag">Operaciones</div>
+        <p class="card-label">Industria y entornos complejos</p>
+        <p>Visión por computador, pronóstico, sistemas edge y herramientas operativas diseñadas para condiciones reales.</p>
       </div>
     </div>
 
     <div class="trust-band">
-      <span class="trust-eyebrow">§ 04.B — Pensado para procurement y legal</span>
-      <h3>Postura de confianza<span class="display-italic">,</span> <span class="display-italic gradient-text">por defecto.</span></h3>
+      <span class="trust-eyebrow">CONTROL DESDE EL INICIO</span>
+      <h3>Confianza y propiedad<span class="display-italic">,</span> <span class="display-italic gradient-text">integradas en la entrega.</span></h3>
       <div class="trust-grid">
         <div class="trust-item">
-          <div class="ti-tag">— Soberanía de datos</div>
-          <p class="detail-title">Tus datos, tu infraestructura</p>
-          <p>Despliega todo el stack en tu nube, on-prem o VPC privada. Tus llaves, tus políticas de retención. Tus datos nunca entrenan un modelo público.</p>
+          <div class="ti-tag">Propiedad de datos</div>
+          <p class="detail-title">Tus datos siguen siendo tuyos</p>
+          <p>No reutilizamos datos de clientes para otros proyectos ni para entrenar modelos ajenos. Acordamos acceso y retención antes de empezar.</p>
         </div>
         <div class="trust-item">
-          <div class="ti-tag">— IA Privada</div>
-          <p class="detail-title">Modelos locales. Sin internet.</p>
-          <p>LLMs on-prem, visión en dispositivo y pipelines totalmente air-gapped para las cargas más sensibles — cero llamadas a APIs públicas.</p>
+          <div class="ti-tag">Opciones de despliegue</div>
+          <p class="detail-title">Cloud, on-premise o edge</p>
+          <p>Elegimos el entorno según las necesidades operativas, de privacidad, latencia e integración.</p>
         </div>
         <div class="trust-item">
-          <div class="ti-tag">— PI &amp; cumplimiento</div>
-          <p class="detail-title">El trabajo es tuyo, auditable</p>
-          <p>Código fuente, modelos y pipelines se transfieren al entregar. Arquitecturas alineadas con GDPR, HIPAA y SOC2.</p>
-        </div>
-        <div class="trust-item">
-          <div class="ti-tag">— Trazabilidad</div>
-          <p class="detail-title">Cada decisión es trazable</p>
-          <p>Trazas, evaluaciones y guardarraíles siempre activos. Riesgo y legal obtienen un log auditable desde la primera semana.</p>
+          <div class="ti-tag">Seguridad y trazabilidad</div>
+          <p class="detail-title">Expectativas acordadas por escrito</p>
+          <p>El acceso, la seguridad, las evaluaciones, las limitaciones y los criterios permanecen documentados durante la entrega.</p>
         </div>
       </div>
     </div>
 
     <footer class="pg-footer">
       <div><span class="dot"></span>WIQONN.COM</div>
-      <div>SECTORES · CONFIANZA · LISTOS PARA CUMPLIMIENTO</div>
+      <div>ORGANIZACIONES · CONFIANZA · PROPIEDAD</div>
       <div>05 / 07</div>
     </footer>
   </div>
@@ -1399,88 +1453,70 @@
 
 
 <!-- ===================================================================
-     PAGE 6 — ENGAGEMENT MODEL + ROI / PAYBACK
+     PAGE 6: FORMACIÓN + ADOPCIÓN
 ==================================================================== -->
 <section class="page">
   <div class="frame">
     <header class="pg-header">
       <div class="brand-mini"><div class="brand-mini-mark"></div> WIQONN / 2026</div>
-      <div>05 — MODELO DE TRABAJO &amp; ROI</div>
+      <div>05 · FORMACIÓN &amp; ADOPCIÓN</div>
       <div>P. 06</div>
     </header>
 
     <div class="split-head" style="margin-top: 12mm; margin-bottom: 4mm;">
       <div>
-        <span class="num">§ 05 — CÓMO TRABAJAMOS</span>
-        <h2 class="display">Tres fases<span class="display-italic">.</span><br><span class="display-italic gradient-text">Sin sorpresas.</span></h2>
+        <span class="num">FORMACIÓN &amp; ADOPCIÓN</span>
+        <h2 class="display">Construimos el sistema<span class="display-italic">.</span><br><span class="display-italic gradient-text">Desarrollamos la capacidad.</span></h2>
       </div>
-      <p>Cadencia predecible, fases de alcance fijo, punto de decisión en cada paso. Puedes parar, pivotar o escalar en cualquier fase sin penalidad contractual.</p>
+      <p>La formación puede ser parte de cualquier proyecto de Wiqonn. La adaptamos a la tecnología, las personas involucradas y el nivel de autonomía que necesita tu organización.</p>
     </div>
 
     <div class="timeline-band">
       <div class="timeline">
         <div class="phase">
-          <div class="duration">— Fase 01 · 1–2 semanas</div>
-          <h3>Descubrimiento</h3>
-          <p>Enmarcar el problema de negocio, definir línea base de la métrica, auditar los datos. Aún sin código.</p>
-          <ul>
-            <li>Entrevistas con stakeholders</li>
-            <li>Auditoría de datos y sistemas</li>
-            <li>Métrica de éxito y línea base</li>
-            <li>Propuesta de arquitectura</li>
-          </ul>
+          <div class="duration">Modalidad 01</div>
+          <h3>Aprender según el rol</h3>
+          <p>Sesiones enfocadas para líderes, usuarios y equipos técnicos, según las decisiones y tareas de cada grupo.</p>
         </div>
         <div class="timeline-arrow">→</div>
         <div class="phase">
-          <div class="duration">— Fase 02 · 4–6 semanas</div>
-          <h3>Piloto</h3>
-          <p>Lanzar un sistema funcional con alcance controlado. Probar que la métrica se mueve antes de escalar.</p>
-          <ul>
-            <li>Prototipo de calidad productiva</li>
-            <li>Harness de evaluación y guardarraíles</li>
-            <li>Revisión con stakeholders internos</li>
-            <li>Punto de decisión Go / no-go</li>
-          </ul>
+          <div class="duration">Modalidad 02</div>
+          <h3>Practicar en contexto</h3>
+          <p>Los talleres usan los flujos, datos y herramientas de la organización para conectar el aprendizaje con el trabajo diario.</p>
         </div>
         <div class="timeline-arrow">→</div>
         <div class="phase live">
-          <div class="duration">— Fase 03 · 8–12 semanas</div>
-          <h3>Producción</h3>
-          <p>Endurecimiento, integración y un plan claro de handover a tu equipo — o partnership continuo.</p>
-          <ul>
-            <li>Endurecimiento y definición de SLOs</li>
-            <li>Integración completa y rollout</li>
-            <li>Transferencia de conocimiento al equipo</li>
-            <li>Retainer opcional de managed-ops</li>
-          </ul>
+          <div class="duration">Modalidad 03</div>
+          <h3>Conservar el conocimiento</h3>
+          <p>La documentación, las guías y la transferencia ayudan a tu equipo a operar, mejorar y formar a otras personas.</p>
         </div>
       </div>
     </div>
 
     <div class="roi-band">
-      <span class="trust-eyebrow" style="display:block; margin-bottom: 4mm;">§ 05.B — Cómo la IA se paga sola</span>
+      <span class="trust-eyebrow" style="display:block; margin-bottom: 4mm;">DISPONIBLE EN TODAS NUESTRAS PRÁCTICAS</span>
       <div class="roi-grid">
         <div class="roi-card hero">
-          <div class="tag">— El principio</div>
-          <p class="card-label">Acotado a un número<br>que importa a tu negocio.</p>
-          <p>No vendemos IA por hora. Cada engagement se moldea alrededor de un KPI operativo o financiero — costo ahorrado, tiempo recuperado, ingreso desbloqueado — definido y con línea base juntos en Descubrimiento antes de escribir código.</p>
+          <div class="tag">Sistemas tecnológicos</div>
+          <p class="card-label">IA aplicada, datos, software e infraestructura</p>
+          <p>Desde el uso práctico hasta la operación, evaluación, gobierno y mantenimiento.</p>
         </div>
         <div class="roi-card">
-          <div class="tag">— El costo alternativo</div>
-          <p class="card-label">El precio de no hacer nada.</p>
-          <p>Para la mayoría de empresas el verdadero gasto no es el desarrollo de IA — son las horas humanas, las señales perdidas y las aprobaciones lentas que se queman silenciosamente cada trimestre que el flujo sigue manual.</p>
+          <div class="tag">Transformación</div>
+          <p class="card-label">Procesos, automatización y adopción</p>
+          <p>Los equipos aprenden cómo funciona el nuevo flujo y cómo pueden mejorarlo.</p>
         </div>
         <div class="roi-card">
-          <div class="tag">— El de-risking</div>
-          <p class="card-label">Para o pivota en cualquier fase.</p>
-          <p>Los engagements por fases significan que solo te comprometes a la siguiente fase, no al programa completo. Si Descubrimiento muestra que las matemáticas no cuadran, lo cancelamos juntos — sin presión de escalación, sin teatro de costos hundidos.</p>
+          <div class="tag">Crecimiento cuando aplica</div>
+          <p class="card-label">Marketing, SEO, contenido y analítica</p>
+          <p>Formación práctica vinculada con los canales, la audiencia y el sistema de medición en uso.</p>
         </div>
       </div>
     </div>
 
     <footer class="pg-footer">
       <div><span class="dot"></span>WIQONN.COM</div>
-      <div>MODELO DE TRABAJO · PAYBACK · PUNTOS DE DECISIÓN</div>
+      <div>FORMACIÓN · ADOPCIÓN · AUTONOMÍA</div>
       <div>06 / 07</div>
     </footer>
   </div>
@@ -1500,11 +1536,11 @@
 
     <div class="contact-panel">
       <div class="contact-hero">
-        <span class="num">§ 07 — SIGUIENTE PASO</span>
-        <h2>Cuéntanos qué te<br>está frenando<span class="display-italic">.</span> Te<br><em>diremos</em> si<br>podemos ayudar.</h2>
-        <p>Sin pitch. Sin deck de 60 slides. Una conversación real — usualmente 30 minutos — para ver si hay un problema medible para el que podamos lanzar una solución dentro de un trimestre.</p>
+        <span class="num">SIGUIENTE PASO</span>
+        <h2>Cuéntanos qué<br>debe cambiar<span class="display-italic">.</span><br>Trazaremos el<br><em>siguiente paso.</em></h2>
+        <p>Trae el proceso, producto o decisión que está frenando a tu organización. Revisaremos el contexto y te diremos con claridad dónde pueden ayudar el software, los datos, la IA o la infraestructura.</p>
         <a class="contact-cta" href="https://www.wiqonn.com/">
-          Agenda una consulta gratis
+          Hablemos de tu caso de uso
           <span style="font-family: var(--display); font-size: 16pt; line-height: 0;">→</span>
         </a>
       </div>
@@ -1512,25 +1548,27 @@
 
     <div class="contact-grid">
       <div>
-        <p class="detail-title">— Web</p>
+        <p class="detail-title">Web</p>
         <p><a href="https://www.wiqonn.com/">wiqonn.com</a></p>
       </div>
       <div>
-        <p class="detail-title">— Correo</p>
+        <p class="detail-title">Correo</p>
         <p><!--email_off--><a href="mailto:contact@wiqonn.com">contact@wiqonn.com</a><!--/email_off--></p>
       </div>
       <div>
-        <p class="detail-title">— Modelo de trabajo</p>
-        <p>Descubrimiento → Piloto → Producción<br>Típicamente 2–8 semanas por fase</p>
+        <p class="detail-title">Modelo de entrega</p>
+        <p>Entender → Construir → Transferir<br>Alcance y decisiones acordados por fase</p>
       </div>
     </div>
 
     <div class="endmark" style="margin-top: 4mm;">
       <div class="brand-mini-mark"></div>
-      © 2026 Wiqonn — Todos los derechos reservados
+      © 2026 Wiqonn · Todos los derechos reservados
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- ===================================================================
      PRINT HELPER (hidden when printing)
@@ -1546,7 +1584,7 @@
 <nav class="site-nav" aria-label="Navegación del sitio">
   <a href="/">Wiqonn: inicio</a>
   <a href="/blog">Blog de investigación en IA</a>
-  <a href="/brochure/" hreflang="en" lang="en">AI services (English)</a>
+  <a href="/brochure/" hreflang="en" lang="en">Brochure in English</a>
 </nav>
 </body>
 </html>
