@@ -18,6 +18,17 @@ const REVEAL_DELAYS = {
 
 const posts = [
   {
+    slug: "visual-grounding",
+    title: "Structured Output Does Not Guarantee Visual Grounding: An Empirical Study of Vision-Language Model Localization",
+    description:
+      "An empirical study of coordinate interfaces, crop selection and answer reliability for visual agents and Physical AI.",
+    date: "October 2026",
+    readTime: "12 min read",
+    author: "Wayner Barrios",
+    tags: ["Multimodal AI", "Computer Vision", "Evaluation", "Qwen"],
+    featured: true,
+  },
+  {
     slug: "dgx-spark-finetune",
     title: "Fine-Tune LLMs on a DGX Spark: LoRA + NVFP4 in Practice",
     description:
@@ -26,7 +37,7 @@ const posts = [
     readTime: "14 min read",
     author: "Wayner Barrios",
     tags: ["DGX Spark", "NVFP4", "LoRA", "Blackwell", "Fine-Tuning"],
-    featured: true,
+    featured: false,
   },
   {
     slug: "vllm-mlx",
@@ -78,11 +89,11 @@ export default function BlogPage() {
               decisions and working code.
             </p>
             <p className="mt-6 text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              The Wiqonn blog documents how we train, evaluate and deploy language models.
-              Start with the DGX Spark guide to compare fine-tuning backends, memory requirements
-              and model export workflows. For inference on a Mac, explore our vLLM-MLX benchmarks
-              and setup instructions. Each article includes the hardware, software and limitations
-              behind the results so you can assess them against your own workload.
+              The Wiqonn blog documents how we train, evaluate and deploy AI systems.
+              Start with our visual-grounding study to see why valid structured output can still
+              select the wrong evidence. Then explore fine-tuning on DGX Spark or local inference
+              on Apple Silicon. Each article includes the hardware, software and limitations behind
+              the results so you can assess them against your own workload.
             </p>
           </div>
         </div>

@@ -15,6 +15,7 @@ PAGES = {
     "/en": ("en.html", "en"),
     "/blog": ("blog.html", "en"),
     "/blog/dgx-spark-finetune": ("blog/dgx-spark-finetune.html", "en"),
+    "/blog/visual-grounding": ("blog/visual-grounding.html", "en"),
     "/blog/vllm-mlx": ("blog/vllm-mlx.html", "en"),
     "/brochure/": ("brochure/index.html", "en"),
     "/brochure/es/": ("brochure/es/index.html", "es"),
